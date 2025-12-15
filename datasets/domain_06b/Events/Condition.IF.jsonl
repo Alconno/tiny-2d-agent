@@ -1,0 +1,191 @@
+// Condition.IF (text)
+{"user_input": "If text hello exists", "assistant_output": "If text hello exists"}
+{"user_input": "check if blue text sky exists", "assistant_output": "If text blue sky exists"}
+{"user_input": "verify green or red text stop exists", "assistant_output": "If text green or red stop exists"}
+{"user_input": "not text error exists", "assistant_output": "If text error exists negate"}
+{"user_input": "Set a condition that checks if any word yellow word light exists", "assistant_output": "If text yellow light exists"}
+{"user_input": "if text alert exists", "assistant_output": "If text alert exists"}
+{"user_input": "check text warning exists", "assistant_output": "If text warning exists"}
+{"user_input": "if red text fail exists", "assistant_output": "If text red fail exists"}
+{"user_input": "not text offline exists", "assistant_output": "If text offline exists negate"}
+{"user_input": "verify green text success exists", "assistant_output": "If text green success exists"}
+{"user_input": "if text start exists", "assistant_output": "If text start exists"}
+{"user_input": "check text stop exists", "assistant_output": "If text stop exists"}
+{"user_input": "if yellow text low exists", "assistant_output": "If text yellow low exists"}
+{"user_input": "text error exists", "assistant_output": "If text error exists"}
+{"user_input": "not blue text full exists", "assistant_output": "If text blue full exists negate"}
+{"user_input": "verify text complete exists", "assistant_output": "If text complete exists"}
+{"user_input": "if text ok exists", "assistant_output": "If text ok exists"}
+{"user_input": "check text fail exists", "assistant_output": "If text fail exists"}
+{"user_input": "if text running exists", "assistant_output": "If text running exists"}
+{"user_input": "text warning exists", "assistant_output": "If text warning exists"}
+{"user_input": "if text error doesnt exist", "assistant_output": "If text error exists negate"}
+{"user_input": "check text warning doesnt exist", "assistant_output": "If text warning exists negate"}
+{"user_input": "verify red text fail doesnt exist", "assistant_output": "If text red fail exists negate"}
+{"user_input": "text offline doesnt exist", "assistant_output": "If text offline exists negate"}
+{"user_input": "check green text success doesnt exist", "assistant_output": "If text green success exists negate"}
+{"user_input": "if text start doesnt exist", "assistant_output": "If text start exists negate"}
+{"user_input": "verify text stop doesnt exist", "assistant_output": "If text stop exists negate"}
+{"user_input": "yellow text low doesnt exist", "assistant_output": "If text yellow low exists negate"}
+{"user_input": "text complete doesnt exist", "assistant_output": "If text complete exists negate"}
+{"user_input": "if text alert exists", "assistant_output": "If text alert exists"}
+{"user_input": "check text warning exists", "assistant_output": "If text warning exists"}
+{"user_input": "if text error exists", "assistant_output": "If text error exists"}
+{"user_input": "verify text success exists", "assistant_output": "If text success exists"}
+{"user_input": "if text start exists", "assistant_output": "If text start exists"}
+{"user_input": "check text stop exists", "assistant_output": "If text stop exists"}
+{"user_input": "if text running exists", "assistant_output": "If text running exists"}
+{"user_input": "verify text complete exists", "assistant_output": "If text complete exists"}
+{"user_input": "if text ok exists", "assistant_output": "If text ok exists"}
+{"user_input": "check text fail exists", "assistant_output": "If text fail exists"}
+{"user_input": "if text low exists", "assistant_output": "If text low exists"}
+{"user_input": "verify text high exists", "assistant_output": "If text high exists"}
+{"user_input": "if red text danger exists", "assistant_output": "If text red danger exists"}
+{"user_input": "check green text safe exists", "assistant_output": "If text green safe exists"}
+{"user_input": "if blue text info exists", "assistant_output": "If text blue info exists"}
+{"user_input": "verify yellow text caution exists", "assistant_output": "If text yellow caution exists"}
+{"user_input": "if text ready exists", "assistant_output": "If text ready exists"}
+{"user_input": "check text done exists", "assistant_output": "If text done exists"}
+{"user_input": "if text paused exists", "assistant_output": "If text paused exists"}
+{"user_input": "verify text started exists", "assistant_output": "If text started exists"}
+{"user_input": "if text connected exists", "assistant_output": "If text connected exists"}
+{"user_input": "check text disconnected exists", "assistant_output": "If text disconnected exists"}
+{"user_input": "if text loaded exists", "assistant_output": "If text loaded exists"}
+{"user_input": "verify text saving exists", "assistant_output": "If text saving exists"}
+{"user_input": "if text saved exists", "assistant_output": "If text saved exists"}
+{"user_input": "check text deleted exists", "assistant_output": "If text deleted exists"}
+{"user_input": "if text updated exists", "assistant_output": "If text updated exists"}
+{"user_input": "verify text modifying exists", "assistant_output": "If text modifying exists"}
+{"user_input": "if text modified exists", "assistant_output": "If text modified exists"}
+{"user_input": "check text uploaded exists", "assistant_output": "If text uploaded exists"}
+{"user_input": "if text downloading exists", "assistant_output": "If text downloading exists"}
+{"user_input": "verify text downloaded exists", "assistant_output": "If text downloaded exists"}
+{"user_input": "if text error found exists", "assistant_output": "If text error found exists"}
+{"user_input": "check text success found exists", "assistant_output": "If text success found exists"}
+{"user_input": "if text warning detected exists", "assistant_output": "If text warning detected exists"}
+{"user_input": "verify text alert detected exists", "assistant_output": "If text alert detected exists"}
+{"user_input": "if text info exists", "assistant_output": "If text info exists"}
+{"user_input": "check text message exists", "assistant_output": "If text message exists"}
+{"user_input": "if text notice exists", "assistant_output": "If text notice exists"}
+{"user_input": "verify text log exists", "assistant_output": "If text log exists"}
+{"user_input": "if text report exists", "assistant_output": "If text report exists"}
+{"user_input": "check text file exists", "assistant_output": "If text file exists"}
+{"user_input": "if text document exists", "assistant_output": "If text document exists"}
+{"user_input": "verify text folder exists", "assistant_output": "If text folder exists"}
+{"user_input": "if text folder empty exists", "assistant_output": "If text folder empty exists"}
+{"user_input": "check text folder full exists", "assistant_output": "If text folder full exists"}
+{"user_input": "if text system exists", "assistant_output": "If text system exists"}
+{"user_input": "verify text network exists", "assistant_output": "If text network exists"}
+{"user_input": "if text connection exists", "assistant_output": "If text connection exists"}
+{"user_input": "check text server exists", "assistant_output": "If text server exists"}
+{"user_input": "if text client exists", "assistant_output": "If text client exists"}
+{"user_input": "verify text process exists", "assistant_output": "If text process exists"}
+{"user_input": "if text task exists", "assistant_output": "If text task exists"}
+{"user_input": "check text job exists", "assistant_output": "If text job exists"}
+{"user_input": "if text queue exists", "assistant_output": "If text queue exists"}
+{"user_input": "verify text buffer exists", "assistant_output": "If text buffer exists"}
+{"user_input": "hey check if the text hello is there", "assistant_output": "If text hello exists"}
+{"user_input": "can you see if blue text sky exists", "assistant_output": "If text blue sky exists"}
+{"user_input": "make sure the green or red text stop shows up", "assistant_output": "If text green or red stop exists"}
+{"user_input": "it looks like error text is missing", "assistant_output": "If text error exists negate"}
+{"user_input": "see if yellow light text is on the screen", "assistant_output": "If text yellow light exists"}
+{"user_input": "verify that the alert text exists", "assistant_output": "If text alert exists"}
+{"user_input": "check if text warning appears", "assistant_output": "If text warning exists"}
+{"user_input": "is the text ready displayed", "assistant_output": "If text ready exists"}
+{"user_input": "confirm that text complete is present", "assistant_output": "If text complete exists"}
+{"user_input": "make sure the ok text shows up", "assistant_output": "If text ok exists"}
+
+
+
+
+// Condition.IF (image)
+{"user_input": "if image circle exists", "assistant_output": "If image circle exists"}
+{"user_input": "check if triangle image exists", "assistant_output": "If image triangle exists"}
+{"user_input": "verify that image red moon exists", "assistant_output": "If image red moon exists"}
+{"user_input": "not image green square exists", "assistant_output": "If image green square exists negate"}
+{"user_input": "if image circle exists", "assistant_output": "If image circle exists"}
+{"user_input": "check if triangle image exists", "assistant_output": "If image triangle exists"}
+{"user_input": "verify red image moon exists", "assistant_output": "If image red moon exists"}
+{"user_input": "if image square exists", "assistant_output": "If image square exists"}
+{"user_input": "check image star exists", "assistant_output": "If image star exists"}
+{"user_input": "if image heart exists", "assistant_output": "If image heart exists"}
+{"user_input": "verify image green square exists", "assistant_output": "If image green square exists"}
+{"user_input": "if blue image circle exists", "assistant_output": "If image blue circle exists"}
+{"user_input": "check yellow image triangle exists", "assistant_output": "If image yellow triangle exists"}
+{"user_input": "if image diamond exists", "assistant_output": "If image diamond exists"}
+{"user_input": "verify image moon exists", "assistant_output": "If image moon exists"}
+{"user_input": "if image sun exists", "assistant_output": "If image sun exists"}
+{"user_input": "check image cloud exists", "assistant_output": "If image cloud exists"}
+{"user_input": "if image tree exists", "assistant_output": "If image tree exists"}
+{"user_input": "verify image red heart exists", "assistant_output": "If image red heart exists"}
+{"user_input": "if image green triangle exists", "assistant_output": "If image green triangle exists"}
+{"user_input": "check image blue square exists", "assistant_output": "If image blue square exists"}
+{"user_input": "if image yellow star exists", "assistant_output": "If image yellow star exists"}
+{"user_input": "verify image circle exists", "assistant_output": "If image circle exists"}
+{"user_input": "check image triangle exists", "assistant_output": "If image triangle exists"}
+{"user_input": "if image heart exists", "assistant_output": "If image heart exists"}
+{"user_input": "verify image star exists", "assistant_output": "If image star exists"}
+{"user_input": "check image diamond exists", "assistant_output": "If image diamond exists"}
+{"user_input": "if image sun exists", "assistant_output": "If image sun exists"}
+{"user_input": "verify image moon exists", "assistant_output": "If image moon exists"}
+{"user_input": "check image cloud exists", "assistant_output": "If image cloud exists"}
+{"user_input": "if image tree exists", "assistant_output": "If image tree exists"}
+{"user_input": "verify image flower exists", "assistant_output": "If image flower exists"}
+{"user_input": "check image leaf exists", "assistant_output": "If image leaf exists"}
+{"user_input": "if image red circle exists", "assistant_output": "If image red circle exists"}
+{"user_input": "verify image green square exists", "assistant_output": "If image green square exists"}
+{"user_input": "check image blue triangle exists", "assistant_output": "If image blue triangle exists"}
+{"user_input": "if image yellow star exists", "assistant_output": "If image yellow star exists"}
+{"user_input": "verify image pink heart exists", "assistant_output": "If image pink heart exists"}
+{"user_input": "check image orange diamond exists", "assistant_output": "If image orange diamond exists"}
+{"user_input": "if image purple moon exists", "assistant_output": "If image purple moon exists"}
+{"user_input": "verify image brown cloud exists", "assistant_output": "If image brown cloud exists"}
+{"user_input": "check image black tree exists", "assistant_output": "If image black tree exists"}
+{"user_input": "if image white sun exists", "assistant_output": "If image white sun exists"}
+{"user_input": "verify image gray leaf exists", "assistant_output": "If image gray leaf exists"}
+{"user_input": "check image red flower exists", "assistant_output": "If image red flower exists"}
+{"user_input": "if image green heart exists", "assistant_output": "If image green heart exists"}
+{"user_input": "verify image blue star exists", "assistant_output": "If image blue star exists"}
+{"user_input": "check image yellow diamond exists", "assistant_output": "If image yellow diamond exists"}
+{"user_input": "if image circle red exists", "assistant_output": "If image circle red exists"}
+{"user_input": "verify image triangle blue exists", "assistant_output": "If image triangle blue exists"}
+{"user_input": "check image heart pink exists", "assistant_output": "If image heart pink exists"}
+{"user_input": "if image diamond orange exists", "assistant_output": "If image diamond orange exists"}
+{"user_input": "verify image star yellow exists", "assistant_output": "If image star yellow exists"}
+{"user_input": "check image sun white exists", "assistant_output": "If image sun white exists"}
+{"user_input": "if image moon purple exists", "assistant_output": "If image moon purple exists"}
+{"user_input": "verify image cloud gray exists", "assistant_output": "If image cloud gray exists"}
+{"user_input": "check image tree brown exists", "assistant_output": "If image tree brown exists"}
+{"user_input": "if image flower green exists", "assistant_output": "If image flower green exists"}
+{"user_input": "verify image leaf yellow exists", "assistant_output": "If image leaf yellow exists"}
+{"user_input": "check image sun orange exists", "assistant_output": "If image sun orange exists"}
+{"user_input": "if image moon blue exists", "assistant_output": "If image moon blue exists"}
+{"user_input": "verify image cloud white exists", "assistant_output": "If image cloud white exists"}
+{"user_input": "check image tree black exists", "assistant_output": "If image tree black exists"}
+{"user_input": "if image leaf red exists", "assistant_output": "If image leaf red exists"}
+{"user_input": "verify image flower pink exists", "assistant_output": "If image flower pink exists"}
+{"user_input": "check image heart green exists", "assistant_output": "If image heart green exists"}
+{"user_input": "if image star blue exists", "assistant_output": "If image star blue exists"}
+{"user_input": "verify image diamond yellow exists", "assistant_output": "If image diamond yellow exists"}
+{"user_input": "check image circle orange exists", "assistant_output": "If image circle orange exists"}
+{"user_input": "if image triangle purple exists", "assistant_output": "If image triangle purple exists"}
+{"user_input": "if image circle doesnt exist", "assistant_output": "If image circle exists negate"}
+{"user_input": "check image triangle doesnt exist", "assistant_output": "If image triangle exists negate"}
+{"user_input": "verify red image moon doesnt exist", "assistant_output": "If image red moon exists negate"}
+{"user_input": "image square doesnt exist", "assistant_output": "If image square exists negate"}
+{"user_input": "check image star doesnt exist", "assistant_output": "If image star exists negate"}
+{"user_input": "if image heart doesnt exist", "assistant_output": "If image heart exists negate"}
+{"user_input": "verify image green square doesnt exist", "assistant_output": "If image green square exists negate"}
+{"user_input": "check image blue triangle doesnt exist", "assistant_output": "If image blue triangle exists negate"}
+{"user_input": "yellow image star doesnt exist", "assistant_output": "If image yellow star exists negate"}
+{"user_input": "verify image circle doesnt exist", "assistant_output": "If image circle exists negate"}
+{"user_input": "hey check if the circle image is there", "assistant_output": "If image circle exists"}
+{"user_input": "can you see if the triangle image exists", "assistant_output": "If image triangle exists"}
+{"user_input": "make sure the red moon image is visible", "assistant_output": "If image red moon exists"}
+{"user_input": "looks like the green square image is missing", "assistant_output": "If image green square exists negate"}
+{"user_input": "see if the heart image shows up", "assistant_output": "If image heart exists"}
+{"user_input": "verify that the blue triangle image is on screen", "assistant_output": "If image blue triangle exists"}
+{"user_input": "check if the yellow star image appears", "assistant_output": "If image yellow star exists"}
+{"user_input": "is the red circle image displayed", "assistant_output": "If image red circle exists"}
+{"user_input": "confirm that the diamond image is present", "assistant_output": "If image diamond exists"}
+{"user_input": "make sure the sun image shows up", "assistant_output": "If image sun exists"}

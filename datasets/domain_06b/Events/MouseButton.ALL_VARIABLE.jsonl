@@ -1,0 +1,76 @@
+
+{"user_input": "click all variables named count", "assistant_output": "click all variable count"}
+{"user_input": "right click every variable called score", "assistant_output": "right click all variable score"}
+{"user_input": "double click all vars labeled lives", "assistant_output": "double click all variable lives"}
+{"user_input": "middle click every var named money", "assistant_output": "middle click all variable money"}
+{"user_input": "right click every variable tagged theme", "assistant_output": "right click all variable theme"}
+{"user_input": "middle click all vars called layout", "assistant_output": "middle click all variable layout"}
+{"user_input": "double click every var named category", "assistant_output": "double click all variable category"}
+{"user_input": "click all variables named type", "assistant_output": "click all variable type"}
+{"user_input": "right click all variables labeled version", "assistant_output": "right click all variable version"}
+{"user_input": "double click variables called priority", "assistant_output": "double click all variable priority"}
+{"user_input": "middle click each variable named state", "assistant_output": "middle click all variable state"}
+{"user_input": "click all variable records for mode", "assistant_output": "click all variable mode"}
+{"user_input": "right click all variable collections named token", "assistant_output": "right click all variable token"}
+{"user_input": "middle click every variable data named hash", "assistant_output": "middle click all variable hash"}
+{"user_input": "double click variables called pin", "assistant_output": "double click all variable pin"}
+{"user_input": "click all vars named count2", "assistant_output": "click all variable count2"}
+{"user_input": "right click every var named metric", "assistant_output": "right click all variable metric"}
+{"user_input": "double click all variable entries called threshold", "assistant_output": "double click all variable threshold"}
+{"user_input": "middle click all vars for limit", "assistant_output": "middle click all variable limit"}
+{"user_input": "click all variables labeled cap", "assistant_output": "click all variable cap"}
+{"user_input": "right click all vars for quota", "assistant_output": "right click all variable quota"}
+{"user_input": "middle click all variable items named index", "assistant_output": "middle click all variable index"}
+{"user_input": "double click every variable called slot", "assistant_output": "double click all variable slot"}
+{"user_input": "click all vars called record", "assistant_output": "click all variable record"}
+{"user_input": "right click each variable named log", "assistant_output": "right click all variable log"}
+{"user_input": "double click every variable for journal", "assistant_output": "double click all variable journal"}
+{"user_input": "middle click all variable entries called entry", "assistant_output": "middle click all variable entry"}
+{"user_input": "click all variables called quest", "assistant_output": "click all variable quest"}
+{"user_input": "right click all variables named mission", "assistant_output": "right click all variable mission"}
+{"user_input": "middle click vars labeled task", "assistant_output": "middle click all variable task"}
+{"user_input": "double click every var named job", "assistant_output": "double click all variable job"}
+{"user_input": "click all vars named goal", "assistant_output": "click all variable goal"}
+{"user_input": "right click all variables called target", "assistant_output": "right click all variable target"}
+{"user_input": "double click every variable labeled focus", "assistant_output": "double click all variable focus"}
+{"user_input": "middle click all variables named aim", "assistant_output": "middle click all variable aim"}
+{"user_input": "click all variable entries called theme2", "assistant_output": "click all variable theme2"}
+{"user_input": "right click every var called option", "assistant_output": "right click all variable option"}
+{"user_input": "middle click variables named preset", "assistant_output": "middle click all variable preset"}
+{"user_input": "double click all vars for config", "assistant_output": "double click all variable config"}
+{"user_input": "click all variables called state2", "assistant_output": "click all variable state2"}
+{"user_input": "right click variables named phase", "assistant_output": "right click all variable phase"}
+{"user_input": "middle click all vars named step", "assistant_output": "middle click all variable step"}
+{"user_input": "double click all variable entries for stage", "assistant_output": "double click all variable stage"}
+{"user_input": "click all variable items called button", "assistant_output": "click all variable button"}
+{"user_input": "right click all vars named checkbox", "assistant_output": "right click all variable checkbox"}
+{"user_input": "double click all variable entries labeled dropdown", "assistant_output": "double click all variable dropdown"}
+{"user_input": "middle click every variable called slider", "assistant_output": "middle click all variable slider"}
+{"user_input": "click all vars labeled switch", "assistant_output": "click all variable switch"}
+{"user_input": "right click all variable entries for toggle", "assistant_output": "right click all variable toggle"}
+{"user_input": "double click all vars named option", "assistant_output": "double click all variable option"}
+{"user_input": "middle click all variable records called menu", "assistant_output": "middle click all variable menu"}
+{"user_input": "click every variable named field", "assistant_output": "click all variable field"}
+{"user_input": "right click all vars labeled input", "assistant_output": "right click all variable input"}
+{"user_input": "double click all variable entries called button2", "assistant_output": "double click all variable button2"}
+{"user_input": "middle click all vars named checkbox2", "assistant_output": "middle click all variable checkbox2"}
+{"user_input": "click all variable items called dropdown2", "assistant_output": "click all variable dropdown2"}
+{"user_input": "right click all vars labeled slider2", "assistant_output": "right click all variable slider2"}
+{"user_input": "double click all variable entries called switch2", "assistant_output": "double click all variable switch2"}
+{"user_input": "middle click all vars named toggle2", "assistant_output": "middle click all variable toggle2"}
+{"user_input": "click all variable records called option2", "assistant_output": "click all variable option2"}
+{"user_input": "right click every variable named menu2", "assistant_output": "right click all variable menu2"}
+{"user_input": "double click all vars labeled field2", "assistant_output": "double click all variable field2"}
+{"user_input": "middle click every variable entry called input2", "assistant_output": "middle click all variable input2"}
+
+// Human like
+{"user_input": "hey can you click all the variables called score for me", "assistant_output": "click all variable score"}
+{"user_input": "please right click every variable labeled health", "assistant_output": "right click all variable health"}
+{"user_input": "double click all vars named mana if you can", "assistant_output": "double click all variable mana"}
+{"user_input": "middle click all the variables called energy now", "assistant_output": "middle click all variable energy"}
+{"user_input": "could you click all variables for level", "assistant_output": "click all variable level"}
+{"user_input": "right click all the variables named points quickly", "assistant_output": "right click all variable points"}
+{"user_input": "double click every variable tagged xp", "assistant_output": "double click all variable xp"}
+{"user_input": "middle click all variables called stamina please", "assistant_output": "middle click all variable stamina"}
+{"user_input": "click all vars labeled timer now", "assistant_output": "click all variable timer"}
+{"user_input": "right click every variable named reward for me", "assistant_output": "right click all variable reward"}

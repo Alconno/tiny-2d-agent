@@ -1,0 +1,501 @@
+{"user_input": "record a sequence where I click looping, start a loop for names, type each name, press ctrl A, backspace, escape, end loop, click looping again", "assistant_output": "start recording sequence\nclick looping\nstart loop names as template\ntype names as template\npress ctrl A\npress backspace\npress escape\nstop loop\nclick looping\nstop recording sequence"}
+{"user_input": "make a loop for each email where I open inbox, type the email, hit enter, close inbox", "assistant_output": "start loop email as template\nclick inbox\ntype email as template\npress enter\nclick close inbox\nstop loop"}
+{"user_input": "create a sequence called login where you click username box, type admin, click password box, type secret, press enter", "assistant_output": "start recording login\nclick username box\ntype admin\nclick password box\ntype secret\npress enter\nstop recording login"}
+{"user_input": "wait 3 seconds then click confirm and press escape", "assistant_output": "wait 3\nclick confirm\npress escape"}
+{"user_input": "record a sequence where I click File, type my name, press Enter, click Save", "assistant_output": "start recording sequence\nclick File\ntype my name\npress enter\nclick Save\nstop recording sequence"}
+{"user_input": "wait 2 seconds then click OK", "assistant_output": "wait 2\nclick OK"}
+{"user_input": "start a loop for each username: click Username, type username, press Tab, type Password, press Enter, stop loop", "assistant_output": "start loop username as template\nclick Username\ntype username as template\npress tab\ntype Password\npress enter\nstop loop"}
+{"user_input": "record login sequence: click User, type admin, click Pass, type 1234, press Enter", "assistant_output": "start recording login\nclick User\ntype admin\nclick Pass\ntype 1234\npress enter\nstop recording login"}
+{"user_input": "wait 1 second and click Continue", "assistant_output": "wait 1\nclick Continue"}
+{"user_input": "double click Document to open", "assistant_output": "double click Document"}
+{"user_input": "type hello world in Chat and press Enter", "assistant_output": "type hello world\npress enter"}
+{"user_input": "start recording sequence: click Settings, type new value, press Enter, click Logout, stop recording", "assistant_output": "start recording sequence\nclick Settings\ntype new value\npress enter\nclick Logout\nstop recording sequence"}
+{"user_input": "wait 5 then click Confirm", "assistant_output": "wait 5\nclick Confirm"}
+{"user_input": "click Item1, click Item2, press Escape", "assistant_output": "click Item1\nclick Item2\npress escape"}
+{"user_input": "start loop for FileName: click FileName, type name, press Enter, stop loop", "assistant_output": "start loop FileName as template\nclick FileName\ntype FileName as template\npress enter\nstop loop"}
+{"user_input": "record sequence: click Name, type Alice, click Email, type alice@example.com, press Enter", "assistant_output": "start recording sequence\nclick Name\ntype Alice\nclick Email\ntype alice@example.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Submit", "assistant_output": "wait 3\nclick Submit"}
+{"user_input": "double click Image1 then press Escape", "assistant_output": "double click Image1\npress escape"}
+{"user_input": "type SearchQuery and press Enter", "assistant_output": "type SearchQuery\npress enter"}
+{"user_input": "start recording: click Profile, type Bio, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Profile\ntype Bio\npress enter\nstop recording sequence"}
+{"user_input": "wait five then click Next", "assistant_output": "wait 5\nclick Next"}
+{"user_input": "start loop for Contacts: click ContactName, type Message, press Enter, stop loop", "assistant_output": "start loop Contacts as template\nclick ContactName\ntype Message\npress enter\nstop loop"}
+{"user_input": "record sequence: click Help, press Escape, stop recording", "assistant_output": "start recording sequence\nclick Help\npress escape\nstop recording sequence"}
+{"user_input": "click Checkbox1, press Tab, type Comment, press Enter", "assistant_output": "click Checkbox1\npress tab\ntype Comment\npress enter"}
+{"user_input": "start loop for Products: click ProductName, type Quantity, press Enter, stop loop", "assistant_output": "start loop Products as template\nclick ProductName\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "wait 1 then double click FileA", "assistant_output": "wait 1\ndouble click FileA"}
+{"user_input": "record sequence: click Language, type English, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Language\ntype English\npress enter\nstop recording sequence"}
+{"user_input": "click Option1, click Option2, press Escape", "assistant_output": "click Option1\nclick Option2\npress escape"}
+{"user_input": "type Username, press Tab, type Password, press Enter", "assistant_output": "type Username\npress tab\ntype Password\npress enter"}
+{"user_input": "start loop for Orders: click OrderID, type Quantity, press Enter, stop loop", "assistant_output": "start loop Orders as template\nclick OrderID\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "wait 2 then click Accept", "assistant_output": "wait 2\nclick Accept"}
+{"user_input": "record sequence: click Title, type Report, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Report\npress enter\nstop recording sequence"}
+{"user_input": "click Name1, click Name2, press Escape", "assistant_output": "click Name1\nclick Name2\npress escape"}
+{"user_input": "type SearchTerm, press Enter", "assistant_output": "type SearchTerm\npress enter"}
+{"user_input": "start recording: click Date, type 2025-01-01, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Date\ntype 2025-01-01\npress enter\nstop recording sequence"}
+{"user_input": "wait one then click OK", "assistant_output": "wait 1\nclick OK"}
+{"user_input": "double click FileB then press Escape", "assistant_output": "double click FileB\npress escape"}
+{"user_input": "start loop for Tasks: click TaskName, type Note, press Enter, stop loop", "assistant_output": "start loop Tasks as template\nclick TaskName\ntype Note\npress enter\nstop loop"}
+{"user_input": "record sequence: click Title, type Document1, click Author, type Bob, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Document1\nclick Author\ntype Bob\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Finish", "assistant_output": "wait 3\nclick Finish"}
+{"user_input": "click ItemA, click ItemB, press Escape", "assistant_output": "click ItemA\nclick ItemB\npress escape"}
+{"user_input": "type Keyword, press Enter", "assistant_output": "type Keyword\npress enter"}
+{"user_input": "start recording: click Field1, type Value1, click Field2, type Value2, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Field1\ntype Value1\nclick Field2\ntype Value2\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then click Continue", "assistant_output": "wait 2\nclick Continue"}
+{"user_input": "double click Folder1 then press Escape", "assistant_output": "double click Folder1\npress escape"}
+{"user_input": "start loop for Items: click ItemName, type Quantity, press Enter, stop loop", "assistant_output": "start loop Items as template\nclick ItemName\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "record sequence: click Name, type Charlie, click Email, type charlie@example.com, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Name\ntype Charlie\nclick Email\ntype charlie@example.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click Confirm", "assistant_output": "wait 1\nclick Confirm"}
+{"user_input": "click OptionA, click OptionB, press Escape", "assistant_output": "click OptionA\nclick OptionB\npress escape"}
+{"user_input": "type Phrase, press Enter", "assistant_output": "type Phrase\npress enter"}
+{"user_input": "start recording: click FieldA, type X, click FieldB, type Y, press Enter, stop recording", "assistant_output": "start recording sequence\nclick FieldA\ntype X\nclick FieldB\ntype Y\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Done", "assistant_output": "wait 3\nclick Done"}
+{"user_input": "double click FileC then press Escape", "assistant_output": "double click FileC\npress escape"}
+{"user_input": "start loop for Names: click NameText, type Value, press Enter, stop loop", "assistant_output": "start loop Names as template\nclick NameText\ntype Value\npress enter\nstop loop"}
+{"user_input": "record sequence: click Title, type Project1, click Owner, type Alice, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project1\nclick Owner\ntype Alice\npress enter\nstop recording sequence"}
+{"user_input": "record sequence where I click File1, type Report1, press Enter, click File2, type Report2, press Enter, stop recording", "assistant_output": "start recording sequence\nclick File1\ntype Report1\npress enter\nclick File2\ntype Report2\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then click Continue", "assistant_output": "wait 2\nclick Continue"}
+{"user_input": "start loop for Users: click UserName, type Value, press Enter, stop loop", "assistant_output": "start loop Users as template\nclick UserName\ntype Value\npress enter\nstop loop"}
+{"user_input": "double click Document1 then press Escape", "assistant_output": "double click Document1\npress escape"}
+{"user_input": "type QueryText and press Enter", "assistant_output": "type QueryText\npress enter"}
+{"user_input": "record sequence: click Field1, type Text1, click Field2, type Text2, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Field1\ntype Text1\nclick Field2\ntype Text2\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click OK", "assistant_output": "wait 1\nclick OK"}
+{"user_input": "start loop for Orders: click OrderID, type Quantity, press Enter, stop loop", "assistant_output": "start loop Orders as template\nclick OrderID\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "click ItemA, click ItemB, press Escape", "assistant_output": "click ItemA\nclick ItemB\npress escape"}
+{"user_input": "record sequence: click Name, type Alice, click Email, type alice@mail.com, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Name\ntype Alice\nclick Email\ntype alice@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Submit", "assistant_output": "wait 3\nclick Submit"}
+{"user_input": "double click FileX then press Escape", "assistant_output": "double click FileX\npress escape"}
+{"user_input": "type SearchTerm and press Enter", "assistant_output": "type SearchTerm\npress enter"}
+{"user_input": "start recording: click Profile, type BioText, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Profile\ntype BioText\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then click Next", "assistant_output": "wait 2\nclick Next"}
+{"user_input": "start loop for Messages: click Contact, type MessageText, press Enter, stop loop", "assistant_output": "start loop Messages as template\nclick Contact\ntype MessageText\npress enter\nstop loop"}
+{"user_input": "record sequence: click Help, press Escape, stop recording", "assistant_output": "start recording sequence\nclick Help\npress escape\nstop recording sequence"}
+{"user_input": "click Checkbox1, press Tab, type CommentText, press Enter", "assistant_output": "click Checkbox1\npress tab\ntype CommentText\npress enter"}
+{"user_input": "start loop for Products: click ProductName, type Amount, press Enter, stop loop", "assistant_output": "start loop Products as template\nclick ProductName\ntype Amount\npress enter\nstop loop"}
+{"user_input": "wait 1 then double click FileA", "assistant_output": "wait 1\ndouble click FileA"}
+{"user_input": "record sequence: click Language, type English, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Language\ntype English\npress enter\nstop recording sequence"}
+{"user_input": "click Option1, click Option2, press Escape", "assistant_output": "click Option1\nclick Option2\npress escape"}
+{"user_input": "type UsernameText, press Tab, type PasswordText, press Enter", "assistant_output": "type UsernameText\npress tab\ntype PasswordText\npress enter"}
+{"user_input": "start loop for Tasks: click TaskName, type Note, press Enter, stop loop", "assistant_output": "start loop Tasks as template\nclick TaskName\ntype Note\npress enter\nstop loop"}
+{"user_input": "wait two then click Accept", "assistant_output": "wait 2\nclick Accept"}
+{"user_input": "record sequence: click Title, type ReportName, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype ReportName\npress enter\nstop recording sequence"}
+{"user_input": "click Name1, click Name2, press Escape", "assistant_output": "click Name1\nclick Name2\npress escape"}
+{"user_input": "type SearchPhrase, press Enter", "assistant_output": "type SearchPhrase\npress enter"}
+{"user_input": "start recording: click Date, type 2025-11-20, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Date\ntype 2025-11-20\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click OK", "assistant_output": "wait 1\nclick OK"}
+{"user_input": "double click FileB then press Escape", "assistant_output": "double click FileB\npress escape"}
+{"user_input": "start loop for Names: click NameText, type ValueText, press Enter, stop loop", "assistant_output": "start loop Names as template\nclick NameText\ntype ValueText\npress enter\nstop loop"}
+{"user_input": "record sequence: click Title, type Project1, click Owner, type Alice, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project1\nclick Owner\ntype Alice\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Finish", "assistant_output": "wait 3\nclick Finish"}
+{"user_input": "click ItemA, click ItemB, press Escape", "assistant_output": "click ItemA\nclick ItemB\npress escape"}
+{"user_input": "type KeywordText, press Enter", "assistant_output": "type KeywordText\npress enter"}
+{"user_input": "start recording: click Field1, type Value1, click Field2, type Value2, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Field1\ntype Value1\nclick Field2\ntype Value2\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then click Continue", "assistant_output": "wait 2\nclick Continue"}
+{"user_input": "double click Folder1 then press Escape", "assistant_output": "double click Folder1\npress escape"}
+{"user_input": "start loop for Items: click ItemName, type Quantity, press Enter, stop loop", "assistant_output": "start loop Items as template\nclick ItemName\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "record sequence: click Name, type Charlie, click Email, type charlie@mail.com, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Name\ntype Charlie\nclick Email\ntype charlie@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click Confirm", "assistant_output": "wait 1\nclick Confirm"}
+{"user_input": "click OptionA, click OptionB, press Escape", "assistant_output": "click OptionA\nclick OptionB\npress escape"}
+{"user_input": "type PhraseText, press Enter", "assistant_output": "type PhraseText\npress enter"}
+{"user_input": "start recording: click FieldA, type XValue, click FieldB, type YValue, press Enter, stop recording", "assistant_output": "start recording sequence\nclick FieldA\ntype XValue\nclick FieldB\ntype YValue\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Done", "assistant_output": "wait 3\nclick Done"}
+{"user_input": "double click FileC then press Escape", "assistant_output": "double click FileC\npress escape"}
+{"user_input": "start loop for NamesList: click NameText, type ValueText, press Enter, stop loop", "assistant_output": "start loop NamesList as template\nclick NameText\ntype ValueText\npress enter\nstop loop"}
+{"user_input": "record sequence: click Title, type Project2, click Owner, type Bob, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project2\nclick Owner\ntype Bob\npress enter\nstop recording sequence"}
+{"user_input": "record sequence: click File, type Report, press Enter, click Close, stop recording", "assistant_output": "start recording sequence\nclick File\ntype Report\npress enter\nclick Close\nstop recording sequence"}
+{"user_input": "wait 2 seconds then click Accept", "assistant_output": "wait 2\nclick Accept"}
+{"user_input": "start loop for usernames: click Username, type name, press Tab, type Password, press Enter, stop loop", "assistant_output": "start loop usernames as template\nclick Username\ntype name as template\npress tab\ntype Password\npress enter\nstop loop"}
+{"user_input": "double click Icon1 then press Escape", "assistant_output": "double click Icon1\npress escape"}
+{"user_input": "type MessageText and press Enter", "assistant_output": "type MessageText\npress enter"}
+{"user_input": "record a sequence: click Settings, type NewValue, press Enter, click Logout, stop recording", "assistant_output": "start recording sequence\nclick Settings\ntype NewValue\npress enter\nclick Logout\nstop recording sequence"}
+{"user_input": "wait 5 then click Confirm", "assistant_output": "wait 5\nclick Confirm"}
+{"user_input": "click ItemA, click ItemB, press Escape", "assistant_output": "click ItemA\nclick ItemB\npress escape"}
+{"user_input": "start loop for FileNames: click FileName, type name, press Enter, stop loop", "assistant_output": "start loop FileNames as template\nclick FileName\ntype FileName as template\npress enter\nstop loop"}
+{"user_input": "record sequence: click Name, type Bob, click Email, type bob@example.com, press Enter", "assistant_output": "start recording sequence\nclick Name\ntype Bob\nclick Email\ntype bob@example.com\npress enter\nstop recording sequence"}
+{"user_input": "wait three seconds then click Submit", "assistant_output": "wait 3\nclick Submit"}
+{"user_input": "double click Image2 then press Escape", "assistant_output": "double click Image2\npress escape"}
+{"user_input": "type SearchQueryText and press Enter", "assistant_output": "type SearchQueryText\npress enter"}
+{"user_input": "start recording: click Profile, type BioText, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Profile\ntype BioText\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then click Next", "assistant_output": "wait 2\nclick Next"}
+{"user_input": "start loop for ContactsList: click ContactName, type Message, press Enter, stop loop", "assistant_output": "start loop ContactsList as template\nclick ContactName\ntype Message\npress enter\nstop loop"}
+{"user_input": "record sequence: click Help, press Escape, stop recording", "assistant_output": "start recording sequence\nclick Help\npress escape\nstop recording sequence"}
+{"user_input": "click CheckboxA, press Tab, type Comment, press Enter", "assistant_output": "click CheckboxA\npress tab\ntype Comment\npress enter"}
+{"user_input": "start loop for ProductsList: click ProductName, type Quantity, press Enter, stop loop", "assistant_output": "start loop ProductsList as template\nclick ProductName\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "wait 1 then double click FileB", "assistant_output": "wait 1\ndouble click FileB"}
+{"user_input": "record sequence: click Language, type English, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Language\ntype English\npress enter\nstop recording sequence"}
+{"user_input": "click OptionX, click OptionY, press Escape", "assistant_output": "click OptionX\nclick OptionY\npress escape"}
+{"user_input": "type UsernameText, press Tab, type PasswordText, press Enter", "assistant_output": "type UsernameText\npress tab\ntype PasswordText\npress enter"}
+{"user_input": "start loop for TasksList: click TaskName, type Note, press Enter, stop loop", "assistant_output": "start loop TasksList as template\nclick TaskName\ntype Note\npress enter\nstop loop"}
+{"user_input": "wait 2 then click Accept", "assistant_output": "wait 2\nclick Accept"}
+{"user_input": "record sequence: click Title, type ReportName, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype ReportName\npress enter\nstop recording sequence"}
+{"user_input": "click NameA, click NameB, press Escape", "assistant_output": "click NameA\nclick NameB\npress escape"}
+{"user_input": "type SearchPhraseText, press Enter", "assistant_output": "type SearchPhraseText\npress enter"}
+{"user_input": "start recording: click Date, type 2025-11-21, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Date\ntype 2025-11-21\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click OK", "assistant_output": "wait 1\nclick OK"}
+{"user_input": "double click FileC then press Escape", "assistant_output": "double click FileC\npress escape"}
+{"user_input": "start loop for NameList: click NameText, type ValueText, press Enter, stop loop", "assistant_output": "start loop NameList as template\nclick NameText\ntype ValueText\npress enter\nstop loop"}
+{"user_input": "record sequence: click Title, type Project3, click Owner, type Carol, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project3\nclick Owner\ntype Carol\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Finish", "assistant_output": "wait 3\nclick Finish"}
+{"user_input": "click ItemX, click ItemY, press Escape", "assistant_output": "click ItemX\nclick ItemY\npress escape"}
+{"user_input": "type KeywordText, press Enter", "assistant_output": "type KeywordText\npress enter"}
+{"user_input": "start recording: click Field1, type Value1, click Field2, type Value2, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Field1\ntype Value1\nclick Field2\ntype Value2\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then click Continue", "assistant_output": "wait 2\nclick Continue"}
+{"user_input": "double click Folder2 then press Escape", "assistant_output": "double click Folder2\npress escape"}
+{"user_input": "start loop for ItemsList: click ItemName, type Quantity, press Enter, stop loop", "assistant_output": "start loop ItemsList as template\nclick ItemName\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "record sequence: click Name, type Dave, click Email, type dave@example.com, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Name\ntype Dave\nclick Email\ntype dave@example.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click Confirm", "assistant_output": "wait 1\nclick Confirm"}
+{"user_input": "click OptionA, click OptionB, press Escape", "assistant_output": "click OptionA\nclick OptionB\npress escape"}
+{"user_input": "type PhraseText, press Enter", "assistant_output": "type PhraseText\npress enter"}
+{"user_input": "start recording: click FieldA, type XValue, click FieldB, type YValue, press Enter, stop recording", "assistant_output": "start recording sequence\nclick FieldA\ntype XValue\nclick FieldB\ntype YValue\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click Done", "assistant_output": "wait 3\nclick Done"}
+{"user_input": "double click FileD then press Escape", "assistant_output": "double click FileD\npress escape"}
+{"user_input": "start loop for NamesArray: click NameText, type ValueText, press Enter, stop loop", "assistant_output": "start loop NamesArray as template\nclick NameText\ntype ValueText\npress enter\nstop loop"}
+{"user_input": "record sequence: click Title, type Project4, click Owner, type Dave, press Enter, stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project4\nclick Owner\ntype Dave\npress enter\nstop recording sequence"}
+{"user_input": "make a new sequence, click looping, start loop for names, type each name, hit ctrl A, backspace, escape, end loop, click looping again", "assistant_output": "start recording sequence\nclick looping\nstart loop names as template\ntype names as template\npress ctrl A\npress backspace\npress escape\nstop loop\nclick looping\nstop recording sequence"}
+{"user_input": "loop over emails, open inbox, type email, press enter, close inbox", "assistant_output": "start loop email as template\nclick inbox\ntype email as template\npress enter\nclick close inbox\nstop loop"}
+{"user_input": "login sequence: click username, type admin, click password, type secret, press enter", "assistant_output": "start recording login\nclick username\ntype admin\nclick password\ntype secret\npress enter\nstop recording login"}
+{"user_input": "wait 3 sec then click confirm and press escape", "assistant_output": "wait 3\nclick confirm\npress escape"}
+{"user_input": "record sequence, click file, type my name, press enter, click save", "assistant_output": "start recording sequence\nclick file\ntype my name\npress enter\nclick save\nstop recording sequence"}
+{"user_input": "wait 2 sec then click ok", "assistant_output": "wait 2\nclick ok"}
+{"user_input": "start loop usernames, click username, type it, press tab, type password, enter, stop loop", "assistant_output": "start loop username as template\nclick username\ntype username as template\npress tab\ntype password\npress enter\nstop loop"}
+{"user_input": "record login sequence: click user, type admin, click pass, type 1234, enter", "assistant_output": "start recording login\nclick user\ntype admin\nclick pass\ntype 1234\npress enter\nstop recording login"}
+{"user_input": "wait 1 sec then click continue", "assistant_output": "wait 1\nclick continue"}
+{"user_input": "double click document to open", "assistant_output": "double click document"}
+{"user_input": "type hello world in chat then enter", "assistant_output": "type hello world\npress enter"}
+{"user_input": "record sequence: click settings, type new value, enter, click logout", "assistant_output": "start recording sequence\nclick settings\ntype new value\npress enter\nclick logout\nstop recording sequence"}
+{"user_input": "wait 5 then click confirm", "assistant_output": "wait 5\nclick confirm"}
+{"user_input": "click item1, click item2, press esc", "assistant_output": "click item1\nclick item2\npress escape"}
+{"user_input": "start loop for file name, click file, type name, enter, stop loop", "assistant_output": "start loop file as template\nclick file\ntype file as template\npress enter\nstop loop"}
+{"user_input": "record sequence: click name, type alice, click email, type alice@example.com, enter", "assistant_output": "start recording sequence\nclick name\ntype alice\nclick email\ntype alice@example.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click submit", "assistant_output": "wait 3\nclick submit"}
+{"user_input": "double click image1, then escape", "assistant_output": "double click image1\npress escape"}
+{"user_input": "type search query and press enter", "assistant_output": "type search query\npress enter"}
+{"user_input": "start recording: click profile, type bio, enter, stop recording", "assistant_output": "start recording sequence\nclick profile\ntype bio\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 sec and click next", "assistant_output": "wait 2\nclick next"}
+{"user_input": "start loop contacts: click name, type msg, enter, stop loop", "assistant_output": "start loop contacts as template\nclick name\ntype msg\npress enter\nstop loop"}
+{"user_input": "record sequence: click help, press esc, stop recording", "assistant_output": "start recording sequence\nclick help\npress escape\nstop recording sequence"}
+{"user_input": "click checkbox1, tab, type comment, enter", "assistant_output": "click checkbox1\npress tab\ntype comment\npress enter"}
+{"user_input": "start loop products: click product, type qty, enter, stop loop", "assistant_output": "start loop products as template\nclick product\ntype qty\npress enter\nstop loop"}
+{"user_input": "wait 1 sec then double click filea", "assistant_output": "wait 1\ndouble click filea"}
+{"user_input": "record: click language, type english, enter, stop recording", "assistant_output": "start recording sequence\nclick language\ntype english\npress enter\nstop recording sequence"}
+{"user_input": "click option1, click option2, esc", "assistant_output": "click option1\nclick option2\npress escape"}
+{"user_input": "type username, tab, type password, enter", "assistant_output": "type username\npress tab\ntype password\npress enter"}
+{"user_input": "start loop orders: click orderid, type quantity, enter, stop loop", "assistant_output": "start loop orders as template\nclick orderid\ntype quantity\npress enter\nstop loop"}
+{"user_input": "wait 2 then click accept", "assistant_output": "wait 2\nclick accept"}
+{"user_input": "record: click title, type report, enter, stop recording", "assistant_output": "start recording sequence\nclick title\ntype report\npress enter\nstop recording sequence"}
+{"user_input": "click name1, click name2, esc", "assistant_output": "click name1\nclick name2\npress escape"}
+{"user_input": "type search term, enter", "assistant_output": "type search term\npress enter"}
+{"user_input": "record: click date, type 2025-11-20, enter, stop recording", "assistant_output": "start recording sequence\nclick date\ntype 2025-11-20\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click ok", "assistant_output": "wait 1\nclick ok"}
+{"user_input": "double click fileb then esc", "assistant_output": "double click fileb\npress escape"}
+{"user_input": "start loop names: click nametext, type value, enter, stop loop", "assistant_output": "start loop names as template\nclick nametext\ntype value\npress enter\nstop loop"}
+{"user_input": "record: click title, type project1, click owner, type alice, enter, stop recording", "assistant_output": "start recording sequence\nclick title\ntype project1\nclick owner\ntype alice\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click finish", "assistant_output": "wait 3\nclick finish"}
+{"user_input": "click itema, click itemb, esc", "assistant_output": "click itema\nclick itemb\npress escape"}
+{"user_input": "type keyword, enter", "assistant_output": "type keyword\npress enter"}
+{"user_input": "start recording: click field1, type val1, click field2, type val2, enter, stop recording", "assistant_output": "start recording sequence\nclick field1\ntype val1\nclick field2\ntype val2\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 sec then click continue", "assistant_output": "wait 2\nclick continue"}
+{"user_input": "double click folder1 then esc", "assistant_output": "double click folder1\npress escape"}
+{"user_input": "start loop items: click itemname, type qty, enter, stop loop", "assistant_output": "start loop items as template\nclick itemname\ntype qty\npress enter\nstop loop"}
+{"user_input": "record: click name, type charlie, click email, type charlie@mail.com, enter, stop recording", "assistant_output": "start recording sequence\nclick name\ntype charlie\nclick email\ntype charlie@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click confirm", "assistant_output": "wait 1\nclick confirm"}
+{"user_input": "click optiona, click optionb, esc", "assistant_output": "click optiona\nclick optionb\npress escape"}
+{"user_input": "type phrase, enter", "assistant_output": "type phrase\npress enter"}
+{"user_input": "start recording: click fielda, type xval, click fieldb, type yval, enter, stop recording", "assistant_output": "start recording sequence\nclick fielda\ntype xval\nclick fieldb\ntype yval\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click done", "assistant_output": "wait 3\nclick done"}
+{"user_input": "double click filec then esc", "assistant_output": "double click filec\npress escape"}
+{"user_input": "umm so like, ignore this, but I NEED YOU TO CLICK looping now pls", "assistant_output": "click looping"}
+{"user_input": "hey hey hey, dont mind me just chillin, but start a loop over names, type em", "assistant_output": "start loop names as template\ntype names as template\nstop loop"}
+{"user_input": "ok so im kinda lost here, click submit button for me k?", "assistant_output": "click submit"}
+{"user_input": "listen up, wait like 2 sec then click okk", "assistant_output": "wait 2\nclick ok"}
+{"user_input": "this is random stuff, but type hello world and hit enter", "assistant_output": "type hello world\npress enter"}
+{"user_input": "yo yo yo, record a sequence where I click file1, type report1, enter, then file2", "assistant_output": "start recording sequence\nclick file1\ntype report1\npress enter\nclick file2\nstop recording sequence"}
+{"user_input": "pls ignore this, just double click image123", "assistant_output": "double click image123"}
+{"user_input": "random words blah blah, but wait 3 sec then click submit", "assistant_output": "wait 3\nclick submit"}
+{"user_input": "hi hi, start a loop for email, type each email, enter, close inbox", "assistant_output": "start loop email as template\ntype email as template\npress enter\nclick close inbox\nstop loop"}
+{"user_input": "like omg, record this sequence click user box, type admin, click pass, type 1234, enter", "assistant_output": "start recording sequence\nclick user box\ntype admin\nclick pass\ntype 1234\npress enter\nstop recording sequence"}
+{"user_input": "hehehe, just click next button after waiting 1 sec ok?", "assistant_output": "wait 1\nclick next"}
+{"user_input": "idk why im typing this, double click folderA plz", "assistant_output": "double click folderA"}
+{"user_input": "ignore ignore ignore but type username then tab then password then enter", "assistant_output": "type username\npress tab\ntype password\npress enter"}
+{"user_input": "hey so yeah, wait 5 then click confirm button", "assistant_output": "wait 5\nclick confirm"}
+{"user_input": "random chatty stuff, click checkbox1 then type comment and enter", "assistant_output": "click checkbox1\ntype comment\npress enter"}
+{"user_input": "lol ok start recording: click profile type bio hit enter stop recording", "assistant_output": "start recording sequence\nclick profile\ntype bio\npress enter\nstop recording sequence"}
+{"user_input": "pls ignore me, start loop products click product type quantity enter stop loop", "assistant_output": "start loop products as template\nclick product\ntype quantity\npress enter\nstop loop"}
+{"user_input": "hehe, wait 2 sec then double click fileB", "assistant_output": "wait 2\ndouble click fileB"}
+{"user_input": "im just saying hi, but record sequence click field1 type value1 click field2 type value2 enter stop recording", "assistant_output": "start recording sequence\nclick field1\ntype value1\nclick field2\ntype value2\npress enter\nstop recording sequence"}
+{"user_input": "random nonsense, click help then escape", "assistant_output": "click help\npress escape"}
+{"user_input": "ignore this pls, wait 3 then click finish", "assistant_output": "wait 3\nclick finish"}
+{"user_input": "hey umm, start loop names click name type value enter stop loop", "assistant_output": "start loop names as template\nclick name\ntype value\npress enter\nstop loop"}
+{"user_input": "ok so i dunno, double click document1 then esc", "assistant_output": "double click document1\npress escape"}
+{"user_input": "pls pls pls, type phrase then enter", "assistant_output": "type phrase\npress enter"}
+{"user_input": "ignore all this, record sequence click title type project click owner type bob enter stop recording", "assistant_output": "start recording sequence\nclick title\ntype project\nclick owner\ntype bob\npress enter\nstop recording sequence"}
+{"user_input": "heh heh heh, wait 1 sec then click continue", "assistant_output": "wait 1\nclick continue"}
+{"user_input": "umm i dont know, click itemA click itemB esc", "assistant_output": "click itemA\nclick itemB\npress escape"}
+{"user_input": "random babble, start loop orders click orderID type quantity enter stop loop", "assistant_output": "start loop orders as template\nclick orderID\ntype quantity\npress enter\nstop loop"}
+{"user_input": "ignore ignore pls, record click language type english enter stop recording", "assistant_output": "start recording sequence\nclick language\ntype english\npress enter\nstop recording sequence"}
+{"user_input": "yo yo, wait 2 then click accept", "assistant_output": "wait 2\nclick accept"}
+{"user_input": "hehe random words, type search query and enter", "assistant_output": "type search query\npress enter"}
+{"user_input": "ignore ignore pls, start recording click fieldA type X click fieldB type Y enter stop recording", "assistant_output": "start recording sequence\nclick fieldA\ntype X\nclick fieldB\ntype Y\npress enter\nstop recording sequence"}
+{"user_input": "um hi hi, double click fileC then esc", "assistant_output": "double click fileC\npress escape"}
+{"user_input": "uhh like start loop users click username type value enter stop loop", "assistant_output": "start loop users as template\nclick username\ntype value\npress enter\nstop loop"}
+{"user_input": "okokok, click option1 click option2 escape", "assistant_output": "click option1\nclick option2\npress escape"}
+{"user_input": "ignore this random stuff, record click date type 2025-11-21 enter stop recording", "assistant_output": "start recording sequence\nclick date\ntype 2025-11-21\npress enter\nstop recording sequence"}
+{"user_input": "haha lol, wait 3 sec then click submit", "assistant_output": "wait 3\nclick submit"}
+{"user_input": "umm i guess, start recording click name type charlie click email type charlie@mail.com enter stop recording", "assistant_output": "start recording sequence\nclick name\ntype charlie\nclick email\ntype charlie@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "uhh ignore this, start loop products click product type qty enter stop loop", "assistant_output": "start loop products as template\nclick product\ntype qty\npress enter\nstop loop"}
+{"user_input": "heh heh, wait 1 then double click fileA", "assistant_output": "wait 1\ndouble click fileA"}
+{"user_input": "ignore pls, type keyword then enter", "assistant_output": "type keyword\npress enter"}
+{"user_input": "okok, record sequence click field1 type val1 click field2 type val2 enter stop recording", "assistant_output": "start recording sequence\nclick field1\ntype val1\nclick field2\ntype val2\npress enter\nstop recording sequence"}
+{"user_input": "random chat, wait 2 sec then click continue", "assistant_output": "wait 2\nclick continue"}
+{"user_input": "ignore this, double click folder1 then esc", "assistant_output": "double click folder1\npress escape"}
+{"user_input": "ok start loop items click itemname type qty enter stop loop", "assistant_output": "start loop items as template\nclick itemname\ntype qty\npress enter\nstop loop"}
+{"user_input": "umm hi, record click title type project2 click owner type alice enter stop recording", "assistant_output": "start recording sequence\nclick title\ntype project2\nclick owner\ntype alice\npress enter\nstop recording sequence"}
+{"user_input": "hehe, click itemA click itemB esc", "assistant_output": "click itemA\nclick itemB\npress escape"}
+{"user_input": "ignore ignore, type phraseText then enter", "assistant_output": "type phraseText\npress enter"}
+{"user_input": "start recording click fieldA type xval click fieldB type yval enter stop recording", "assistant_output": "start recording sequence\nclick fieldA\ntype xval\nclick fieldB\ntype yval\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 sec then click done", "assistant_output": "wait 3\nclick done"}
+{"user_input": "ignore pls, double click fileC then esc", "assistant_output": "double click fileC\npress escape"}
+{"user_input": "okok, start loop nameslist click nametext type valuetext enter stop loop", "assistant_output": "start loop nameslist as template\nclick nametext\ntype valuetext\npress enter\nstop loop"}
+{"user_input": "hehe, record click title type project3 click owner type bob enter stop recording", "assistant_output": "start recording sequence\nclick title\ntype project3\nclick owner\ntype bob\npress enter\nstop recording sequence"}
+{"user_input": "um random words, wait 2 then click ok", "assistant_output": "wait 2\nclick ok"}
+{"user_input": "start loop users click username type value enter stop loop", "assistant_output": "start loop users as template\nclick username\ntype value\npress enter\nstop loop"}
+{"user_input": "ignore pls, record click date type 2025-12-01 enter stop recording", "assistant_output": "start recording sequence\nclick date\ntype 2025-12-01\npress enter\nstop recording sequence"}
+{"user_input": "lol omg, wait 1 then click next", "assistant_output": "wait 1\nclick next"}
+{"user_input": "start recording click name type alice click email type alice@mail.com enter stop recording", "assistant_output": "start recording sequence\nclick name\ntype alice\nclick email\ntype alice@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "heehee, double click fileX then esc", "assistant_output": "double click fileX\npress escape"}
+{"user_input": "ignore ignore, type keywordText then enter", "assistant_output": "type keywordText\npress enter"}
+{"user_input": "start loop orders click orderid type quantity enter stop loop", "assistant_output": "start loop orders as template\nclick orderid\ntype quantity\npress enter\nstop loop"}
+{"user_input": "wait 3 sec then click confirm", "assistant_output": "wait 3\nclick confirm"}
+{"user_input": "record click field1 type val1 click field2 type val2 enter stop recording", "assistant_output": "start recording sequence\nclick field1\ntype val1\nclick field2\ntype val2\npress enter\nstop recording sequence"}
+{"user_input": "umm umm, start loop items click itemname type qty enter stop loop", "assistant_output": "start loop items as template\nclick itemname\ntype qty\npress enter\nstop loop"}
+{"user_input": "hehe random stuff, double click folderB then esc", "assistant_output": "double click folderB\npress escape"}
+{"user_input": "ignore pls, type search phrase then enter", "assistant_output": "type search phrase\npress enter"}
+{"user_input": "okokok, wait 1 then click continue", "assistant_output": "wait 1\nclick continue"}
+{"user_input": "start recording click profile type biotext enter stop recording", "assistant_output": "start recording sequence\nclick profile\ntype biotext\npress enter\nstop recording sequence"}
+{"user_input": "heehee, click itemA click itemB esc", "assistant_output": "click itemA\nclick itemB\npress escape"}
+{"user_input": "ignore ignore pls, start loop names click nametext type valuetext enter stop loop", "assistant_output": "start loop names as template\nclick nametext\ntype valuetext\npress enter\nstop loop"}
+{"user_input": "wait 2 sec then double click fileD", "assistant_output": "wait 2\ndouble click fileD"}
+{"user_input": "record click title type project4 click owner type alice enter stop recording", "assistant_output": "start recording sequence\nclick title\ntype project4\nclick owner\ntype alice\npress enter\nstop recording sequence"}
+{"user_input": "click submit", "assistant_output": "click submit"}
+{"user_input": "double click fileA", "assistant_output": "double click fileA"}
+{"user_input": "wait 3 then click done", "assistant_output": "wait 3\nclick done"}
+{"user_input": "type hello world then press enter", "assistant_output": "type hello world\npress enter"}
+{"user_input": "start recording sequence click name type Alice enter stop recording", "assistant_output": "start recording sequence\nclick name\ntype Alice\npress enter\nstop recording sequence"}
+{"user_input": "start loop users click username type value enter stop loop", "assistant_output": "start loop users as template\nclick username\ntype value\npress enter\nstop loop"}
+{"user_input": "click checkbox1 then type comment and press enter", "assistant_output": "click checkbox1\ntype comment\npress enter"}
+{"user_input": "wait 2 then double click folderB", "assistant_output": "wait 2\ndouble click folderB"}
+{"user_input": "record sequence click title type Project1 click owner type Bob enter stop recording", "assistant_output": "start recording sequence\nclick title\ntype Project1\nclick owner\ntype Bob\npress enter\nstop recording sequence"}
+{"user_input": "start loop orders click orderID type quantity enter stop loop", "assistant_output": "start loop orders as template\nclick orderID\ntype quantity\npress enter\nstop loop"}
+{"user_input": "click next", "assistant_output": "click next"}
+{"user_input": "double click image1", "assistant_output": "double click image1"}
+{"user_input": "wait 1 then click continue", "assistant_output": "wait 1\nclick continue"}
+{"user_input": "type username press tab type password press enter", "assistant_output": "type username\npress tab\ntype password\npress enter"}
+{"user_input": "start recording click field1 type val1 click field2 type val2 enter stop recording", "assistant_output": "start recording sequence\nclick field1\ntype val1\nclick field2\ntype val2\npress enter\nstop recording sequence"}
+{"user_input": "start loop names click name type value enter stop loop", "assistant_output": "start loop names as template\nclick name\ntype value\npress enter\nstop loop"}
+{"user_input": "click help press escape", "assistant_output": "click help\npress escape"}
+{"user_input": "wait 5 then click confirm", "assistant_output": "wait 5\nclick confirm"}
+{"user_input": "double click folder1", "assistant_output": "double click folder1"}
+{"user_input": "click file1 type report1 enter click file2", "assistant_output": "click file1\ntype report1\npress enter\nclick file2"}
+{"user_input": "start recording click profile type bio enter stop recording", "assistant_output": "start recording sequence\nclick profile\ntype bio\npress enter\nstop recording sequence"}
+{"user_input": "start loop products click product type quantity enter stop loop", "assistant_output": "start loop products as template\nclick product\ntype quantity\npress enter\nstop loop"}
+{"user_input": "wait 2 then click ok", "assistant_output": "wait 2\nclick ok"}
+{"user_input": "click option1 click option2 press escape", "assistant_output": "click option1\nclick option2\npress escape"}
+{"user_input": "type search query press enter", "assistant_output": "type search query\npress enter"}
+{"user_input": "start recording click language type English enter stop recording", "assistant_output": "start recording sequence\nclick language\ntype English\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 then click finish", "assistant_output": "wait 3\nclick finish"}
+{"user_input": "click itemA click itemB press escape", "assistant_output": "click itemA\nclick itemB\npress escape"}
+{"user_input": "start loop emails click email type message enter stop loop", "assistant_output": "start loop emails as template\nclick email\ntype message\npress enter\nstop loop"}
+{"user_input": "record click date type 2025-11-21 enter stop recording", "assistant_output": "start recording sequence\nclick date\ntype 2025-11-21\npress enter\nstop recording sequence"}
+{"user_input": "wait 1 then click next", "assistant_output": "wait 1\nclick next"}
+{"user_input": "double click fileB", "assistant_output": "double click fileB"}
+{"user_input": "type phrase press enter", "assistant_output": "type phrase\npress enter"}
+{"user_input": "start recording click title type report click owner type Alice enter stop recording", "assistant_output": "start recording sequence\nclick title\ntype report\nclick owner\ntype Alice\npress enter\nstop recording sequence"}
+{"user_input": "start loop items click itemName type qty enter stop loop", "assistant_output": "start loop items as template\nclick itemName\ntype qty\npress enter\nstop loop"}
+{"user_input": "click submit button", "assistant_output": "click submit"}
+{"user_input": "double click document1", "assistant_output": "double click document1"}
+{"user_input": "wait 2 then click accept", "assistant_output": "wait 2\nclick accept"}
+{"user_input": "record click fieldA type X click fieldB type Y enter stop recording", "assistant_output": "start recording sequence\nclick fieldA\ntype X\nclick fieldB\ntype Y\npress enter\nstop recording sequence"}
+{"user_input": "start loop users click username type value enter stop loop", "assistant_output": "start loop users as template\nclick username\ntype value\npress enter\nstop loop"}
+{"user_input": "click name1 click name2 press escape", "assistant_output": "click name1\nclick name2\npress escape"}
+{"user_input": "wait 3 then click submit", "assistant_output": "wait 3\nclick submit"}
+{"user_input": "start recording click name type Charlie click email type charlie@mail.com enter stop recording", "assistant_output": "start recording sequence\nclick name\ntype Charlie\nclick email\ntype charlie@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "start loop orders click orderID type quantity enter stop loop", "assistant_output": "start loop orders as template\nclick orderID\ntype quantity\npress enter\nstop loop"}
+{"user_input": "wait 1 then click continue", "assistant_output": "wait 1\nclick continue"}
+{"user_input": "double click folderC", "assistant_output": "double click folderC"}
+{"user_input": "type keyword press enter", "assistant_output": "type keyword\npress enter"}
+{"user_input": "click optionA click optionB press escape", "assistant_output": "click optionA\nclick optionB\npress escape"}
+{"user_input": "start recording click profile type biotext enter stop recording", "assistant_output": "start recording sequence\nclick profile\ntype biotext\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 then double click fileD", "assistant_output": "wait 2\ndouble click fileD"}
+{"user_input": "click itemA click itemB press escape", "assistant_output": "click itemA\nclick itemB\npress escape"}
+{"user_input": "yo yo ignore me typing nonsense but i want to start recording called testSeq now pls", "assistant_output": "start recording testSeq\nstop recording testSeq"}
+{"user_input": "umm so random talk here but i NEED you to click SubmitButton for me", "assistant_output": "click SubmitButton"}
+{"user_input": "okokok i had 5 coffees but just double click fileA now", "assistant_output": "double click fileA"}
+{"user_input": "hey ignore ignore but type HelloWorld and then hit enter", "assistant_output": "type HelloWorld\npress enter"}
+{"user_input": "lol so like i dont care about all this talk, but start loop itemsList as template", "assistant_output": "start loop itemsList as template\nstop loop"}
+{"user_input": "blah blah blah wait 2 then click ok please", "assistant_output": "wait 2\nclick ok"}
+{"user_input": "yo yo yo, click checkbox1 then type commentText and enter", "assistant_output": "click checkbox1\ntype commentText\npress enter"}
+{"user_input": "umm so random words here, record sequence click File1 type Report1 enter stop recording", "assistant_output": "start recording sequence\nclick File1\ntype Report1\npress enter\nstop recording sequence"}
+{"user_input": "ignore all this but double click FolderX now", "assistant_output": "double click FolderX"}
+{"user_input": "random gibberish but wait 3 sec then click ConfirmButton", "assistant_output": "wait 3\nclick ConfirmButton"}
+{"user_input": "hey hey, start loop Emails click EmailField type emailText enter stop loop", "assistant_output": "start loop Emails as template\nclick EmailField\ntype emailText\npress enter\nstop loop"}
+{"user_input": "umm so like record a sequence click UserBox type admin pass type 1234 enter", "assistant_output": "start recording sequence\nclick UserBox\ntype admin\nclick pass\ntype 1234\npress enter\nstop recording sequence"}
+{"user_input": "lol ignore ignore wait 1 then click ContinueButton", "assistant_output": "wait 1\nclick ContinueButton"}
+{"user_input": "so many words but just double click Document1 plz", "assistant_output": "double click Document1"}
+{"user_input": "umm i dont care, type username then tab then password then enter", "assistant_output": "type username\npress tab\ntype password\npress enter"}
+{"user_input": "random nonsense wait 5 then click SubmitBtn", "assistant_output": "wait 5\nclick SubmitBtn"}
+{"user_input": "ignore this, click Option1 click Option2 escape", "assistant_output": "click Option1\nclick Option2\npress escape"}
+{"user_input": "ok ok start recording sequence click Profile type Bio enter stop recording", "assistant_output": "start recording sequence\nclick Profile\ntype Bio\npress enter\nstop recording sequence"}
+{"user_input": "hehe ignore ignore start loop Products click Product type Quantity enter stop loop", "assistant_output": "start loop Products as template\nclick Product\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "umm blah wait 2 sec then double click FileB", "assistant_output": "wait 2\ndouble click FileB"}
+{"user_input": "ignore ignore pls record click Field1 type Value1 click Field2 type Value2 enter stop recording", "assistant_output": "start recording sequence\nclick Field1\ntype Value1\nclick Field2\ntype Value2\npress enter\nstop recording sequence"}
+{"user_input": "random words click Help then escape", "assistant_output": "click Help\npress escape"}
+{"user_input": "pls ignore wait 3 then click FinishButton", "assistant_output": "wait 3\nclick FinishButton"}
+{"user_input": "hey umm start loop Names click NameField type ValueField enter stop loop", "assistant_output": "start loop Names as template\nclick NameField\ntype ValueField\npress enter\nstop loop"}
+{"user_input": "ok so dunno double click Doc1 then esc", "assistant_output": "double click Doc1\npress escape"}
+{"user_input": "pls pls pls type PhraseText then enter", "assistant_output": "type PhraseText\npress enter"}
+{"user_input": "ignore ignore record sequence click Title type Project click Owner type Bob enter stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project\nclick Owner\ntype Bob\npress enter\nstop recording sequence"}
+{"user_input": "heh heh wait 1 sec then click ContinueButton", "assistant_output": "wait 1\nclick ContinueButton"}
+{"user_input": "umm i dunno click ItemA click ItemB esc", "assistant_output": "click ItemA\nclick ItemB\npress escape"}
+{"user_input": "random words start loop Orders click OrderID type Quantity enter stop loop", "assistant_output": "start loop Orders as template\nclick OrderID\ntype Quantity\npress enter\nstop loop"}
+{"user_input": "ignore pls record click Language type English enter stop recording", "assistant_output": "start recording sequence\nclick Language\ntype English\npress enter\nstop recording sequence"}
+{"user_input": "yo yo wait 2 then click AcceptButton", "assistant_output": "wait 2\nclick AcceptButton"}
+{"user_input": "hehe random words type SearchQuery then enter", "assistant_output": "type SearchQuery\npress enter"}
+{"user_input": "ignore ignore start recording click FieldA type X click FieldB type Y enter stop recording", "assistant_output": "start recording sequence\nclick FieldA\ntype X\nclick FieldB\ntype Y\npress enter\nstop recording sequence"}
+{"user_input": "um hi hi double click FileC then esc", "assistant_output": "double click FileC\npress escape"}
+{"user_input": "uhh start loop Users click Username type Value enter stop loop", "assistant_output": "start loop Users as template\nclick Username\ntype Value\npress enter\nstop loop"}
+{"user_input": "okokok click Option1 click Option2 escape", "assistant_output": "click Option1\nclick Option2\npress escape"}
+{"user_input": "ignore random stuff record click Date type 2025-11-21 enter stop recording", "assistant_output": "start recording sequence\nclick Date\ntype 2025-11-21\npress enter\nstop recording sequence"}
+{"user_input": "haha wait 3 sec then click SubmitButton", "assistant_output": "wait 3\nclick SubmitButton"}
+{"user_input": "umm i guess start recording click Name type Charlie click Email type Charlie@mail.com enter stop recording", "assistant_output": "start recording sequence\nclick Name\ntype Charlie\nclick Email\ntype Charlie@mail.com\npress enter\nstop recording sequence"}
+{"user_input": "uhh ignore start loop Products click Product type Qty enter stop loop", "assistant_output": "start loop Products as template\nclick Product\ntype Qty\npress enter\nstop loop"}
+{"user_input": "heh heh wait 1 then double click FileA", "assistant_output": "wait 1\ndouble click FileA"}
+{"user_input": "ignore pls type Keyword then enter", "assistant_output": "type Keyword\npress enter"}
+{"user_input": "okok record sequence click Field1 type Val1 click Field2 type Val2 enter stop recording", "assistant_output": "start recording sequence\nclick Field1\ntype Val1\nclick Field2\ntype Val2\npress enter\nstop recording sequence"}
+{"user_input": "random chat wait 2 sec then click ContinueButton", "assistant_output": "wait 2\nclick ContinueButton"}
+{"user_input": "ignore this double click Folder1 then esc", "assistant_output": "double click Folder1\npress escape"}
+{"user_input": "ok start loop Items click ItemName type Qty enter stop loop", "assistant_output": "start loop Items as template\nclick ItemName\ntype Qty\npress enter\nstop loop"}
+{"user_input": "umm hi record click Title type Project2 click Owner type Alice enter stop recording", "assistant_output": "start recording sequence\nclick Title\ntype Project2\nclick Owner\ntype Alice\npress enter\nstop recording sequence"}
+{"user_input": "hehe click ItemA click ItemB esc", "assistant_output": "click ItemA\nclick ItemB\npress escape"}
+{"user_input": "ignore ignore type PhraseText then enter", "assistant_output": "type PhraseText\npress enter"}
+{"user_input": "start recording click FieldA type XVal click FieldB type YVal enter stop recording", "assistant_output": "start recording sequence\nclick FieldA\ntype XVal\nclick FieldB\ntype YVal\npress enter\nstop recording sequence"}
+{"user_input": "umm so like wait five seconds then click start", "assistant_output": "wait 5\nclick start"}
+{"user_input": "hey hey hey sleep ten and then type hello", "assistant_output": "wait 10\ntype hello"}
+{"user_input": "yo yo wait three secs before pressing enter", "assistant_output": "wait 3\npress enter"}
+{"user_input": "wait 2 sec then click ok", "assistant_output": "wait 2\nclick ok"}
+{"user_input": "sleep 500 milliseconds before typing hello", "assistant_output": "wait 0.5\ntype hello"}
+{"user_input": "double click document and then escape", "assistant_output": "double click document\npress escape"}
+{"user_input": "record login: click user, type admin, click pass, type 1234, enter", "assistant_output": "start recording login\nclick user\ntype admin\nclick pass\ntype 1234\npress enter\nstop recording login"}
+{"user_input": "wait one second then click continue", "assistant_output": "wait 1\nclick continue"}
+{"user_input": "start loop usernames: click user, type name, tab, type pass, enter, stop loop", "assistant_output": "start loop username as template\nclick user\ntype username as template\npress tab\ntype pass\npress enter\nstop loop"}
+{"user_input": "sleep 750 ms and then double click fileA", "assistant_output": "wait 0.75\ndouble click fileA"}
+{"user_input": "type hello world then press enter", "assistant_output": "type hello world\npress enter"}
+{"user_input": "wait 1.5 sec then click submit", "assistant_output": "wait 1.5\nclick submit"}
+{"user_input": "record sequence: click settings, type new value, enter, click logout", "assistant_output": "start recording sequence\nclick settings\ntype new value\npress enter\nclick logout\nstop recording sequence"}
+{"user_input": "wait 250 ms then press enter", "assistant_output": "wait 0.25\npress enter"}
+{"user_input": "double click image1 then escape", "assistant_output": "double click image1\npress escape"}
+{"user_input": "sleep two hundred milliseconds and then click confirm", "assistant_output": "wait 0.2\nclick confirm"}
+{"user_input": "start loop files: click file, type filename, enter, stop loop", "assistant_output": "start loop file as template\nclick file\ntype file as template\npress enter\nstop loop"}
+{"user_input": "record: click profile, type bio, enter, stop recording", "assistant_output": "start recording sequence\nclick profile\ntype bio\npress enter\nstop recording sequence"}
+{"user_input": "wait 3 sec and then click next", "assistant_output": "wait 3\nclick next"}
+{"user_input": "sleep 1.25s before typing password", "assistant_output": "wait 1.25\ntype password"}
+{"user_input": "click checkbox1, tab, type comment, enter", "assistant_output": "click checkbox1\npress tab\ntype comment\npress enter"}
+{"user_input": "wait 900 ms then click finish", "assistant_output": "wait 0.9\nclick finish"}
+{"user_input": "record sequence: click name, type alice, click email, type alice@example.com, enter", "assistant_output": "start recording sequence\nclick name\ntype alice\nclick email\ntype alice@example.com\npress enter\nstop recording sequence"}
+{"user_input": "double click folderB then esc", "assistant_output": "double click folderB\npress escape"}
+{"user_input": "wait 2 seconds then click confirm", "assistant_output": "wait 2\nclick confirm"}
+{"user_input": "start loop orders: click orderid, type quantity, enter, stop loop", "assistant_output": "start loop orders as template\nclick orderid\ntype quantity\npress enter\nstop loop"}
+{"user_input": "sleep 50ms then click checkbox", "assistant_output": "wait 0.05\nclick checkbox"}
+{"user_input": "type search query and press enter", "assistant_output": "type search query\npress enter"}
+{"user_input": "wait 3.5 sec then click submit", "assistant_output": "wait 3.5\nclick submit"}
+{"user_input": "record: click field1, type val1, click field2, type val2, enter, stop recording", "assistant_output": "start recording sequence\nclick field1\ntype val1\nclick field2\ntype val2\npress enter\nstop recording sequence"}
+{"user_input": "double click fileC then esc", "assistant_output": "double click fileC\npress escape"}
+{"user_input": "wait 1.75 sec then click ok", "assistant_output": "wait 1.75\nclick ok"}
+{"user_input": "start loop items: click itemname, type qty, enter, stop loop", "assistant_output": "start loop items as template\nclick itemname\ntype qty\npress enter\nstop loop"}
+{"user_input": "sleep 1 second and click next", "assistant_output": "wait 1\nclick next"}
+{"user_input": "record: click title, type report, enter, stop recording", "assistant_output": "start recording sequence\nclick title\ntype report\npress enter\nstop recording sequence"}
+{"user_input": "wait 400 ms then click cancel", "assistant_output": "wait 0.4\nclick cancel"}
+{"user_input": "double click fileD then esc", "assistant_output": "double click fileD\npress escape"}
+{"user_input": "wait 5 sec then click submit", "assistant_output": "wait 5\nclick submit"}
+{"user_input": "type username, tab, type password, enter", "assistant_output": "type username\npress tab\ntype password\npress enter"}
+{"user_input": "sleep 2.2s then click ok", "assistant_output": "wait 2.2\nclick ok"}
+{"user_input": "click item1, click item2, esc", "assistant_output": "click item1\nclick item2\npress escape"}
+{"user_input": "record: click date, type 2025-11-21, enter, stop recording", "assistant_output": "start recording sequence\nclick date\ntype 2025-11-21\npress enter\nstop recording sequence"}
+{"user_input": "wait 3.25 seconds and then click continue", "assistant_output": "wait 3.25\nclick continue"}
+{"user_input": "double click document1 then esc", "assistant_output": "double click document1\npress escape"}
+{"user_input": "sleep 600 ms and then type hello world", "assistant_output": "wait 0.6\ntype hello world"}
+{"user_input": "start loop names: click nametext, type value, enter, stop loop", "assistant_output": "start loop names as template\nclick nametext\ntype value\npress enter\nstop loop"}
+{"user_input": "record: click profile, type bio, enter, stop recording", "assistant_output": "start recording sequence\nclick profile\ntype bio\npress enter\nstop recording sequence"}
+{"user_input": "wait 2 sec then click continue", "assistant_output": "wait 2\nclick continue"}
+{"user_input": "sleep 125 milliseconds before clicking ok", "assistant_output": "wait 0.125\nclick ok"}
+{"user_input": "double click image2 then escape", "assistant_output": "double click image2\npress escape"}
+{"user_input": "record: click fieldA, type xval, click fieldB, type yval, enter, stop recording", "assistant_output": "start recording sequence\nclick fieldA\ntype xval\nclick fieldB\ntype yval\npress enter\nstop recording sequence"}
+{"user_input": "wait 800 ms then press enter", "assistant_output": "wait 0.8\npress enter"}
+{"user_input": "broooo listen idc about all the blabla im typing now cuz i had coffee and my hands shaking but PLEASE i beg u just start the sequence recording called megaTest", "assistant_output": "start recording megaTest"}
+{"user_input": "wait 2 seconds then click OK", "assistant_output": "wait 2\nclick OK"}
+{"user_input": "start a loop for each username: click Username, type username, press Tab, type Password, press Enter, stop loop", "assistant_output": "start loop username as template\nclick Username\ntype username as template\npress tab\ntype Password\npress enter\nstop loop"}
+{"user_input": "record login sequence: click User, type admin, click Pass, type 1234, press Enter", "assistant_output": "start recording login\nclick User\ntype admin\nclick Pass\ntype 1234\npress enter"}
+{"user_input": "wait 1 second and click Continue", "assistant_output": "wait 1\nclick Continue"}
+{"user_input": "double click Document to open", "assistant_output": "double click Document"}
+{"user_input": "type hello world in Chat and press Enter", "assistant_output": "type hello world\npress enter"}
+{"user_input": "start recording sequence: click Settings, type new value, press Enter, click Logout", "assistant_output": "start recording sequence\nclick Settings\ntype new value\npress enter\nclick Logout"}
+{"user_input": "wait 5 then click Confirm", "assistant_output": "wait 5\nclick Confirm"}
+{"user_input": "click Item1, click Item2, press Escape", "assistant_output": "click Item1\nclick Item2\npress escape"}
+{"user_input": "start loop for FileName: click FileName, type name, press Enter", "assistant_output": "start loop FileName as template\nclick FileName\ntype FileName as template\npress enter"}
+{"user_input": "record sequence: click Name, type Alice, click Email, type alice@example.com, press Enter", "assistant_output": "start recording sequence\nclick Name\ntype Alice\nclick Email\ntype alice@example.com\npress enter"}
+{"user_input": "wait 3 then click Submit", "assistant_output": "wait 3\nclick Submit"}
+{"user_input": "double click Image1 then press Escape", "assistant_output": "double click Image1\npress escape"}
+{"user_input": "type SearchQuery and press Enter", "assistant_output": "type SearchQuery\npress enter"}
+{"user_input": "start recording: click Profile, type Bio, press Enter", "assistant_output": "start recording sequence\nclick Profile\ntype Bio\npress enter"}
+{"user_input": "wait five then click Next", "assistant_output": "wait 5\nclick Next"}
+{"user_input": "start loop for Contacts: click ContactName, type Message, press Enter", "assistant_output": "start loop Contacts as template\nclick ContactName\ntype Message\npress enter"}
+{"user_input": "record sequence: click Help, press Escape", "assistant_output": "start recording sequence\nclick Help\npress escape"}
+{"user_input": "click Checkbox1, press Tab, type Comment, press Enter", "assistant_output": "click Checkbox1\npress tab\ntype Comment\npress enter"}
+{"user_input": "start loop for Products: click ProductName, type Quantity, press Enter", "assistant_output": "start loop Products as template\nclick ProductName\ntype Quantity\npress enter"}
+{"user_input": "wait 1 then double click FileA", "assistant_output": "wait 1\ndouble click FileA"}
+{"user_input": "record sequence: click Language, type English, press Enter", "assistant_output": "start recording sequence\nclick Language\ntype English\npress enter"}
+{"user_input": "click Option1, click Option2, press Escape", "assistant_output": "click Option1\nclick Option2\npress escape"}
+{"user_input": "type Username, press Tab, type Password, press Enter", "assistant_output": "type Username\npress tab\ntype Password\npress enter"}
+{"user_input": "start loop for Orders: click OrderID, type Quantity, press Enter", "assistant_output": "start loop Orders as template\nclick OrderID\ntype Quantity\npress enter"}
+{"user_input": "wait 2 then click Accept", "assistant_output": "wait 2\nclick Accept"}
+{"user_input": "double click image1 then escape", "assistant_output": "double click image1\npress escape"}
+{"user_input": "sleep two hundred milliseconds and then click confirm", "assistant_output": "wait 0.2\nclick confirm"}
+{"user_input": "start loop files: click file, type filename, enter", "assistant_output": "start loop file as template\nclick file\ntype file as template\npress enter"}
+{"user_input": "record: click profile, type bio, enter", "assistant_output": "start recording sequence\nclick profile\ntype bio\npress enter"}
+{"user_input": "wait 3 sec and then click next", "assistant_output": "wait 3\nclick next"}
+{"user_input": "sleep 1.25s before typing password", "assistant_output": "wait 1.25\ntype password"}
+{"user_input": "click checkbox1, tab, type comment, enter", "assistant_output": "click checkbox1\npress tab\ntype comment\npress enter"}
+{"user_input": "wait 900 ms then click finish", "assistant_output": "wait 0.9\nclick finish"}
+{"user_input": "record sequence: click name, type alice, click email, type alice@example.com, enter", "assistant_output": "start recording sequence\nclick name\ntype alice\nclick email\ntype alice@example.com\npress enter"}
+{"user_input": "double click folderB then esc", "assistant_output": "double click folderB\npress escape"}
+{"user_input": "wait 2 seconds then click confirm", "assistant_output": "wait 2\nclick confirm"}
+{"user_input": "start loop orders: click orderid, type quantity, enter", "assistant_output": "start loop orders as template\nclick orderid\ntype quantity\npress enter"}
+{"user_input": "sleep 50ms then click checkbox", "assistant_output": "wait 0.05\nclick checkbox"}
+{"user_input": "type search query and press enter", "assistant_output": "type search query\npress enter"}
+{"user_input": "wait 3.5 sec then click submit", "assistant_output": "wait 3.5\nclick submit"}
+{"user_input": "click optionA click optionB press escape", "assistant_output": "click optionA\nclick optionB\npress escape"}
+{"user_input": "start recording click profile type biotext enter", "assistant_output": "start recording sequence\nclick profile\ntype biotext\npress enter"}
+{"user_input": "wait 2 then double click fileD", "assistant_output": "wait 2\ndouble click fileD"}
+{"user_input": "click itemA click itemB press escape", "assistant_output": "click itemA\nclick itemB\npress escape"}
+{"user_input": "yo yo ignore me typing nonsense but i want to start recording called testSeq now pls", "assistant_output": "start recording testSeq"}
+{"user_input": "umm so random talk here but i NEED you to click SubmitButton for me", "assistant_output": "click SubmitButton"}
+{"user_input": "okokok i had 5 coffees but just double click fileA now", "assistant_output": "double click fileA"}
+{"user_input": "start recording: click Profile, type Name", "assistant_output": "start recording sequence\nclick Profile\ntype Name"}
+{"user_input": "start a loop for each File: click FileName, type Content", "assistant_output": "start loop File as template\nclick FileName\ntype Content"}
+{"user_input": "record: click Settings, click AdvancedOptions", "assistant_output": "start recording sequence\nclick Settings\nclick AdvancedOptions"}
+{"user_input": "start loop Orders: click OrderID, type Quantity", "assistant_output": "start loop Orders as template\nclick OrderID\ntype Quantity"}
+{"user_input": "start recording sequence: click Login, type Username", "assistant_output": "start recording sequence\nclick Login\ntype Username"}
+{"user_input": "start loop for each Contact: click ContactName, type Message", "assistant_output": "start loop Contact as template\nclick ContactName\ntype Message"}
+{"user_input": "record sequence: click Menu, click Option1", "assistant_output": "start recording sequence\nclick Menu\nclick Option1"}
+{"user_input": "start a loop for Products: click ProductName, type Price", "assistant_output": "start loop Product as template\nclick ProductName\ntype Price"}
+{"user_input": "start recording: click ProfilePic, type Caption", "assistant_output": "start recording sequence\nclick ProfilePic\ntype Caption"}
+{"user_input": "start loop for Emails: click Recipient, type Subject", "assistant_output": "start loop Email as template\nclick Recipient\ntype Subject"}
+{"user_input": "record: click Dashboard, click Reports", "assistant_output": "start recording sequence\nclick Dashboard\nclick Reports"}
+{"user_input": "start loop Tasks: click TaskName, type Status", "assistant_output": "start loop Task as template\nclick TaskName\ntype Status"}
+{"user_input": "start recording sequence: click Chat, type Message", "assistant_output": "start recording sequence\nclick Chat\ntype Message"}
+{"user_input": "start a loop for Documents: click DocName, type Content", "assistant_output": "start loop Document as template\nclick DocName\ntype Content"}
+{"user_input": "record: click Button1, click Button2", "assistant_output": "start recording sequence\nclick Button1\nclick Button2"}
+{"user_input": "start loop Users: click UserID, type Action", "assistant_output": "start loop User as template\nclick UserID\ntype Action"}
+{"user_input": "start recording: click Form, type Data", "assistant_output": "start recording sequence\nclick Form\ntype Data"}
+{"user_input": "start a loop for Files: click FileLabel, type Filename", "assistant_output": "start loop File as template\nclick FileLabel\ntype Filename"}
+{"user_input": "record sequence: click Menu, type OptionText", "assistant_output": "start recording sequence\nclick Menu\ntype OptionText"}
+{"user_input": "start loop for Products: click ProductID, type Description", "assistant_output": "start loop Product as template\nclick ProductID\ntype Description"}

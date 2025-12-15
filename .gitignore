@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Logs
+*.log
+
+# Model checkpoints / training outputs
+qwen-alpaca-lora/*
+qwen-domain-lora/*
+upscaling_models/*
+wandb/*
+
+# WandB outputs
+wandb/
+
+# Upscaling / large external models
+upscaling_models/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Tokenizer & special tokens generated during training (optional)
+qwen-*/checkpoint-*/*.json
+qwen-*/special_tokens_map.json
+qwen-*/added_tokens.json
+
+# Misc
+*.pth
+*.pb
+
+# Ignore init pyc (optional)
+**/__init__.pyc

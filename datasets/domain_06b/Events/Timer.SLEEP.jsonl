@@ -1,0 +1,66 @@
+{"user_input": "Sleep for 5 seconds before continuing", "assistant_output": "sleep 5"}
+{"user_input": "Wait 2 seconds", "assistant_output": "sleep 2"}
+{"user_input": "Pause for 1 second", "assistant_output": "sleep 1"}
+{"user_input": "Sleep 10 seconds", "assistant_output": "sleep 10"}
+{"user_input": "Take a short pause of 3 seconds", "assistant_output": "sleep 3"}
+{"user_input": "Sleep three seconds", "assistant_output": "sleep three"}
+{"user_input": "Sleep 10 seconds", "assistant_output": "sleep 10"}
+{"user_input": "Sleep for 500ms", "assistant_output": "sleep 0.5"}
+{"user_input": "Sleep 500ms before continuing", "assistant_output": "sleep 0.5"}
+{"user_input": "Sleep 900ms", "assistant_output": "sleep 0.9"},
+{"user_input": "Sleep 1.5 seconds", "assistant_output": "sleep 1.5"},
+{"user_input": "Sleep 8 seconds", "assistant_output": "sleep 8"},
+{"user_input": "Sleep 1.3 seconds", "assistant_output": "sleep 1.3"},
+{"user_input": "Sleep 9 seconds", "assistant_output": "sleep 9"},
+{"user_input": "Sleep 1.4 seconds", "assistant_output": "sleep 1.4"},
+{"user_input": "Sleep 1100ms", "assistant_output": "sleep 1.1"},
+{"user_input": "sleep three seconds", "assistant_output": "sleep 3"},
+{"user_input": "sleep seven hundred fifty milliseconds", "assistant_output": "sleep 0.75"},
+{"user_input": "sleep four seconds", "assistant_output": "sleep 4"},
+{"user_input": "sleep one thousand two hundred milliseconds", "assistant_output": "sleep 1.2"},
+{"user_input": "sleep two point five seconds", "assistant_output": "sleep 2.5"},
+{"user_input": "sleep eight hundred milliseconds", "assistant_output": "sleep 0.8"},
+{"user_input": "sleep one point two seconds", "assistant_output": "sleep 1.2"},
+{"user_input": "sleep six hundred milliseconds", "assistant_output": "sleep 0.6"}
+{"user_input": "sleep one point five seconds", "assistant_output": "sleep 1.5"}
+{"user_input": "sleep one second", "assistant_output": "sleep 1"}
+{"user_input": "uh sleep five seconds before doing anything", "assistant_output": "sleep 5"}
+{"user_input": "so wait two point five seconds then continue", "assistant_output": "sleep 2.5"}
+{"user_input": "sleep one point two seconds just wait", "assistant_output": "sleep 1.2"}
+{"user_input": "sleep seven hundred milliseconds approximately", "assistant_output": "sleep 0.7"}
+{"user_input": "sleep three seconds or so", "assistant_output": "sleep 3"}
+{"user_input": "sleep one thousand milliseconds exactly", "assistant_output": "sleep 1"}
+{"user_input": "sleep one point five seconds and continue", "assistant_output": "sleep 1.5"}
+{"user_input": "sleep six hundred milliseconds only", "assistant_output": "sleep 0.6"}
+{"user_input": "sleep ten seconds uh yeah wait", "assistant_output": "sleep 10"}
+{"user_input": "sleep one hundred milliseconds really quick", "assistant_output": "sleep 0.1"}
+{"user_input": "sleep five seconds and then continue", "assistant_output": "sleep 5"}
+{"user_input": "sleep three point five seconds please", "assistant_output": "sleep 3.5"}
+{"user_input": "sleep 8 seconds", "assistant_output": "sleep 8"}
+{"user_input": "sleep 5", "assistant_output": "sleep 5"}
+{"user_input": "wait 7", "assistant_output": "sleep 7"}
+{"user_input": "sleep 12", "assistant_output": "sleep 12"}
+{"user_input": "wait one", "assistant_output": "sleep 1"}
+{"user_input": "sleep 3.5", "assistant_output": "sleep 3.5"}
+{"user_input": "sleep 6", "assistant_output": "sleep 6"}
+{"user_input": "sleep ten", "assistant_output": "sleep 10"}
+{"user_input": "Sleep for five seconds before moving on", "assistant_output": "sleep 5"}
+{"user_input": "Wait two and a half seconds", "assistant_output": "sleep 2.5"}
+{"user_input": "Pause one second", "assistant_output": "sleep 1"}
+{"user_input": "Sleep seven hundred milliseconds", "assistant_output": "sleep 0.7"}
+{"user_input": "Wait one point two seconds", "assistant_output": "sleep 1.2"}
+{"user_input": "Sleep 1.5 seconds before continuing", "assistant_output": "sleep 1.5"}
+{"user_input": "Hold for 900 milliseconds", "assistant_output": "sleep 0.9"}
+{"user_input": "Sleep three seconds or so", "assistant_output": "sleep 3"}
+{"user_input": "Wait a quick 0.5 seconds", "assistant_output": "sleep 0.5"}
+{"user_input": "Pause for 2 seconds", "assistant_output": "sleep 2"}
+{"user_input": "Sleep 8 seconds and then continue", "assistant_output": "sleep 8"}
+{"user_input": "Wait four point five seconds", "assistant_output": "sleep 4.5"}
+{"user_input": "Sleep 1.1 seconds", "assistant_output": "sleep 1.1"}
+{"user_input": "Wait six hundred milliseconds", "assistant_output": "sleep 0.6"}
+{"user_input": "Sleep for one thousand two hundred milliseconds", "assistant_output": "sleep 1.2"}
+{"user_input": "Pause briefly for 750ms", "assistant_output": "sleep 0.75"}
+{"user_input": "Sleep two seconds exactly", "assistant_output": "sleep 2"}
+{"user_input": "Hold on for 3.5 seconds", "assistant_output": "sleep 3.5"}
+{"user_input": "Sleep one point five seconds before continuing", "assistant_output": "sleep 1.5"}
+{"user_input": "Wait a moment, sleep 10 seconds", "assistant_output": "sleep 10"}

@@ -1,0 +1,98 @@
+{"user_input": "click top variable health", "assistant_output": "click variable health"}
+{"user_input": "right click the top var player", "assistant_output": "right click variable player"}
+{"user_input": "middle click best variable ammo", "assistant_output": "middle click variable ammo"}
+{"user_input": "double click one var called xp", "assistant_output": "double click variable xp"}
+{"user_input": "click the top variable called coins", "assistant_output": "click variable coins"}
+{"user_input": "right click top variable score", "assistant_output": "right click variable score"}
+{"user_input": "double click top var lives", "assistant_output": "double click variable lives"}
+{"user_input": "middle click the best var named shield", "assistant_output": "middle click variable shield"}
+{"user_input": "click the top variable health", "assistant_output": "click variable health"}
+{"user_input": "right click the top variable score", "assistant_output": "right click variable score"}
+{"user_input": "double click the top variable mana", "assistant_output": "double click variable mana"}
+{"user_input": "middle click the top variable stamina", "assistant_output": "middle click variable stamina"}
+{"user_input": "left click the top variable energy", "assistant_output": "left click variable energy"}
+{"user_input": "click the top var coins", "assistant_output": "click variable coins"}
+{"user_input": "right click top var shield", "assistant_output": "right click variable shield"}
+{"user_input": "double click the top var xp", "assistant_output": "double click variable xp"}
+{"user_input": "middle click best variable focus", "assistant_output": "middle click variable focus"}
+{"user_input": "click the best variable armor", "assistant_output": "click variable armor"}
+{"user_input": "right click the best variable rating", "assistant_output": "right click variable rating"}
+{"user_input": "double click the variable with highest value called stars", "assistant_output": "double click variable stars"}
+{"user_input": "middle click the top variable credits", "assistant_output": "middle click variable credits"}
+{"user_input": "click the top variable level", "assistant_output": "click variable level"}
+{"user_input": "right click the best variable score list", "assistant_output": "right click variable score list"}
+{"user_input": "double click the top var damage", "assistant_output": "double click variable damage"}
+{"user_input": "middle click the best var durability", "assistant_output": "middle click variable durability"}
+{"user_input": "click top variable rank", "assistant_output": "click variable rank"}
+{"user_input": "right click top variable mastery", "assistant_output": "right click variable mastery"}
+{"user_input": "double click the top variable tokens", "assistant_output": "double click variable tokens"}
+{"user_input": "middle click the best variable buffs", "assistant_output": "middle click variable buffs"}
+{"user_input": "click the top variable quests", "assistant_output": "click variable quests"}
+{"user_input": "right click top var speed", "assistant_output": "right click variable speed"}
+{"user_input": "double click the top variable movement", "assistant_output": "double click variable movement"}
+{"user_input": "middle click the best variable heat", "assistant_output": "middle click variable heat"}
+{"user_input": "click the top variable storage", "assistant_output": "click variable storage"}
+{"user_input": "double click top var challenge", "assistant_output": "double click variable challenge"}
+{"user_input": "middle click the top variable zone", "assistant_output": "middle click variable zone"}
+{"user_input": "click the top var shield level", "assistant_output": "click variable shield level"}
+{"user_input": "right click the best variable boost", "assistant_output": "right click variable boost"}
+{"user_input": "double click best var wind", "assistant_output": "double click variable wind"}
+{"user_input": "middle click top variable footstep", "assistant_output": "middle click variable footstep"}
+{"user_input": "click the top variable gps", "assistant_output": "click variable gps"}
+{"user_input": "right click top variable ping", "assistant_output": "right click variable ping"}
+{"user_input": "double click the top var battery", "assistant_output": "double click variable battery"}
+{"user_input": "middle click best variable packet loss", "assistant_output": "middle click variable packet loss"}
+{"user_input": "click the top variable season rank", "assistant_output": "click variable season rank"}
+{"user_input": "right click the highest value variable named wave", "assistant_output": "right click variable wave"}
+{"user_input": "double click the top variable temperature", "assistant_output": "double click variable temperature"}
+{"user_input": "double click the best variable vram", "assistant_output": "double click variable vram"}
+{"user_input": "middle click top variable disk speed", "assistant_output": "middle click variable disk speed"}
+{"user_input": "click the top variable net speed", "assistant_output": "click variable net speed"}
+{"user_input": "right click the highest variable trend", "assistant_output": "right click variable trend"}
+{"user_input": "double click top variable message count", "assistant_output": "double click variable message count"}
+{"user_input": "middle click top variable followers", "assistant_output": "middle click variable followers"}
+{"user_input": "click best variable likes", "assistant_output": "click variable likes"}
+{"user_input": "right click the top variable reposts", "assistant_output": "right click variable reposts"}
+{"user_input": "double click best variable comments", "assistant_output": "double click variable comments"}
+{"user_input": "middle click top variable views", "assistant_output": "middle click variable views"}
+{"user_input": "click the best variable session time", "assistant_output": "click variable session time"}
+{"user_input": "right click top variable ping quality", "assistant_output": "right click variable ping quality"}
+{"user_input": "double click top variable uptime score", "assistant_output": "double click variable uptime score"}
+{"user_input": "middle click the best var zone level", "assistant_output": "middle click variable zone level"}
+{"user_input": "click the top variable map progress", "assistant_output": "click variable map progress"}
+{"user_input": "right click best variable star power", "assistant_output": "right click variable star power"}
+{"user_input": "double click the top var bonus", "assistant_output": "double click variable bonus"}
+{"user_input": "middle click best variable cooldown", "assistant_output": "middle click variable cooldown"}
+{"user_input": "click the top variable health regen", "assistant_output": "click variable health regen"}
+
+// Human-like
+{"user_input": "can you click the top value inside points", "assistant_output": "click variable points"}
+{"user_input": "right click the highest entry in ammo", "assistant_output": "right click variable ammo"}
+{"user_input": "double click whatever is the top score in money", "assistant_output": "double click variable money"}
+{"user_input": "middle click the best value stored in heat", "assistant_output": "middle click variable heat"}
+{"user_input": "click the top thing inside coins", "assistant_output": "click variable coins"}
+{"user_input": "right click the best number from health", "assistant_output": "right click variable health"}
+{"user_input": "double click the highest ranked item in xp", "assistant_output": "double click variable xp"}
+{"user_input": "middle click the strongest entry from shield", "assistant_output": "middle click variable shield"}
+{"user_input": "click whatever is the best value under stamina", "assistant_output": "click variable stamina"}
+{"user_input": "right click the top item saved in quests", "assistant_output": "right click variable quests"}
+{"user_input": "double click the highest one inside armor", "assistant_output": "double click variable armor"}
+{"user_input": "middle click the top value under focus", "assistant_output": "middle click variable focus"}
+{"user_input": "click the top score stored in speed", "assistant_output": "click variable speed"}
+{"user_input": "right click the strongest reading from power", "assistant_output": "right click variable power"}
+{"user_input": "double click the highest number in score", "assistant_output": "double click variable score"}
+{"user_input": "middle click whatever has the best value in heat level", "assistant_output": "middle click variable heat level"}
+{"user_input": "double click the top value stored in pressure", "assistant_output": "double click variable pressure"}
+{"user_input": "middle click the best reading from voltage", "assistant_output": "middle click variable voltage"}
+{"user_input": "click the highest number in watts", "assistant_output": "click variable watts"}
+{"user_input": "right click the top result from current", "assistant_output": "right click variable current"}
+{"user_input": "double click the top value inside frequency", "assistant_output": "double click variable frequency"}
+{"user_input": "middle click the strongest one in memory", "assistant_output": "middle click variable memory"}
+{"user_input": "click the top score inside load", "assistant_output": "click variable load"}
+{"user_input": "right click the biggest entry inside followers", "assistant_output": "right click variable followers"}
+{"user_input": "double click whatever is the top inside likes", "assistant_output": "double click variable likes"}
+{"user_input": "middle click the best value stored in views", "assistant_output": "middle click variable views"}
+{"user_input": "click the highest value under messages", "assistant_output": "click variable messages"}
+{"user_input": "right click the best number inside reposts", "assistant_output": "right click variable reposts"}
+{"user_input": "double click the top value in comments", "assistant_output": "double click variable comments"}
+{"user_input": "middle click the strongest value inside notifications", "assistant_output": "middle click variable notifications"}

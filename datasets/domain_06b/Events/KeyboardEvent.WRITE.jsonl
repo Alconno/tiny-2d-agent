@@ -1,0 +1,146 @@
+{"user_input": "Write username", "assistant_output": "write username"}
+{"user_input": "Write email", "assistant_output": "write email"}
+{"user_input": "Write password123", "assistant_output": "write password123"}
+{"user_input": "Write hello world", "assistant_output": "write hello world"}
+{"user_input": "Write full name", "assistant_output": "write full name"}
+{"user_input": "Write firstName", "assistant_output": "write firstName"}
+{"user_input": "Write lastName", "assistant_output": "write lastName"}
+{"user_input": "Write city", "assistant_output": "write city"}
+{"user_input": "Write zip code", "assistant_output": "write zip code"}
+{"user_input": "Write phone number", "assistant_output": "write phone number"}
+{"user_input": "Write street address", "assistant_output": "write street address"}
+{"user_input": "Write company name", "assistant_output": "write company name"}
+{"user_input": "Write job title", "assistant_output": "write job title"}
+{"user_input": "Write meeting notes", "assistant_output": "write meeting notes"}
+{"user_input": "Write project description", "assistant_output": "write project description"}
+{"user_input": "Write comments", "assistant_output": "write comments"}
+{"user_input": "Write feedback", "assistant_output": "write feedback"}
+{"user_input": "Write order ID", "assistant_output": "write order ID"}
+{"user_input": "Write client ID", "assistant_output": "write client ID"}
+{"user_input": "Write product name", "assistant_output": "write product name"}
+{"user_input": "Write username as variable", "assistant_output": "write username as template"}
+{"user_input": "Write email as template", "assistant_output": "write email as template"}
+{"user_input": "Write firstName as template", "assistant_output": "write firstName as template"}
+{"user_input": "Write lastName variable", "assistant_output": "write lastName as template"}
+{"user_input": "Write clientID as template", "assistant_output": "write clientID as template"}
+{"user_input": "Write sessionID variable", "assistant_output": "write sessionID as template"}
+{"user_input": "Write orderNumber as template", "assistant_output": "write orderNumber as template"}
+{"user_input": "Write description variable", "assistant_output": "write description as template"}
+{"user_input": "Write commentText as template", "assistant_output": "write commentText as template"}
+{"user_input": "Write username123", "assistant_output": "write username123"}
+{"user_input": "Write admin password", "assistant_output": "write admin password"}
+{"user_input": "Write test input", "assistant_output": "write test input"}
+{"user_input": "Write random string", "assistant_output": "write random string"}
+{"user_input": "Write note for task", "assistant_output": "write note for task"}
+{"user_input": "Write tempValue as variable", "assistant_output": "write tempValue as template"}
+{"user_input": "Write description", "assistant_output": "write description"}
+{"user_input": "Write feedback text", "assistant_output": "write feedback text"}
+{"user_input": "Write my name", "assistant_output": "write my name"}
+{"user_input": "Write the email", "assistant_output": "write the email"}
+{"user_input": "Write the password", "assistant_output": "write the password"}
+{"user_input": "Write the username", "assistant_output": "write the username"}
+{"user_input": "Write the client name as template", "assistant_output": "write client name as template"}
+{"user_input": "Write the product ID as variable", "assistant_output": "write product ID as template"}
+{"user_input": "Write taskName as template", "assistant_output": "write taskName as template"}
+{"user_input": "Write reportName as template", "assistant_output": "write reportName as template"}
+{"user_input": "Write projectID as variable", "assistant_output": "write projectID as template"}
+{"user_input": "Write project name", "assistant_output": "write project name"}
+{"user_input": "Write task description", "assistant_output": "write task description"}
+{"user_input": "Write some notes", "assistant_output": "write some notes"}
+{"user_input": "Write the text hello world", "assistant_output": "write hello world"}
+{"user_input": "Write emailAddress", "assistant_output": "write emailAddress"}
+{"user_input": "Write phoneNumber", "assistant_output": "write phoneNumber"}
+{"user_input": "Write address", "assistant_output": "write address"}
+{"user_input": "Write zipCode", "assistant_output": "write zipCode"}
+{"user_input": "Write cityName", "assistant_output": "write cityName"}
+{"user_input": "Write streetName", "assistant_output": "write streetName"}
+{"user_input": "Write country", "assistant_output": "write country"}
+{"user_input": "Write username variable", "assistant_output": "write username as template"}
+{"user_input": "Write password variable", "assistant_output": "write password as template"}
+{"user_input": "Write apiKey as template", "assistant_output": "write apiKey as template"}
+{"user_input": "Write clientName as variable", "assistant_output": "write clientName as template"}
+{"user_input": "Write orderNumber as template", "assistant_output": "write orderNumber as template"}
+{"user_input": "Write reportTitle as template", "assistant_output": "write reportTitle as template"}
+{"user_input": "Write notes", "assistant_output": "write notes"}
+{"user_input": "Write the task", "assistant_output": "write the task"}
+{"user_input": "Write the report", "assistant_output": "write the report"}
+{"user_input": "Write the email address", "assistant_output": "write the email address"}
+{"user_input": "Write the phone number", "assistant_output": "write the phone number"}
+{"user_input": "Write the client ID", "assistant_output": "write the client ID"}
+{"user_input": "Write the product name", "assistant_output": "write the product name"}
+{"user_input": "Write the username as template", "assistant_output": "write username as template"}
+{"user_input": "Write the email as template", "assistant_output": "write email as template"}
+{"user_input": "Write the sessionID as variable", "assistant_output": "write sessionID as template"}
+{"user_input": "Write the orderID as variable", "assistant_output": "write orderID as template"}
+{"user_input": "Write the description", "assistant_output": "write the description"}
+{"user_input": "Write the feedback", "assistant_output": "write the feedback"}
+{"user_input": "Write the note", "assistant_output": "write the note"}
+{"user_input": "Write first name", "assistant_output": "write first name"}
+{"user_input": "Write last name", "assistant_output": "write last name"}
+{"user_input": "Write the company name", "assistant_output": "write the company name"}
+{"user_input": "Write the street address", "assistant_output": "write the street address"}
+{"user_input": "Write the city name", "assistant_output": "write the city name"}
+{"user_input": "Write the zip code", "assistant_output": "write the zip code"}
+{"user_input": "Write the country", "assistant_output": "write the country"}
+{"user_input": "Write the product code as template", "assistant_output": "write product code as template"}
+{"user_input": "Write the client code as template", "assistant_output": "write client code as template"}
+{"user_input": "Write order code as template", "assistant_output": "write order code as template"}
+{"user_input": "Write session code as template", "assistant_output": "write session code as template"}
+{"user_input": "Write API key as template", "assistant_output": "write API key as template"}
+{"user_input": "Write temporary value as variable", "assistant_output": "write temporary value as template"}
+{"user_input": "Write some test data", "assistant_output": "write some test data"}
+{"user_input": "Write random value", "assistant_output": "write random value"}
+{"user_input": "Write another example", "assistant_output": "write another example"}
+{"user_input": "Write this text", "assistant_output": "write this text"}
+{"user_input": "Write the user ID", "assistant_output": "write the user ID"}
+{"user_input": "Write session token", "assistant_output": "write session token"}
+{"user_input": "Write API token", "assistant_output": "write API token"}
+{"user_input": "Write project title", "assistant_output": "write project title"}
+{"user_input": "Write note for project", "assistant_output": "write note for project"}
+{"user_input": "Write comment for task", "assistant_output": "write comment for task"}
+{"user_input": "Write message text", "assistant_output": "write message text"}
+{"user_input": "Write username variable", "assistant_output": "write username as template"}
+{"user_input": "Write password variable", "assistant_output": "write password as template"}
+{"user_input": "Write the API key as template", "assistant_output": "write API key as template"}
+{"user_input": "Write some email", "assistant_output": "write some email"}
+{"user_input": "Write test message", "assistant_output": "write test message"}
+{"user_input": "Write the feedback text", "assistant_output": "write feedback text"}
+{"user_input": "Write text sample", "assistant_output": "write text sample"}
+{"user_input": "Write the note text", "assistant_output": "write note text"}
+{"user_input": "Write a random string", "assistant_output": "write a random string"}
+{"user_input": "Write demo data", "assistant_output": "write demo data"}
+{"user_input": "Write placeholder text", "assistant_output": "write placeholder text"}
+{"user_input": "Write template name as template", "assistant_output": "write template name as template"}
+{"user_input": "Write variable name as template", "assistant_output": "write variable name as template"}
+
+// Human like
+{"user_input": "uh write username", "assistant_output": "write username"}
+{"user_input": "write, uh, email please", "assistant_output": "write email"}
+{"user_input": "write password one two three", "assistant_output": "write password123"}
+{"user_input": "okay write hello world", "assistant_output": "write hello world"}
+{"user_input": "write my full name", "assistant_output": "write full name"}
+{"user_input": "can you write first name", "assistant_output": "write firstName"}
+{"user_input": "write last name uh", "assistant_output": "write lastName"}
+{"user_input": "write the city name", "assistant_output": "write city"}
+{"user_input": "write zip code i guess", "assistant_output": "write zip code"}
+{"user_input": "write phone number please", "assistant_output": "write phone number"}
+{"user_input": "write street address for me", "assistant_output": "write street address"}
+{"user_input": "write company name", "assistant_output": "write company name"}
+{"user_input": "uh write job title", "assistant_output": "write job title"}
+{"user_input": "write meeting notes", "assistant_output": "write meeting notes"}
+{"user_input": "write project description", "assistant_output": "write project description"}
+{"user_input": "write comments", "assistant_output": "write comments"}
+{"user_input": "write feedback text", "assistant_output": "write feedback"}
+{"user_input": "write order ID", "assistant_output": "write order ID"}
+{"user_input": "write client ID please", "assistant_output": "write client ID"}
+{"user_input": "write product name", "assistant_output": "write product name"}
+{"user_input": "write username as variable", "assistant_output": "write username as template"}
+{"user_input": "write email as a template", "assistant_output": "write email as template"}
+{"user_input": "write first name as template", "assistant_output": "write firstName as template"}
+{"user_input": "write lastName variable", "assistant_output": "write lastName as template"}
+{"user_input": "write the clientID as template", "assistant_output": "write clientID as template"}
+{"user_input": "uh write sessionID as variable", "assistant_output": "write sessionID as template"}
+{"user_input": "write order number template", "assistant_output": "write orderNumber as template"}
+{"user_input": "write the description text", "assistant_output": "write description"}
+{"user_input": "write feedback please", "assistant_output": "write feedback"}
+{"user_input": "write some test note", "assistant_output": "write some notes"}

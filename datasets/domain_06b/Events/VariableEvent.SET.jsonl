@@ -1,0 +1,370 @@
+// VariableEvent.SET (numbers, optional color)
+{"user_input": "set variable called pro that has value 100", "assistant_output": "set variable pro|number|100"}
+{"user_input": "create variable count with value under 200", "assistant_output": "set variable count|number|<200"}
+{"user_input": "make variable score with red color >50", "assistant_output": "set variable score|number|red >50"}
+{"user_input": "set var level that is between 10 and 50", "assistant_output": "set variable level|number|>10<50"}
+{"user_input": "define variable points yellow or green <200>50", "assistant_output": "set variable points|number|yellow or green <200>50"}
+{"user_input": "set variable health to 100", "assistant_output": "set variable health|number|100"}
+{"user_input": "set var mana to 50", "assistant_output": "set variable mana|number|50"}
+{"user_input": "make variable energy 75", "assistant_output": "set variable energy|number|75"}
+{"user_input": "create variable score with value 200", "assistant_output": "set variable score|number|200"}
+{"user_input": "define variable points 150", "assistant_output": "set variable points|number|150"}
+{"user_input": "set variable called pro that has value 100", "assistant_output": "set variable pro|number|100"}
+{"user_input": "create variable count with value under 200", "assistant_output": "set variable count|number|<200"}
+{"user_input": "make variable score with red color greater than 50", "assistant_output": "set variable score|number|red >50"}
+{"user_input": "set var level that is between 10 and 50", "assistant_output": "set variable level|number|>10<50"}
+{"user_input": "define variable points yellow or green less than 200 and greater than 50", "assistant_output": "set variable points|number|yellow or green >50<200"}
+{"user_input": "set variable health to 100", "assistant_output": "set variable health|number|100"}
+{"user_input": "set var mana to 50", "assistant_output": "set variable mana|number|50"}
+{"user_input": "make variable energy 75", "assistant_output": "set variable energy|number|75"}
+{"user_input": "create variable score with value 200", "assistant_output": "set variable score|number|200"}
+{"user_input": "define variable points 150", "assistant_output": "set variable points|number|150"}
+{"user_input": "set variable level greater than 10", "assistant_output": "set variable level|number|>10"}
+{"user_input": "make variable xp less than 500", "assistant_output": "set variable xp|number|<500"}
+{"user_input": "set var gold between 100 and 1000", "assistant_output": "set variable gold|number|>100<1000"}
+{"user_input": "define variable coins between 50 and 200", "assistant_output": "set variable coins|number|>50<200"}
+{"user_input": "create variable health red greater than 20", "assistant_output": "set variable health|number|red >20"}
+{"user_input": "set variable mana blue less than 100", "assistant_output": "set variable mana|number|blue <100"}
+{"user_input": "make variable energy green between 10 and 50", "assistant_output": "set variable energy|number|green >10<50"}
+{"user_input": "set var score yellow 100", "assistant_output": "set variable score|number|yellow 100"}
+{"user_input": "create variable points orange between 5 and 20", "assistant_output": "set variable points|number|orange >5<20"}
+{"user_input": "define variable gold brown 500", "assistant_output": "set variable gold|number|brown 500"}
+{"user_input": "set variable coins purple less than 50", "assistant_output": "set variable coins|number|purple <50"}
+{"user_input": "make variable health black 75", "assistant_output": "set variable health|number|black 75"}
+{"user_input": "create variable mana white greater than 10", "assistant_output": "set variable mana|number|white >10"}
+{"user_input": "set variable energy gray 25", "assistant_output": "set variable energy|number|gray 25"}
+{"user_input": "define variable score red 100", "assistant_output": "set variable score|number|red 100"}
+{"user_input": "set var points green between 20 and 100", "assistant_output": "set variable points|number|green >20<100"}
+{"user_input": "make variable gold blue less than 500", "assistant_output": "set variable gold|number|blue <500"}
+{"user_input": "set variable coins yellow 10", "assistant_output": "set variable coins|number|yellow 10"}
+{"user_input": "create variable health orange from 30 to 70", "assistant_output": "set variable health|number|orange >30<70"}
+{"user_input": "define variable mana purple 200", "assistant_output": "set variable mana|number|purple 200"}
+{"user_input": "set var energy brown up to 150", "assistant_output": "set variable energy|number|brown <150"}
+{"user_input": "make variable score black over 10", "assistant_output": "set variable score|number|black >10"}
+{"user_input": "set variable points white 50", "assistant_output": "set variable points|number|white 50"}
+{"user_input": "create variable gold gray below 300", "assistant_output": "set variable gold|number|gray <300"}
+{"user_input": "define variable coins red at least 5", "assistant_output": "set variable coins|number|red >5"}
+{"user_input": "set variable health green 100", "assistant_output": "set variable health|number|green 100"}
+{"user_input": "make variable mana blue 75", "assistant_output": "set variable mana|number|blue 75"}
+{"user_input": "set var energy yellow within 10 and 50", "assistant_output": "set variable energy|number|yellow >10<50"}
+{"user_input": "create variable score orange up to 200", "assistant_output": "set variable score|number|orange <200"}
+{"user_input": "define variable points purple 150", "assistant_output": "set variable points|number|purple 150"}
+{"user_input": "set variable gold brown in the range 100 to 500", "assistant_output": "set variable gold|number|brown >100<500"}
+{"user_input": "make variable coins black 25", "assistant_output": "set variable coins|number|black 25"}
+{"user_input": "set variable health white 50", "assistant_output": "set variable health|number|white 50"}
+{"user_input": "create variable mana gray above 10", "assistant_output": "set variable mana|number|gray >10"}
+{"user_input": "set var energy red 75", "assistant_output": "set variable energy|number|red 75"}
+{"user_input": "define variable score green 100", "assistant_output": "set variable score|number|green 100"}
+{"user_input": "set variable points blue smaller than 200", "assistant_output": "set variable points|number|blue <200"}
+{"user_input": "make variable gold yellow 300", "assistant_output": "set variable gold|number|yellow 300"}
+{"user_input": "create variable coins orange 50", "assistant_output": "set variable coins|number|orange 50"}
+{"user_input": "set variable health purple more than 20", "assistant_output": "set variable health|number|purple >20"}
+{"user_input": "define variable mana brown under 100", "assistant_output": "set variable mana|number|brown <100"}
+{"user_input": "make variable energy black 60", "assistant_output": "set variable energy|number|black 60"}
+{"user_input": "set var score white at least 50", "assistant_output": "set variable score|number|white >50"}
+{"user_input": "create variable points gray up to 150", "assistant_output": "set variable points|number|gray <150"}
+{"user_input": "set variable gold red 500", "assistant_output": "set variable gold|number|red 500"}
+{"user_input": "make variable coins green from 10 to 100", "assistant_output": "set variable coins|number|green >10<100"}
+{"user_input": "define variable health blue 200", "assistant_output": "set variable health|number|blue 200"}
+{"user_input": "set variable mana yellow 150", "assistant_output": "set variable mana|number|yellow 150"}
+{"user_input": "create variable energy orange in the range 5 to 50", "assistant_output": "set variable energy|number|orange >5<50"}
+{"user_input": "set var score purple up to 300", "assistant_output": "set variable score|number|purple <300"}
+{"user_input": "make variable points brown 50", "assistant_output": "set variable points|number|brown 50"}
+{"user_input": "set variable gold black above 100", "assistant_output": "set variable gold|number|black >100"}
+{"user_input": "define variable coins white below 50", "assistant_output": "set variable coins|number|white <50"}
+{"user_input": "create variable health gray 75", "assistant_output": "set variable health|number|gray 75"}
+{"user_input": "make variable mana red between 10 and 100", "assistant_output": "set variable mana|number|red >10<100"}
+{"user_input": "set var energy green 50", "assistant_output": "set variable energy|number|green 50"}
+{"user_input": "define variable score blue within 20 and 200", "assistant_output": "set variable score|number|blue >20<200"}
+{"user_input": "create variable points yellow 100", "assistant_output": "set variable points|number|yellow 100"}
+{"user_input": "set variable gold orange less than 400", "assistant_output": "set variable gold|number|orange <400"}
+{"user_input": "create variable gold white 300", "assistant_output": "set variable gold|number|white 300"}
+{"user_input": "set var coins gray 25", "assistant_output": "set variable coins|number|gray 25"}
+{"user_input": "make variable health red higher than 50", "assistant_output": "set variable health|number|red >50"}
+{"user_input": "define variable mana green under 100", "assistant_output": "set variable mana|number|green <100"}
+{"user_input": "set variable energy blue 200", "assistant_output": "set variable energy|number|blue 200"}
+{"user_input": "create variable score yellow from 5 to 150", "assistant_output": "set variable score|number|yellow >5<150"}
+{"user_input": "make variable points orange 50", "assistant_output": "set variable points|number|orange 50"}
+{"user_input": "set variable gold purple <300", "assistant_output": "set variable gold|number|purple <300"}
+{"user_input": "define variable coins brown 75", "assistant_output": "set variable coins|number|brown 75"}
+{"user_input": "create variable health black 100", "assistant_output": "set variable health|number|black 100"}
+{"user_input": "make variable mana white 50", "assistant_output": "set variable mana|number|white 50"}
+{"user_input": "set var energy gray >10<100", "assistant_output": "set variable energy|number|gray >10<100"}
+{"user_input": "define variable score red 150", "assistant_output": "set variable score|number|red 150"}
+{"user_input": "create variable points green <200", "assistant_output": "set variable points|number|green <200"}
+{"user_input": "set variable health red or blue <10", "assistant_output": "set variable health|number|red or blue <10"}
+{"user_input": "make variable mana green or yellow >5", "assistant_output": "set variable mana|number|green or yellow >5"}
+{"user_input": "create variable energy blue or purple <50", "assistant_output": "set variable energy|number|blue or purple <50"}
+{"user_input": "define variable score red or orange >20<100", "assistant_output": "set variable score|number|red or orange >20<100"}
+{"user_input": "set var points yellow or green <200", "assistant_output": "set variable points|number|yellow or green <200"}
+{"user_input": "make variable gold purple or brown >10<500", "assistant_output": "set variable gold|number|purple or brown >10<500"}
+{"user_input": "create variable coins black or white <30", "assistant_output": "set variable coins|number|black or white <30"}
+{"user_input": "define variable health gray or blue >15", "assistant_output": "set variable health|number|gray or blue >15"}
+{"user_input": "set variable mana red or green <50", "assistant_output": "set variable mana|number|red or green <50"}
+{"user_input": "make variable energy yellow or purple >5<25", "assistant_output": "set variable energy|number|yellow or purple >5<25"}
+{"user_input": "set variable health", "assistant_output": "set variable health|number|all"}
+{"user_input": "make variable mana", "assistant_output": "set variable mana|number|all"}
+{"user_input": "create variable energy", "assistant_output": "set variable energy|number|all"}
+{"user_input": "define variable score", "assistant_output": "set variable score|number|all"}
+{"user_input": "set var points", "assistant_output": "set variable points|number|all"}
+{"user_input": "make variable gold", "assistant_output": "set variable gold|number|all"}
+{"user_input": "create variable coins", "assistant_output": "set variable coins|number|all"}
+{"user_input": "define variable health", "assistant_output": "set variable health|number|all"}
+{"user_input": "set variable mana", "assistant_output": "set variable mana|number|all"}
+{"user_input": "make variable energy", "assistant_output": "set variable energy|number|all"}
+{"user_input": "define variable mana", "assistant_output": "set variable mana|number|all"}
+{"user_input": "set variable energy", "assistant_output": "set variable energy|number|all"}
+{"user_input": "make variable score", "assistant_output": "set variable score|number|all"}
+{"user_input": "create variable points", "assistant_output": "set variable points|number|all"}
+{"user_input": "define variable gold", "assistant_output": "set variable gold|number|all"}
+{"user_input": "set variable health to all numbers below 10", "assistant_output": "set variable health|number|<10"}
+{"user_input": "set variable mana with all values under 5", "assistant_output": "set variable mana|number|<5"}
+{"user_input": "define a variable energy using all numbers greater than 12", "assistant_output": "set variable energy|number|>12"}
+{"user_input": "set variable score from all values above 30", "assistant_output": "set variable score|number|>30"}
+{"user_input": "create a variable points with all numbers less than 4", "assistant_output": "set variable points|number|<4"}
+{"user_input": "create a variable gold to all numbers over 100", "assistant_output": "set variable gold|number|>100"}
+{"user_input": "create variable coins from all values smaller than 3", "assistant_output": "set variable coins|number|<3"}
+{"user_input": "create variable ammo with all amounts below 20", "assistant_output": "set variable ammo|number|<20"}
+{"user_input": "define a variable speed using all numbers higher than 6", "assistant_output": "set variable speed|number|>6"}
+{"user_input": "define a variable level to all values above 2", "assistant_output": "set variable level|number|>2"}
+{"user_input": "define a variable stamina from all numbers under 8", "assistant_output": "set variable stamina|number|<8"}
+{"user_input": "define variable hp using all values greater than 50", "assistant_output": "set variable hp|number|>50"}
+{"user_input": "define variable crit with all percentages above 25", "assistant_output": "set variable crit|number|>25"}
+{"user_input": "make variable armor from all values less than 15", "assistant_output": "set variable armor|number|<15"}
+{"user_input": "make variable attack to all numbers above 9", "assistant_output": "set variable attack|number|>9"}
+{"user_input": "make a variable defense with all values below 7", "assistant_output": "set variable defense|number|<7"}
+{"user_input": "make a variable regen using all numbers above 18", "assistant_output": "set variable regen|number|>18"}
+{"user_input": "set variable weight from all values less than 40", "assistant_output": "set variable weight|number|<40"}
+{"user_input": "set variable size with all numbers over 60", "assistant_output": "set variable size|number|>60"}
+{"user_input": "set variable range using all numbers below 12", "assistant_output": "set variable range|number|<12"}
+{"user_input": "set variable cooldown from all values above 3", "assistant_output": "set variable cooldown|number|>3"}
+{"user_input": "set variable clicks with all numbers under 9", "assistant_output": "set variable clicks|number|<9"}
+{"user_input": "set variable slots using all values greater than 14", "assistant_output": "set variable slots|number|>14"}
+{"user_input": "set variable tries from all numbers above 2", "assistant_output": "set variable tries|number|>2"}
+{"user_input": "set variable stacks with all values lower than 11", "assistant_output": "set variable stacks|number|<11"}
+{"user_input": "set variable rounds from all numbers above 19", "assistant_output": "set variable rounds|number|>19"}
+{"user_input": "set variable charges using all numbers below 6", "assistant_output": "set variable charges|number|<6"}
+{"user_input": "set variable steps with all values greater than 22", "assistant_output": "set variable steps|number|>22"}
+{"user_input": "set variable waves from all numbers under 13", "assistant_output": "set variable waves|number|<13"}
+{"user_input": "set variable ticks using all numbers above 4", "assistant_output": "set variable ticks|number|>4"}
+{"user_input": "set variable health red", "assistant_output": "set variable health|number|red"}
+{"user_input": "make variable mana blue", "assistant_output": "set variable mana|number|blue"}
+{"user_input": "create variable energy green", "assistant_output": "set variable energy|number|green"}
+{"user_input": "define variable score yellow", "assistant_output": "set variable score|number|yellow"}
+{"user_input": "set var points orange", "assistant_output": "set variable points|number|orange"}
+{"user_input": "make variable gold purple", "assistant_output": "set variable gold|number|purple"}
+{"user_input": "create variable coins black", "assistant_output": "set variable coins|number|black"}
+{"user_input": "define variable health white", "assistant_output": "set variable health|number|white"}
+{"user_input": "set variable mana gray", "assistant_output": "set variable mana|number|gray"}
+{"user_input": "make variable energy brown", "assistant_output": "set variable energy|number|brown"}
+{"user_input": "set variable health >10", "assistant_output": "set variable health|number|>10"}
+{"user_input": "make variable mana <50", "assistant_output": "set variable mana|number|<50"}
+{"user_input": "create variable energy >5<25", "assistant_output": "set variable energy|number|>5<25"}
+{"user_input": "define variable score >20<100", "assistant_output": "set variable score|number|>20<100"}
+{"user_input": "set var points <200", "assistant_output": "set variable points|number|<200"}
+{"user_input": "make variable gold >10<500", "assistant_output": "set variable gold|number|>10<500"}
+{"user_input": "create variable coins >5<50", "assistant_output": "set variable coins|number|>5<50"}
+{"user_input": "define variable health >0<100", "assistant_output": "set variable health|number|>0<100"}
+{"user_input": "set variable mana >10<200", "assistant_output": "set variable mana|number|>10<200"}
+{"user_input": "make variable energy >15<150", "assistant_output": "set variable energy|number|>15<150"}
+{"user_input": "create variable score >50<250", "assistant_output": "set variable score|number|>50<250"}
+{"user_input": "define variable points >5<100", "assistant_output": "set variable points|number|>5<100"}
+{"user_input": "set var gold >100<500", "assistant_output": "set variable gold|number|>100<500"}
+{"user_input": "make variable coins >10<200", "assistant_output": "set variable coins|number|>10<200"}
+{"user_input": "create variable health >20<80", "assistant_output": "set variable health|number|>20<80"}
+{"user_input": "create variable score from 50 to 250", "assistant_output": "set variable score|number|>50<250"}
+{"user_input": "define variable points in the range 5 to 100", "assistant_output": "set variable points|number|>5<100"}
+{"user_input": "set var gold between 100 and 500", "assistant_output": "set variable gold|number|>100<500"}
+{"user_input": "make variable coins from 10 to 200", "assistant_output": "set variable coins|number|>10<200"}
+{"user_input": "create variable health in the range 20 to 80", "assistant_output": "set variable health|number|>20<80"}
+{"user_input": "define variable mana from 0 to 50", "assistant_output": "set variable mana|number|>0<50"}
+{"user_input": "set variable energy in the range 5 to 25", "assistant_output": "set variable energy|number|>5<25"}
+{"user_input": "make variable score from 10 to 100", "assistant_output": "set variable score|number|>10<100"}
+{"user_input": "create variable points between 50 and 150", "assistant_output": "set variable points|number|>50<150"}
+{"user_input": "define variable gold in the range 200 to 500", "assistant_output": "set variable gold|number|>200<500"}
+{"user_input": "set var coins from 30 to 300", "assistant_output": "set variable coins|number|>30<300"}
+{"user_input": "make variable health between 15 and 75", "assistant_output": "set variable health|number|>15<75"}
+{"user_input": "create variable score between 5 and 25", "assistant_output": "set variable score|number|>5<25"}
+{"user_input": "define variable points in the range 50 to 300", "assistant_output": "set variable points|number|>50<300"}
+{"user_input": "set var gold from 25 to 75", "assistant_output": "set variable gold|number|>25<75"}
+{"user_input": "make variable coins between 10 and 200", "assistant_output": "set variable coins|number|>10<200"}
+{"user_input": "create variable health from 0 to 50", "assistant_output": "set variable health|number|>0<50"}
+{"user_input": "define variable mana in the range 15 to 60", "assistant_output": "set variable mana|number|>15<60"}
+{"user_input": "set variable energy between 10 and 40", "assistant_output": "set variable energy|number|>10<40"}
+{"user_input": "make variable score from 5 to 25", "assistant_output": "set variable score|number|>5<25"}
+{"user_input": "create variable points in the range 20 to 80", "assistant_output": "set variable points|number|>20<80"}
+{"user_input": "define variable gold from 50 to 150", "assistant_output": "set variable gold|number|>50<150"}
+{"user_input": "set var coins between 10 and 100", "assistant_output": "set variable coins|number|>10<100"}
+{"user_input": "make variable health from 0 to 10", "assistant_output": "set variable health|number|>0<10"}
+{"user_input": "create variable mana in the range 5 to 15", "assistant_output": "set variable mana|number|>5<15"}
+{"user_input": "define variable energy from 1 to 20", "assistant_output": "set variable energy|number|>1<20"}
+{"user_input": "set a variable called pro that will take all values below 10", "assistant_output": "set variable pro|number|<10"}
+{"user_input": "set a variable named coding that will contain every value below or equal to 30", "assistant_output": "set variable coding|number|<=30"}
+{"user_input": "set the variable keyboard that will take values above 89", "assistant_output": "set variable keyboard|number|>89"}
+{"user_input": "create a variable prompting that gather all values equal to 100", "assistant_output": "set variable prompting|number|100"}
+{"user_input": "make a variable called treat below blue 19", "assistant_output": "set variable treat|number|blue <19"}
+
+
+
+
+
+// VariableEvent.SET (strings)
+{"user_input": "set variable name to Alice", "assistant_output": "set variable name|string|Alice"}
+{"user_input": "make variable city called Paris", "assistant_output": "set variable city|string|Paris"}
+{"user_input": "create variable color red", "assistant_output": "set variable color|string|red"}
+{"user_input": "define variable mood blue", "assistant_output": "set variable mood|string|blue"}
+{"user_input": "set variable role as admin", "assistant_output": "set variable role|string|admin"}
+{"user_input": "make variable status offline", "assistant_output": "set variable status|string|offline"}
+{"user_input": "set variable weather sunny", "assistant_output": "set variable weather|string|sunny"}
+{"user_input": "create variable target boss", "assistant_output": "set variable target|string|boss"}
+{"user_input": "set variable path like C users admin", "assistant_output": "set variable path|string|C users admin"}
+{"user_input": "make variable message hello world", "assistant_output": "set variable message|string|hello world"}
+{"user_input": "create variable flag enabled", "assistant_output": "set variable flag|string|enabled"}
+{"user_input": "set variable key mysecretkey", "assistant_output": "set variable key|string|mysecretkey"}
+{"user_input": "set variable name to Alice", "assistant_output": "set variable name|string|Alice"}
+{"user_input": "create variable color red", "assistant_output": "set variable color|string|red"}
+{"user_input": "define variable mood blue", "assistant_output": "set variable mood|string|blue"}
+{"user_input": "set variable role as admin", "assistant_output": "set variable role|string|admin"}
+{"user_input": "make variable status offline", "assistant_output": "set variable status|string|offline"}
+{"user_input": "set variable weather sunny", "assistant_output": "set variable weather|string|sunny"}
+{"user_input": "create variable target boss", "assistant_output": "set variable target|string|boss"}
+{"user_input": "set variable path like C users admin", "assistant_output": "set variable path|string|C users admin"}
+{"user_input": "make variable message hello world", "assistant_output": "set variable message|string|hello world"}
+{"user_input": "create variable flag enabled", "assistant_output": "set variable flag|string|enabled"}
+{"user_input": "set variable key mysecretkey", "assistant_output": "set variable key|string|mysecretkey"}
+{"user_input": "set variable account JohnDoe", "assistant_output": "set variable account|string|JohnDoe"}
+{"user_input": "make variable password 123456", "assistant_output": "set variable password|string|123456"}
+{"user_input": "create variable folder documents", "assistant_output": "set variable folder|string|documents"}
+{"user_input": "define variable server localhost", "assistant_output": "set variable server|string|localhost"}
+{"user_input": "set variable user guest", "assistant_output": "set variable user|string|guest"}
+{"user_input": "make variable database myDB", "assistant_output": "set variable database|string|myDB"}
+{"user_input": "create variable region EU", "assistant_output": "set variable region|string|EU"}
+{"user_input": "set variable level easy", "assistant_output": "set variable level|string|easy"}
+{"user_input": "define variable language English", "assistant_output": "set variable language|string|English"}
+{"user_input": "make variable mode dark", "assistant_output": "set variable mode|string|dark"}
+{"user_input": "create variable theme light", "assistant_output": "set variable theme|string|light"}
+{"user_input": "set variable command start", "assistant_output": "set variable command|string|start"}
+{"user_input": "make variable response ok", "assistant_output": "set variable response|string|ok"}
+{"user_input": "create variable direction north", "assistant_output": "set variable direction|string|north"}
+{"user_input": "set variable file config.txt", "assistant_output": "set variable file|string|config.txt"}
+{"user_input": "define variable status active", "assistant_output": "set variable status|string|active"}
+{"user_input": "make variable type premium", "assistant_output": "set variable type|string|premium"}
+{"user_input": "create variable id 987654", "assistant_output": "set variable id|string|987654"}
+{"user_input": "set variable subject math", "assistant_output": "set variable subject|string|math"}
+{"user_input": "make variable topic science", "assistant_output": "set variable topic|string|science"}
+{"user_input": "define variable level advanced", "assistant_output": "set variable level|string|advanced"}
+{"user_input": "set variable category tech", "assistant_output": "set variable category|string|tech"}
+{"user_input": "create variable item sword", "assistant_output": "set variable item|string|sword"}
+{"user_input": "make variable weapon bow", "assistant_output": "set variable weapon|string|bow"}
+{"user_input": "define variable armor shield", "assistant_output": "set variable armor|string|shield"}
+{"user_input": "set variable skill coding", "assistant_output": "set variable skill|string|coding"}
+{"user_input": "create variable hobby reading", "assistant_output": "set variable hobby|string|reading"}
+{"user_input": "make variable job developer", "assistant_output": "set variable job|string|developer"}
+{"user_input": "set variable title manager", "assistant_output": "set variable title|string|manager"}
+{"user_input": "define variable team alpha", "assistant_output": "set variable team|string|alpha"}
+{"user_input": "create variable project X", "assistant_output": "set variable project|string|X"}
+{"user_input": "make variable department sales", "assistant_output": "set variable department|string|sales"}
+{"user_input": "set variable code A123", "assistant_output": "set variable code|string|A123"}
+{"user_input": "define variable token xyz987", "assistant_output": "set variable token|string|xyz987"}
+{"user_input": "make variable session active", "assistant_output": "set variable session|string|active"}
+{"user_input": "create variable license valid", "assistant_output": "set variable license|string|valid"}
+{"user_input": "set variable state new", "assistant_output": "set variable state|string|new"}
+{"user_input": "make variable region west", "assistant_output": "set variable region|string|west"}
+{"user_input": "define variable plan gold", "assistant_output": "set variable plan|string|gold"}
+{"user_input": "create variable goal finish", "assistant_output": "set variable goal|string|finish"}
+{"user_input": "set variable color red-blue", "assistant_output": "set variable color|string|red-blue"}
+{"user_input": "set var name to John like now", "assistant_output": "set variable name|string|John"}
+{"user_input": "make var city called New York", "assistant_output": "set variable city|string|New York"}
+{"user_input": "create var color green you know", "assistant_output": "set variable color|string|green"}
+{"user_input": "define var mood blue today", "assistant_output": "set variable mood|string|blue"}
+{"user_input": "set variable role as admin account", "assistant_output": "set variable role|string|admin"}
+{"user_input": "make var status offline right now", "assistant_output": "set variable status|string|offline"}
+{"user_input": "set var weather sunny outside", "assistant_output": "set variable weather|string|sunny"}
+{"user_input": "create var target boss enemy", "assistant_output": "set variable target|string|boss"}
+{"user_input": "set variable path like C users admin folder", "assistant_output": "set variable path|string|C users admin"}
+{"user_input": "make var message hello world everyone", "assistant_output": "set variable message|string|hello world"}
+{"user_input": "set var name Alicee", "assistant_output": "set variable name|string|Alice"}
+{"user_input": "make variable ci ty called Paris", "assistant_output": "set variable city|string|Paris"}
+{"user_input": "create var colr red", "assistant_output": "set variable color|string|red"}
+{"user_input": "define var moood blue", "assistant_output": "set variable mood|string|blue"}
+{"user_input": "set variable role adminn", "assistant_output": "set variable role|string|admin"}
+{"user_input": "make var statuz offline", "assistant_output": "set variable status|string|offline"}
+{"user_input": "set var weather sunnyy", "assistant_output": "set variable weather|string|sunny"}
+{"user_input": "create var targent boss", "assistant_output": "set variable target|string|boss"}
+{"user_input": "set variable path like C users admn", "assistant_output": "set variable path|string|C users admin"}
+{"user_input": "make var message hello worldd", "assistant_output": "set variable message|string|hello world"}
+{"user_input": "set variable key my sec ret key", "assistant_output": "set variable key|string|mysecretkey"}
+{"user_input": "create variable folder docu ments", "assistant_output": "set variable folder|string|documents"}
+{"user_input": "define var server local host", "assistant_output": "set variable server|string|localhost"}
+{"user_input": "set var user guesst", "assistant_output": "set variable user|string|guest"}
+{"user_input": "make variable databse myDB", "assistant_output": "set variable database|string|myDB"}
+{"user_input": "create variable region EUU", "assistant_output": "set variable region|string|EU"}
+{"user_input": "set variable level eeasy", "assistant_output": "set variable level|string|easy"}
+{"user_input": "define variable langauge English", "assistant_output": "set variable language|string|English"}
+{"user_input": "make variable modee dark", "assistant_output": "set variable mode|string|dark"}
+{"user_input": "create variable themee light", "assistant_output": "set variable theme|string|light"}
+{"user_input": "set variable commandd start", "assistant_output": "set variable command|string|start"}
+{"user_input": "make variable respons ok", "assistant_output": "set variable response|string|ok"}
+{"user_input": "create var dirrection north", "assistant_output": "set variable direction|string|north"}
+{"user_input": "set var file config txt", "assistant_output": "set variable file|string|config.txt"}
+{"user_input": "define var status activee", "assistant_output": "set variable status|string|active"}
+{"user_input": "make variable typ premium", "assistant_output": "set variable type|string|premium"}
+{"user_input": "create var idd 987654", "assistant_output": "set variable id|string|987654"}
+{"user_input": "set var subject mathh", "assistant_output": "set variable subject|string|math"}
+{"user_input": "make variable topik science", "assistant_output": "set variable topic|string|science"}
+{"user_input": "define variable leve advanced", "assistant_output": "set variable level|string|advanced"}
+{"user_input": "set variable name to Alice now", "assistant_output": "set variable name|string|Alice"}
+{"user_input": "make variable city called Paris please", "assistant_output": "set variable city|string|Paris"}
+{"user_input": "create variable color red okay", "assistant_output": "set variable color|string|red"}
+{"user_input": "define variable mood blue now", "assistant_output": "set variable mood|string|blue"}
+{"user_input": "set variable role admin right", "assistant_output": "set variable role|string|admin"}
+{"user_input": "make variable status offline yes", "assistant_output": "set variable status|string|offline"}
+{"user_input": "set variable weather sunny today", "assistant_output": "set variable weather|string|sunny"}
+{"user_input": "create variable target boss uh", "assistant_output": "set variable target|string|boss"}
+{"user_input": "set variable path like C users admin folder", "assistant_output": "set variable path|string|C users admin"}
+{"user_input": "make variable message hello world now", "assistant_output": "set variable message|string|hello world"}
+{"user_input": "set variable key my secret key please", "assistant_output": "set variable key|string|mysecretkey"}
+{"user_input": "create variable folder documents today", "assistant_output": "set variable folder|string|documents"}
+{"user_input": "define variable server localhost okay", "assistant_output": "set variable server|string|localhost"}
+{"user_input": "set variable user guest now", "assistant_output": "set variable user|string|guest"}
+{"user_input": "make variable database myDB right", "assistant_output": "set variable database|string|myDB"}
+{"user_input": "create variable region EU yes", "assistant_output": "set variable region|string|EU"}
+{"user_input": "set variable level easy now", "assistant_output": "set variable level|string|easy"}
+{"user_input": "define variable language English please", "assistant_output": "set variable language|string|English"}
+{"user_input": "make variable mode dark right", "assistant_output": "set variable mode|string|dark"}
+{"user_input": "create variable theme light okay", "assistant_output": "set variable theme|string|light"}
+{"user_input": "set variable command start now", "assistant_output": "set variable command|string|start"}
+{"user_input": "make variable response ok please", "assistant_output": "set variable response|string|ok"}
+{"user_input": "create variable direction north yes", "assistant_output": "set variable direction|string|north"}
+{"user_input": "set variable file config.txt now", "assistant_output": "set variable file|string|config.txt"}
+{"user_input": "define variable status active today", "assistant_output": "set variable status|string|active"}
+{"user_input": "make variable type premium right", "assistant_output": "set variable type|string|premium"}
+{"user_input": "create variable id 987654 okay", "assistant_output": "set variable id|string|987654"}
+{"user_input": "set variable subject math now", "assistant_output": "set variable subject|string|math"}
+{"user_input": "make variable topic science yes", "assistant_output": "set variable topic|string|science"}
+{"user_input": "define variable level advanced right", "assistant_output": "set variable level|string|advanced"}
+{"user_input": "set variable category tech today", "assistant_output": "set variable category|string|tech"}
+{"user_input": "create variable item sword now", "assistant_output": "set variable item|string|sword"}
+{"user_input": "make variable weapon bow please", "assistant_output": "set variable weapon|string|bow"}
+{"user_input": "define variable armor shield right", "assistant_output": "set variable armor|string|shield"}
+{"user_input": "set variable skill coding now", "assistant_output": "set variable skill|string|coding"}
+{"user_input": "create variable hobby reading today", "assistant_output": "set variable hobby|string|reading"}
+{"user_input": "make variable job developer right", "assistant_output": "set variable job|string|developer"}
+{"user_input": "set variable title manager now", "assistant_output": "set variable title|string|manager"}
+{"user_input": "define variable team alpha please", "assistant_output": "set variable team|string|alpha"}
+{"user_input": "create variable project X now", "assistant_output": "set variable project|string|X"}
+{"user_input": "make variable department sales today", "assistant_output": "set variable department|string|sales"}
+{"user_input": "set variable code A123 okay", "assistant_output": "set variable code|string|A123"}
+{"user_input": "define variable token xyz987 please", "assistant_output": "set variable token|string|xyz987"}
+{"user_input": "make variable session active right", "assistant_output": "set variable session|string|active"}
+{"user_input": "create variable license valid today", "assistant_output": "set variable license|string|valid"}
+{"user_input": "set variable state new now", "assistant_output": "set variable state|string|new"}
+{"user_input": "make variable region west please", "assistant_output": "set variable region|string|west"}
+{"user_input": "define variable plan gold okay", "assistant_output": "set variable plan|string|gold"}
+{"user_input": "create variable goal finish right", "assistant_output": "set variable goal|string|finish"}
+{"user_input": "set variable color red-blue now", "assistant_output": "set variable color|string|red-blue"}
+{"user_input": "make variable message hi all today", "assistant_output": "set variable message|string|hi all"}
+{"user_input": "create variable name John Doe okay", "assistant_output": "set variable name|string|John Doe"}
+{"user_input": "define variable city Paris France now", "assistant_output": "set variable city|string|Paris"}
+{"user_input": "set variable language English please", "assistant_output": "set variable language|string|English"}
+{"user_input": "make variable subject Maths right", "assistant_output": "set variable subject|string|Maths"}
