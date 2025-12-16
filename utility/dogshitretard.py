@@ -614,4 +614,3 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
     bx, by, bw, bh = bbox 
     return (bx + ox, by + oy, bw, bh)
 
-

@@ -120,6 +120,7 @@ def run_ocr(screenshot, offset, found_colors, number_only=False):
         preds, embd_lines = prev_preds, prev_embd_lines
     else:
         preds = models.ocr_func(screenshot, offset)  
+        print("OCR PREDS: ", preds)
         if found_colors:
             preds = [[
                     (bbox, text, color) for bbox, text, color in line

@@ -1,74 +1,93 @@
-import zmq
+import os
+import logging
+import traceback
+from fastapi import FastAPI, UploadFile, File
+from pydantic import BaseModel
+import uvicorn
 import pickle
-import OCR as OCR_module
+from PIL import Image
+import io
+
 from OCR import OCR
 from finetune.Qwen3_06BInsctruct.generate import generate, setup_gpt_model
 from embed import embed_text, get_emb_model
-import logging, os
-import traceback
+
+# -------------------- setup --------------------
+
 logging.basicConfig(level=logging.ERROR)
+logging.getLogger("ppocr").setLevel(logging.WARNING)
 
-def main():
-    logging.getLogger("ppocr").setLevel(logging.WARNING)
-    os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-    ocr = OCR(conf=0.4, downscale=1.0, max_workers=8, upscale=2.0, box_condense=(8,4))
+app = FastAPI(title="Local ML Model Host")
 
-    # ZMQ setup
-    context = zmq.Context()
-    socket = context.socket(zmq.REP)
-    socket.bind("tcp://127.0.0.1:5555")
+# load models ONCE
+ocr = OCR(conf=0.4, downscale=1.0, max_workers=8, upscale=2.0, box_condense=(8,4))
+gpt_model, gpt_tokenizer, get_prompt_func = setup_gpt_model()
+emb_model = get_emb_model()
 
-    gpt_model, gpt_tokenizer, get_prompt_func = setup_gpt_model()
+print("✅ Models loaded, FastAPI ready")
 
-    emb_model = get_emb_model()
+# -------------------- request schemas --------------------
 
-    poller = zmq.Poller()
-    poller.register(socket, zmq.POLLIN)
+class EmbedReq(BaseModel):
+    text: list[str]
 
-    print("ZMQ ready, models are being hosted.\n")
+class GPTReq(BaseModel):
+    input: str
 
+class OCRReq(BaseModel):
+    img: bytes
+    ocr_crop_offset: tuple[int, int]
+
+# -------------------- endpoints --------------------
+
+@app.post("/embed")
+def embed(req: EmbedReq):
     try:
-        while True:
-            socks = dict(poller.poll(timeout=1000))
-            if socket in socks and socks[socket] == zmq.POLLIN:
-                try:
-                    req = pickle.loads(socket.recv(zmq.NOBLOCK))
-                    cmd = req.get("cmd")
+        embs = embed_text(req.text, emb_model)
+        if hasattr(embs, "tolist"):
+            embs = embs.tolist()
+        return embs
+    except Exception:
+        return {
+            "error": "embed failed",
+            "traceback": traceback.format_exc()
+        }
 
-                    if cmd == "ocr":
-                        preds = ocr(req["img"], req["ocr_crop_offset"])
-                        socket.send(pickle.dumps(preds))
+@app.post("/gpt")
+def gpt(req: GPTReq):
+    try:
+        return generate(req.input, gpt_model, gpt_tokenizer, get_prompt_func)
+    except Exception:
+        return {
+            "error": "gpt failed",
+            "traceback": traceback.format_exc()
+        }
 
-                    elif cmd == "embed":
-                        emb = embed_text(req["text"], emb_model)
-                        socket.send(pickle.dumps(emb))
+@app.post("/ocr")
+def ocr_api(file: UploadFile = File(...), ox: int = 0, oy: int = 0):
+    try:
+        ocr_crop_offset = (ox, oy)
+        img_bytes = file.file.read()
+        img = Image.open(io.BytesIO(img_bytes)).convert("RGB")
 
-                    elif cmd == "gpt":
-                        out = generate(req["input"], gpt_model, gpt_tokenizer, get_prompt_func)
-                        socket.send(pickle.dumps(out))
+        return ocr(img, ocr_crop_offset)
 
-                    else:
-                        socket.send(pickle.dumps({"error": f"Unknown cmd {cmd}"}))
+    except Exception:
+        import traceback
+        return {
+            "error": "ocr failed",
+            "traceback": traceback.format_exc()
+        }
 
-                except Exception as e:
-                    logging.exception("Server exception")
-                    tb = traceback.format_exc()
-                    try:
-                        socket.send(pickle.dumps({
-                            "error": str(e),
-                            "traceback": tb
-                        }))
-                    except zmq.error.ZMQError:
-                        pass
-
-    except KeyboardInterrupt:
-        print("\nShutting down server...")
-    finally:
-        socket.close()
-        context.term()
-
+# -------------------- run --------------------
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(
+        app,
+        host="127.0.0.1",
+        port=5555,
+        log_level="error"
+    )

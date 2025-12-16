@@ -354,4 +354,5 @@ class OCR:
                     new_line.append((new_b, t, c))
                 new.append(new_line)
             final_lines = new
+
         return final_lines

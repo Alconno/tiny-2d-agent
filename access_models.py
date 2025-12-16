@@ -1,40 +1,50 @@
-import zmq
-import pickle
-
-class AccessModels():
+import requests
+import io
+class AccessModels:
     def __init__(self):
-        TCP = "tcp://127.0.0.1:5555"
-        context = zmq.Context()
-        self.socket = context.socket(zmq.REQ)
-        self.socket.connect(TCP)
-        self.socket.RCVTIMEO = 45000  # recv timeout
-        self.socket.SNDTIMEO = 45000  # send timeout
-        print("Socket connected to", TCP)
+        self.base = "http://127.0.0.1:5555"
+        self.session = requests.Session()
 
-    def safe_request(self, msg):
-        try:
-            self.socket.send(pickle.dumps(msg))
-            resp = self.socket.recv()
-            return pickle.loads(resp)
+    # ---------- helpers ----------
 
-        except zmq.error.Again:
-            print("ZMQ timeout — resetting socket")
+    def _post(self, endpoint, payload, timeout):
+        r = self.session.post(
+            f"{self.base}/{endpoint}",
+            json=payload,
+            timeout=timeout
+        )
+        r.raise_for_status()
+        data = r.json()
+        if isinstance(data, dict) and "error" in data:
+            raise RuntimeError(data["error"] + "\n" + data.get("traceback", ""))
+        return data
 
-            # HARD RESET (required)
-            self.socket.close(linger=0)
-            context = zmq.Context.instance()
-            self.socket = context.socket(zmq.REQ)
-            self.socket.connect("tcp://127.0.0.1:5555")
-            self.socket.RCVTIMEO = 45000
-            self.socket.SNDTIMEO = 45000
+    # ---------- public API ----------
 
-        return None
-
-    def ocr_func(self, img, ocr_crop_offset):
-        return self.safe_request({"cmd": "ocr", "img": img, "ocr_crop_offset": ocr_crop_offset})
-
-    def embd_func(self, txt):
-        return self.safe_request({"cmd": "embed", "text": txt})
+    def embd_func(self, texts):
+        return self._post(
+            "embed",
+            {"text": texts},
+            timeout=120
+        )
 
     def gpt_func(self, input_text):
-        return self.safe_request({"cmd": "gpt", "input": input_text})
+        return self._post(
+            "gpt",
+            {"input": input_text},
+            timeout=300
+        )
+
+    def ocr_func(self, img, ocr_crop_offset=(0,0)):
+        buf = io.BytesIO()
+        img.save(buf, format="PNG")
+        buf.seek(0)
+
+        resp = self.session.post(
+            f"{self.base}/ocr",
+            files={"file": ("screenshot.png", buf, "image/png")},
+            data={"ox": ocr_crop_offset[0], "oy": ocr_crop_offset[1]},
+            timeout=120
+        )
+        resp.raise_for_status()
+        return resp.json()
