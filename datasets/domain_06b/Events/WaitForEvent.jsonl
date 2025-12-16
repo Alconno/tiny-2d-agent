@@ -1,0 +1,88 @@
+{"user_input": "Wait for insane", "assistant_output": "Wait for insane"}
+{"user_input": "Wait for loading", "assistant_output": "Wait for loading"}
+{"user_input": "Wait for start button", "assistant_output": "Wait for start button"}
+{"user_input": "Wait for login", "assistant_output": "Wait for login"}
+{"user_input": "Wait for error message", "assistant_output": "Wait for error message"}
+{"user_input": "Wait for 10 seconds", "assistant_output": "Wait for 10"}
+{"user_input": "Wait 10 for finish", "assistant_output": "Wait for finish|10"}
+{"user_input": "Wait 20 for download", "assistant_output": "Wait for download|20"}
+{"user_input": "Wait 30 for ready", "assistant_output": "Wait for ready|30"}
+{"user_input": "Wait 5 for complete", "assistant_output": "Wait for complete|5"}
+{"user_input": "Wait 15 seconds for insane", "assistant_output": "Wait for insane|15"}
+{"user_input": "Wait 10 seconds for loading", "assistant_output": "Wait for loading|10"}
+{"user_input": "Wait 20 seconds for start", "assistant_output": "Wait for start|20"}
+{"user_input": "Wait 5 seconds for error", "assistant_output": "Wait for error|5"}
+{"user_input": "Wait thirty for done", "assistant_output": "Wait for done|30"}
+{"user_input": "Wait fifteen for success", "assistant_output": "Wait for success|15"}
+{"user_input": "Wait five for welcome", "assistant_output": "Wait for welcome|5"}
+{"user_input": "Wait twenty five for login screen", "assistant_output": "Wait for login screen|25"}
+{"user_input": "Wait 100 for main menu", "assistant_output": "Wait for main menu|100"}
+{"user_input": "Wait 500 for dashboard", "assistant_output": "Wait for dashboard|500"}
+{"user_input": "Wait for image logo", "assistant_output": "Wait for image logo"}
+{"user_input": "Wait for picture icon", "assistant_output": "Wait for image icon"}
+{"user_input": "Wait for icon home", "assistant_output": "Wait for image home"}
+{"user_input": "Wait 10 for image settings", "assistant_output": "Wait for image settings|10"}
+{"user_input": "Wait 20 for picture menu", "assistant_output": "Wait for image menu|20"}
+{"user_input": "Wait 30 for icon close", "assistant_output": "Wait for image close|30"}
+{"user_input": "Wait for text submit", "assistant_output": "Wait for submit"}
+{"user_input": "Wait for label username", "assistant_output": "Wait for username"}
+{"user_input": "Wait 15 for text password", "assistant_output": "Wait for password|15"}
+{"user_input": "Wait 10 for label email", "assistant_output": "Wait for email|10"}
+{"user_input": "Wait for this loading screen", "assistant_output": "Wait for this loading screen"}
+{"user_input": "Wait for that error message", "assistant_output": "Wait for that error message"}
+{"user_input": "Wait for my profile picture", "assistant_output": "Wait for my profile picture"}
+{"user_input": "Wait for the start button", "assistant_output": "Wait for the start button"}
+{"user_input": "Wait 25 for the login form", "assistant_output": "Wait for the login form|25"}
+{"user_input": "Wait for loading bar 15 seconds", "assistant_output": "Wait for loading bar|15"}
+{"user_input": "Wait 30 for progress indicator", "assistant_output": "Wait for progress indicator|30"}
+{"user_input": "Wait for save icon 10", "assistant_output": "Wait for image save|10"}
+{"user_input": "Wait for cancel button 5", "assistant_output": "Wait for cancel button|5"}
+{"user_input": "Wait 45 for next page", "assistant_output": "Wait for next page|45"}
+{"user_input": "Wait for image logo 20 seconds", "assistant_output": "Wait for image logo|20"}
+{"user_input": "Wait for picture settings 15", "assistant_output": "Wait for image settings|15"}
+{"user_input": "Wait for icon home 30", "assistant_output": "Wait for image home|30"}
+{"user_input": "Wait 60 for text confirmation", "assistant_output": "Wait for confirmation|60"}
+{"user_input": "Wait 120 for image splash", "assistant_output": "Wait for image splash|120"}
+{"user_input": "Wait for image loading spinner", "assistant_output": "Wait for image loading spinner"}
+{"user_input": "Wait 180 for main interface", "assistant_output": "Wait for main interface|180"}
+{"user_input": "Wait 2 for error popup", "assistant_output": "Wait for error popup|2"}
+{"user_input": "Wait 3 for warning message", "assistant_output": "Wait for warning message|3"}
+{"user_input": "Wait 4 for success notification", "assistant_output": "Wait for success notification|4"}
+{"user_input": "Wait 7 for info dialog", "assistant_output": "Wait for info dialog|7"}
+{"user_input": "Wait for the insane text", "assistant_output": "Wait for the insane text"}
+{"user_input": "Wait for insane label 25", "assistant_output": "Wait for insane label|25"}
+{"user_input": "Wait for insane image 40", "assistant_output": "Wait for image insane|40"}
+{"user_input": "Wait for picture insane 50", "assistant_output": "Wait for image insane|50"}
+{"user_input": "Wait 8 for text welcome", "assistant_output": "Wait for welcome|8"}
+{"user_input": "Wait 12 for image avatar", "assistant_output": "Wait for image avatar|12"}
+{"user_input": "Wait for notification bell", "assistant_output": "Wait for notification bell"}
+{"user_input": "Wait 6 for search bar", "assistant_output": "Wait for search bar|6"}
+{"user_input": "Wait 9 for profile picture", "assistant_output": "Wait for profile picture|9"}
+{"user_input": "Wait for text processing", "assistant_output": "Wait for processing"}
+{"user_input": "Wait 25 for image upload", "assistant_output": "Wait for image upload|25"}
+{"user_input": "Wait for the download complete", "assistant_output": "Wait for the download complete"}
+{"user_input": "Wait 18 for icon refresh", "assistant_output": "Wait for image refresh|18"}
+{"user_input": "Wait for installation finish", "assistant_output": "Wait for installation finish"}
+{"user_input": "Wait 22 for text connection", "assistant_output": "Wait for connection|22"}
+{"user_input": "Wait for picture dashboard", "assistant_output": "Wait for image dashboard"}
+{"user_input": "Wait 14 for text authentication", "assistant_output": "Wait for authentication|14"}
+{"user_input": "Wait for image header", "assistant_output": "Wait for image header"}
+{"user_input": "Wait 11 for icon settings", "assistant_output": "Wait for image settings|11"}
+
+
+// Human like
+{"user_input": "hey wait for insane", "assistant_output": "Wait for insane"}
+{"user_input": "wait up for loading please", "assistant_output": "Wait for loading"}
+{"user_input": "can you wait for start button", "assistant_output": "Wait for start button"}
+{"user_input": "wait a bit for login", "assistant_output": "Wait for login"}
+{"user_input": "wait ten seconds for insane", "assistant_output": "Wait for insane|10"}
+{"user_input": "wait fifteen for the loading bar", "assistant_output": "Wait for the loading bar|15"}
+{"user_input": "hold on for error message", "assistant_output": "Wait for error message"}
+{"user_input": "wait for like five seconds for insane", "assistant_output": "Wait for insane|5"}
+{"user_input": "hey wait twenty for download complete", "assistant_output": "Wait for download complete|20"}
+{"user_input": "wait for a sec for the icon", "assistant_output": "Wait for image the icon"}
+{"user_input": "wait for about ten seconds for insane", "assistant_output": "Wait for insane|10"}
+{"user_input": "can you wait for picture settings", "assistant_output": "Wait for image settings"}
+{"user_input": "wait for maybe fifteen for insane", "assistant_output": "Wait for insane|15"}
+{"user_input": "wait for the insane thing please", "assistant_output": "Wait for the insane thing"}
+{"user_input": "wait for thirty seconds for insane okay", "assistant_output": "Wait for insane|30"}

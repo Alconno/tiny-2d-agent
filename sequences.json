@@ -278,15 +278,7 @@
     },
     "man": {
         "steps": [
-            {
-                "text": "Focus 831, 242, 903, 650"
-            },
-            {
-                "text": "set variable items|number|yellow <45"
-            },
-            {
-                "text": "click all variable items"
-            }
+            {"text": "Wait for insane|15"}
         ]
     }
 }

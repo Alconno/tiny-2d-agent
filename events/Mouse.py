@@ -147,7 +147,6 @@ class Mouse:
                             MouseButton.SPATIAL_LEFT | MouseButton.SPATIAL_RIGHT):
             emb = run_ocr_func(screenshot, offset, found_colors)
             
-            print("Target ctx: ", ctx)
             parts = [p.strip() for p in ctx.split("|", 1)]
             if len(parts) == 1:
                 parts.append(None)
@@ -156,8 +155,7 @@ class Mouse:
             
             expanded = self.expand_color_logic_func(target_ctx=real_ctx)
             target = self.extract_box_target_with_more_ctx_func(expanded, emb, embd_func, found_colors)
-            
-            print("spatial original target:", target)
+
             if target:
                 bbox = target["result"]["bbox"]
                 new_bbox = self.get_spatial_location(action_result, bbox, offset, screenshot, spatial_search_condition)

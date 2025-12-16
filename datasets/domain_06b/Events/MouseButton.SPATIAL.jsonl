@@ -1,0 +1,212 @@
+// ---------------------------- SPATIAL left click ----------------------------
+{"user_input": "click left of main menu", "assistant_output": "click left of main menu"}
+{"user_input": "click right of save button", "assistant_output": "click right of save button"}
+{"user_input": "click above the search box", "assistant_output": "click above of search box"}
+{"user_input": "click below the header text", "assistant_output": "click below of header text"}
+{"user_input": "click left to the icon", "assistant_output": "click left of icon"}
+{"user_input": "click right to the logo", "assistant_output": "click right of logo"}
+{"user_input": "click on top of the window", "assistant_output": "click above of window"}
+{"user_input": "click under the toolbar", "assistant_output": "click below of toolbar"}
+{"user_input": "click left of the text submit", "assistant_output": "click left of submit|text"}
+{"user_input": "click right of the object", "assistant_output": "click right of object"}
+{"user_input": "click above text start", "assistant_output": "click above of start|text"}
+{"user_input": "click below of the image", "assistant_output": "click below of image"}
+{"user_input": "click left of menu now", "assistant_output": "click left of menu"}
+{"user_input": "click right of button please", "assistant_output": "click right of button"}
+{"user_input": "click above the text file", "assistant_output": "click above of file|text"}
+{"user_input": "click below the panel", "assistant_output": "click below of panel"}
+{"user_input": "click left to the text open", "assistant_output": "click left of open|text"}
+{"user_input": "click right to text close", "assistant_output": "click right of close|text"}
+{"user_input": "click on top of the sidebar", "assistant_output": "click above of sidebar"}
+{"user_input": "click under the navigation", "assistant_output": "click below of navigation"}
+{"user_input": "click left of text cancel", "assistant_output": "click left of cancel|text"}
+{"user_input": "click right of text apply", "assistant_output": "click right of apply|text"}
+{"user_input": "click above the object", "assistant_output": "click above of object"}
+{"user_input": "click below text settings", "assistant_output": "click below of settings|text"}
+{"user_input": "click left of the tab", "assistant_output": "click left of tab"}
+{"user_input": "click right of the link", "assistant_output": "click right of link"}
+{"user_input": "click above text username", "assistant_output": "click above of username|text"}
+{"user_input": "click below of text password", "assistant_output": "click below of password|text"}
+{"user_input": "click left to the field", "assistant_output": "click left of field"}
+{"user_input": "click right to the checkbox", "assistant_output": "click right of checkbox"}
+{"user_input": "click on top of text title", "assistant_output": "click above of title|text"}
+{"user_input": "click under the list", "assistant_output": "click below of list"}
+{"user_input": "click left of the text edit", "assistant_output": "click left of edit|text"}
+{"user_input": "click right of the text view", "assistant_output": "click right of view|text"}
+{"user_input": "click above the container", "assistant_output": "click above of container"}
+{"user_input": "click below the text area", "assistant_output": "click below of area|text"}
+{"user_input": "click left of element", "assistant_output": "click left of element"}
+{"user_input": "click right of widget", "assistant_output": "click right of widget"}
+{"user_input": "click above text header", "assistant_output": "click above of header|text"}
+{"user_input": "click below of text footer", "assistant_output": "click below of footer|text"}
+{"user_input": "click left to the control", "assistant_output": "click left of control"}
+{"user_input": "click right to the component", "assistant_output": "click right of component"}
+{"user_input": "click on top of text label", "assistant_output": "click above of label|text"}
+{"user_input": "click under the section", "assistant_output": "click below of section"}
+{"user_input": "click left of the text input", "assistant_output": "click left of input|text"}
+{"user_input": "click right of the text output", "assistant_output": "click right of output|text"}
+{"user_input": "click above the frame", "assistant_output": "click above of frame"}
+{"user_input": "click below text comment", "assistant_output": "click below of comment|text"}
+{"user_input": "click left of divider", "assistant_output": "click left of divider"}
+{"user_input": "click right of separator", "assistant_output": "click right of separator"}
+
+
+// Human like
+{"user_input": "click to the left of the save icon", "assistant_output": "click left of save icon"}
+{"user_input": "click right of the settings menu", "assistant_output": "click right of settings menu"}
+{"user_input": "click on top of the login button", "assistant_output": "click above of login button"}
+{"user_input": "click below the search bar please", "assistant_output": "click below of search bar"}
+{"user_input": "click left of text username field", "assistant_output": "click left of username field|text"}
+{"user_input": "click right of the next button quickly", "assistant_output": "click right of next button"}
+{"user_input": "click above text email address", "assistant_output": "click above of email address|text"}
+{"user_input": "click under the main navigation bar", "assistant_output": "click below of main navigation bar"}
+{"user_input": "click left to the profile picture", "assistant_output": "click left of profile picture"}
+{"user_input": "click right to text confirmation", "assistant_output": "click right of confirmation|text"}
+{"user_input": "click on top of the video player", "assistant_output": "click above of video player"}
+{"user_input": "click below the status message", "assistant_output": "click below of status message"}
+{"user_input": "click left of the file upload area", "assistant_output": "click left of file upload area"}
+{"user_input": "click right of text send message", "assistant_output": "click right of send message|text"}
+{"user_input": "click above the attachment button", "assistant_output": "click above of attachment button"}
+{"user_input": "click below of text error message", "assistant_output": "click below of error message|text"}
+{"user_input": "click left of the drop down menu", "assistant_output": "click left of drop down menu"}
+{"user_input": "please click left of the notification bell", "assistant_output": "click left of notification bell"}
+{"user_input": "do click right of the compose button", "assistant_output": "click right of compose button"}
+{"user_input": "could you click above the text header please", "assistant_output": "click above of header|text"}
+{"user_input": "left click below the sidebar menu", "assistant_output": "click below of sidebar menu"}
+{"user_input": "hey click left of text draft saved", "assistant_output": "click left of draft saved|text"}
+{"user_input": "go ahead and click right of the settings gear", "assistant_output": "click right of settings gear"}
+{"user_input": "i need you to click above the main content area", "assistant_output": "click above of main content area"}
+{"user_input": "left click under the search results", "assistant_output": "click below of search results"}
+{"user_input": "please do click left to the profile avatar", "assistant_output": "click left of profile avatar"}
+{"user_input": "just click right to text unread messages", "assistant_output": "click right of unread messages|text"}
+{"user_input": "would you click on top of the video thumbnail", "assistant_output": "click above of video thumbnail"}
+{"user_input": "click below the text error warning now", "assistant_output": "click below of error warning|text"}
+{"user_input": "hey can you click left of the three dots menu", "assistant_output": "click left of three dots menu"}
+{"user_input": "please left click right of text loading please", "assistant_output": "click right of loading|text"}
+{"user_input": "do me a favor click above the color palette", "assistant_output": "click above of color palette"}
+{"user_input": "i want you to click under the chat bubble", "assistant_output": "click below of chat bubble"}
+{"user_input": "left click left of text document name", "assistant_output": "click left of document name|text"}
+{"user_input": "go click right of the maximize window button", "assistant_output": "click right of maximize window button"}
+{"user_input": "can you please click above the text input field", "assistant_output": "click above of input field|text"}
+{"user_input": "click below of the zoom in control", "assistant_output": "click below of zoom in control"}
+{"user_input": "please left click left to the mute microphone", "assistant_output": "click left of mute microphone"}
+{"user_input": "do click right to the text share post", "assistant_output": "click right of share post|text"}
+{"user_input": "left click on top of the text file path", "assistant_output": "click above of file path|text"}
+{"user_input": "click under the text status update", "assistant_output": "click below of status update|text"}
+{"user_input": "please do left click left of the trash can icon", "assistant_output": "click left of trash can icon"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------- SPATIAL right click ----------------------------
+{"user_input": "right click left of main menu", "assistant_output": "right click left of main menu"}
+{"user_input": "right click right of save button", "assistant_output": "right click right of save button"}
+{"user_input": "right click above the search box", "assistant_output": "right click above of search box"}
+{"user_input": "right click below the header text", "assistant_output": "right click below of header text"}
+{"user_input": "right click left to the icon", "assistant_output": "right click left of icon"}
+{"user_input": "right click right to the logo", "assistant_output": "right click right of logo"}
+{"user_input": "right click on top of the window", "assistant_output": "right click above of window"}
+{"user_input": "right click under the toolbar", "assistant_output": "right click below of toolbar"}
+{"user_input": "right click left of the text submit", "assistant_output": "right click left of submit|text"}
+{"user_input": "right click right of the object", "assistant_output": "right click right of object"}
+{"user_input": "right click above text start", "assistant_output": "right click above of start|text"}
+{"user_input": "right click below of the image", "assistant_output": "right click below of image"}
+{"user_input": "right click left of menu now", "assistant_output": "right click left of menu"}
+{"user_input": "right click right of button please", "assistant_output": "right click right of button"}
+{"user_input": "right click above the text file", "assistant_output": "right click above of file|text"}
+{"user_input": "right click below the panel", "assistant_output": "right click below of panel"}
+{"user_input": "right click left to the text open", "assistant_output": "right click left of open|text"}
+{"user_input": "right click right to text close", "assistant_output": "right click right of close|text"}
+{"user_input": "right click on top of the sidebar", "assistant_output": "right click above of sidebar"}
+{"user_input": "right click under the navigation", "assistant_output": "right click below of navigation"}
+{"user_input": "right click left of text cancel", "assistant_output": "right click left of cancel|text"}
+{"user_input": "right click right of text apply", "assistant_output": "right click right of apply|text"}
+{"user_input": "right click above the object", "assistant_output": "right click above of object"}
+{"user_input": "right click below text settings", "assistant_output": "right click below of settings|text"}
+{"user_input": "right click left of the tab", "assistant_output": "right click left of tab"}
+{"user_input": "right click right of the link", "assistant_output": "right click right of link"}
+{"user_input": "right click above text username", "assistant_output": "right click above of username|text"}
+{"user_input": "right click below of text password", "assistant_output": "right click below of password|text"}
+{"user_input": "right click left to the field", "assistant_output": "right click left of field"}
+{"user_input": "right click right to the checkbox", "assistant_output": "right click right of checkbox"}
+{"user_input": "right click on top of text title", "assistant_output": "right click above of title|text"}
+{"user_input": "right click under the list", "assistant_output": "right click below of list"}
+{"user_input": "right click left of the text edit", "assistant_output": "right click left of edit|text"}
+{"user_input": "right click right of the text view", "assistant_output": "right click right of view|text"}
+{"user_input": "right click above the container", "assistant_output": "right click above of container"}
+{"user_input": "right click below the text area", "assistant_output": "right click below of area|text"}
+{"user_input": "right click left of element", "assistant_output": "right click left of element"}
+{"user_input": "right click right of widget", "assistant_output": "right click right of widget"}
+
+
+// ---------------------------- SPATIAL double click ----------------------------
+{"user_input": "double click left of main menu", "assistant_output": "double click left of main menu"}
+{"user_input": "double click right of save button", "assistant_output": "double click right of save button"}
+{"user_input": "double click above the search box", "assistant_output": "double click above of search box"}
+{"user_input": "double click below the header text", "assistant_output": "double click below of header text"}
+{"user_input": "double click left to the icon", "assistant_output": "double click left of icon"}
+{"user_input": "double click right to the logo", "assistant_output": "double click right of logo"}
+{"user_input": "double click on top of the window", "assistant_output": "double click above of window"}
+{"user_input": "double click under the toolbar", "assistant_output": "double click below of toolbar"}
+{"user_input": "double click left of the text submit", "assistant_output": "double click left of submit|text"}
+{"user_input": "double click right of text start", "assistant_output": "double click right of start|text"}
+{"user_input": "double click above of the image", "assistant_output": "double click above of image"}
+{"user_input": "double click below of menu now", "assistant_output": "double click below of menu"}
+{"user_input": "double click left of button please", "assistant_output": "double click left of button"}
+{"user_input": "double click right of text file", "assistant_output": "double click right of file|text"}
+{"user_input": "double click above the panel", "assistant_output": "double click above of panel"}
+
+// ---------------------------- SPATIAL shift-left click ----------------------------
+{"user_input": "shift left click left of main menu", "assistant_output": "shift left click left of main menu"}
+{"user_input": "shift left click right of save button", "assistant_output": "shift left click right of save button"}
+{"user_input": "shift left click above the search box", "assistant_output": "shift left click above of search box"}
+{"user_input": "shift left click below the header text", "assistant_output": "shift left click below of header text"}
+{"user_input": "shift left click left to the icon", "assistant_output": "shift left click left of icon"}
+{"user_input": "shift left click right to the logo", "assistant_output": "shift left click right of logo"}
+{"user_input": "shift left click on top of the window", "assistant_output": "shift left click above of window"}
+{"user_input": "shift left click under the toolbar", "assistant_output": "shift left click below of toolbar"}
+{"user_input": "shift left click left of the text submit", "assistant_output": "shift left click left of submit|text"}
+{"user_input": "shift left click right of text start", "assistant_output": "shift left click right of start|text"}
+{"user_input": "shift left click above of the image", "assistant_output": "shift left click above of image"}
+{"user_input": "shift left click below of menu now", "assistant_output": "shift left click below of menu"}
+{"user_input": "shift left click left of button please", "assistant_output": "shift left click left of button"}
+{"user_input": "shift left click right of text file", "assistant_output": "shift left click right of file|text"}
+{"user_input": "shift left click above the panel", "assistant_output": "shift left click above of panel"}
+
+// ---------------------------- SPATIAL shift-right click ----------------------------
+{"user_input": "shift right click left of main menu", "assistant_output": "shift right click left of main menu"}
+{"user_input": "shift right click right of save button", "assistant_output": "shift right click right of save button"}
+{"user_input": "shift right click above the search box", "assistant_output": "shift right click above of search box"}
+{"user_input": "shift right click below the header text", "assistant_output": "shift right click below of header text"}
+{"user_input": "shift right click left to the icon", "assistant_output": "shift right click left of icon"}
+{"user_input": "shift right click right to the logo", "assistant_output": "shift right click right of logo"}
+{"user_input": "shift right click on top of the window", "assistant_output": "shift right click above of window"}
+{"user_input": "shift right click under the toolbar", "assistant_output": "shift right click below of toolbar"}
+{"user_input": "shift right click left of the text submit", "assistant_output": "shift right click left of submit|text"}
+{"user_input": "shift right click right of text start", "assistant_output": "shift right click right of start|text"}
+{"user_input": "shift right click above of the image", "assistant_output": "shift right click above of image"}
+{"user_input": "shift right click below of menu now", "assistant_output": "shift right click below of menu"}
+{"user_input": "shift right click left of button please", "assistant_output": "shift right click left of button"}
+{"user_input": "shift right click right of text file", "assistant_output": "shift right click right of file|text"}
+{"user_input": "shift right click above the panel", "assistant_output": "shift right click above of panel"}
+
+// ---------------------------- SPATIAL middle click ----------------------------
+{"user_input": "middle click left of main menu", "assistant_output": "middle click left of main menu"}
+{"user_input": "middle click right of save button", "assistant_output": "middle click right of save button"}
+{"user_input": "middle click above the search box", "assistant_output": "middle click above of search box"}
+{"user_input": "middle click below the header text", "assistant_output": "middle click below of header text"}
+{"user_input": "middle click left to the icon", "assistant_output": "middle click left of icon"}

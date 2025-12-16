@@ -21,6 +21,8 @@ from events.ScreenCapture import ScreenCapture, ScreenCaptureEvent
 from events.Conditioning import Condition, ConditionProcessor
 from events.Variable import VariableEvent, VariableProcessor
 from events.Loop import LoopProcessor, LoopEvent
+from events.ToggleGPT import ToggleGPT
+from events.WaitFor import WaitForEvent, WaitForEventProcessor
 from class_models.Context import Context
 from class_models.Variable import Variable
 
@@ -37,7 +39,8 @@ keyboard = Keyboard(models.embd_func)
 mouse = Mouse()
 conditionProcessor = ConditionProcessor()
 variableProcessor = VariableProcessor()
-loopProcessor = LoopProcessor() 
+loopProcessor = LoopProcessor()
+waitForProcessor = WaitForEventProcessor()
 #print("pre embedding possible events", possible_events)
 event_embeds = embd_events(models.embd_func, possible_events)
 context_queue = deque()
@@ -67,7 +70,7 @@ n_retries = 4
 current_context = Context("", n_retries)
 recording_state = {"active": False, "contexts": [], "name": ""}
 recording_stack = [recording_state["contexts"]]
-use_GPT = False 
+use_GPT = False
 
 screen_capture = ScreenCapture()
 screenshot_box = None
@@ -123,7 +126,6 @@ def run_ocr(screenshot, offset, found_colors, number_only=False):
                     if color in found_colors 
                 ]for line in preds]
 
-        print("preds: ", preds)
         if number_only: preds = filter_numbers(preds)
         embd_lines = embd_ocr_lines(models.embd_func, preds, found_colors)
         prev_screenshot, prev_preds, prev_embd_lines, prev_hash = screenshot, preds, embd_lines, image_hash(screenshot)
@@ -132,11 +134,13 @@ def run_ocr(screenshot, offset, found_colors, number_only=False):
 
 def apply_gpt_to_context(ctx):
     if models.gpt_func:
-        res = models.gpt_func(ctx).split("\n")
-        ctx_processed = res[0].strip() if res else ""
-        for line in res[1:]:
-            context_queue.append(line.strip())
-        return ctx_processed
+        res = models.gpt_func(ctx)
+        if res:
+            res = res.split('\n')
+            ctx_processed = res[0].strip() if res else ""
+            for line in res[1:]:
+                context_queue.append(line.strip())
+            return ctx_processed
     return ctx
 
 # ---- Main loop ----
@@ -177,12 +181,13 @@ while True:
 
         parsed_action_cache[orig_ctx] = parsed_action
         retry_target_cache[orig_ctx] = (target_text, found_colors)
+        print(">>>>>>>>>>>>> processed ctx:", ctx_processed)
     else:
         parsed_action = parsed_action_cache[orig_ctx]
         action_result = parsed_action["result"]
         target_text, found_colors = retry_target_cache[orig_ctx]
 
-    print(">>>>>>>>>>>>> context:", orig_ctx)
+    print(">>>>>>>>>>>>> orig context:", orig_ctx)
     print(">>>>>>>>>>>>> action:", action_result)
 
     # ---- Template check ----
@@ -198,6 +203,11 @@ while True:
     failed = True
     # ---- Event processing ----
     if not is_template:
+        if isinstance(action_result, ToggleGPT):
+            use_GPT = not use_GPT
+            print(f"GPT is now {'ON' if use_GPT else 'OFF'}. Say 'toggle GPT' to switch again.")
+            failed = False
+
         if isinstance(action_result, MouseButton):
             if target_text:
                 failed = mouse.process_event(parsed_action, target_text, variables, screenshot_box, found_colors, 
@@ -213,6 +223,11 @@ while True:
             if delay_s:
                 time.sleep(delay_s)
                 failed = False
+
+        elif isinstance(action_result, WaitForEvent):
+            if target_text:
+                failed = waitForProcessor.waitFor(action_result, target_text, found_colors, screenshot_box, 
+                                            embd_func=models.embd_func, run_ocr_func=run_ocr)
 
         elif isinstance(action_result, ScreenCaptureEvent):
             print(action_result)

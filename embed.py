@@ -9,4 +9,6 @@ def get_emb_model():
     return SentenceTransformer(STModel_name)
 
 def embed_text(texts, _model):
-    return _model.encode(texts, batch_size=32, normalize_embeddings=True)
+    print("EMBEDDING CALL...")
+    res = _model.encode(texts, batch_size=32, normalize_embeddings=True)
+    return res

@@ -19,7 +19,7 @@ def setup_gpt_model():
         trust_remote_code=True,
         device_map="auto"
     )
-    _model = PeftModel.from_pretrained(base_model, "./qwen-domain-lora/training_20251206_034533/checkpoint-330")
+    _model = PeftModel.from_pretrained(base_model, "./qwen-domain-lora/training_20251216_044452/checkpoint-411")
     _model.eval()
 
     print(f"---- Hosting GPT model: {sum(p.numel() for p in _model.parameters())} params ----")
@@ -33,6 +33,7 @@ def generate(user_input: str, _model, _tokenizer, _get_prompt) -> str:
 
     prompt = _get_prompt(user_input)
     inputs = _tokenizer(prompt, return_tensors="pt").to(_model.device)
+    print("GPT CALL..")
     with torch.no_grad():
         outputs = _model.generate(**inputs, max_new_tokens=50, do_sample=True, temperature=0.01, top_p=0.1)
     text = _tokenizer.decode(outputs[0], skip_special_tokens=True)

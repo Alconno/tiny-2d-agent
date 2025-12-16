@@ -14,11 +14,21 @@ class AccessModels():
     def safe_request(self, msg):
         try:
             self.socket.send(pickle.dumps(msg))
-            resp = pickle.loads(self.socket.recv())
-            return resp
+            resp = self.socket.recv()
+            return pickle.loads(resp)
+
         except zmq.error.Again:
-            print("Server not available or timed out")
-            return None
+            print("ZMQ timeout — resetting socket")
+
+            # HARD RESET (required)
+            self.socket.close(linger=0)
+            context = zmq.Context.instance()
+            self.socket = context.socket(zmq.REQ)
+            self.socket.connect("tcp://127.0.0.1:5555")
+            self.socket.RCVTIMEO = 45000
+            self.socket.SNDTIMEO = 45000
+
+        return None
 
     def ocr_func(self, img, ocr_crop_offset):
         return self.safe_request({"cmd": "ocr", "img": img, "ocr_crop_offset": ocr_crop_offset})

@@ -133,51 +133,55 @@ def extract_action(context_text, event_embeds, embd_func, max_n=8, boost_alpha=0
     return best if best["score"] > 0.6 else None
 
 
-
 def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=False):
-    max_n = 6
     boost_alpha = 0.2
     color_boost = 1.15
     color_penalty = 0.85
 
-    words = ctx.lower().split()
-    spans = [" ".join(words[i:i+n]) for n in range(1, max_n+1) for i in range(len(words)-n+1)]
-    if not spans: return None
+    ctx = ctx.lower().strip()
+    if not ctx:
+        return None
 
-    span_embs = embd_func(spans)
-    
+    ctx_emb = embd_func([ctx])
+    if ctx_emb is None:
+        return None
+    ctx_emb = ctx_emb[0]
+
     if color_list:
         color_list = [c.lower() for c in color_list]
     if return_all:
         results = []
 
-    best = {"score": -1, "span": None, "result": None}
-    for span, s_emb in zip(spans, span_embs):
-        for line in embd_lines:
-            for item in line:
-                sim = hybrid_score(span, item["text"], s_emb, item["embedding"])
+    best = {"score": -1, "query": ctx, "result": None}
 
-                # boost for exact span match
-                if span == item["text"].lower():
-                    sim *= 1 + boost_alpha * (len(span.split()) - 1)
+    for line in embd_lines:
+        for item in line:
+            item_text = item["text"].lower()
 
-                # color adjustments
-                if color_list and item.get("color"):
-                    sim *= color_boost if item["color"].lower() in color_list else color_penalty
+            sim = hybrid_score(ctx, item_text, ctx_emb, item["embedding"])
 
-                if return_all:
-                    if sim > 0.6:
-                        r = {k: v for k, v in item.items() if k != "embedding"}
-                        results.append({"score": sim, "span": span, "result": r})
-                else:
-                    if sim > best["score"]:
-                        r = {k: v for k, v in item.items() if k != "embedding"}
-                        best.update({"score": sim, "span": span, "result": r})
+            # Boost ONLY if full query matches
+            if ctx == item_text:
+                sim *= 1 + boost_alpha * (len(ctx.split()) - 1)
+
+            # Color adjustments
+            if color_list and item.get("color"):
+                sim *= color_boost if item["color"].lower() in color_list else color_penalty
+
+            if return_all:
+                if sim > 0.6:
+                    r = {k: v for k, v in item.items() if k != "embedding"}
+                    results.append({"score": sim, "query": ctx, "result": r})
+            else:
+                if sim > best["score"]:
+                    r = {k: v for k, v in item.items() if k != "embedding"}
+                    best.update({"score": sim, "query": ctx, "result": r})
 
     if return_all:
         return results if results else None
     else:
         return best if best["score"] > 0.6 else None
+    
 
 def extract_box_target_with_more_ctx(ctxs, embd_lines, embd_func, color_list=None, return_all=False):
     if return_all:

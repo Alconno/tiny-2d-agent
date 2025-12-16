@@ -474,6 +474,71 @@
 {"user_input": "middle click all variables called stamina please", "assistant_output": "middle click all variable stamina"}
 {"user_input": "click all vars labeled timer now", "assistant_output": "click all variable timer"}
 {"user_input": "right click every variable named reward for me", "assistant_output": "right click all variable reward"}
+{"user_input": "can you use shift left click for all the variables called count", "assistant_output": "shift left click all variable count"}
+{"user_input": "i need you to shift left click every single variable named score", "assistant_output": "shift left click all variable score"}
+{"user_input": "shift and left click all the variables labeled lives", "assistant_output": "shift left click all variable lives"}
+{"user_input": "could you please do shift left click on all money variables", "assistant_output": "shift left click all variable money"}
+{"user_input": "shift left click all the theme tagged variables for me", "assistant_output": "shift left click all variable theme"}
+{"user_input": "shift left click all variables called layout", "assistant_output": "shift left click all variable layout"}
+{"user_input": "shift left click all variables named category", "assistant_output": "shift left click all variable category"}
+{"user_input": "shift left click all variables named type", "assistant_output": "shift left click all variable type"}
+{"user_input": "shift left click all variables labeled version", "assistant_output": "shift left click all variable version"}
+{"user_input": "shift left click all variables called priority", "assistant_output": "shift left click all variable priority"}
+{"user_input": "shift left click all variables named state", "assistant_output": "shift left click all variable state"}
+{"user_input": "shift left click all variables for mode", "assistant_output": "shift left click all variable mode"}
+{"user_input": "shift left click all variables named token", "assistant_output": "shift left click all variable token"}
+{"user_input": "shift left click all variables named hash", "assistant_output": "shift left click all variable hash"}
+{"user_input": "shift left click all variables called pin", "assistant_output": "shift left click all variable pin"}
+{"user_input": "shift left click all variables named count2", "assistant_output": "shift left click all variable count2"}
+{"user_input": "shift left click all variables named metric", "assistant_output": "shift left click all variable metric"}
+{"user_input": "shift left click all variables called threshold", "assistant_output": "shift left click all variable threshold"}
+{"user_input": "shift left click all variables for limit", "assistant_output": "shift left click all variable limit"}
+{"user_input": "shift left click all variables labeled cap", "assistant_output": "shift left click all variable cap"}
+{"user_input": "shift left click all variables for quota", "assistant_output": "shift left click all variable quota"}
+{"user_input": "shift left click all variables named index", "assistant_output": "shift left click all variable index"}
+{"user_input": "shift left click all variables called slot", "assistant_output": "shift left click all variable slot"}
+{"user_input": "shift left click journal variables", "assistant_output": "shift left click all variable journal"}
+{"user_input": "apply shift left click to entry variables", "assistant_output": "shift left click all variable entry"}
+{"user_input": "perform shift left click on quest variables", "assistant_output": "shift left click all variable quest"}
+{"user_input": "shift left click all mission variables now", "assistant_output": "shift left click all variable mission"}
+{"user_input": "do a shift left click on each task variable", "assistant_output": "shift left click all variable task"}
+{"user_input": "can you use shift right click for all the variables called count", "assistant_output": "shift right click all variable count"}
+{"user_input": "i need you to shift right click every single variable named score", "assistant_output": "shift right click all variable score"}
+{"user_input": "shift and right click all the variables labeled lives", "assistant_output": "shift right click all variable lives"}
+{"user_input": "could you please do shift right click on all money variables", "assistant_output": "shift right click all variable money"}
+{"user_input": "shift right click all the theme tagged variables for me", "assistant_output": "shift right click all variable theme"}
+{"user_input": "shift right click all variables called layout", "assistant_output": "shift right click all variable layout"}
+{"user_input": "shift right click all variables named category", "assistant_output": "shift right click all variable category"}
+{"user_input": "shift right click all variables named type", "assistant_output": "shift right click all variable type"}
+{"user_input": "shift right click all variables labeled version", "assistant_output": "shift right click all variable version"}
+{"user_input": "shift right click all variables called priority", "assistant_output": "shift right click all variable priority"}
+{"user_input": "shift right click all variables named state", "assistant_output": "shift right click all variable state"}
+{"user_input": "shift right click all variables for mode", "assistant_output": "shift right click all variable mode"}
+{"user_input": "shift right click all variables named token", "assistant_output": "shift right click all variable token"}
+{"user_input": "shift right click all variables named hash", "assistant_output": "shift right click all variable hash"}
+{"user_input": "shift right click all variables called pin", "assistant_output": "shift right click all variable pin"}
+{"user_input": "shift right click all variables named count2", "assistant_output": "shift right click all variable count2"}
+{"user_input": "shift right click all variables named metric", "assistant_output": "shift right click all variable metric"}
+{"user_input": "shift right click all variables called threshold", "assistant_output": "shift right click all variable threshold"}
+{"user_input": "shift right click all variables for limit", "assistant_output": "shift right click all variable limit"}
+{"user_input": "shift right click all variables labeled cap", "assistant_output": "shift right click all variable cap"}
+{"user_input": "shift right click all variables for quota", "assistant_output": "shift right click all variable quota"}
+{"user_input": "shift right click all variables named index", "assistant_output": "shift right click all variable index"}
+{"user_input": "use shift right to click every variable named count", "assistant_output": "shift right click all variable count"}
+{"user_input": "perform shift right click on all variables called score", "assistant_output": "shift right click all variable score"}
+{"user_input": "shift right click each variable labeled lives", "assistant_output": "shift right click all variable lives"}
+{"user_input": "apply shift right click to all money variables", "assistant_output": "shift right click all variable money"}
+{"user_input": "execute shift right click on every theme variable", "assistant_output": "shift right click all variable theme"}
+{"user_input": "hey can you shift left click all the variables called health", "assistant_output": "shift left click all variable health"}
+{"user_input": "please shift left click every variable labeled mana", "assistant_output": "shift left click all variable mana"}
+{"user_input": "could you shift left click all variables for energy", "assistant_output": "shift left click all variable energy"}
+{"user_input": "shift left click all the variables named level if you can", "assistant_output": "shift left click all variable level"}
+{"user_input": "do shift left click all variables called points now", "assistant_output": "shift left click all variable points"}
+{"user_input": "hey can you shift right click all the variables called health", "assistant_output": "shift right click all variable health"}
+{"user_input": "please shift right click every variable labeled mana", "assistant_output": "shift right click all variable mana"}
+{"user_input": "could you shift right click all variables for energy", "assistant_output": "shift right click all variable energy"}
+{"user_input": "shift right click all the variables named level if you can", "assistant_output": "shift right click all variable level"}
+{"user_input": "do shift right click all variables called points now", "assistant_output": "shift right click all variable points"}
 {"user_input": "double click notes dot txt", "assistant_output": "double click notes.txt"}
 {"user_input": "yo double click on music dot wav file please", "assistant_output": "double click music.wav"}
 {"user_input": "double click notes dot txt file now", "assistant_output": "double click notes.txt"}
@@ -894,6 +959,186 @@
 {"user_input": "Right click white link", "assistant_output": "right click white link"}
 {"user_input": "Right click orange icon", "assistant_output": "right click orange icon"}
 {"user_input": "Right click purple menu now", "assistant_output": "right click purple menu"}
+{"user_input": "click left of main menu", "assistant_output": "click left of main menu"}
+{"user_input": "click right of save button", "assistant_output": "click right of save button"}
+{"user_input": "click above the search box", "assistant_output": "click above of search box"}
+{"user_input": "click below the header text", "assistant_output": "click below of header text"}
+{"user_input": "click left to the icon", "assistant_output": "click left of icon"}
+{"user_input": "click right to the logo", "assistant_output": "click right of logo"}
+{"user_input": "click on top of the window", "assistant_output": "click above of window"}
+{"user_input": "click under the toolbar", "assistant_output": "click below of toolbar"}
+{"user_input": "click left of the text submit", "assistant_output": "click left of submit|text"}
+{"user_input": "click right of the object", "assistant_output": "click right of object"}
+{"user_input": "click above text start", "assistant_output": "click above of start|text"}
+{"user_input": "click below of the image", "assistant_output": "click below of image"}
+{"user_input": "click left of menu now", "assistant_output": "click left of menu"}
+{"user_input": "click right of button please", "assistant_output": "click right of button"}
+{"user_input": "click above the text file", "assistant_output": "click above of file|text"}
+{"user_input": "click below the panel", "assistant_output": "click below of panel"}
+{"user_input": "click left to the text open", "assistant_output": "click left of open|text"}
+{"user_input": "click right to text close", "assistant_output": "click right of close|text"}
+{"user_input": "click on top of the sidebar", "assistant_output": "click above of sidebar"}
+{"user_input": "click under the navigation", "assistant_output": "click below of navigation"}
+{"user_input": "click left of text cancel", "assistant_output": "click left of cancel|text"}
+{"user_input": "click right of text apply", "assistant_output": "click right of apply|text"}
+{"user_input": "click above the object", "assistant_output": "click above of object"}
+{"user_input": "click below text settings", "assistant_output": "click below of settings|text"}
+{"user_input": "click left of the tab", "assistant_output": "click left of tab"}
+{"user_input": "click right of the link", "assistant_output": "click right of link"}
+{"user_input": "click above text username", "assistant_output": "click above of username|text"}
+{"user_input": "click below of text password", "assistant_output": "click below of password|text"}
+{"user_input": "click left to the field", "assistant_output": "click left of field"}
+{"user_input": "click right to the checkbox", "assistant_output": "click right of checkbox"}
+{"user_input": "click on top of text title", "assistant_output": "click above of title|text"}
+{"user_input": "click under the list", "assistant_output": "click below of list"}
+{"user_input": "click left of the text edit", "assistant_output": "click left of edit|text"}
+{"user_input": "click right of the text view", "assistant_output": "click right of view|text"}
+{"user_input": "click above the container", "assistant_output": "click above of container"}
+{"user_input": "click below the text area", "assistant_output": "click below of area|text"}
+{"user_input": "click left of element", "assistant_output": "click left of element"}
+{"user_input": "click right of widget", "assistant_output": "click right of widget"}
+{"user_input": "click above text header", "assistant_output": "click above of header|text"}
+{"user_input": "click below of text footer", "assistant_output": "click below of footer|text"}
+{"user_input": "click left to the control", "assistant_output": "click left of control"}
+{"user_input": "click right to the component", "assistant_output": "click right of component"}
+{"user_input": "click on top of text label", "assistant_output": "click above of label|text"}
+{"user_input": "click under the section", "assistant_output": "click below of section"}
+{"user_input": "click left of the text input", "assistant_output": "click left of input|text"}
+{"user_input": "click right of the text output", "assistant_output": "click right of output|text"}
+{"user_input": "click above the frame", "assistant_output": "click above of frame"}
+{"user_input": "click below text comment", "assistant_output": "click below of comment|text"}
+{"user_input": "click left of divider", "assistant_output": "click left of divider"}
+{"user_input": "click right of separator", "assistant_output": "click right of separator"}
+{"user_input": "click to the left of the save icon", "assistant_output": "click left of save icon"}
+{"user_input": "click right of the settings menu", "assistant_output": "click right of settings menu"}
+{"user_input": "click on top of the login button", "assistant_output": "click above of login button"}
+{"user_input": "click below the search bar please", "assistant_output": "click below of search bar"}
+{"user_input": "click left of text username field", "assistant_output": "click left of username field|text"}
+{"user_input": "click right of the next button quickly", "assistant_output": "click right of next button"}
+{"user_input": "click above text email address", "assistant_output": "click above of email address|text"}
+{"user_input": "click under the main navigation bar", "assistant_output": "click below of main navigation bar"}
+{"user_input": "click left to the profile picture", "assistant_output": "click left of profile picture"}
+{"user_input": "click right to text confirmation", "assistant_output": "click right of confirmation|text"}
+{"user_input": "click on top of the video player", "assistant_output": "click above of video player"}
+{"user_input": "click below the status message", "assistant_output": "click below of status message"}
+{"user_input": "click left of the file upload area", "assistant_output": "click left of file upload area"}
+{"user_input": "click right of text send message", "assistant_output": "click right of send message|text"}
+{"user_input": "click above the attachment button", "assistant_output": "click above of attachment button"}
+{"user_input": "click below of text error message", "assistant_output": "click below of error message|text"}
+{"user_input": "click left of the drop down menu", "assistant_output": "click left of drop down menu"}
+{"user_input": "please click left of the notification bell", "assistant_output": "click left of notification bell"}
+{"user_input": "do click right of the compose button", "assistant_output": "click right of compose button"}
+{"user_input": "could you click above the text header please", "assistant_output": "click above of header|text"}
+{"user_input": "left click below the sidebar menu", "assistant_output": "click below of sidebar menu"}
+{"user_input": "hey click left of text draft saved", "assistant_output": "click left of draft saved|text"}
+{"user_input": "go ahead and click right of the settings gear", "assistant_output": "click right of settings gear"}
+{"user_input": "i need you to click above the main content area", "assistant_output": "click above of main content area"}
+{"user_input": "left click under the search results", "assistant_output": "click below of search results"}
+{"user_input": "please do click left to the profile avatar", "assistant_output": "click left of profile avatar"}
+{"user_input": "just click right to text unread messages", "assistant_output": "click right of unread messages|text"}
+{"user_input": "would you click on top of the video thumbnail", "assistant_output": "click above of video thumbnail"}
+{"user_input": "click below the text error warning now", "assistant_output": "click below of error warning|text"}
+{"user_input": "hey can you click left of the three dots menu", "assistant_output": "click left of three dots menu"}
+{"user_input": "please left click right of text loading please", "assistant_output": "click right of loading|text"}
+{"user_input": "do me a favor click above the color palette", "assistant_output": "click above of color palette"}
+{"user_input": "i want you to click under the chat bubble", "assistant_output": "click below of chat bubble"}
+{"user_input": "left click left of text document name", "assistant_output": "click left of document name|text"}
+{"user_input": "go click right of the maximize window button", "assistant_output": "click right of maximize window button"}
+{"user_input": "can you please click above the text input field", "assistant_output": "click above of input field|text"}
+{"user_input": "click below of the zoom in control", "assistant_output": "click below of zoom in control"}
+{"user_input": "please left click left to the mute microphone", "assistant_output": "click left of mute microphone"}
+{"user_input": "do click right to the text share post", "assistant_output": "click right of share post|text"}
+{"user_input": "left click on top of the text file path", "assistant_output": "click above of file path|text"}
+{"user_input": "click under the text status update", "assistant_output": "click below of status update|text"}
+{"user_input": "please do left click left of the trash can icon", "assistant_output": "click left of trash can icon"}
+{"user_input": "right click left of main menu", "assistant_output": "right click left of main menu"}
+{"user_input": "right click right of save button", "assistant_output": "right click right of save button"}
+{"user_input": "right click above the search box", "assistant_output": "right click above of search box"}
+{"user_input": "right click below the header text", "assistant_output": "right click below of header text"}
+{"user_input": "right click left to the icon", "assistant_output": "right click left of icon"}
+{"user_input": "right click right to the logo", "assistant_output": "right click right of logo"}
+{"user_input": "right click on top of the window", "assistant_output": "right click above of window"}
+{"user_input": "right click under the toolbar", "assistant_output": "right click below of toolbar"}
+{"user_input": "right click left of the text submit", "assistant_output": "right click left of submit|text"}
+{"user_input": "right click right of the object", "assistant_output": "right click right of object"}
+{"user_input": "right click above text start", "assistant_output": "right click above of start|text"}
+{"user_input": "right click below of the image", "assistant_output": "right click below of image"}
+{"user_input": "right click left of menu now", "assistant_output": "right click left of menu"}
+{"user_input": "right click right of button please", "assistant_output": "right click right of button"}
+{"user_input": "right click above the text file", "assistant_output": "right click above of file|text"}
+{"user_input": "right click below the panel", "assistant_output": "right click below of panel"}
+{"user_input": "right click left to the text open", "assistant_output": "right click left of open|text"}
+{"user_input": "right click right to text close", "assistant_output": "right click right of close|text"}
+{"user_input": "right click on top of the sidebar", "assistant_output": "right click above of sidebar"}
+{"user_input": "right click under the navigation", "assistant_output": "right click below of navigation"}
+{"user_input": "right click left of text cancel", "assistant_output": "right click left of cancel|text"}
+{"user_input": "right click right of text apply", "assistant_output": "right click right of apply|text"}
+{"user_input": "right click above the object", "assistant_output": "right click above of object"}
+{"user_input": "right click below text settings", "assistant_output": "right click below of settings|text"}
+{"user_input": "right click left of the tab", "assistant_output": "right click left of tab"}
+{"user_input": "right click right of the link", "assistant_output": "right click right of link"}
+{"user_input": "right click above text username", "assistant_output": "right click above of username|text"}
+{"user_input": "right click below of text password", "assistant_output": "right click below of password|text"}
+{"user_input": "right click left to the field", "assistant_output": "right click left of field"}
+{"user_input": "right click right to the checkbox", "assistant_output": "right click right of checkbox"}
+{"user_input": "right click on top of text title", "assistant_output": "right click above of title|text"}
+{"user_input": "right click under the list", "assistant_output": "right click below of list"}
+{"user_input": "right click left of the text edit", "assistant_output": "right click left of edit|text"}
+{"user_input": "right click right of the text view", "assistant_output": "right click right of view|text"}
+{"user_input": "right click above the container", "assistant_output": "right click above of container"}
+{"user_input": "right click below the text area", "assistant_output": "right click below of area|text"}
+{"user_input": "right click left of element", "assistant_output": "right click left of element"}
+{"user_input": "right click right of widget", "assistant_output": "right click right of widget"}
+{"user_input": "double click left of main menu", "assistant_output": "double click left of main menu"}
+{"user_input": "double click right of save button", "assistant_output": "double click right of save button"}
+{"user_input": "double click above the search box", "assistant_output": "double click above of search box"}
+{"user_input": "double click below the header text", "assistant_output": "double click below of header text"}
+{"user_input": "double click left to the icon", "assistant_output": "double click left of icon"}
+{"user_input": "double click right to the logo", "assistant_output": "double click right of logo"}
+{"user_input": "double click on top of the window", "assistant_output": "double click above of window"}
+{"user_input": "double click under the toolbar", "assistant_output": "double click below of toolbar"}
+{"user_input": "double click left of the text submit", "assistant_output": "double click left of submit|text"}
+{"user_input": "double click right of text start", "assistant_output": "double click right of start|text"}
+{"user_input": "double click above of the image", "assistant_output": "double click above of image"}
+{"user_input": "double click below of menu now", "assistant_output": "double click below of menu"}
+{"user_input": "double click left of button please", "assistant_output": "double click left of button"}
+{"user_input": "double click right of text file", "assistant_output": "double click right of file|text"}
+{"user_input": "double click above the panel", "assistant_output": "double click above of panel"}
+{"user_input": "shift left click left of main menu", "assistant_output": "shift left click left of main menu"}
+{"user_input": "shift left click right of save button", "assistant_output": "shift left click right of save button"}
+{"user_input": "shift left click above the search box", "assistant_output": "shift left click above of search box"}
+{"user_input": "shift left click below the header text", "assistant_output": "shift left click below of header text"}
+{"user_input": "shift left click left to the icon", "assistant_output": "shift left click left of icon"}
+{"user_input": "shift left click right to the logo", "assistant_output": "shift left click right of logo"}
+{"user_input": "shift left click on top of the window", "assistant_output": "shift left click above of window"}
+{"user_input": "shift left click under the toolbar", "assistant_output": "shift left click below of toolbar"}
+{"user_input": "shift left click left of the text submit", "assistant_output": "shift left click left of submit|text"}
+{"user_input": "shift left click right of text start", "assistant_output": "shift left click right of start|text"}
+{"user_input": "shift left click above of the image", "assistant_output": "shift left click above of image"}
+{"user_input": "shift left click below of menu now", "assistant_output": "shift left click below of menu"}
+{"user_input": "shift left click left of button please", "assistant_output": "shift left click left of button"}
+{"user_input": "shift left click right of text file", "assistant_output": "shift left click right of file|text"}
+{"user_input": "shift left click above the panel", "assistant_output": "shift left click above of panel"}
+{"user_input": "shift right click left of main menu", "assistant_output": "shift right click left of main menu"}
+{"user_input": "shift right click right of save button", "assistant_output": "shift right click right of save button"}
+{"user_input": "shift right click above the search box", "assistant_output": "shift right click above of search box"}
+{"user_input": "shift right click below the header text", "assistant_output": "shift right click below of header text"}
+{"user_input": "shift right click left to the icon", "assistant_output": "shift right click left of icon"}
+{"user_input": "shift right click right to the logo", "assistant_output": "shift right click right of logo"}
+{"user_input": "shift right click on top of the window", "assistant_output": "shift right click above of window"}
+{"user_input": "shift right click under the toolbar", "assistant_output": "shift right click below of toolbar"}
+{"user_input": "shift right click left of the text submit", "assistant_output": "shift right click left of submit|text"}
+{"user_input": "shift right click right of text start", "assistant_output": "shift right click right of start|text"}
+{"user_input": "shift right click above of the image", "assistant_output": "shift right click above of image"}
+{"user_input": "shift right click below of menu now", "assistant_output": "shift right click below of menu"}
+{"user_input": "shift right click left of button please", "assistant_output": "shift right click left of button"}
+{"user_input": "shift right click right of text file", "assistant_output": "shift right click right of file|text"}
+{"user_input": "shift right click above the panel", "assistant_output": "shift right click above of panel"}
+{"user_input": "middle click left of main menu", "assistant_output": "middle click left of main menu"}
+{"user_input": "middle click right of save button", "assistant_output": "middle click right of save button"}
+{"user_input": "middle click above the search box", "assistant_output": "middle click above of search box"}
+{"user_input": "middle click below the header text", "assistant_output": "middle click below of header text"}
+{"user_input": "middle click left to the icon", "assistant_output": "middle click left of icon"}
 {"user_input": "click top variable health", "assistant_output": "click variable health"}
 {"user_input": "right click the top var player", "assistant_output": "right click variable player"}
 {"user_input": "middle click best variable ammo", "assistant_output": "middle click variable ammo"}
@@ -1304,6 +1549,58 @@
 {"user_input": "Start loop employees data", "assistant_output": "start loop employees data as template"}
 {"user_input": "Start loop user accounts", "assistant_output": "start loop user accounts as template"}
 {"user_input": "Start loop items list available", "assistant_output": "start loop items list as template"}
+{"user_input": "start loop 3 times", "assistant_output": "start loop 3"}
+{"user_input": "start loop 7 times", "assistant_output": "start loop 7"}
+{"user_input": "start loop 8 times", "assistant_output": "start loop 8"}
+{"user_input": "start loop 9 times", "assistant_output": "start loop 9"}
+{"user_input": "start loop 10", "assistant_output": "start loop 10"}
+{"user_input": "start loop 20", "assistant_output": "start loop 20"}
+{"user_input": "start loop 30", "assistant_output": "start loop 30"}
+{"user_input": "start loop 40", "assistant_output": "start loop 40"}
+{"user_input": "start loop 50", "assistant_output": "start loop 50"}
+{"user_input": "start loop 100 times", "assistant_output": "start loop 100"}
+{"user_input": "start loop 200 times", "assistant_output": "start loop 200"}
+{"user_input": "start loop 300 times", "assistant_output": "start loop 300"}
+{"user_input": "start loop 400 times", "assistant_output": "start loop 400"}
+{"user_input": "start loop 500 times", "assistant_output": "start loop 500"}
+{"user_input": "start loop 1000", "assistant_output": "start loop 1000"}
+{"user_input": "start loop one time", "assistant_output": "start loop 1"}
+{"user_input": "start loop two times", "assistant_output": "start loop 2"}
+{"user_input": "start loop three times", "assistant_output": "start loop 3"}
+{"user_input": "start loop four", "assistant_output": "start loop 4"}
+{"user_input": "start loop five", "assistant_output": "start loop 5"}
+{"user_input": "start loop six", "assistant_output": "start loop 6"}
+{"user_input": "start loop seven", "assistant_output": "start loop 7"}
+{"user_input": "start loop eight times", "assistant_output": "start loop 8"}
+{"user_input": "start loop nine times", "assistant_output": "start loop 9"}
+{"user_input": "start loop ten times", "assistant_output": "start loop 10"}
+{"user_input": "loop 5 times", "assistant_output": "start loop 5"}
+{"user_input": "run loop 10", "assistant_output": "start loop 10"}
+{"user_input": "start loop 100", "assistant_output": "start loop 100"}
+{"user_input": "start a loop of 20 times", "assistant_output": "start loop 20"}
+{"user_input": "begin loop 15", "assistant_output": "start loop 15"}
+{"user_input": "execute loop 50 times", "assistant_output": "start loop 50"}
+{"user_input": "do loop 7 times", "assistant_output": "start loop 7"}
+{"user_input": "create loop 12", "assistant_output": "start loop 12"}
+{"user_input": "start looping 30 times", "assistant_output": "start loop 30"}
+{"user_input": "run a loop for 8 times", "assistant_output": "start loop 8"}
+{"user_input": "perform loop 25 times", "assistant_output": "start loop 25"}
+{"user_input": "start loop for 1000", "assistant_output": "start loop 1000"}
+{"user_input": "do a loop 4 times", "assistant_output": "start loop 4"}
+{"user_input": "begin a loop of 60", "assistant_output": "start loop 60"}
+{"user_input": "run 99 times loop", "assistant_output": "start loop 99"}
+{"user_input": "start loop with 17 iterations", "assistant_output": "start loop 17"}
+{"user_input": "loop through 42 times", "assistant_output": "start loop 42"}
+{"user_input": "start loop number 3", "assistant_output": "start loop 3"}
+{"user_input": "do loop for 11", "assistant_output": "start loop 11"}
+{"user_input": "begin loop 5000", "assistant_output": "start loop 5000"}
+{"user_input": "start loop 2 times now", "assistant_output": "start loop 2"}
+{"user_input": "run loop of 9", "assistant_output": "start loop 9"}
+{"user_input": "execute a loop 33 times", "assistant_output": "start loop 33"}
+{"user_input": "start loop for 75", "assistant_output": "start loop 75"}
+{"user_input": "begin loop 6 times", "assistant_output": "start loop 6"}
+{"user_input": "run loop 18 times", "assistant_output": "start loop 18"}
+{"user_input": "start loop 100000 times", "assistant_output": "start loop 100000"}
 {"user_input": "Uh start loop over the names here", "assistant_output": "start loop names as template"}
 {"user_input": "Okay, start looping through the items list", "assistant_output": "start loop items list as template"}
 {"user_input": "Hey, start loop over email addresses please", "assistant_output": "start loop email addresses as template"}
@@ -1324,6 +1621,36 @@
 {"user_input": "Uh, start loop over the invoices list for me", "assistant_output": "start loop invoices list as template"}
 {"user_input": "Hey, start looping through the document files please", "assistant_output": "start loop document files as template"}
 {"user_input": "Okay, start loop over all the customer names quickly", "assistant_output": "start loop customer names as template"}
+{"user_input": "hey can you start a loop for 3 times", "assistant_output": "start loop 3"}
+{"user_input": "please run loop 5 times", "assistant_output": "start loop 5"}
+{"user_input": "could you begin loop 10", "assistant_output": "start loop 10"}
+{"user_input": "i need you to start loop 15 times", "assistant_output": "start loop 15"}
+{"user_input": "do a loop of 20 for me", "assistant_output": "start loop 20"}
+{"user_input": "start looping 25 times please", "assistant_output": "start loop 25"}
+{"user_input": "run a loop that goes 30 times", "assistant_output": "start loop 30"}
+{"user_input": "can you execute loop 35 times", "assistant_output": "start loop 35"}
+{"user_input": "start the loop with 40 iterations", "assistant_output": "start loop 40"}
+{"user_input": "hey begin loop 45 times", "assistant_output": "start loop 45"}
+{"user_input": "please do loop 50", "assistant_output": "start loop 50"}
+{"user_input": "could you run loop 55 times", "assistant_output": "start loop 55"}
+{"user_input": "i want you to start loop 60", "assistant_output": "start loop 60"}
+{"user_input": "do a loop that repeats 65 times", "assistant_output": "start loop 65"}
+{"user_input": "start loop for 70 times please", "assistant_output": "start loop 70"}
+{"user_input": "hey run loop 75 times", "assistant_output": "start loop 75"}
+{"user_input": "begin a loop of 80 iterations", "assistant_output": "start loop 80"}
+{"user_input": "can you start loop 85", "assistant_output": "start loop 85"}
+{"user_input": "execute a loop for 90 times", "assistant_output": "start loop 90"}
+{"user_input": "start loop with 95 repetitions", "assistant_output": "start loop 95"}
+{"user_input": "run a loop that does 100 iterations", "assistant_output": "start loop 100"}
+{"user_input": "please start loop 110 times", "assistant_output": "start loop 110"}
+{"user_input": "could you do loop 120", "assistant_output": "start loop 120"}
+{"user_input": "i need a loop of 130 times", "assistant_output": "start loop 130"}
+{"user_input": "start loop 140 iterations", "assistant_output": "start loop 140"}
+{"user_input": "begin loop 150 times please", "assistant_output": "start loop 150"}
+{"user_input": "run loop 160 times", "assistant_output": "start loop 160"}
+{"user_input": "execute loop 170", "assistant_output": "start loop 170"}
+{"user_input": "start loop with 180 repetitions", "assistant_output": "start loop 180"}
+{"user_input": "do a loop for 190 times", "assistant_output": "start loop 190"}
 {"user_input": "Stop loop now", "assistant_output": "stop loop"}
 {"user_input": "Stop loop", "assistant_output": "stop loop"}
 {"user_input": "End the loop", "assistant_output": "stop loop"}
@@ -1414,6 +1741,16 @@
 {"user_input": "Hold on for 3.5 seconds", "assistant_output": "sleep 3.5"}
 {"user_input": "Sleep one point five seconds before continuing", "assistant_output": "sleep 1.5"}
 {"user_input": "Wait a moment, sleep 10 seconds", "assistant_output": "sleep 10"}
+{"user_input": "toggle GPT", "assistant_output": "toggle GPT"}
+{"user_input": "toggle gpt", "assistant_output": "toggle GPT"}
+{"user_input": "toggleGPT", "assistant_output": "toggle GPT"}
+{"user_input": "gpt toggle", "assistant_output": "toggle GPT"}
+{"user_input": "toggle g p t", "assistant_output": "toggle GPT"}
+{"user_input": "hey toggle GPT for me", "assistant_output": "toggle GPT"}
+{"user_input": "please toggle the GPT", "assistant_output": "toggle GPT"}
+{"user_input": "can you toggle GPT now", "assistant_output": "toggle GPT"}
+{"user_input": "i need you to toggle GPT", "assistant_output": "toggle GPT"}
+{"user_input": "toggle GPT please", "assistant_output": "toggle GPT"}
 {"user_input": "set variable called pro that has value 100", "assistant_output": "set variable pro|number|100"}
 {"user_input": "create variable count with value under 200", "assistant_output": "set variable count|number|<200"}
 {"user_input": "make variable score with red color >50", "assistant_output": "set variable score|number|red >50"}
@@ -1757,3 +2094,88 @@
 {"user_input": "define variable city Paris France now", "assistant_output": "set variable city|string|Paris"}
 {"user_input": "set variable language English please", "assistant_output": "set variable language|string|English"}
 {"user_input": "make variable subject Maths right", "assistant_output": "set variable subject|string|Maths"}
+{"user_input": "Wait for insane", "assistant_output": "Wait for insane"}
+{"user_input": "Wait for loading", "assistant_output": "Wait for loading"}
+{"user_input": "Wait for start button", "assistant_output": "Wait for start button"}
+{"user_input": "Wait for login", "assistant_output": "Wait for login"}
+{"user_input": "Wait for error message", "assistant_output": "Wait for error message"}
+{"user_input": "Wait for 10 seconds", "assistant_output": "Wait for 10"}
+{"user_input": "Wait 10 for finish", "assistant_output": "Wait for finish|10"}
+{"user_input": "Wait 20 for download", "assistant_output": "Wait for download|20"}
+{"user_input": "Wait 30 for ready", "assistant_output": "Wait for ready|30"}
+{"user_input": "Wait 5 for complete", "assistant_output": "Wait for complete|5"}
+{"user_input": "Wait 15 seconds for insane", "assistant_output": "Wait for insane|15"}
+{"user_input": "Wait 10 seconds for loading", "assistant_output": "Wait for loading|10"}
+{"user_input": "Wait 20 seconds for start", "assistant_output": "Wait for start|20"}
+{"user_input": "Wait 5 seconds for error", "assistant_output": "Wait for error|5"}
+{"user_input": "Wait thirty for done", "assistant_output": "Wait for done|30"}
+{"user_input": "Wait fifteen for success", "assistant_output": "Wait for success|15"}
+{"user_input": "Wait five for welcome", "assistant_output": "Wait for welcome|5"}
+{"user_input": "Wait twenty five for login screen", "assistant_output": "Wait for login screen|25"}
+{"user_input": "Wait 100 for main menu", "assistant_output": "Wait for main menu|100"}
+{"user_input": "Wait 500 for dashboard", "assistant_output": "Wait for dashboard|500"}
+{"user_input": "Wait for image logo", "assistant_output": "Wait for image logo"}
+{"user_input": "Wait for picture icon", "assistant_output": "Wait for image icon"}
+{"user_input": "Wait for icon home", "assistant_output": "Wait for image home"}
+{"user_input": "Wait 10 for image settings", "assistant_output": "Wait for image settings|10"}
+{"user_input": "Wait 20 for picture menu", "assistant_output": "Wait for image menu|20"}
+{"user_input": "Wait 30 for icon close", "assistant_output": "Wait for image close|30"}
+{"user_input": "Wait for text submit", "assistant_output": "Wait for submit"}
+{"user_input": "Wait for label username", "assistant_output": "Wait for username"}
+{"user_input": "Wait 15 for text password", "assistant_output": "Wait for password|15"}
+{"user_input": "Wait 10 for label email", "assistant_output": "Wait for email|10"}
+{"user_input": "Wait for this loading screen", "assistant_output": "Wait for this loading screen"}
+{"user_input": "Wait for that error message", "assistant_output": "Wait for that error message"}
+{"user_input": "Wait for my profile picture", "assistant_output": "Wait for my profile picture"}
+{"user_input": "Wait for the start button", "assistant_output": "Wait for the start button"}
+{"user_input": "Wait 25 for the login form", "assistant_output": "Wait for the login form|25"}
+{"user_input": "Wait for loading bar 15 seconds", "assistant_output": "Wait for loading bar|15"}
+{"user_input": "Wait 30 for progress indicator", "assistant_output": "Wait for progress indicator|30"}
+{"user_input": "Wait for save icon 10", "assistant_output": "Wait for image save|10"}
+{"user_input": "Wait for cancel button 5", "assistant_output": "Wait for cancel button|5"}
+{"user_input": "Wait 45 for next page", "assistant_output": "Wait for next page|45"}
+{"user_input": "Wait for image logo 20 seconds", "assistant_output": "Wait for image logo|20"}
+{"user_input": "Wait for picture settings 15", "assistant_output": "Wait for image settings|15"}
+{"user_input": "Wait for icon home 30", "assistant_output": "Wait for image home|30"}
+{"user_input": "Wait 60 for text confirmation", "assistant_output": "Wait for confirmation|60"}
+{"user_input": "Wait 120 for image splash", "assistant_output": "Wait for image splash|120"}
+{"user_input": "Wait for image loading spinner", "assistant_output": "Wait for image loading spinner"}
+{"user_input": "Wait 180 for main interface", "assistant_output": "Wait for main interface|180"}
+{"user_input": "Wait 2 for error popup", "assistant_output": "Wait for error popup|2"}
+{"user_input": "Wait 3 for warning message", "assistant_output": "Wait for warning message|3"}
+{"user_input": "Wait 4 for success notification", "assistant_output": "Wait for success notification|4"}
+{"user_input": "Wait 7 for info dialog", "assistant_output": "Wait for info dialog|7"}
+{"user_input": "Wait for the insane text", "assistant_output": "Wait for the insane text"}
+{"user_input": "Wait for insane label 25", "assistant_output": "Wait for insane label|25"}
+{"user_input": "Wait for insane image 40", "assistant_output": "Wait for image insane|40"}
+{"user_input": "Wait for picture insane 50", "assistant_output": "Wait for image insane|50"}
+{"user_input": "Wait 8 for text welcome", "assistant_output": "Wait for welcome|8"}
+{"user_input": "Wait 12 for image avatar", "assistant_output": "Wait for image avatar|12"}
+{"user_input": "Wait for notification bell", "assistant_output": "Wait for notification bell"}
+{"user_input": "Wait 6 for search bar", "assistant_output": "Wait for search bar|6"}
+{"user_input": "Wait 9 for profile picture", "assistant_output": "Wait for profile picture|9"}
+{"user_input": "Wait for text processing", "assistant_output": "Wait for processing"}
+{"user_input": "Wait 25 for image upload", "assistant_output": "Wait for image upload|25"}
+{"user_input": "Wait for the download complete", "assistant_output": "Wait for the download complete"}
+{"user_input": "Wait 18 for icon refresh", "assistant_output": "Wait for image refresh|18"}
+{"user_input": "Wait for installation finish", "assistant_output": "Wait for installation finish"}
+{"user_input": "Wait 22 for text connection", "assistant_output": "Wait for connection|22"}
+{"user_input": "Wait for picture dashboard", "assistant_output": "Wait for image dashboard"}
+{"user_input": "Wait 14 for text authentication", "assistant_output": "Wait for authentication|14"}
+{"user_input": "Wait for image header", "assistant_output": "Wait for image header"}
+{"user_input": "Wait 11 for icon settings", "assistant_output": "Wait for image settings|11"}
+{"user_input": "hey wait for insane", "assistant_output": "Wait for insane"}
+{"user_input": "wait up for loading please", "assistant_output": "Wait for loading"}
+{"user_input": "can you wait for start button", "assistant_output": "Wait for start button"}
+{"user_input": "wait a bit for login", "assistant_output": "Wait for login"}
+{"user_input": "wait ten seconds for insane", "assistant_output": "Wait for insane|10"}
+{"user_input": "wait fifteen for the loading bar", "assistant_output": "Wait for the loading bar|15"}
+{"user_input": "hold on for error message", "assistant_output": "Wait for error message"}
+{"user_input": "wait for like five seconds for insane", "assistant_output": "Wait for insane|5"}
+{"user_input": "hey wait twenty for download complete", "assistant_output": "Wait for download complete|20"}
+{"user_input": "wait for a sec for the icon", "assistant_output": "Wait for image the icon"}
+{"user_input": "wait for about ten seconds for insane", "assistant_output": "Wait for insane|10"}
+{"user_input": "can you wait for picture settings", "assistant_output": "Wait for image settings"}
+{"user_input": "wait for maybe fifteen for insane", "assistant_output": "Wait for insane|15"}
+{"user_input": "wait for the insane thing please", "assistant_output": "Wait for the insane thing"}
+{"user_input": "wait for thirty seconds for insane okay", "assistant_output": "Wait for insane|30"}
