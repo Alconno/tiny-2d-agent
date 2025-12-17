@@ -6,6 +6,9 @@ from rapidfuzz import fuzz
 import jellyfish
 import pyautogui
 from class_models.Context import Context
+import  cv2
+
+
 
 def normalize_word(s):
     s = s.lower()
@@ -94,16 +97,17 @@ def clean_target(target: str):
 
 
 
-def get_matching_str(input: str, cands: list, embd_func):
-    # Compares embd similarity between input str and candidate strings
-    # Returns best match found
-    cand_embds = zip(cands, embd_func(cands))
-    in_embd = embd_func(input)
-    
-    best = {"score": -1, "result": ""}
-    for (cand, cand_embd) in cand_embds:
-        sim = hybrid_score(input, cand, in_embd, cand_embd)
+def get_matching_str(ctx: str, cands: list, embd_func):
+    print("get_matching_str() input:", ctx)
+    assert isinstance(ctx, str)
+    assert all(isinstance(c, str) for c in cands)
 
+    in_embd = embd_func(ctx)
+    cand_embds = zip(cands, embd_func(cands))
+
+    best = {"score": -1, "result": ""}
+    for cand, cand_embd in cand_embds:
+        sim = hybrid_score(ctx, cand, in_embd, cand_embd)
         if sim > best["score"]:
             best = {"score": sim, "result": cand}
     return best["result"]
@@ -549,9 +553,6 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
     SAD = 350 # Spatial Awareness Distance - How far something is considered "next to" 
     x,y,w,h = bbox
     ox, oy = offset
-    x -= ox
-    y -= oy
-    bbox = (x, y, w, h)
     orig_box = bbox
 
     min_height, min_width = max(5, int(h*0.1)), max(7, int(w*0.1))
@@ -563,45 +564,55 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
     proj_dropout = 0.03 if is_object_detection else 0.1
     proj_gate = 0
 
-    def get_segments(bbox, horizontal=False):
+    # Requires (left, top, right, bottom) bbox format for PIL.crop()
+    def get_segments(bbox, horizontal=False, reverse=False):
         crop = np.array(screenshot.crop(bbox))
-        x_proj, y_proj = calculate_edges(crop, 
-                                        use_color=True if spatial_search_condition == "text" else False,
-                                        apply_blur=True,
-                                        edge_dropout=edge_dropout, 
-                                        proj_dropout=proj_dropout)
+
+        x_proj, y_proj = calculate_edges(
+            crop, use_color=is_text_detection, apply_blur=True,
+            edge_dropout=edge_dropout, proj_dropout=proj_dropout
+        )
         proj = x_proj if horizontal else y_proj
+        if reverse: proj = proj[::-1]
+
         diff = np.diff(np.pad((proj > proj_gate).astype(int), (1, 1)))
-        starts, ends = np.where(diff == 1)[0], np.where(diff == -1)[0]
+        starts = np.where(diff == 1)[0]
+        ends   = np.where(diff == -1)[0]
+
+        if reverse:
+            L = len(proj)
+            starts, ends = L - ends, L - starts
         return starts, ends
     
     while bbox == orig_box:
         if spatial_event & MouseButton.SPATIAL_ABOVE:
-            starts, ends = get_segments((x-ASA, max(0, y-SAD), x+w+ASA, y))
-            for y0,y1 in reversed(list(zip(starts,ends))):
-                if y1 >= y: continue
-                if (y1-y0) >= min_height:
-                    bbox = (x, y0, w, y1 - y0)
+            crop_left, crop_top, crop_right, crop_bottom = max(0, x-ASA-1), max(0, y-SAD), x+w+ASA+10, y
+            starts, ends = get_segments((crop_left, crop_top, crop_right, crop_bottom), reverse=True)
+            for y0, y1 in zip(starts, ends):
+                abs_y0, abs_y1 = y0 + crop_top, y1 + crop_top
+                if (abs_y1 - abs_y0) >= min_height:
+                    bbox = (x, abs_y0, w, abs_y1 - abs_y0)
                     break
         elif spatial_event & MouseButton.SPATIAL_BELOW:
-            starts, ends = get_segments((x-ASA, y+h, x+w+ASA, min(screenshot.height-min_height, y+h+SAD)))
-            for y0,y1 in zip(starts,ends):
-                if y0 <= 1 or y0 > screenshot.height - min_height: continue
-                if (y1-y0) >= min_height:
-                    bbox = (x, y0 + (y + h), w, y1 - y0)
+            starts, ends = get_segments((max(0, x-ASA-1), y+h, 
+                                         min(screenshot.width, x+w+ASA+10), min(screenshot.height, y+h+SAD)))
+            for y0, y1 in zip(starts, ends):
+                local_y = y0 + (int(y + h))
+                if local_y <= 1 or local_y > screenshot.height - min_height:
+                    continue
+                if (y1 - y0) >= min_height:
+                    bbox = (x, local_y, w, y1 - y0)
                     break
         elif spatial_event & MouseButton.SPATIAL_LEFT:
             crop_start_x = max(0, x - SAD)
-            starts, ends = get_segments((crop_start_x, y-ASA, x, y+h+ASA), horizontal=True)
-            for x0, x1 in reversed(list(zip(starts, ends))):
-                if x1 >= x: 
-                    continue
+            starts, ends = get_segments((crop_start_x, y-ASA, x, y+h+ASA), horizontal=True, reverse=True)
+            for x0, x1 in zip(starts, ends):
                 if (x1 - x0) >= min_width:
                     print(x0, x1)
                     bbox = (x0 + crop_start_x, y, x1 - x0, h)
                     break
         elif spatial_event & MouseButton.SPATIAL_RIGHT:
-            starts, ends = get_segments((x+w, y-ASA, min(screenshot.width, w+x+SAD), y+h+ASA), horizontal=True)
+            starts, ends = get_segments((x+w, y-ASA, min(screenshot.width, x+w+SAD), y+h+ASA), horizontal=True)
             for x0,x1 in zip(starts,ends):
                 if x0 <= 1 or x0 > screenshot.width - min_width: continue
                 if (x1-x0) >= min_width:
@@ -614,3 +625,17 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
     bx, by, bw, bh = bbox 
     return (bx + ox, by + oy, bw, bh)
 
+ 
+
+
+def apply_offset_to_var(offset, var):
+    ox, oy = offset
+    if var and var.value:
+        for val in var.value:
+            x, y, w, h = val['bbox']
+            val['bbox'] = (x + ox, y + oy, w, h)
+
+def apply_offset_to_bbox(offset, bbox):
+    ox,oy = offset
+    bbox[0] += ox
+    bbox[1] += oy

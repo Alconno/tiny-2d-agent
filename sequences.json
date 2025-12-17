@@ -251,16 +251,24 @@
     },
     "realm": {
         "steps": [
-            {"text": "click realm"},
+            {
+                "text": "click realm"
+            },
             {
                 "text": "start loop jaja as template",
                 "meta": {
                     "loop": "jaja"
                 },
                 "sub_contexts": [
-                    {"text": "focus 4, 135, 1093, 745"},
-                    {"text": "click {{jaja}}"},
-                    {"text": "sleep 3"}
+                    {
+                        "text": "focus 4, 135, 1093, 745"
+                    },
+                    {
+                        "text": "click {{jaja}}"
+                    },
+                    {
+                        "text": "sleep 3"
+                    }
                 ]
             }
         ],
@@ -278,7 +286,44 @@
     },
     "man": {
         "steps": [
-            {"text": "Wait for insane|15"}
+            {
+                "text": "Wait for insane|15"
+            }
         ]
+    },
+    "auction": {
+        "steps": [
+            {
+                "text": "Focus 18,174,1085,741"
+            },
+            {
+                "text": "Click below name."
+            },
+            {
+                "text": "Type Eternal Fire."
+            },
+            {
+                "text": "Click search."
+            },
+            {
+                "text": "Click white Eternal Fire."
+            },
+            {
+                "text": "press ctrl-A"
+            },
+            {
+                "text": "Press Backspace."
+            },
+            {
+                "text": "focus 842,268,904,630"
+            },
+            {
+                "text": "Set a variable named items with all values yellow below 40."
+            },
+            {
+                "text": "Click Top Variable Items."
+            }
+        ],
+        "vars": []
     }
 }

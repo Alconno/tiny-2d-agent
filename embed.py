@@ -10,5 +10,10 @@ def get_emb_model():
 
 def embed_text(texts, _model):
     print("EMBEDDING CALL...")
-    res = _model.encode(texts, batch_size=32, normalize_embeddings=True)
-    return res
+    assert isinstance(texts, (str, list)), type(texts)
+    if isinstance(texts, list):
+        assert all(isinstance(t, str) and t.strip() for t in texts)
+    else:
+        assert texts.strip()
+
+    return _model.encode(texts, batch_size=32, normalize_embeddings=True)

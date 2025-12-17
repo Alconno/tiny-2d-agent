@@ -27,7 +27,7 @@ class MouseButton(Flag):
 class Mouse:
     def __init__(self):
         from utility.dogshitretard import take_screenshot, get_target_image, expand_color_logic, extract_box_target_with_more_ctx
-        from utility.dogshitretard import get_matching_str, get_spatial_location
+        from utility.dogshitretard import get_matching_str, get_spatial_location, apply_offset_to_bbox
         from utility.image_matching import find_crop_in_image
 
         self.take_screenshot_func = take_screenshot
@@ -37,6 +37,7 @@ class Mouse:
         self.extract_box_target_with_more_ctx_func = extract_box_target_with_more_ctx
         self.get_matching_str_func = get_matching_str
         self.get_spatial_location = get_spatial_location
+        self.apply_offset_to_bbox = apply_offset_to_bbox
         self.controller = Controller()
         self.kb_controller = KeyboardController()
         self._map = {
@@ -119,7 +120,7 @@ class Mouse:
                 print("image not found:", ctx)
 
         elif action_result & MouseButton.VAR_ALL:
-            var_name = self.get_matching_str_func(ctx, list(variables.keys()), embd_func)
+            var_name = self.get_matching_str_func(ctx, list(variables.keys()), embd_func) 
             if var_name:
                 var_obj = variables.get(var_name)
                 var_values = var_obj.get("value") if isinstance(var_obj, dict) else getattr(var_obj, "value", []) or []
@@ -165,7 +166,8 @@ class Mouse:
             emb = run_ocr_func(screenshot, offset, found_colors)
             expanded = self.expand_color_logic_func(target_ctx=ctx)
             target = self.extract_box_target_with_more_ctx_func(expanded, emb, embd_func, found_colors)
-
+            if target['result'] and target['result']['bbox']:
+                self.apply_offset_to_bbox(offset, target['result']['bbox'])
             print("target:", target)
             if target:
                 self.execute(parsed_action, target)

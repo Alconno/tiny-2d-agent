@@ -3,6 +3,7 @@ import os, re, time, threading
 from collections import deque
 from peft import PeftModel
 from access_models import AccessModels
+import tkinter
 
 # ---- Local / project modules ----
 from VoiceTranscriber import VoiceTranscriber
@@ -31,6 +32,7 @@ import logging
 logging.getLogger("ppocr").setLevel(logging.WARNING)
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+tkinter.NoDefaultRoot()
 
 # ---- Models & events ----
 models = AccessModels()
@@ -120,7 +122,6 @@ def run_ocr(screenshot, offset, found_colors, number_only=False):
         preds, embd_lines = prev_preds, prev_embd_lines
     else:
         preds = models.ocr_func(screenshot, offset)  
-        print("OCR PREDS: ", preds)
         if found_colors:
             preds = [[
                     (bbox, text, color) for bbox, text, color in line
@@ -240,7 +241,8 @@ while True:
                     failed = True
                 screenshot_box = tuple(nums)
             else:
-                _, screenshot_box = screen_capture.select_region()
+                bbox_xywh, bbox_coords  = screen_capture.select_region()
+                screenshot_box = bbox_coords
                 time.sleep(0.25)
                 current_context.text += " {},{},{},{}".format(*screenshot_box)
             print("current box: ", screenshot_box)

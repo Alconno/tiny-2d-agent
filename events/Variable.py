@@ -8,12 +8,13 @@ class VariableEvent(Flag):
 class VariableProcessor():
     def __init__(self):
         from utility.dogshitretard import expand_color_logic, extract_box_target_with_more_ctx,\
-                                        extract_numbers_target_with_more_ctx, take_screenshot
+                                        extract_numbers_target_with_more_ctx, take_screenshot, apply_offset_to_var
 
         self.take_screenshot_func = take_screenshot
         self.expand_color_logic_func = expand_color_logic
         self.extract_box_target_with_more_ctx_func = extract_box_target_with_more_ctx
         self.extract_numbers_target_with_more_ctx_func = extract_numbers_target_with_more_ctx
+        self.apply_offset = apply_offset_to_var
 
     
     # ctx input like "set var '<name> <type> <desc>'"
@@ -50,6 +51,8 @@ class VariableProcessor():
                 targets.sort(key=lambda x: x['score'], reverse=True) # descending
             
             var.value = targets
+            self.apply_offset(offset, var)
+
             return var
 
                     
