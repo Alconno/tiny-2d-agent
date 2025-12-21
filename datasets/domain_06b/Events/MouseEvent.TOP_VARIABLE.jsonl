@@ -96,3 +96,149 @@
 {"user_input": "right click the best number inside reposts", "assistant_output": "right click variable reposts"}
 {"user_input": "double click the top value in comments", "assistant_output": "double click variable comments"}
 {"user_input": "middle click the strongest value inside notifications", "assistant_output": "middle click variable notifications"}
+
+
+
+
+// Edge cases
+
+// "variable" appears as part of target name, not as keyword
+{"user_input": "click top variable variable health", "assistant_output": "Wrong input"}
+
+// Multiple variable-like words
+{"user_input": "click the variable top variable score", "assistant_output": "Wrong input"}
+
+// "var" as part of variable name (like in programming)
+{"user_input": "click top var var_name", "assistant_output": "click variable var_name"}
+
+// No variable name specified
+{"user_input": "click top variable", "assistant_output": "Wrong input"}
+{"user_input": "right click the best", "assistant_output": "Wrong input"}
+
+// Variable name is a common word that could be confused
+{"user_input": "click top variable the", "assistant_output": "Wrong input"}
+{"user_input": "right click best variable click", "assistant_output": "Wrong input"}
+
+// Nonsensical combinations
+{"user_input": "variable click top health", "assistant_output": "Wrong input"}
+{"user_input": "top click variable health", "assistant_output": "Wrong input"}
+
+// special character variables
+{"user_input": "click top variable health_2", "assistant_output": "click variable health_2"}
+{"user_input": "right click best variable score-1", "assistant_output": "right click variable score-1"}
+{"user_input": "double click top var player.x", "assistant_output": "double click variable player.x"}
+{"user_input": "middle click best variable $coins", "assistant_output": "middle click variable $coins"}
+{"user_input": "click top variable %complete", "assistant_output": "click variable %complete"}
+
+// mixed case variations
+{"user_input": "CLICK TOP VARIABLE HEALTH", "assistant_output": "click variable health"}
+{"user_input": "Right Click The Top Var Score", "assistant_output": "right click variable score"}
+{"user_input": "Double Click BEST VARIABLE Mana", "assistant_output": "double click variable mana"}
+
+// plural/singular inconsistencies
+{"user_input": "click top variable player health", "assistant_output": "click variable player health"}
+{"user_input": "right click best variable total score", "assistant_output": "right click variable total score"}
+{"user_input": "double click top var game speed", "assistant_output": "double click variable game speed"}
+
+// compound variable names with spaces
+{"user_input": "click top variable player health", "assistant_output": "click variable player health"}
+{"user_input": "right click best variable total score", "assistant_output": "right click variable total score"}
+{"user_input": "double click top var game speed", "assistant_output": "double click variable game speed"}
+
+// action type
+{"user_input": "top variable health", "assistant_output": "Wrong input"}
+
+// "variable" keyword but has "var" in name
+{"user_input": "click top variance", "assistant_output": "Wrong input"}
+
+// Wrong order
+{"user_input": "variable top click health", "assistant_output": "Wrong input"}
+
+// Extra words that break pattern
+{"user_input": "please click the top variable named health", "assistant_output": "click variable health"}
+
+// Too vague
+{"user_input": "click the thing", "assistant_output": "Wrong input"}
+
+// Missing "top/best" indicator
+{"user_input": "click variable health", "assistant_output": "click variable health"}
+
+// Wrong preposition
+{"user_input": "click top variable with health", "assistant_output": "Wrong input"}
+
+// Numeric
+{"user_input": "click top variable 100points", "assistant_output": "click variable 100points"}
+{"user_input": "right click best variable level_99", "assistant_output": "right click variable level_99"}
+{"user_input": "double click top var 2x_multiplier", "assistant_output": "double click variable 2x_multiplier"}
+
+
+// ---------------------------- SHIFT LEFT CLICK TOP VARIABLE ----------------------------
+{"user_input": "can you use shift left click for the top variable called count", "assistant_output": "shift left click top variable count"}
+{"user_input": "i need you to shift left click the best variable named score", "assistant_output": "shift left click top variable score"}
+{"user_input": "shift and left click the top variable labeled lives", "assistant_output": "shift left click top variable lives"}
+{"user_input": "could you please do shift left click on the top money variable", "assistant_output": "shift left click top variable money"}
+{"user_input": "shift left click the best theme tagged variable for me", "assistant_output": "shift left click top variable theme"}
+{"user_input": "shift left click the top variable called layout", "assistant_output": "shift left click top variable layout"}
+{"user_input": "shift left click the best variable named category", "assistant_output": "shift left click top variable category"}
+{"user_input": "shift left click the top variable named type", "assistant_output": "shift left click top variable type"}
+{"user_input": "shift left click the best variable labeled version", "assistant_output": "shift left click top variable version"}
+{"user_input": "shift left click the top variable called priority", "assistant_output": "shift left click top variable priority"}
+{"user_input": "shift left click the best variable named state", "assistant_output": "shift left click top variable state"}
+{"user_input": "shift left click the top variable for mode", "assistant_output": "shift left click top variable mode"}
+{"user_input": "shift left click the best variable named token", "assistant_output": "shift left click top variable token"}
+{"user_input": "shift left click the top variable named hash", "assistant_output": "shift left click top variable hash"}
+{"user_input": "shift left click the best variable called pin", "assistant_output": "shift left click top variable pin"}
+{"user_input": "shift left click the top variable named count2", "assistant_output": "shift left click top variable count2"}
+{"user_input": "shift left click the best variable named metric", "assistant_output": "shift left click top variable metric"}
+{"user_input": "shift left click the top variable called threshold", "assistant_output": "shift left click top variable threshold"}
+{"user_input": "shift left click the best variable for limit", "assistant_output": "shift left click top variable limit"}
+{"user_input": "shift left click the top variable labeled cap", "assistant_output": "shift left click top variable cap"}
+{"user_input": "shift left click the best variable for quota", "assistant_output": "shift left click top variable quota"}
+{"user_input": "shift left click the top variable named index", "assistant_output": "shift left click top variable index"}
+{"user_input": "shift left click the best variable called slot", "assistant_output": "shift left click top variable slot"}
+{"user_input": "shift left click the top journal variable", "assistant_output": "shift left click top variable journal"}
+{"user_input": "apply shift left click to the best entry variable", "assistant_output": "shift left click top variable entry"}
+{"user_input": "perform shift left click on the top quest variable", "assistant_output": "shift left click top variable quest"}
+{"user_input": "shift left click the best mission variable now", "assistant_output": "shift left click top variable mission"}
+{"user_input": "do a shift left click on the top task variable", "assistant_output": "shift left click top variable task"}
+
+// ---------------------------- SHIFT RIGHT CLICK TOP VARIABLE ----------------------------
+{"user_input": "can you use shift right click for the top variable called count", "assistant_output": "shift right click top variable count"}
+{"user_input": "i need you to shift right click the best variable named score", "assistant_output": "shift right click top variable score"}
+{"user_input": "shift and right click the top variable labeled lives", "assistant_output": "shift right click top variable lives"}
+{"user_input": "could you please do shift right click on the top money variable", "assistant_output": "shift right click top variable money"}
+{"user_input": "shift right click the best theme tagged variable for me", "assistant_output": "shift right click top variable theme"}
+{"user_input": "shift right click the top variable called layout", "assistant_output": "shift right click top variable layout"}
+{"user_input": "shift right click the best variable named category", "assistant_output": "shift right click top variable category"}
+{"user_input": "shift right click the top variable named type", "assistant_output": "shift right click top variable type"}
+{"user_input": "shift right click the best variable labeled version", "assistant_output": "shift right click top variable version"}
+{"user_input": "shift right click the top variable called priority", "assistant_output": "shift right click top variable priority"}
+{"user_input": "shift right click the best variable named state", "assistant_output": "shift right click top variable state"}
+{"user_input": "shift right click the top variable for mode", "assistant_output": "shift right click top variable mode"}
+{"user_input": "shift right click the best variable named token", "assistant_output": "shift right click top variable token"}
+{"user_input": "shift right click the top variable named hash", "assistant_output": "shift right click top variable hash"}
+{"user_input": "shift right click the best variable called pin", "assistant_output": "shift right click top variable pin"}
+{"user_input": "shift right click the top variable named count2", "assistant_output": "shift right click top variable count2"}
+{"user_input": "shift right click the best variable named metric", "assistant_output": "shift right click top variable metric"}
+{"user_input": "shift right click the top variable called threshold", "assistant_output": "shift right click top variable threshold"}
+{"user_input": "shift right click the best variable for limit", "assistant_output": "shift right click top variable limit"}
+{"user_input": "shift right click the top variable labeled cap", "assistant_output": "shift right click top variable cap"}
+{"user_input": "shift right click the best variable for quota", "assistant_output": "shift right click top variable quota"}
+{"user_input": "shift right click the top variable named index", "assistant_output": "shift right click top variable index"}
+{"user_input": "use shift right to click the best variable named count", "assistant_output": "shift right click top variable count"}
+{"user_input": "perform shift right click on the top variable called score", "assistant_output": "shift right click top variable score"}
+{"user_input": "shift right click the best variable labeled lives", "assistant_output": "shift right click top variable lives"}
+{"user_input": "apply shift right click to the top money variable", "assistant_output": "shift right click top variable money"}
+{"user_input": "execute shift right click on the best theme variable", "assistant_output": "shift right click top variable theme"}
+
+// ---------------------------- HUMAN LIKE SHIFT CLICKS TOP VARIABLE ----------------------------
+{"user_input": "hey can you shift left click the top variable called health", "assistant_output": "shift left click top variable health"}
+{"user_input": "please shift left click the best variable labeled mana", "assistant_output": "shift left click top variable mana"}
+{"user_input": "could you shift left click the top variable for energy", "assistant_output": "shift left click top variable energy"}
+{"user_input": "shift left click the best variable named level if you can", "assistant_output": "shift left click top variable level"}
+{"user_input": "do shift left click the top variable called points now", "assistant_output": "shift left click top variable points"}
+{"user_input": "hey can you shift right click the top variable called health", "assistant_output": "shift right click top variable health"}
+{"user_input": "please shift right click the best variable labeled mana", "assistant_output": "shift right click top variable mana"}
+{"user_input": "could you shift right click the top variable for energy", "assistant_output": "shift right click top variable energy"}
+{"user_input": "shift right click the best variable named level if you can", "assistant_output": "shift right click top variable level"}
+{"user_input": "do shift right click the top variable called points now", "assistant_output": "shift right click top variable points"}

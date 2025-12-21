@@ -40,3 +40,7 @@ qwen-*/added_tokens.json
 
 # Ignore init pyc (optional)
 **/__init__.pyc
+
+
+segmentation/segment_anything
+segmentation/sam_vit_h_4b8939.pth

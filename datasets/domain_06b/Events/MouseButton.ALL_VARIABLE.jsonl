@@ -111,9 +111,9 @@
 {"user_input": "shift and right click all the variables labeled lives", "assistant_output": "shift right click all variable lives"}
 {"user_input": "could you please do shift right click on all money variables", "assistant_output": "shift right click all variable money"}
 {"user_input": "shift right click all the theme tagged variables for me", "assistant_output": "shift right click all variable theme"}
-{"user_input": "shift right click all variables called layout", "assistant_output": "shift right click all variable layout"}
-{"user_input": "shift right click all variables named category", "assistant_output": "shift right click all variable category"}
-{"user_input": "shift right click all variables named type", "assistant_output": "shift right click all variable type"}
+{"user_input": "shift right click all vars called layout", "assistant_output": "shift right click all variable layout"}
+{"user_input": "shift right click all vars named category", "assistant_output": "shift right click all variable category"}
+{"user_input": "shift right click all var named type", "assistant_output": "shift right click all variable type"}
 {"user_input": "shift right click all variables labeled version", "assistant_output": "shift right click all variable version"}
 {"user_input": "shift right click all variables called priority", "assistant_output": "shift right click all variable priority"}
 {"user_input": "shift right click all variables named state", "assistant_output": "shift right click all variable state"}

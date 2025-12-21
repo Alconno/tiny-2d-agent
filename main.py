@@ -122,14 +122,10 @@ def run_ocr(screenshot, offset, found_colors, number_only=False):
         preds, embd_lines = prev_preds, prev_embd_lines
     else:
         preds = models.ocr_func(screenshot, offset)  
-        if found_colors:
-            preds = [[
-                    (bbox, text, color) for bbox, text, color in line
-                    if color in found_colors 
-                ]for line in preds]
 
+        print("found colors:", found_colors)
         if number_only: preds = filter_numbers(preds)
-        embd_lines = embd_ocr_lines(models.embd_func, preds, found_colors)
+        embd_lines = embd_ocr_lines(models.embd_func, preds)
         prev_screenshot, prev_preds, prev_embd_lines, prev_hash = screenshot, preds, embd_lines, image_hash(screenshot)
     return embd_lines
 
@@ -162,15 +158,28 @@ while True:
         time.sleep(0.1)
         continue
 
+    print("context meta: ", current_context.meta)
+
+    # ---- GPT Processing ----
     orig_ctx = current_context.text
-
-    # ---- GPT & action parsing (once per context) ----
-    if orig_ctx not in parsed_action_cache:
+    if current_context.meta is None:
+        current_context.meta = {}
+    if not current_context.meta.get("gpt_applied", False):
         ctx_processed = apply_gpt_to_context(orig_ctx) if use_GPT else orig_ctx
-        ctx_processed = re.sub(r"[.,;!?]", "", ctx_processed).strip()
+        current_context.meta["gpt_applied"] = True
+    else:
+        ctx_processed = orig_ctx
+    ctx_processed = re.sub(r"[.;!?]", "", ctx_processed).strip()
 
+
+    # ---- Action parsing (once per context) ----
+    if ctx_processed not in parsed_action_cache:
         found_colors = re.findall(color_pattern, ctx_processed, re.I)
         found_colors = [c.lower() for c in found_colors] or None
+
+        if found_colors:
+            ctx_processed = re.sub(color_pattern, "", ctx_processed, flags=re.I)
+            ctx_processed = re.sub(r"\s+", " ", ctx_processed).strip()
 
         parsed_action = extract_action(ctx_processed, event_embeds, models.embd_func)
         if not parsed_action:
@@ -181,16 +190,17 @@ while True:
         action_result = parsed_action["result"]
         target_text = extract_target_context(parsed_action.get("span",""), ctx_processed)
 
-        parsed_action_cache[orig_ctx] = parsed_action
-        retry_target_cache[orig_ctx] = (target_text, found_colors)
-        print(">>>>>>>>>>>>> processed ctx:", ctx_processed)
+        parsed_action_cache[ctx_processed] = parsed_action
+        retry_target_cache[ctx_processed] = (target_text, found_colors)
     else:
-        parsed_action = parsed_action_cache[orig_ctx]
+        parsed_action = parsed_action_cache[ctx_processed]
         action_result = parsed_action["result"]
-        target_text, found_colors = retry_target_cache[orig_ctx]
+        target_text, found_colors = retry_target_cache[ctx_processed]
 
-    print(">>>>>>>>>>>>> orig context:", orig_ctx)
-    print(">>>>>>>>>>>>> action:", action_result)
+
+    print(">>>>>>>>>> orig context:", ctx_processed)
+    print(">>>>>>>>>> action:", action_result)
+
 
     # ---- Template check ----
     is_template = re.match(
@@ -201,9 +211,10 @@ while True:
         print("You cannot use templates while not recording")
         current_context = Context()
         continue
+    
 
-    failed = True
     # ---- Event processing ----
+    failed = True
     if not is_template:
         if isinstance(action_result, ToggleGPT):
             use_GPT = not use_GPT
@@ -296,7 +307,9 @@ while True:
                 if passed:
                     failed = False
                     if current_context.sub_contexts and not recording_state["active"]:
-                        context_queue.extend(current_context.sub_contexts)
+                        for sub_ctx in reversed(current_context.sub_contexts):
+                            context_queue.appendleft(sub_ctx)
+                print("Condition ", "passed" if passed else "failed.")
         elif action_result == Condition.END_IF:
             if len(recording_stack) > 1: recording_stack.pop()
             failed = False
@@ -304,15 +317,15 @@ while True:
 
     # Retry logic 
     if failed:
-        retries[orig_ctx] = retries.get(orig_ctx, n_retries) - 1
-        if retries[orig_ctx] > 0:
-            print(f"Retrying {orig_ctx} ({retries[orig_ctx]} left)")
+        retries[ctx_processed] = retries.get(ctx_processed, n_retries) - 1
+        if retries[ctx_processed] > 0:
+            print(f"Retrying {ctx_processed} ({retries[ctx_processed]} left)")
             context_queue.appendleft(current_context)
         else:
-            print(f"Skipping {orig_ctx}")
-            retries.pop(orig_ctx, None)
-            parsed_action_cache.pop(orig_ctx, None)
-            retry_target_cache.pop(orig_ctx, None)
+            print(f"Skipping {ctx_processed}")
+            retries.pop(ctx_processed, None)
+            parsed_action_cache.pop(ctx_processed, None)
+            retry_target_cache.pop(ctx_processed, None)
 
         current_context = Context()
         time.sleep(1)

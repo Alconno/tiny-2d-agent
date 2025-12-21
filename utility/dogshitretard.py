@@ -7,8 +7,11 @@ import jellyfish
 import pyautogui
 from class_models.Context import Context
 import  cv2
-
-
+import io
+import base64
+from PIL import Image
+from utility.get_text_color import get_text_color
+from utility.color_to_text import get_color_name
 
 def normalize_word(s):
     s = s.lower()
@@ -27,10 +30,15 @@ def hybrid_score(span, item_text, span_emb, item_emb):
     fz = fuzz.ratio(a,b)/100
     return .45 * ph + 0.35 * fz + 0.20 * cos
 
+def base64_to_crop(b64_str):
+    img_bytes = base64.b64decode(b64_str)
+    pil_img = Image.open(io.BytesIO(img_bytes)).convert("RGB")
+    crop_array = np.array(pil_img)
+    return crop_array
 
 _emb_cache = {}  # key: text + str(box), value: embedding
 
-def embd_ocr_lines(embd_func, preds, use_color=False):
+def embd_ocr_lines(embd_func, preds):
     embd_lines = []
     to_encode, idxs = [], []
     lines_structure = []
@@ -39,32 +47,31 @@ def embd_ocr_lines(embd_func, preds, use_color=False):
         return None
 
     for line in preds:
-        if line is not None and len(line) > 0 and len(line[0]) != 3: 
+        if line is None or len(line) == 0 or len(line[0]) != 3: 
             print("embd_ocr_lines() => received wrong preds structure")
             continue
 
         entries = [None] * len(line)
-        for i, (box, text, text_color) in enumerate(line):
-            text = f"{text_color} {text}" if use_color else text
+        for i, (box, text, crop) in enumerate(line):
             key = text + "_" + "_".join(f"{b:.2f}" for b in box)
 
             if key in _emb_cache:
-                entries[i] = {"bbox": box, "text": text, "embedding": _emb_cache[key]}
+                entries[i] = {"bbox": box, "text": text, "embedding": _emb_cache[key], "crop": crop}
             else:
                 to_encode.append(text)
-                idxs.append((entries, i, key, box, text))
+                idxs.append((entries, i, key, box, text, crop))
         lines_structure.append(entries)
 
     if to_encode:
         embeddings = embd_func(to_encode)
-        for (entries, i, key, box, text), emb in zip(idxs, embeddings):
+        for (entries, i, key, box, text, crop), emb in zip(idxs, embeddings):
             _emb_cache[key] = emb
-            entries[i] = {"bbox": box, "text": text, "embedding": emb}
+            entries[i] = {"bbox": box, "text": text, "embedding": emb, "crop": crop}
 
     for entries in lines_structure:
         embd_lines.append([e for e in entries if e is not None])
 
-    return embd_lines # dict{'box':(x,y,w,h), 'text': txt or clr txt, 'embedding'}
+    return embd_lines
 
 
 def embd_events(embd_func, possible_events):
@@ -158,9 +165,11 @@ def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=F
 
     best = {"score": -1, "query": ctx, "result": None}
 
+
     for line in embd_lines:
         for item in line:
             item_text = item["text"].lower()
+            print(ctx, " : ", item_text)
 
             sim = hybrid_score(ctx, item_text, ctx_emb, item["embedding"])
 
@@ -169,8 +178,13 @@ def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=F
                 sim *= 1 + boost_alpha * (len(ctx.split()) - 1)
 
             # Color adjustments
-            if color_list and item.get("color"):
-                sim *= color_boost if item["color"].lower() in color_list else color_penalty
+            if sim > 0.6 and item.get("crop") and color_list:
+                print("Over 0.6: ", ctx, item_text, " => Running color detection")
+                np_crop = base64_to_crop(item["crop"])
+                color_rgb = get_text_color(np_crop)
+                color_text = get_color_name(color_rgb)
+                print("Detected color ", color_text, " for text: ", item_text)
+                sim *= color_boost if color_text in color_list else color_penalty
 
             if return_all:
                 if sim > 0.6:
@@ -185,27 +199,6 @@ def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=F
         return results if results else None
     else:
         return best if best["score"] > 0.6 else None
-    
-
-def extract_box_target_with_more_ctx(ctxs, embd_lines, embd_func, color_list=None, return_all=False):
-    if return_all:
-        all_results = []
-        for cctx in ctxs:
-            cand = extract_box_target(cctx, embd_lines, embd_func, color_list, return_all=True)
-            if cand:
-                all_results.extend(cand)
-        return all_results if all_results else None
-    else:
-        best = None
-        best_score = -1e9
-        for cctx in ctxs:
-            cand = extract_box_target(cctx, embd_lines, embd_func, color_list, return_all=False)
-            if cand:
-                score = cand.get("score", 0)
-                if score > best_score:
-                    best_score = score
-                    best = cand
-        return best
 
 
 
@@ -345,7 +338,7 @@ def get_target_image(embd_func, ctx, path="./clickable_images"):
     return osp.join(path, image_files[base.index(best["text"])])
 
 
-# Expands a context string that lists multiple colors joined by "or"/"and" 
+"""# Expands a context string that lists multiple colors joined by "or"/"and" 
 # into separate context strings for each color, keeping the surrounding text intact.
 # Example: "click red or blue button" -> ["click red button", "click blue button"]
 def expand_color_logic(target_ctx: str):
@@ -371,7 +364,7 @@ def expand_color_logic(target_ctx: str):
         results.append(new_ctx)
 
     return results
-
+"""
 
 
 import mss
@@ -453,97 +446,75 @@ def compare(sign, target, value):
     return value == target
 
 
-def extract_numbers_target_with_more_ctx(ctxs, embd_lines, embd_func, color_list, return_all=False):
-    results = []
+def extract_numbers_target(ctx, embd_lines, embd_func, color_list=None, return_all=False):
     color_list = color_list or []
+    results = []
 
-    for ctx in ctxs:
-        ctx_lower = ctx.lower().strip()
+    ctx_lower = ctx.lower().strip()
 
-        # If context is "all" or "all numbers", extract everything
-        if ctx_lower in ("all", "all numbers"):
-            for line in embd_lines:
-                for it in line:
-                    text = it["text"].strip()
-                    bbox = it["bbox"]
-                    if not text:
-                        continue
-                    tok = text.split()
-                    try:
-                        val = float(tok[-1])
-                    except:
-                        continue
-                    color = tok[0] if color_list and len(tok) == 2 and tok[0] in color_list else None
-                    results.append({
-                        "match": it["text"],
-                        "value": val,
-                        "color": color,
-                        "bbox": bbox
-                    })
-            continue
-
-        parts = ctx_lower.split()
-        rules = parse_sign_number(parts[-1] if len(parts) > 1 else parts[0])
-        if rules is None:
-            continue
-
-        # target color strings + embeddings
-        target_colors = [w for w in parts[:-1] if w in color_list]
-        target_embs = embd_func(target_colors) if target_colors else []
-
-        # gather candidate items
-        items = []
+    # "all" context: extract everything
+    if ctx_lower in ("all", "all numbers"):
         for line in embd_lines:
             for it in line:
-                text = it["text"].strip()
-                bbox = it["bbox"]
-                if not text:
-                    continue
-                tok = text.split()
-                color = tok[0] if color_list and len(tok) == 2 and tok[0] in color_list else None
                 try:
-                    val = float(tok[-1])
+                    val = float(it["text"].strip().split()[-1])
                 except:
                     continue
-                items.append((it, color, val, bbox))
-
-        # embed unique item colors
-        unique_colors = [c for c in {c for _, c, _, _ in items} if c]
-        item_embs = dict(zip(unique_colors, embd_func(unique_colors))) if unique_colors else {}
-
-        for it, item_color, val, bbox in items:
-            if target_colors:
-                if not item_color: continue
-                item_vec = item_embs.get(item_color)
-                if item_vec is None: continue
-                best = max(
-                    hybrid_score(tc, item_color, te, item_vec)
-                    for tc, te in zip(target_colors, target_embs)
-                )
-                if best < 0.65:
-                    continue
-
-            # numeric comparison
-            if all(compare(s, t, val) for s, t in rules):
                 results.append({
                     "match": it["text"],
                     "value": val,
-                    "color": item_color,
-                    "bbox": bbox
+                    "color": None,
+                    "bbox": it["bbox"],
+                    "crop": it.get("crop")
                 })
 
-    # Sort asc by top Y 
-    if results:
-        results.sort(key=lambda x: x['bbox'][1])
+    # parse rules for numeric comparison
+    parts = ctx_lower.split()
+    parts = [part.strip() for part in parts]
+    rules = parse_sign_number(parts[-1] if len(parts) > 1 else parts[0])
+    if rules is None:
+        return None
 
+    # collect candidates that pass numeric comparison
+    candidates = []
+    for line in embd_lines:
+        for it in line:
+            try:
+                val = float(it["text"].strip().split()[-1])
+            except:
+                continue
+            if not all(compare(s, t, val) for s, t in rules):
+                continue
+            np_crop = base64_to_crop(it.get("crop"))
+            color_text = get_color_name(get_text_color(np_crop)) if np_crop is not None else None
+            candidates.append({"item": it, "val": val, "color": color_text, "bbox": it["bbox"]})
+
+    # batch embed unique candidate colors
+    unique_colors = {c["color"] for c in candidates if c["color"] and color_list}
+    color_emb_map = dict(zip(unique_colors, embd_func(list(unique_colors)))) if unique_colors else {}
+
+    # filter by color similarity if color_list provided
+    for c in candidates:
+        color = c["color"]
+        if color_list and color:
+            vec = color_emb_map.get(color)
+            if not vec:
+                continue
+            if max(hybrid_score(cl, color, ce, vec) for cl, ce in zip(color_list, embd_func(list(color_list)))) < 0.65:
+                continue
+        results.append({
+            "match": c["item"]["text"],
+            "value": c["val"],
+            "color": color,
+            "bbox": c["bbox"],
+        })
+
+    results.sort(key=lambda x: x['bbox'][1]) if results else None
     if return_all:
         return results or None
     return max(results, key=lambda x: x["value"]) if results else None
 
 
-
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 
 
 from events.Mouse import MouseButton

@@ -26,15 +26,14 @@ class MouseButton(Flag):
 
 class Mouse:
     def __init__(self):
-        from utility.dogshitretard import take_screenshot, get_target_image, expand_color_logic, extract_box_target_with_more_ctx
+        from utility.dogshitretard import take_screenshot, get_target_image, extract_box_target
         from utility.dogshitretard import get_matching_str, get_spatial_location, apply_offset_to_bbox
         from utility.image_matching import find_crop_in_image
 
         self.take_screenshot_func = take_screenshot
         self.get_target_image_func = get_target_image
         self.find_crop_in_image_func = find_crop_in_image
-        self.expand_color_logic_func = expand_color_logic
-        self.extract_box_target_with_more_ctx_func = extract_box_target_with_more_ctx
+        self.extract_box_target = extract_box_target
         self.get_matching_str_func = get_matching_str
         self.get_spatial_location = get_spatial_location
         self.apply_offset_to_bbox = apply_offset_to_bbox
@@ -154,8 +153,7 @@ class Mouse:
             real_ctx = parts[0]
             spatial_search_condition = parts[1] or "object" # 'text' (color edge detection) or 'object'(defaut)(gray edge detection)
             
-            expanded = self.expand_color_logic_func(target_ctx=real_ctx)
-            target = self.extract_box_target_with_more_ctx_func(expanded, emb, embd_func, found_colors)
+            target = self.extract_box_target(ctx, emb, embd_func, found_colors)
 
             if target:
                 bbox = target["result"]["bbox"]
@@ -164,9 +162,8 @@ class Mouse:
 
         else:
             emb = run_ocr_func(screenshot, offset, found_colors)
-            expanded = self.expand_color_logic_func(target_ctx=ctx)
-            target = self.extract_box_target_with_more_ctx_func(expanded, emb, embd_func, found_colors)
-            if target['result'] and target['result']['bbox']:
+            target = self.extract_box_target(ctx, emb, embd_func, found_colors)
+            if target and target['result'] and target['result']['bbox']:
                 self.apply_offset_to_bbox(offset, target['result']['bbox'])
             print("target:", target)
             if target:

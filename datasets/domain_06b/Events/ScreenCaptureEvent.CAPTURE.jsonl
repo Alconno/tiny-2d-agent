@@ -55,3 +55,40 @@
 {"user_input": "capture left sidebar please", "assistant_output": "capture"}
 {"user_input": "screenshot right panel okay", "assistant_output": "capture"}
 {"user_input": "screen main window now", "assistant_output": "capture"}
+{"user_input": "Focus 18,174,1085,741", "assistant_output": "Focus 18,174,1085,741"}
+{"user_input": "Focus 842,268,904,630", "assistant_output": "Focus 842,268,904,630"}
+{"user_input": "Focus 0,0,1920,1080", "assistant_output": "Focus 0,0,1920,1080"}
+{"user_input": "Focus 100,200,300,400", "assistant_output": "Focus 100,200,300,400"}
+{"user_input": "Focus 50,75,800,600", "assistant_output": "Focus 50,75,800,600"}
+{"user_input": "Focus 120,340,560,780", "assistant_output": "Focus 120,340,560,780"}
+{"user_input": "Focus 15,25,400,300", "assistant_output": "Focus 15,25,400,300"}
+{"user_input": "Focus 250,360,1280,720", "assistant_output": "Focus 250,360,1280,720"}
+{"user_input": "Focus 10,10,500,500", "assistant_output": "Focus 10,10,500,500"}
+{"user_input": "Focus 600,400,1200,900", "assistant_output": "Focus 600,400,1200,900"}
+{"user_input": "Focus 30,40,700,800", "assistant_output": "Focus 30,40,700,800"}
+{"user_input": "Focus 150,225,1600,900", "assistant_output": "Focus 150,225,1600,900"}
+{"user_input": "Focus 5,5,1366,768", "assistant_output": "Focus 5,5,1366,768"}
+{"user_input": "Focus 200,300,1000,750", "assistant_output": "Focus 200,300,1000,750"}
+{"user_input": "Focus 45,60,1920,1200", "assistant_output": "Focus 45,60,1920,1200"}
+{"user_input": "Focus 75,90,1024,768", "assistant_output": "Focus 75,90,1024,768"}
+{"user_input": "Focus 320,240,1440,900", "assistant_output": "Focus 320,240,1440,900"}
+{"user_input": "Focus 12,34,567,890", "assistant_output": "Focus 12,34,567,890"}
+{"user_input": "Focus 99,88,777,666", "assistant_output": "Focus 99,88,777,666"}
+{"user_input": "Focus 123,456,789,1011", "assistant_output": "Focus 123,456,789,1011"}
+{"user_input": "Focus 404,303,2020,1616", "assistant_output": "Focus 404,303,2020,1616"}
+{"user_input": "Focus 720,480,1920,1080", "assistant_output": "Focus 720,480,1920,1080"}
+{"user_input": "Focus 80,160,640,480", "assistant_output": "Focus 80,160,640,480"}
+{"user_input": "Focus 22,33,444,555", "assistant_output": "Focus 22,33,444,555"}
+{"user_input": "Focus 256,144,1920,1080", "assistant_output": "Focus 256,144,1920,1080"}
+{"user_input": "Focus 180,270,900,600", "assistant_output": "Focus 180,270,900,600"}
+{"user_input": "Focus 66,77,888,999", "assistant_output": "Focus 66,77,888,999"}
+{"user_input": "Focus 111,222,333,444", "assistant_output": "Focus 111,222,333,444"}
+{"user_input": "Focus 420,360,1680,1050", "assistant_output": "Focus 420,360,1680,1050"}
+{"user_input": "Focus 19,84,1920,1200", "assistant_output": "Focus 19,84,1920,1200"}
+{"user_input": "Focus 1,2,3,4", "assistant_output": "Focus 1,2,3,4"}
+{"user_input": "Focus 9,9,9,9", "assistant_output": "Focus 0,0,0,0"}
+{"user_input": "Focus 9999,9999,9999,9999", "assistant_output": "Focus 9999,9999,9999,9999"}
+{"user_input": "Focus 123", "assistant_output": "Focus"}
+{"user_input": "Focus 10,20,30", "assistant_output": "focus"}
+{"user_input": "Focus 10,20,30,40,50", "assistant_output": "Focus 10,20,30,40"}
+{"user_input": "Focus a,b,c,d", "assistant_output": "focus"}

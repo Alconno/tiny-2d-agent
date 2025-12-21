@@ -7,13 +7,12 @@ class VariableEvent(Flag):
 
 class VariableProcessor():
     def __init__(self):
-        from utility.dogshitretard import expand_color_logic, extract_box_target_with_more_ctx,\
-                                        extract_numbers_target_with_more_ctx, take_screenshot, apply_offset_to_var
+        from utility.dogshitretard import extract_box_target,\
+                                        extract_numbers_target, take_screenshot, apply_offset_to_var
 
         self.take_screenshot_func = take_screenshot
-        self.expand_color_logic_func = expand_color_logic
-        self.extract_box_target_with_more_ctx_func = extract_box_target_with_more_ctx
-        self.extract_numbers_target_with_more_ctx_func = extract_numbers_target_with_more_ctx
+        self.extract_box_target = extract_box_target
+        self.extract_numbers_target = extract_numbers_target
         self.apply_offset = apply_offset_to_var
 
     
@@ -30,16 +29,15 @@ class VariableProcessor():
             var = Variable.extract_structured_var(ctx)
             is_num = var.type=="number" or var.type=="num"
 
-            emb = run_ocr_func(screenshot, offset, found_colors, number_only=is_num)
-            expanded_ctxs = self.expand_color_logic_func(target_ctx=var.desc)
+            emb_lines = run_ocr_func(screenshot, offset, found_colors, number_only=is_num)
             
             if is_num:
                 # Number
-                targets = self.extract_numbers_target_with_more_ctx_func(expanded_ctxs, emb, embd_func, found_colors, return_all=True)
+                targets = self.extract_numbers_target(ctx, emb_lines, embd_func, found_colors, return_all=True)
             else:
                 # String
                 # Will not include 'color' field in answer as its only used dynamically during embd matching
-                targets = self.extract_box_target_with_more_ctx_func(expanded_ctxs, emb, embd_func, found_colors, return_all=True)
+                targets = self.extract_box_target(ctx, emb_lines, embd_func, found_colors, return_all=True)
                 if targets == None: return var
                 targets = [
                     {'score': t['score'], 
@@ -61,8 +59,3 @@ class VariableProcessor():
         
             
 
-
-
-
-
-#target = self.extract_box_target_with_more_ctx_func(expanded, emb, embd_func, found_colors)

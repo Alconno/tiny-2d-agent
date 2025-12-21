@@ -7,26 +7,26 @@
 {"user_input": "Write lastName", "assistant_output": "write lastName"}
 {"user_input": "Write city", "assistant_output": "write city"}
 {"user_input": "Write zip code", "assistant_output": "write zip code"}
-{"user_input": "Write phone number", "assistant_output": "write phone number"}
-{"user_input": "Write street address", "assistant_output": "write street address"}
-{"user_input": "Write company name", "assistant_output": "write company name"}
-{"user_input": "Write job title", "assistant_output": "write job title"}
-{"user_input": "Write meeting notes", "assistant_output": "write meeting notes"}
-{"user_input": "Write project description", "assistant_output": "write project description"}
-{"user_input": "Write comments", "assistant_output": "write comments"}
-{"user_input": "Write feedback", "assistant_output": "write feedback"}
+{"user_input": "type phone number", "assistant_output": "write phone number"}
+{"user_input": "type street address", "assistant_output": "write street address"}
+{"user_input": "type company name", "assistant_output": "write company name"}
+{"user_input": "type job title", "assistant_output": "write job title"}
+{"user_input": "Type meeting notes", "assistant_output": "write meeting notes"}
+{"user_input": "Type project description", "assistant_output": "write project description"}
+{"user_input": "Type comments", "assistant_output": "write comments"}
+{"user_input": "Type feedback", "assistant_output": "write feedback"}
 {"user_input": "Write order ID", "assistant_output": "write order ID"}
 {"user_input": "Write client ID", "assistant_output": "write client ID"}
 {"user_input": "Write product name", "assistant_output": "write product name"}
 {"user_input": "Write username as variable", "assistant_output": "write username as template"}
-{"user_input": "Write email as template", "assistant_output": "write email as template"}
-{"user_input": "Write firstName as template", "assistant_output": "write firstName as template"}
-{"user_input": "Write lastName variable", "assistant_output": "write lastName as template"}
-{"user_input": "Write clientID as template", "assistant_output": "write clientID as template"}
+{"user_input": "Type email as template", "assistant_output": "write email as template"}
+{"user_input": "Type firstName as template", "assistant_output": "write firstName as template"}
+{"user_input": "Type lastName variable", "assistant_output": "write lastName as template"}
+{"user_input": "Type clientID as template", "assistant_output": "write clientID as template"}
 {"user_input": "Write sessionID variable", "assistant_output": "write sessionID as template"}
 {"user_input": "Write orderNumber as template", "assistant_output": "write orderNumber as template"}
 {"user_input": "Write description variable", "assistant_output": "write description as template"}
-{"user_input": "Write commentText as template", "assistant_output": "write commentText as template"}
+{"user_input": "Type commentText as template", "assistant_output": "write commentText as template"}
 {"user_input": "Write username123", "assistant_output": "write username123"}
 {"user_input": "Write admin password", "assistant_output": "write admin password"}
 {"user_input": "Write test input", "assistant_output": "write test input"}

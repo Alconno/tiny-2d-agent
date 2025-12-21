@@ -10,55 +10,13 @@ import time
 import cv2
 from collections import deque
 import warnings, os, sys
+
+
 sys.path.append(".")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from utility.color_to_text import get_color_name
-
 import matplotlib.pyplot as plt
 import numpy as np
-import math
-
-def visualize_label_colors(crops, texts, colors, per_page=10):
-    total = len(crops)
-    if total == 0:
-        print("No labels to visualize.")
-        return
-
-    num_pages = math.ceil(total / per_page)
-
-    for page in range(num_pages):
-        start = page * per_page
-        end = min(start + per_page, total)
-
-        page_crops = crops[start:end]
-        page_texts = texts[start:end]
-        page_colors = colors[start:end]
-
-        n = len(page_crops)
-        plt.figure(figsize=(12, n * 2))
-
-        for i, (crop, text, color) in enumerate(zip(page_crops, page_texts, page_colors)):
-            rgb = np.array(color) / 255.0
-
-            plt.subplot(n, 2, 2*i + 1)
-            plt.imshow(crop)
-            plt.axis("off")
-            plt.title(f"Text: {text}")
-
-            plt.subplot(n, 2, 2*i + 2)
-            plt.imshow(np.ones((50, 50, 3)) * rgb)
-            plt.axis("off")
-            plt.title(f"Color: {get_color_name(color)}")
-
-        plt.tight_layout()
-        plt.show()
-
-        print(f"Showing labels {start}–{end} of {total}  |  Page {page+1}/{num_pages}")
-
-
-
-
 
 
 class OCR:
@@ -143,44 +101,6 @@ class OCR:
 
         return [b for b, keep in results.items() if keep]
                     
-
-
-    def _get_text_color(self, crop):
-        blur = cv2.GaussianBlur(crop, (15, 15), sigmaX=35.0)
-        crop = cv2.addWeighted(crop, 1.4, blur, -0.5, 0)
-        crop = cv2.bilateralFilter(crop, d=45, sigmaColor=50, sigmaSpace=50)
-        crop = crop.astype(np.float32)
-
-        gx = np.zeros(crop.shape[:2], np.float32)
-        gy = np.zeros_like(gx)
-        for c in range(3):
-            gx += cv2.Scharr(crop[..., c], cv2.CV_32F, 1, 0) ** 2
-            gy += cv2.Scharr(crop[..., c], cv2.CV_32F, 0, 1) ** 2
-        mag = cv2.magnitude(gx, gy)
-        _,edges = cv2.threshold(mag, 0.15 * mag.max(), 1, cv2.THRESH_BINARY)
-        edges_erode = cv2.erode(edges.astype(np.uint8), np.ones((2,2), np.uint8))
-        ys, xs = np.where(edges_erode)
-        if len(xs) < 3:
-            return crop.mean(axis=(0,1))
-
-        text_pix = crop[ys, xs]
-        bg_mask = mag < 0.005
-        if bg_mask.any():
-            bg_color = crop[bg_mask].mean(axis=0)
-            dist = np.linalg.norm(text_pix - bg_color, axis=1)
-            keep = dist > 10
-            if keep.any():
-                text_pix = text_pix[keep]
-
-        if len(text_pix) == 0:
-            return crop.mean(axis=(0,1))
-
-        weights = mag[ys, xs] + 1e-3
-        if weights.shape[0] != text_pix.shape[0]:
-            weights = None 
-        return np.average(text_pix, axis=0, weights=weights)
-    
-
 
     def split_text_vertically(self, crop, threshold=0.35, proj_noise=0.05,
                             edge_pad=2, visualize=False, target_px=200):
@@ -280,52 +200,46 @@ class OCR:
             hsh = self._hash_crop(crop)
             if hsh in self.box_cache:
                 return self.box_cache[hsh]
-            color = self._get_text_color(crop)
+            
             result = self.ocr.ocr(crop, det=False, cls=False)
             if not result or not result[0] or not result[0][0]:
-                return "", color
+                return "", crop
             text, conf = result[0][0][0].strip(), result[0][0][1]
 
             if conf < self.CONF_THRESH:
                 text = ""
 
-            self.box_cache[hsh] = (text, color)
-            return text, color
+            self.box_cache[hsh] = (text, crop)
+            return text, crop
 
         with ThreadPoolExecutor(max_workers=self.max_workers) as ex:
             processed_crops = list(ex.map(process_crop, zip(final_boxes, crops)))
 
         # ---- post-process filtering ----
-        filtered = [(box, text, color)
-                    for box, (text, color) in zip(final_boxes, processed_crops)
+        filtered = [(box, text, crop)
+                    for box, (text, crop) in zip(final_boxes, processed_crops)
                     if text and text.strip() != ""]
-        if not filtered:return []
+        if not filtered: 
+            return []
 
-        boxes, texts, colors = zip(*filtered)
+        boxes, texts, crops_out = zip(*filtered)
 
-        boxes  = list(boxes)
-        texts  = list(texts)
-        colors = list(colors)
-        text_colors = [get_color_name(c) for c in colors]
-
-        """    filtered_crops = [
-            np.array(screenshot.crop((int(b[0]), int(b[1]), int(b[0]+b[2]), int(b[1]+b[3]))))
-            for b in boxes
-        ]
-        visualize_label_colors(filtered_crops, texts, colors)"""
+        boxes = list(boxes)
+        texts = list(texts)
+        crops_out = list(crops_out)
 
         # Restore scaling
         boxes = [(int(x/scale), int(y/scale), int(w/scale), int(h/scale)) for x, y, w, h in boxes]
 
-        # Sort and group lines  
-        items = sorted(zip(boxes, texts, text_colors), key=lambda x: (x[0][1]+x[0][3]//2, x[0][0]))
+        # Sort and group lines
+        items = sorted(zip(boxes, texts, crops_out), key=lambda x: (x[0][1]+x[0][3]//2, x[0][0]))
         Y_lines, cur, prev_y = [], [], items[0][0][1]+items[0][0][3]//2
         for b, t, c in items:
             y_mid = b[1]+b[3]//2
             if abs(y_mid-prev_y) > b[3]*0.4:
                 Y_lines.append(cur)
                 cur = []
-            cur.append((b,t,c))
+            cur.append((b, t, c))
             prev_y = y_mid
         if cur: Y_lines.append(cur)
 
@@ -338,10 +252,9 @@ class OCR:
                 if x_start-prev_x_end > 80:
                     final_lines.append(cur)
                     cur = []
-                cur.append((b,t,c))
+                cur.append((b, t, c))
                 prev_x_end = x_end
             if cur: final_lines.append(cur)
-
 
         # Fix coordinates for cropped screenshots
         if ocr_crop_offset and ocr_crop_offset != (0,0):

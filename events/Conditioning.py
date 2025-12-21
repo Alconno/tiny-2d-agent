@@ -9,13 +9,12 @@ class Condition(Enum):
 
 class ConditionProcessor():
     def __init__(self):
-        from utility.dogshitretard import take_screenshot, extract_box_target_with_more_ctx, expand_color_logic,\
+        from utility.dogshitretard import take_screenshot, extract_box_target,\
                                         get_target_image, get_matching_str
         from utility.image_matching import find_crop_in_image
 
         self.take_screenshot_func = take_screenshot
-        self.extract_box_target_with_more_ctx_func = extract_box_target_with_more_ctx
-        self.expand_color_logic_func = expand_color_logic
+        self.extract_box_target = extract_box_target
         self.get_target_image_func = get_target_image
         self.find_crop_in_image_func = find_crop_in_image
         self.get_matching_str_func = get_matching_str
@@ -86,10 +85,11 @@ class ConditionProcessor():
         
     def check_text(self, condition, screenshot_box, run_ocr_func, embd_func):
         screenshot, offset = self.take_screenshot_func(screenshot_box)
-        embd_lines = run_ocr_func(screenshot, offset, condition["colors"]) # offset used because of tiling
-        expanded_ctxs = self.expand_color_logic_func(target_ctx=condition["query"])
+        ctx = condition["query"]
+        color_list = condition["colors"]
 
-        target = self.extract_box_target_with_more_ctx_func(expanded_ctxs, embd_lines, embd_func, condition["colors"])
+        embd_lines = run_ocr_func(screenshot, offset, color_list)
+        target = self.extract_box_target(ctx, embd_lines, embd_func, color_list)
 
         if target is None:
             return False
