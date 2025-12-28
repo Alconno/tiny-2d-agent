@@ -48,7 +48,7 @@ possible_events = {
     ("play recording", "play sequence", "play"): SequenceEvent.PLAY,
 
     # Loop events
-    ("start loop", "start looping"): LoopEvent.START,
+    ("loop", "start loop", "start looping"): LoopEvent.START,
     ("end loop", "stop loop", "stop looping"): LoopEvent.STOP,
 
     # Conditioning events

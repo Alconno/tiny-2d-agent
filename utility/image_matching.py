@@ -62,9 +62,9 @@ def SIFT_search(img, crop, min_match_count=4):
 
 
 def calculate_edges(crop, use_color=False, apply_blur=False, blur_sigma=35.0, edge_dropout=0.15, proj_dropout=0.05):
-    cv2.imshow("Crop", crop)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    #cv2.imshow("Crop", crop)
+    #cv2.waitKey(0)
+    #cv2.destroyAllWindows()
     if apply_blur:
         blur = cv2.GaussianBlur(crop, (15,15), sigmaX=blur_sigma)
         crop = cv2.addWeighted(crop, 1.6, blur, -.5, 0)

@@ -2,7 +2,7 @@ class Context:
     def __init__(self, txt="", meta=None):
         self.text = txt
         self.sub_contexts = None
-        self.meta = meta or {}
+        self.meta = meta or {} # currently only for 'gpt_applied' state
 
     def to_dict(self):
         return {

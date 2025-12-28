@@ -53,9 +53,5 @@ class VariableProcessor():
 
             return var
 
-                    
-# set variable pro string like sleep
-
-        
-            
+ 
 

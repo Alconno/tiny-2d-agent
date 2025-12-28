@@ -169,7 +169,6 @@ def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=F
     for line in embd_lines:
         for item in line:
             item_text = item["text"].lower()
-            print(ctx, " : ", item_text)
 
             sim = hybrid_score(ctx, item_text, ctx_emb, item["embedding"])
 
@@ -179,11 +178,9 @@ def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=F
 
             # Color adjustments
             if sim > 0.6 and item.get("crop") and color_list:
-                print("Over 0.6: ", ctx, item_text, " => Running color detection")
                 np_crop = base64_to_crop(item["crop"])
                 color_rgb = get_text_color(np_crop)
                 color_text = get_color_name(color_rgb)
-                print("Detected color ", color_text, " for text: ", item_text)
                 sim *= color_boost if color_text in color_list else color_penalty
 
             if return_all:
@@ -492,6 +489,7 @@ def extract_numbers_target(ctx, embd_lines, embd_func, color_list=None, return_a
     # batch embed unique candidate colors
     unique_colors = {c["color"] for c in candidates if c["color"] and color_list}
     color_emb_map = dict(zip(unique_colors, embd_func(list(unique_colors)))) if unique_colors else {}
+    colors_emb = embd_func(list(color_list))
 
     # filter by color similarity if color_list provided
     for c in candidates:
@@ -500,7 +498,7 @@ def extract_numbers_target(ctx, embd_lines, embd_func, color_list=None, return_a
             vec = color_emb_map.get(color)
             if not vec:
                 continue
-            if max(hybrid_score(cl, color, ce, vec) for cl, ce in zip(color_list, embd_func(list(color_list)))) < 0.65:
+            if max(hybrid_score(cl, color, ce, vec) for cl, ce in zip(color_list, colors_emb)) < 0.65:
                 continue
         results.append({
             "match": c["item"]["text"],
@@ -579,7 +577,6 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
             starts, ends = get_segments((crop_start_x, y-ASA, x, y+h+ASA), horizontal=True, reverse=True)
             for x0, x1 in zip(starts, ends):
                 if (x1 - x0) >= min_width:
-                    print(x0, x1)
                     bbox = (x0 + crop_start_x, y, x1 - x0, h)
                     break
         elif spatial_event & MouseButton.SPATIAL_RIGHT:

@@ -62,77 +62,76 @@ class SequenceProcessor:
         self.update_embds()
 
         matched = self.cmp_txt_and_embs(name, self.data_map, self.embd_func)
-        sequence = self.data.get(matched["text"], None) if matched else None
-        if not sequence: return []
+        sequence = self.data.get(matched["text"]) if matched else None
+        if not sequence:
+            return []
 
-        # Extract vals
-        vars_list = sequence.get("vars", [])
+        # Gather variable values
         var_values = {}
-        self.voiceTranscriber.listener_enabled = True
-        if vars_list and pause_listener_event:
+        if sequence.get("vars") and pause_listener_event:
             pause_listener_event.clear()
-            for var_dict in vars_list:
-                var_name = var_dict["name"]
-                var_type = var_dict.get("type", "str")
-                predefined = var_dict.get("value", None)
-
+            self.voiceTranscriber.listener_enabled = True
+            for v in sequence["vars"]:
+                var_name, var_type, predefined = v["name"], v.get("type","str"), v.get("value")
                 if predefined:
-                    if isinstance(predefined, list):
-                        var_values[var_name] = [str(v).strip() for v in predefined]
-                    else:
-                        var_values[var_name] = [str(predefined).strip()]
+                    var_values[var_name] = [str(x).strip() for x in (predefined if isinstance(predefined,list) else [predefined])]
                     continue
-
-                print(f"Provide value(s) for '{var_name}'")
                 spoken = self.voiceTranscriber()
-                if var_type == "list":
-                    var_values[var_name] = [v.strip() for v in spoken.split(",")]
-                else:
-                    var_values[var_name] = [spoken.strip()]
+                var_values[var_name] = [x.strip() for x in (spoken.split(",") if var_type=="list" else [spoken])]
             pause_listener_event.set()
+            self.voiceTranscriber.listener_enabled = False
 
-        self.voiceTranscriber.listener_enabled = False
-
-        def subst(text: str, override=None):
-            if not text:
-                return ""
-            if override is not None:
-                text = text.replace(f"{{{{{override[0]}}}}}", override[1])
-            else:
-                for var, vals in var_values.items():
-                    if vals:
-                        text = text.replace(f"{{{{{var}}}}}", vals[0])
+        # variable substitution
+        def subst(text):
+            if not text: return ""
+            for var, vals in var_values.items():
+                if vals: text = text.replace(f"{{{{{var}}}}}", vals[0])
             return text
-
-        def expand(ctx: Context, override=None):
-            ctx = ctx.copy()
-            ctx.text = subst(ctx.text, override)
-            if "loop" in ctx.meta:
-                loop_var = ctx.meta["loop"].split(" as ")[0]
-                vals = var_values.get(loop_var, [])
-                out = []
-                for v in vals:
-                    loop_override = (loop_var, v)
-                    for c in ctx.sub_contexts or []:
-                        out.extend(expand(c, loop_override))
-                return out
-            if "loop_count" in ctx.meta:
-                out = []
-                for _ in range(ctx.meta["loop_count"]):
-                    for c in ctx.sub_contexts or []:
-                        out.extend(expand(c, override))
-                return out
-            if ctx.sub_contexts:
-                new_children = []
-                for c in ctx.sub_contexts:
-                    new_children.extend(expand(c, override))
-                ctx.sub_contexts = new_children
-            return [ctx]
+        
+        def parse_loop(text):
+            parts = text.lower().split()
+            if len(parts) >= 2 and parts[0] == "loop":
+                # numeric loop
+                if parts[1].isdigit():
+                    return ("count", int(parts[1]))
+                # explicit template
+                if len(parts) >= 4 and parts[-2] == "as" and (parts[-1] == "template" or parts[-1] == "variable"):
+                    return ("template", parts[1])
+                # implicit template: "loop varname"
+                return ("template", parts[1])
+            return (None, None)
 
         ctx_steps = [Context.from_dict(s) for s in sequence["steps"]]
         final_steps = []
-        for step in ctx_steps:
-            final_steps.extend(expand(step, None))
+
+        for ctx in ctx_steps:
+            ctx.text = subst(ctx.text)
+
+            loop_type, loop_val = parse_loop(ctx.text)
+
+            # NUMERIC LOOP
+            if loop_type == "count":
+                final_steps.append(ctx)
+                continue
+
+            # TEMPLATE LOOP
+            if loop_type == "template":
+                values = var_values.get(loop_val)
+
+                if not values: # no variable, skip
+                    continue
+
+                # expand
+                for val in values:
+                    for sub in ctx.sub_contexts or []:
+                        new_sub = sub.copy()
+                        new_sub.text = new_sub.text.replace(f"{{{{{loop_val}}}}}", val)
+                        final_steps.append(new_sub)
+                continue
+
+            # NORMAL STEP 
+            final_steps.append(ctx)
+
         return final_steps
 
 
@@ -155,22 +154,13 @@ class SequenceProcessor:
         elif action_result == SequenceEvent.PLAY:
             voiceTranscriber.listener_enabled = False
             loaded_sequence = self.load_sequence(name=target_text, pause_listener_event=pause_listener_event)
+            print("loaded sequence: ", loaded_sequence)
+            print("a:", len(context_queue))
             if loaded_sequence:
                 context_queue.extend(loaded_sequence)
+            print("b:", len(context_queue))
             voiceTranscriber.listener_enabled = True
 
 
         return False, recording_state, recording_stack
 
-
-
-
-"""
-                    {"text": "click below of Name"},
-                    {"text": "Write eternal fire"},
-                    {"text": "Press enter"},
-                    {"text": "Wait 1"},
-                    {"text": "Focus 831, 242, 903, 650"},
-                    {"text": "set variable items|number|yellow <45"},
-                    {"text": "click top variable items"}
-"""

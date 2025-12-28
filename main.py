@@ -271,7 +271,7 @@ while True:
     # Looping
     if isinstance(action_result, LoopEvent):
         failed, recording_stack = loopProcessor.process(action_result, target_text, current_context,
-                              recording_stack, is_template)
+                              recording_stack, recording_state, context_queue, is_template)
 
     # Sequence recording
     if recording_state["active"] and action_result \
