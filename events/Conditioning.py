@@ -1,7 +1,8 @@
 from pynput.keyboard import Controller, Key
 from enum import Enum, auto
 import re
-
+import cv2
+import numpy as np
 
 class Condition(Enum):
     IF      = auto()
@@ -25,62 +26,49 @@ class ConditionProcessor():
     Image:          If image 'image' exists
     """
     def parse_condition(self, ctx: str):
-        ctx = ctx.strip()
+        ctx = ctx.strip().lower()
 
-        negate = False
-        if ctx.lower().startswith("not "):
-            negate = True
-            ctx = ctx[4:].strip()
+        negate = ctx.endswith(" negate")
+        if negate:
+            ctx = ctx[:-7].strip()
 
-        text_match = re.match(
-            r'(?:([\w\s]+)\s+)?text\s+(?:"([^"]+)"|([^\"]+))\s+exists',
-            ctx, re.I
-        )
-        if text_match:
-            colors_raw, q1, q2 = text_match.groups()
-            query = (q1 or q2).strip()
+        if ctx.startswith("if "):
+            ctx = ctx[3:].strip()
 
-            colors = []
-            if colors_raw:
-                colors = re.split(r'\s+(?:or|and)\s+', colors_raw.strip(), flags=re.I)
-                colors = [c.lower() for c in colors if c]
-
+        # TEXT
+        m = re.match(r'(?:([\w\s]+)\s+)?text\s+(?:"([^"]+)"|([^\"]+))\s+exists', ctx)
+        if m:
+            colors, q1, q2 = m.groups()
             return {
                 "type": "text",
-                "query": query,
-                "colors": colors or None,
+                "query": (q1 or q2).strip(),
+                "colors": [c.lower() for c in re.split(r'\s+(?:or|and)\s+', colors)] if colors else None,
                 "negate": negate
             }
 
-        image_match = re.match(
-            r'image\s+(?:"([^"]+)"|([^\"]+))\s+exists',
-            ctx, re.I
-        )
-        if image_match:
-            q1, q2 = image_match.groups()
-            query = (q1 or q2).strip()
-
+        # IMAGE
+        m = re.match(r'image\s+(?:"([^"]+)"|([^\"]+))\s+exists', ctx)
+        if m:
             return {
                 "type": "image",
-                "query": query,
+                "query": (m.group(1) or m.group(2)).strip(),
                 "negate": negate
             }
 
-        variable_match = re.match(
-            r'variable\s+(?:"([^"]+)"|([^\"]+))\s+exists',
-            ctx, re.I
-        )
-        if variable_match:
-            q1, q2 = variable_match.groups()
-            query = (q1 or q2).strip()
-
+        # VARIABLE
+        m = re.match(r'variable\s+(?:"([^"]+)"|([^\"]+))\s+exists', ctx)
+        if m:
             return {
                 "type": "variable",
-                "query": query,
+                "query": (m.group(1) or m.group(2)).strip(),
                 "negate": negate
             }
 
-    
+        return None
+
+
+    def apply_negate(self, found: bool, condition: dict):
+        return not found if condition.get("negate", False) else found
 
         
     def check_text(self, condition, screenshot_box, run_ocr_func, embd_func):
@@ -91,9 +79,11 @@ class ConditionProcessor():
         embd_lines = run_ocr_func(screenshot, offset, color_list)
         target = self.extract_box_target(ctx, embd_lines, embd_func, color_list)
 
-        if target is None:
-            return False
-        return target.get("result") is not None and target.get("score", 0) > 0.7, target
+        found = target is not None and target.get("result") is not None and target.get("score", 0) > 0.7
+        found = self.apply_negate(found, condition)
+
+        return found, target
+
 
 
     def check_image(self, condition, screenshot_box, embd_func):
@@ -101,16 +91,27 @@ class ConditionProcessor():
         matching = self.get_target_image_func(
             embd_func, condition["query"], "./clickable_images"
         )
+
         bbox = None
         if matching:
             _, bbox = self.find_crop_in_image_func(screenshot, matching)
-        return bbox is not None, bbox
+
+        found = bbox is not None
+        found = self.apply_negate(found, condition)
+
+        return found, bbox
+
     
 
     def check_variable(self, condition, variables: dict, embd_func):
-        var_name = self.get_matching_str_func(condition["query"], list(variables.keys()), embd_func)
+        var_name = self.get_matching_str_func(
+            condition["query"], list(variables.keys()), embd_func
+        )
 
-        return var_name in variables, variables.get(var_name, None)
+        found = var_name in variables
+        found = self.apply_negate(found, condition)
+
+        return found, variables.get(var_name, None)
 
 
         

@@ -293,18 +293,25 @@
     },
     "auction": {
         "steps": [
+            {"text": "focus 10, 411, 900, 893", "meta": {"gpt_applied": true}},
+            {
+                "text": "if not image yepmark exists",
+                "sub_contexts": [
+                    {"text": "click Show stacks", "meta": {"gpt_applied": true}}
+                ]
+            },
             {
                 "text": "loop names as template",
                 "sub_contexts": [
-                    {"text": "Focus 18,174,1085,741", "meta": {"gpt_applied": true}},
-                    {"text": "Click below of name.", "meta": {"gpt_applied": true}},
-                    {"text": "Write {{names}}", "meta": {"gpt_applied": true}},
+                    {"text": "Focus 18,174,1085,701", "meta": {"gpt_applied": true}},
+                    {"text": "Click below of {{man}}.", "meta": {"gpt_applied": true}},
+                    {"text": "Write {{names.0}}", "meta": {"gpt_applied": true}},
                     {"text": "Click search.", "meta": {"gpt_applied": true}},
-                    {"text": "Click white {{names}}.", "meta": {"gpt_applied": true}},
+                    {"text": "Click white {{names.0}}.", "meta": {"gpt_applied": true}},
                     {"text": "press ctrl A", "meta": {"gpt_applied": true}},
                     {"text": "Press Backspace.", "meta": {"gpt_applied": true}},
                     {"text": "focus 831, 271, 903, 644", "meta": {"gpt_applied": true}},
-                    {"text": "Set a variable named items with all values yellow below 45."},
+                    {"text": "Set a variable named items with all values yellow below {{names.1}}."},
                     {
                         "text": "If variable items exists", "meta": {"gpt_applied": true},
                         "sub_contexts": [
@@ -313,14 +320,22 @@
                     }
                 ]
             },
-            {"text": "Focus 18,174,1085,741"},
-            {"text": "Click below name."}
+            {"text": "Focus 18,174,1085,701", "meta": {"gpt_applied": true}},
+            {"text": "Click below of name.", "meta": {"gpt_applied": true}}
         ],
         "vars": [
             {
                 "name": "names",
                 "type": "list",
-                "value": ["Eternal fire", "Eternal Water"]
+                "value": [
+                    ["Eternal Fire", 45],
+                    ["Eternal Water", 15]
+                ]
+            },
+            {
+                "name": "man",
+                "type": "str",
+                "value": "name"
             }
         ]
     },

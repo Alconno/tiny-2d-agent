@@ -165,7 +165,6 @@ class Mouse:
             target = self.extract_box_target(ctx, emb, embd_func, found_colors)
             if target and target['result'] and target['result']['bbox']:
                 self.apply_offset_to_bbox(offset, target['result']['bbox'])
-            print("target:", target)
             if target:
                 self.execute(parsed_action, target)
                 failed = False

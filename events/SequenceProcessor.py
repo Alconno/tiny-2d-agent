@@ -74,20 +74,62 @@ class SequenceProcessor:
             for v in sequence["vars"]:
                 var_name, var_type, predefined = v["name"], v.get("type","str"), v.get("value")
                 if predefined:
-                    var_values[var_name] = [str(x).strip() for x in (predefined if isinstance(predefined,list) else [predefined])]
+                    if isinstance(predefined, list):
+                        new_vals = []
+                        for x in predefined:
+                            if isinstance(x, str):
+                                try:
+                                    x_parsed = json.loads(x)
+                                    new_vals.append(x_parsed)
+                                except Exception:
+                                    new_vals.append(x)
+                            else:
+                                new_vals.append(x)
+                        var_values[var_name] = new_vals
+                    else:
+                        var_values[var_name] = [predefined]
                     continue
                 spoken = self.voiceTranscriber()
                 var_values[var_name] = [x.strip() for x in (spoken.split(",") if var_type=="list" else [spoken])]
             pause_listener_event.set()
             self.voiceTranscriber.listener_enabled = False
 
+        print(var_values)
+
         # variable substitution
-        def subst(text):
-            if not text: return ""
-            for var, vals in var_values.items():
-                if vals: text = text.replace(f"{{{{{var}}}}}", vals[0])
-            return text
-        
+        VAR_PATTERN = re.compile(r"\{\{(\w+)(?:\.(\d+))?\}\}")
+        def subst(text, current_vars=None):
+            if not text:
+                return text
+
+            def repl(match):
+                var = match.group(1)
+                idx = match.group(2)
+
+                if current_vars is None or var not in current_vars:
+                    return match.group(0)  # leave as-is if variable missing
+
+                value = current_vars[var]
+
+                # scalar
+                if not isinstance(value, list):
+                    return str(value)
+
+                # list or list-of-lists
+                if idx is None:
+                    first = value[0] if value else ""
+                    if isinstance(first, list):
+                        return str(first[0]) if first else ""
+                    return str(first)
+                else:
+                    i = int(idx)
+                    if isinstance(value[0], list):
+                        return str(value[0][i]) if i < len(value[0]) else ""
+                    else:
+                        return str(value[i]) if i < len(value) else ""
+
+            return VAR_PATTERN.sub(repl, text)
+                
         def parse_loop(text):
             parts = text.lower().split()
             if len(parts) >= 2 and parts[0] == "loop":
@@ -109,28 +151,39 @@ class SequenceProcessor:
 
             loop_type, loop_val = parse_loop(ctx.text)
 
-            # NUMERIC LOOP
             if loop_type == "count":
                 final_steps.append(ctx)
                 continue
 
-            # TEMPLATE LOOP
             if loop_type == "template":
                 values = var_values.get(loop_val)
 
-                if not values: # no variable, skip
+                if not values:
                     continue
 
-                # expand
-                for val in values:
+                # build "other" current_vars for substitution (non-loop variables)
+                other_vars = {k: v for k, v in var_values.items() if k != loop_val}
+
+                if isinstance(values, list):
+                    for val in values:  # val is current iteration
+                        for sub in ctx.sub_contexts or []:
+                            new_sub = sub.copy()
+                            # combine loop variable + other variables
+                            current_vars = {**other_vars, loop_val: val}
+                            new_sub.text = subst(new_sub.text, current_vars)
+                            final_steps.append(new_sub)
+                else:
+                    # scalar loop
                     for sub in ctx.sub_contexts or []:
                         new_sub = sub.copy()
-                        new_sub.text = new_sub.text.replace(f"{{{{{loop_val}}}}}", val)
+                        current_vars = {**other_vars, loop_val: values}
+                        new_sub.text = subst(new_sub.text, current_vars)
                         final_steps.append(new_sub)
                 continue
 
-            # NORMAL STEP 
+            # normal step
             final_steps.append(ctx)
+
 
         return final_steps
 

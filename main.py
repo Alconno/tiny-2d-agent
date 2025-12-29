@@ -167,6 +167,7 @@ while True:
     if not current_context.meta.get("gpt_applied", False):
         ctx_processed = apply_gpt_to_context(orig_ctx) if use_GPT else orig_ctx
         current_context.meta["gpt_applied"] = True
+        current_context.text = ctx_processed
     else:
         ctx_processed = orig_ctx
     ctx_processed = re.sub(r"[.;!?]", "", ctx_processed).strip()
@@ -259,6 +260,8 @@ while True:
             print("current box: ", screenshot_box)
             failed = False
                     
+    print("action result: ", action_result)
+    
     # Variables
     if isinstance(action_result, VariableEvent):
         if target_text:
@@ -294,6 +297,7 @@ while True:
     elif isinstance(action_result, Condition):
         if action_result == Condition.IF:
             condition = conditionProcessor.parse_condition(target_text) # {type, query, colors, negate}
+            print("prased conditioin: ", condition)
             if condition:
                 if condition["type"] == "text": 
                     passed, target = conditionProcessor.check_text(condition, screenshot_box, run_ocr_func=run_ocr, embd_func=models.embd_func)
