@@ -69,6 +69,10 @@
 {"user_input": "Wait for image header", "assistant_output": "Wait for image header"}
 {"user_input": "Wait 11 for icon settings", "assistant_output": "Wait for image settings|11"}
 
+{"user_input": "Wait for picture dashboard ignore this", "assistant_output": "nothing"}
+{"user_input": "Wait 14 for text authentication ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Wait for image header nevermind this", "assistant_output": "nothing"}
+{"user_input": "Wait 11 for icon settings forget this", "assistant_output": "nothing"}
 
 // Human like
 {"user_input": "hey wait for insane", "assistant_output": "Wait for insane"}

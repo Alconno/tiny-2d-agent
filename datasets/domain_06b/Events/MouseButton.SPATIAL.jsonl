@@ -23,20 +23,6 @@
 {"user_input": "click text right of apply", "assistant_output": "click right of apply|text"}
 {"user_input": "click above the object", "assistant_output": "click above of object"}
 {"user_input": "click text below settings", "assistant_output": "click below of settings|text"}
-{"user_input": "click left of the tab", "assistant_output": "click left of tab"}
-{"user_input": "click right of the link", "assistant_output": "click right of link"}
-{"user_input": "click text above username", "assistant_output": "click above of username|text"}
-{"user_input": "click text below password", "assistant_output": "click below of password|text"}
-{"user_input": "click left to the field", "assistant_output": "click left of field"}
-{"user_input": "click right to the checkbox", "assistant_output": "click right of checkbox"}
-{"user_input": "click text above title", "assistant_output": "click above of title|text"}
-{"user_input": "click under the list", "assistant_output": "click below of list"}
-{"user_input": "click text left of edit", "assistant_output": "click left of edit|text"}
-{"user_input": "click text right of view", "assistant_output": "click right of view|text"}
-{"user_input": "click above the container", "assistant_output": "click above of container"}
-{"user_input": "click text below area", "assistant_output": "click below of area|text"}
-{"user_input": "click left of element", "assistant_output": "click left of element"}
-{"user_input": "click right of widget", "assistant_output": "click right of widget"}
 {"user_input": "click text above header", "assistant_output": "click above of header|text"}
 {"user_input": "click text below footer", "assistant_output": "click below of footer|text"}
 {"user_input": "click left to the control", "assistant_output": "click left of control"}
@@ -103,14 +89,6 @@
 
 
 
-
-
-
-
-
-
-
-
 // ---------------------------- SPATIAL right click ----------------------------
 {"user_input": "right click left of main menu", "assistant_output": "right click left of main menu"}
 {"user_input": "right click right of save button", "assistant_output": "right click right of save button"}
@@ -141,15 +119,16 @@
 {"user_input": "right click text above username", "assistant_output": "right click above of username|text"}
 {"user_input": "right click text below password", "assistant_output": "right click below of password|text"}
 {"user_input": "right click left to the field", "assistant_output": "right click left of field"}
-{"user_input": "right click right to the checkbox", "assistant_output": "right click right of checkbox"}
-{"user_input": "right click text above title", "assistant_output": "right click above of title|text"}
-{"user_input": "right click under the list", "assistant_output": "right click below of list"}
-{"user_input": "right click text left of edit", "assistant_output": "right click left of edit|text"}
-{"user_input": "right click text right of view", "assistant_output": "right click right of view|text"}
-{"user_input": "right click above the container", "assistant_output": "right click above of container"}
-{"user_input": "right click text below area", "assistant_output": "right click below of area|text"}
-{"user_input": "right click left of element", "assistant_output": "right click left of element"}
-{"user_input": "right click right of widget", "assistant_output": "right click right of widget"}
+// Misheard examples (write for right) - Bad voice model
+{"user_input": "write click right to the checkbox", "assistant_output": "right click right of checkbox"}
+{"user_input": "write click text above title", "assistant_output": "right click above of title|text"}
+{"user_input": "write click under the list", "assistant_output": "right click below of list"}
+{"user_input": "write click text left of edit", "assistant_output": "right click left of edit|text"}
+{"user_input": "write click text right of view", "assistant_output": "right click right of view|text"}
+{"user_input": "write click above the container", "assistant_output": "right click above of container"}
+{"user_input": "write click text below area", "assistant_output": "right click below of area|text"}
+{"user_input": "write click left of element", "assistant_output": "right click left of element"}
+{"user_input": "write click right of widget", "assistant_output": "right click right of widget"}
 
 // ---------------------------- SPATIAL double click ----------------------------
 {"user_input": "double click left of main menu", "assistant_output": "double click left of main menu"}

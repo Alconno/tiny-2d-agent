@@ -62,6 +62,15 @@
 {"user_input": "right click every variable named menu2", "assistant_output": "right click all variable menu2"}
 {"user_input": "double click all vars labeled field2", "assistant_output": "double click all variable field2"}
 {"user_input": "middle click every variable entry called input2", "assistant_output": "middle click all variable input2"}
+{"user_input": "middle click all vars named checkbox2 ignore this", "assistant_output": "nothing"}
+{"user_input": "click all variable items called dropdown2 ignore ignore", "assistant_output": "nothing"}
+{"user_input": "right click all vars labeled slider2 nevermind this", "assistant_output": "nothing"}
+{"user_input": "double click all variable entries called switch2 forget this", "assistant_output": "nothing"}
+{"user_input": "middle click all vars named toggle2 nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "click all variable records called option2, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "right click every variable named menu2, remove this", "assistant_output": "nothing"}
+{"user_input": "double click all vars labeled field2, cancel this", "assistant_output": "nothing"}
+{"user_input": "middle click every variable entry called input2 ignore this", "assistant_output": "nothing"}
 
 // Human like
 {"user_input": "hey can you click all the variables called score for me", "assistant_output": "click all variable score"}
@@ -104,6 +113,13 @@
 {"user_input": "perform shift left click on quest variables", "assistant_output": "shift left click all variable quest"}
 {"user_input": "shift left click all mission variables now", "assistant_output": "shift left click all variable mission"}
 {"user_input": "do a shift left click on each task variable", "assistant_output": "shift left click all variable task"}
+{"user_input": "shift left click all variables named index ignore this", "assistant_output": "nothing"}
+{"user_input": "shift left click all variables called slot ignore ignore", "assistant_output": "nothing"}
+{"user_input": "shift left click journal variables nevermind this", "assistant_output": "nothing"}
+{"user_input": "apply shift left click to entry variables forget this", "assistant_output": "nothing"}
+{"user_input": "perform shift left click on quest variables nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "shift left click all mission variables now, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "do a shift left click on each task variable, remove this", "assistant_output": "nothing"}
 
 // SHift right click
 {"user_input": "can you use shift right click for all the variables called count", "assistant_output": "shift right click all variable count"}
@@ -133,6 +149,14 @@
 {"user_input": "shift right click each variable labeled lives", "assistant_output": "shift right click all variable lives"}
 {"user_input": "apply shift right click to all money variables", "assistant_output": "shift right click all variable money"}
 {"user_input": "execute shift right click on every theme variable", "assistant_output": "shift right click all variable theme"}
+{"user_input": "shift right click all variables labeled cap ignore this", "assistant_output": "nothing"}
+{"user_input": "shift right click all variables for quota ignore ignore", "assistant_output": "nothing"}
+{"user_input": "shift right click all variables named index nevermind this", "assistant_output": "nothing"}
+{"user_input": "use shift right to click every variable named count forget this", "assistant_output": "nothing"}
+{"user_input": "perform shift right click on all variables called score nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "shift right click each variable labeled lives, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "apply shift right click to all money variables, remove this", "assistant_output": "nothing"}
+{"user_input": "execute shift right click on every theme variable, cancel this", "assistant_output": "nothing"}
 
 // Human like shift clicks
 {"user_input": "hey can you shift left click all the variables called health", "assistant_output": "shift left click all variable health"}

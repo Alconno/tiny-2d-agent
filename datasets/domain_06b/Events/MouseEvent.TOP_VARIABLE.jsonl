@@ -96,6 +96,12 @@
 {"user_input": "right click the best number inside reposts", "assistant_output": "right click variable reposts"}
 {"user_input": "double click the top value in comments", "assistant_output": "double click variable comments"}
 {"user_input": "middle click the strongest value inside notifications", "assistant_output": "middle click variable notifications"}
+{"user_input": "click top items", "assistant_output": "click top variable items"}
+{"user_input": "can you click best item in items", "assistant_output": "click top variable items"}
+{"user_input": "click best value in instructions", "assistant_output": "click top variable instructions"}
+{"user_input": "click best result in values", "assistant_output": "click top variable values"}
+
+
 
 
 

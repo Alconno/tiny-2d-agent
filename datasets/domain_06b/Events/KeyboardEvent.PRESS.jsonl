@@ -75,6 +75,19 @@
 {"user_input": "press control shift F12", "assistant_output": "press control shift F12"}
 {"user_input": "press alt shift print screen", "assistant_output": "press alt shift print screen"}
 
+{"user_input": "press control H ignore this", "assistant_output": "nothing"}
+{"user_input": "press alt space ignore ignore", "assistant_output": "nothing"}
+{"user_input": "press control O nevermind this", "assistant_output": "nothing"}
+{"user_input": "press control Q forget this", "assistant_output": "nothing"}
+{"user_input": "press control D nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "press F8, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "press F9, remove this", "assistant_output": "nothing"}
+{"user_input": "press control U, cancel this", "assistant_output": "nothing"}
+{"user_input": "press control shift L ignore this", "assistant_output": "nothing"}
+{"user_input": "press windows M ignore ignore", "assistant_output": "nothing"}
+{"user_input": "press shift F5 nevermind this", "assistant_output": "nothing"}
+{"user_input": "press enter quickly forget this", "assistant_output": "nothing"}
+
 // Human like
 {"user_input": "umm tap the shift and enter keys", "assistant_output": "press shift enter"}
 {"user_input": "ok hit the escape key", "assistant_output": "press escape"}

@@ -85,6 +85,14 @@
 {"user_input": "is the text ready displayed", "assistant_output": "If text ready exists"}
 {"user_input": "confirm that text complete is present", "assistant_output": "If text complete exists"}
 {"user_input": "make sure the ok text shows up", "assistant_output": "If text ok exists"}
+{"user_input": "verify text saving exists ignore this", "assistant_output": "nothing"}
+{"user_input": "if text saved exists ignore ignore", "assistant_output": "nothing"}
+{"user_input": "check text deleted exists nevermind this", "assistant_output": "nothing"}
+{"user_input": "if text updated exists forget this", "assistant_output": "nothing"}
+{"user_input": "verify text modifying exists nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "if text modified exists, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "check text uploaded exists, remove this", "assistant_output": "nothing"}
+{"user_input": "if text downloading exists, cancel this", "assistant_output": "nothing"}
 {"user_input": "if image circle exists", "assistant_output": "If image circle exists"}
 {"user_input": "check if triangle image exists", "assistant_output": "If image triangle exists"}
 {"user_input": "verify that image red moon exists", "assistant_output": "If image red moon exists"}
@@ -113,26 +121,6 @@
 {"user_input": "check image leaf exists", "assistant_output": "If image leaf exists"}
 {"user_input": "if image red circle exists", "assistant_output": "If image red circle exists"}
 {"user_input": "check image blue triangle exists", "assistant_output": "If image blue triangle exists"}
-{"user_input": "verify image pink heart exists", "assistant_output": "If image pink heart exists"}
-{"user_input": "check image orange diamond exists", "assistant_output": "If image orange diamond exists"}
-{"user_input": "if image purple moon exists", "assistant_output": "If image purple moon exists"}
-{"user_input": "verify image brown cloud exists", "assistant_output": "If image brown cloud exists"}
-{"user_input": "check image black tree exists", "assistant_output": "If image black tree exists"}
-{"user_input": "if image white sun exists", "assistant_output": "If image white sun exists"}
-{"user_input": "verify image gray leaf exists", "assistant_output": "If image gray leaf exists"}
-{"user_input": "check image red flower exists", "assistant_output": "If image red flower exists"}
-{"user_input": "if image green heart exists", "assistant_output": "If image green heart exists"}
-{"user_input": "verify image blue star exists", "assistant_output": "If image blue star exists"}
-{"user_input": "check image yellow diamond exists", "assistant_output": "If image yellow diamond exists"}
-{"user_input": "if image circle red exists", "assistant_output": "If image circle red exists"}
-{"user_input": "verify image triangle blue exists", "assistant_output": "If image triangle blue exists"}
-{"user_input": "check image heart pink exists", "assistant_output": "If image heart pink exists"}
-{"user_input": "if image diamond orange exists", "assistant_output": "If image diamond orange exists"}
-{"user_input": "verify image star yellow exists", "assistant_output": "If image star yellow exists"}
-{"user_input": "check image sun white exists", "assistant_output": "If image sun white exists"}
-{"user_input": "if image moon purple exists", "assistant_output": "If image moon purple exists"}
-{"user_input": "verify image cloud gray exists", "assistant_output": "If image cloud gray exists"}
-{"user_input": "check image tree brown exists", "assistant_output": "If image tree brown exists"}
 {"user_input": "if image flower green exists", "assistant_output": "If image flower green exists"}
 {"user_input": "verify image leaf yellow exists", "assistant_output": "If image leaf yellow exists"}
 {"user_input": "check image sun orange exists", "assistant_output": "If image sun orange exists"}
@@ -166,6 +154,17 @@
 {"user_input": "is the red circle image displayed", "assistant_output": "If image red circle exists"}
 {"user_input": "confirm that the diamond image is present", "assistant_output": "If image diamond exists"}
 {"user_input": "make sure the sun image shows up", "assistant_output": "If image sun exists"}
+{"user_input": "verify image pink heart exists ignore this", "assistant_output": "nothing"}
+{"user_input": "check image orange diamond exists ignore ignore", "assistant_output": "nothing"}
+{"user_input": "if image purple moon exists nevermind this", "assistant_output": "nothing"}
+{"user_input": "verify image brown cloud exists forget this", "assistant_output": "nothing"}
+{"user_input": "check image black tree exists nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "if image white sun exists, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "verify image gray leaf exists, remove this", "assistant_output": "nothing"}
+{"user_input": "check image red flower exists, cancel this", "assistant_output": "nothing"}
+{"user_input": "if image green heart exists ignore this", "assistant_output": "nothing"}
+{"user_input": "verify image blue star exists ignore ignore", "assistant_output": "nothing"}
+{"user_input": "check image yellow diamond exists nevermind this", "assistant_output": "nothing"}
 {"user_input": "Press Alt F4 to close the window", "assistant_output": "press Alt F4"}
 {"user_input": "Press Ctrl C quickly", "assistant_output": "press Ctrl C"}
 {"user_input": "Press Shift Enter to submit", "assistant_output": "press Shift Enter"}
@@ -242,6 +241,18 @@
 {"user_input": "press control arrow left", "assistant_output": "press control arrow left"}
 {"user_input": "press control shift F12", "assistant_output": "press control shift F12"}
 {"user_input": "press alt shift print screen", "assistant_output": "press alt shift print screen"}
+{"user_input": "press control H ignore this", "assistant_output": "nothing"}
+{"user_input": "press alt space ignore ignore", "assistant_output": "nothing"}
+{"user_input": "press control O nevermind this", "assistant_output": "nothing"}
+{"user_input": "press control Q forget this", "assistant_output": "nothing"}
+{"user_input": "press control D nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "press F8, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "press F9, remove this", "assistant_output": "nothing"}
+{"user_input": "press control U, cancel this", "assistant_output": "nothing"}
+{"user_input": "press control shift L ignore this", "assistant_output": "nothing"}
+{"user_input": "press windows M ignore ignore", "assistant_output": "nothing"}
+{"user_input": "press shift F5 nevermind this", "assistant_output": "nothing"}
+{"user_input": "press enter quickly forget this", "assistant_output": "nothing"}
 {"user_input": "umm tap the shift and enter keys", "assistant_output": "press shift enter"}
 {"user_input": "ok hit the escape key", "assistant_output": "press escape"}
 {"user_input": "hey press delete please", "assistant_output": "press delete"}
@@ -269,47 +280,47 @@
 {"user_input": "Write lastName", "assistant_output": "write lastName"}
 {"user_input": "Write city", "assistant_output": "write city"}
 {"user_input": "Write zip code", "assistant_output": "write zip code"}
-{"user_input": "Write phone number", "assistant_output": "write phone number"}
-{"user_input": "Write street address", "assistant_output": "write street address"}
-{"user_input": "Write company name", "assistant_output": "write company name"}
-{"user_input": "Write job title", "assistant_output": "write job title"}
-{"user_input": "Write meeting notes", "assistant_output": "write meeting notes"}
-{"user_input": "Write project description", "assistant_output": "write project description"}
-{"user_input": "Write comments", "assistant_output": "write comments"}
-{"user_input": "Write feedback", "assistant_output": "write feedback"}
+{"user_input": "type phone number", "assistant_output": "write phone number"}
+{"user_input": "type street address", "assistant_output": "write street address"}
+{"user_input": "type company name", "assistant_output": "write company name"}
+{"user_input": "type job title", "assistant_output": "write job title"}
+{"user_input": "Type meeting notes", "assistant_output": "write meeting notes"}
+{"user_input": "Type project description", "assistant_output": "write project description"}
+{"user_input": "Type comments", "assistant_output": "write comments"}
+{"user_input": "Type feedback", "assistant_output": "write feedback"}
 {"user_input": "Write order ID", "assistant_output": "write order ID"}
 {"user_input": "Write client ID", "assistant_output": "write client ID"}
 {"user_input": "Write product name", "assistant_output": "write product name"}
 {"user_input": "Write username as variable", "assistant_output": "write username as template"}
-{"user_input": "Write email as template", "assistant_output": "write email as template"}
-{"user_input": "Write firstName as template", "assistant_output": "write firstName as template"}
-{"user_input": "Write lastName variable", "assistant_output": "write lastName as template"}
-{"user_input": "Write clientID as template", "assistant_output": "write clientID as template"}
+{"user_input": "Type email as template", "assistant_output": "write email as template"}
+{"user_input": "Type firstName as template", "assistant_output": "write firstName as template"}
+{"user_input": "Type lastName variable", "assistant_output": "write lastName as template"}
+{"user_input": "Type clientID as template", "assistant_output": "write clientID as template"}
 {"user_input": "Write sessionID variable", "assistant_output": "write sessionID as template"}
 {"user_input": "Write orderNumber as template", "assistant_output": "write orderNumber as template"}
 {"user_input": "Write description variable", "assistant_output": "write description as template"}
-{"user_input": "Write commentText as template", "assistant_output": "write commentText as template"}
-{"user_input": "Write username123", "assistant_output": "write username123"}
-{"user_input": "Write admin password", "assistant_output": "write admin password"}
-{"user_input": "Write test input", "assistant_output": "write test input"}
-{"user_input": "Write random string", "assistant_output": "write random string"}
-{"user_input": "Write note for task", "assistant_output": "write note for task"}
-{"user_input": "Write tempValue as variable", "assistant_output": "write tempValue as template"}
-{"user_input": "Write description", "assistant_output": "write description"}
-{"user_input": "Write feedback text", "assistant_output": "write feedback text"}
-{"user_input": "Write my name", "assistant_output": "write my name"}
-{"user_input": "Write the email", "assistant_output": "write the email"}
-{"user_input": "Write the password", "assistant_output": "write the password"}
-{"user_input": "Write the username", "assistant_output": "write the username"}
-{"user_input": "Write the client name as template", "assistant_output": "write client name as template"}
-{"user_input": "Write the product ID as variable", "assistant_output": "write product ID as template"}
-{"user_input": "Write taskName as template", "assistant_output": "write taskName as template"}
-{"user_input": "Write reportName as template", "assistant_output": "write reportName as template"}
-{"user_input": "Write projectID as variable", "assistant_output": "write projectID as template"}
-{"user_input": "Write project name", "assistant_output": "write project name"}
-{"user_input": "Write task description", "assistant_output": "write task description"}
-{"user_input": "Write some notes", "assistant_output": "write some notes"}
-{"user_input": "Write the text hello world", "assistant_output": "write hello world"}
+{"user_input": "Type commentText as template", "assistant_output": "write commentText as template"}
+{"user_input": "Type username123", "assistant_output": "write username123"}
+{"user_input": "Type admin password", "assistant_output": "write admin password"}
+{"user_input": "Type test input", "assistant_output": "write test input"}
+{"user_input": "Type random string", "assistant_output": "write random string"}
+{"user_input": "Type note for task", "assistant_output": "write note for task"}
+{"user_input": "Type tempValue as variable", "assistant_output": "write tempValue as template"}
+{"user_input": "Type description", "assistant_output": "write description"}
+{"user_input": "Type feedback text", "assistant_output": "write feedback text"}
+{"user_input": "Type my name", "assistant_output": "write my name"}
+{"user_input": "Type the email", "assistant_output": "write the email"}
+{"user_input": "Type the password", "assistant_output": "write the password"}
+{"user_input": "Type the username", "assistant_output": "write the username"}
+{"user_input": "Type the client name as template", "assistant_output": "write client name as template"}
+{"user_input": "Type the product ID as variable", "assistant_output": "write product ID as template"}
+{"user_input": "Type taskName as template", "assistant_output": "write taskName as template"}
+{"user_input": "Type reportName as template", "assistant_output": "write reportName as template"}
+{"user_input": "Type projectID as variable", "assistant_output": "write projectID as template"}
+{"user_input": "Type project name", "assistant_output": "write project name"}
+{"user_input": "Type task description", "assistant_output": "write task description"}
+{"user_input": "Type some notes", "assistant_output": "write some notes"}
+{"user_input": "Type the text hello world", "assistant_output": "write hello world"}
 {"user_input": "Write emailAddress", "assistant_output": "write emailAddress"}
 {"user_input": "Write phoneNumber", "assistant_output": "write phoneNumber"}
 {"user_input": "Write address", "assistant_output": "write address"}
@@ -373,7 +384,7 @@
 {"user_input": "Write variable name as template", "assistant_output": "write variable name as template"}
 {"user_input": "uh write username", "assistant_output": "write username"}
 {"user_input": "write, uh, email please", "assistant_output": "write email"}
-{"user_input": "write password one two three", "assistant_output": "write password123"}
+{"user_input": "type password one two three", "assistant_output": "write password123"}
 {"user_input": "okay write hello world", "assistant_output": "write hello world"}
 {"user_input": "write my full name", "assistant_output": "write full name"}
 {"user_input": "can you write first name", "assistant_output": "write firstName"}
@@ -389,7 +400,7 @@
 {"user_input": "write comments", "assistant_output": "write comments"}
 {"user_input": "write feedback text", "assistant_output": "write feedback"}
 {"user_input": "write order ID", "assistant_output": "write order ID"}
-{"user_input": "write client ID please", "assistant_output": "write client ID"}
+{"user_input": "type client ID please", "assistant_output": "write client ID"}
 {"user_input": "write product name", "assistant_output": "write product name"}
 {"user_input": "write username as variable", "assistant_output": "write username as template"}
 {"user_input": "write email as a template", "assistant_output": "write email as template"}
@@ -464,6 +475,15 @@
 {"user_input": "right click every variable named menu2", "assistant_output": "right click all variable menu2"}
 {"user_input": "double click all vars labeled field2", "assistant_output": "double click all variable field2"}
 {"user_input": "middle click every variable entry called input2", "assistant_output": "middle click all variable input2"}
+{"user_input": "middle click all vars named checkbox2 ignore this", "assistant_output": "nothing"}
+{"user_input": "click all variable items called dropdown2 ignore ignore", "assistant_output": "nothing"}
+{"user_input": "right click all vars labeled slider2 nevermind this", "assistant_output": "nothing"}
+{"user_input": "double click all variable entries called switch2 forget this", "assistant_output": "nothing"}
+{"user_input": "middle click all vars named toggle2 nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "click all variable records called option2, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "right click every variable named menu2, remove this", "assistant_output": "nothing"}
+{"user_input": "double click all vars labeled field2, cancel this", "assistant_output": "nothing"}
+{"user_input": "middle click every variable entry called input2 ignore this", "assistant_output": "nothing"}
 {"user_input": "hey can you click all the variables called score for me", "assistant_output": "click all variable score"}
 {"user_input": "please right click every variable labeled health", "assistant_output": "right click all variable health"}
 {"user_input": "double click all vars named mana if you can", "assistant_output": "double click all variable mana"}
@@ -502,6 +522,13 @@
 {"user_input": "perform shift left click on quest variables", "assistant_output": "shift left click all variable quest"}
 {"user_input": "shift left click all mission variables now", "assistant_output": "shift left click all variable mission"}
 {"user_input": "do a shift left click on each task variable", "assistant_output": "shift left click all variable task"}
+{"user_input": "shift left click all variables named index ignore this", "assistant_output": "nothing"}
+{"user_input": "shift left click all variables called slot ignore ignore", "assistant_output": "nothing"}
+{"user_input": "shift left click journal variables nevermind this", "assistant_output": "nothing"}
+{"user_input": "apply shift left click to entry variables forget this", "assistant_output": "nothing"}
+{"user_input": "perform shift left click on quest variables nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "shift left click all mission variables now, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "do a shift left click on each task variable, remove this", "assistant_output": "nothing"}
 {"user_input": "can you use shift right click for all the variables called count", "assistant_output": "shift right click all variable count"}
 {"user_input": "i need you to shift right click every single variable named score", "assistant_output": "shift right click all variable score"}
 {"user_input": "shift and right click all the variables labeled lives", "assistant_output": "shift right click all variable lives"}
@@ -529,6 +556,14 @@
 {"user_input": "shift right click each variable labeled lives", "assistant_output": "shift right click all variable lives"}
 {"user_input": "apply shift right click to all money variables", "assistant_output": "shift right click all variable money"}
 {"user_input": "execute shift right click on every theme variable", "assistant_output": "shift right click all variable theme"}
+{"user_input": "shift right click all variables labeled cap ignore this", "assistant_output": "nothing"}
+{"user_input": "shift right click all variables for quota ignore ignore", "assistant_output": "nothing"}
+{"user_input": "shift right click all variables named index nevermind this", "assistant_output": "nothing"}
+{"user_input": "use shift right to click every variable named count forget this", "assistant_output": "nothing"}
+{"user_input": "perform shift right click on all variables called score nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "shift right click each variable labeled lives, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "apply shift right click to all money variables, remove this", "assistant_output": "nothing"}
+{"user_input": "execute shift right click on every theme variable, cancel this", "assistant_output": "nothing"}
 {"user_input": "hey can you shift left click all the variables called health", "assistant_output": "shift left click all variable health"}
 {"user_input": "please shift left click every variable labeled mana", "assistant_output": "shift left click all variable mana"}
 {"user_input": "could you shift left click all variables for energy", "assistant_output": "shift left click all variable energy"}
@@ -561,49 +596,7 @@
 {"user_input": "Double click open folder", "assistant_output": "double click open folder"}
 {"user_input": "Double click start button", "assistant_output": "double click start button"}
 {"user_input": "Double click exit link", "assistant_output": "double click exit link"}
-{"user_input": "Double click green button", "assistant_output": "double click green button"}
-{"user_input": "Double click notification icon", "assistant_output": "double click notification icon"}
-{"user_input": "Double click profile picture", "assistant_output": "double click profile picture"}
-{"user_input": "Double click text box", "assistant_output": "double click text box"}
-{"user_input": "Double click sidebar menu", "assistant_output": "double click sidebar menu"}
-{"user_input": "Double click blue text", "assistant_output": "double click blue text"}
-{"user_input": "Double click gray button", "assistant_output": "double click gray button"}
-{"user_input": "Double click next page link", "assistant_output": "double click next page link"}
-{"user_input": "Double click home icon", "assistant_output": "double click home icon"}
-{"user_input": "Double click cancel button", "assistant_output": "double click cancel button"}
-{"user_input": "Double click confirm action", "assistant_output": "double click confirm action"}
-{"user_input": "Double click submit form", "assistant_output": "double click submit form"}
-{"user_input": "Double click menu item", "assistant_output": "double click menu item"}
 {"user_input": "Double click header text", "assistant_output": "double click header text"}
-{"user_input": "Double click image icon", "assistant_output": "double click image icon"}
-{"user_input": "Double click link text", "assistant_output": "double click link text"}
-{"user_input": "Double click footer link", "assistant_output": "double click footer link"}
-{"user_input": "Double click notification badge", "assistant_output": "double click notification badge"}
-{"user_input": "Double click document title", "assistant_output": "double click document title"}
-{"user_input": "Double click search bar", "assistant_output": "double click search bar"}
-{"user_input": "Double click blue banner", "assistant_output": "double click blue banner"}
-{"user_input": "Double click red icon", "assistant_output": "double click red icon"}
-{"user_input": "Double click purple label", "assistant_output": "double click purple label"}
-{"user_input": "Double click info box", "assistant_output": "double click info box"}
-{"user_input": "Double click notification panel", "assistant_output": "double click notification panel"}
-{"user_input": "Double click sidebar icon", "assistant_output": "double click sidebar icon"}
-{"user_input": "Double click green link", "assistant_output": "double click green link"}
-{"user_input": "Double click submit icon", "assistant_output": "double click submit icon"}
-{"user_input": "Double click black button", "assistant_output": "double click black button"}
-{"user_input": "Double click white checkbox", "assistant_output": "double click white checkbox"}
-{"user_input": "Double click orange sidebar", "assistant_output": "double click orange sidebar"}
-{"user_input": "Double click brown icon", "assistant_output": "double click brown icon"}
-{"user_input": "Double click gray checkbox", "assistant_output": "double click gray checkbox"}
-{"user_input": "Double click purple banner", "assistant_output": "double click purple banner"}
-{"user_input": "Double click black icon", "assistant_output": "double click black icon"}
-{"user_input": "Double click white field", "assistant_output": "double click white field"}
-{"user_input": "Double click red label", "assistant_output": "double click red label"}
-{"user_input": "Double click green sidebar", "assistant_output": "double click green sidebar"}
-{"user_input": "Double click blue field", "assistant_output": "double click blue field"}
-{"user_input": "Double click yellow label", "assistant_output": "double click yellow label"}
-{"user_input": "Double click orange link", "assistant_output": "double click orange link"}
-{"user_input": "Double click brown button", "assistant_output": "double click brown button"}
-{"user_input": "Double click gray menu", "assistant_output": "double click gray menu"}
 {"user_input": "Double click purple checkbox", "assistant_output": "double click purple checkbox"}
 {"user_input": "Hey, double click that green button over there", "assistant_output": "double click green button"}
 {"user_input": "Double click the big blue panel", "assistant_output": "double click blue panel"}
@@ -614,13 +607,6 @@
 {"user_input": "Double click on the white checkbox quickly", "assistant_output": "double click white checkbox"}
 {"user_input": "Hey AI, double click the purple menu", "assistant_output": "double click purple menu"}
 {"user_input": "Double click gray text field now", "assistant_output": "double click gray text field"}
-{"user_input": "Double click the orange icon right now", "assistant_output": "double click orange icon"}
-{"user_input": "Double click the first button you see", "assistant_output": "double click button"}
-{"user_input": "Double click the main panel", "assistant_output": "double click panel"}
-{"user_input": "Can you double click the sidebar for me?", "assistant_output": "double click sidebar"}
-{"user_input": "Double click the top link", "assistant_output": "double click link"}
-{"user_input": "Double click that field please", "assistant_output": "double click field"}
-{"user_input": "Quickly double click the green icon", "assistant_output": "double click green icon"}
 {"user_input": "Double click the blue checkbox", "assistant_output": "double click blue checkbox"}
 {"user_input": "Double click the gray button now", "assistant_output": "double click gray button"}
 {"user_input": "Double click the purple field", "assistant_output": "double click purple field"}
@@ -635,6 +621,13 @@
 {"user_input": "Double click the black text box", "assistant_output": "double click black text box"}
 {"user_input": "Hey, double click that icon", "assistant_output": "double click icon"}
 {"user_input": "Double click the gray sidebar quickly", "assistant_output": "double click gray sidebar"}
+{"user_input": "Double click start button ignore this", "assistant_output": "nothing"}
+{"user_input": "Double click exit link ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Double click header text nevermind this", "assistant_output": "nothing"}
+{"user_input": "Double click purple checkbox forget this", "assistant_output": "nothing"}
+{"user_input": "Hey, double click that green button over there nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "Double click the big blue panel, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "Can you double click the red icon for me?, remove this", "assistant_output": "nothing"}
 {"user_input": "Click image profile picture on top right", "assistant_output": "click image profile picture"}
 {"user_input": "Click image settings icon", "assistant_output": "click image settings icon"}
 {"user_input": "Click image avatar top right", "assistant_output": "click image avatar"}
@@ -648,73 +641,8 @@
 {"user_input": "Click image menu icon", "assistant_output": "click image menu icon"}
 {"user_input": "Click image save icon", "assistant_output": "click image save icon"}
 {"user_input": "Click image logout button", "assistant_output": "click image logout button"}
-{"user_input": "Click image notifications icon", "assistant_output": "click image notifications icon"}
-{"user_input": "Click image profile dropdown", "assistant_output": "click image profile dropdown"}
-{"user_input": "Click image download icon", "assistant_output": "click image download icon"}
-{"user_input": "Click image user avatar", "assistant_output": "click image user avatar"}
-{"user_input": "Click image print icon", "assistant_output": "click image print icon"}
-{"user_input": "Click image profile picture", "assistant_output": "click image profile picture"}
-{"user_input": "Click image printer icon", "assistant_output": "click image printer icon"}
-{"user_input": "Click image upload button", "assistant_output": "click image upload button"}
-{"user_input": "click image profile dropdown", "assistant_output": "click image profile dropdown"}
-{"user_input": "can you click image profile pic for me", "assistant_output": "click image profile pic"}
-{"user_input": "click image settings icon now", "assistant_output": "click image settings icon"}
-{"user_input": "uh click image green button now", "assistant_output": "click image green button"}
-{"user_input": "okay so click on image profilePic please", "assistant_output": "click image profilePic"}
-{"user_input": "find uploadIcon for me", "assistant_output": "click image uploadIcon"}
-{"user_input": "click picture settingsGear uh yeah", "assistant_output": "click image settingsGear"}
-{"user_input": "image click helpIcon", "assistant_output": "click image helpIcon"}
-{"user_input": "click icon downloadArrow now", "assistant_output": "click image downloadArrow"}
-{"user_input": "click image submitIcon", "assistant_output": "click image submitIcon"}
-{"user_input": "click on image avatarPic", "assistant_output": "click image avatarPic"}
-{"user_input": "find green approveIcon", "assistant_output": "click image green approveIcon"}
-{"user_input": "click picture downloadArrow", "assistant_output": "click image downloadArrow"}
-{"user_input": "image click closeButton", "assistant_output": "click image closeButton"}
-{"user_input": "click picture closeWindow", "assistant_output": "click image closeWindow"}
-{"user_input": "click icon infoButton", "assistant_output": "click image infoButton"}
-{"user_input": "click image blue icon", "assistant_output": "click image blue icon"}
-{"user_input": "click on image red flag", "assistant_output": "click on image red flag"}
-{"user_input": "find yellow star image", "assistant_output": "find yellow star image"}
-{"user_input": "select image green square", "assistant_output": "select image green square"}
-{"user_input": "image click orange circle", "assistant_output": "image click orange circle"}
-{"user_input": "click icon purple triangle", "assistant_output": "click icon purple triangle"}
-{"user_input": "click picture brown box", "assistant_output": "click picture brown box"}
-{"user_input": "click image blue submit icon", "assistant_output": "click image blue submit icon"}
-{"user_input": "find green checkmark", "assistant_output": "find green checkmark"}
-{"user_input": "click on image red x mark", "assistant_output": "click on image red x mark"}
-{"user_input": "image click yellow star", "assistant_output": "image click yellow star"}
-{"user_input": "click picture purple folder", "assistant_output": "click picture purple folder"}
-{"user_input": "click image blue circle", "assistant_output": "click image blue circle"}
-{"user_input": "click on image yellow star", "assistant_output": "click on image yellow star"}
-{"user_input": "image click purple diamond", "assistant_output": "image click purple diamond"}
 {"user_input": "click icon green check", "assistant_output": "click icon green check"}
 {"user_input": "click picture red x mark", "assistant_output": "click picture red x mark"}
-{"user_input": "click image red flag", "assistant_output": "click image red flag"}
-{"user_input": "click image red flag on the left", "assistant_output": "click image red flag"}
-{"user_input": "please click on image blue star", "assistant_output": "click on image blue star"}
-{"user_input": "select image yellow circle at top left", "assistant_output": "select image yellow circle"}
-{"user_input": "image click pink heart icon", "assistant_output": "image click pink heart"}
-{"user_input": "click picture red square icon", "assistant_output": "click picture red square"}
-{"user_input": "umm select image orange diamond", "assistant_output": "select image orange diamond"}
-{"user_input": "find blue star image", "assistant_output": "find blue star"}
-{"user_input": "please find red cross image", "assistant_output": "find red cross"}
-{"user_input": "image click green checkmark", "assistant_output": "image click green checkmark"}
-{"user_input": "select image teal heart", "assistant_output": "select image teal heart"}
-{"user_input": "find pink moon image at the top", "assistant_output": "find pink moon"}
-{"user_input": "click icon gray square", "assistant_output": "click icon gray square"}
-{"user_input": "image click cyan triangle icon", "assistant_output": "image click cyan triangle"}
-{"user_input": "please click picture magenta star", "assistant_output": "click picture magenta star"}
-{"user_input": "find lime circle image", "assistant_output": "find lime circle"}
-{"user_input": "hey AI, find green check icon", "assistant_output": "find green check"}
-{"user_input": "umm click on image blue star now", "assistant_output": "click on image blue star"}
-{"user_input": "please select image yellow circle top right", "assistant_output": "select image yellow circle"}
-{"user_input": "click icon purple triangle near the top", "assistant_output": "click icon purple triangle"}
-{"user_input": "find the green flag image", "assistant_output": "find green flag"}
-{"user_input": "click picture red square icon please", "assistant_output": "click picture red square"}
-{"user_input": "select image orange diamond for me", "assistant_output": "select image orange diamond"}
-{"user_input": "find blue star image at top left", "assistant_output": "find blue star"}
-{"user_input": "click image blue circle now", "assistant_output": "click image blue circle"}
-{"user_input": "please find red cross image quickly", "assistant_output": "find red cross"}
 {"user_input": "find orange moon image quickly", "assistant_output": "find orange moon"}
 {"user_input": "click icon cyan heart", "assistant_output": "click icon cyan heart"}
 {"user_input": "image click purple triangle", "assistant_output": "image click purple triangle"}
@@ -729,33 +657,6 @@
 {"user_input": "click icon red star", "assistant_output": "click icon red star"}
 {"user_input": "image click blue diamond", "assistant_output": "image click blue diamond"}
 {"user_input": "please click picture yellow circle icon", "assistant_output": "click picture yellow circle"}
-{"user_input": "find teal triangle image", "assistant_output": "find teal triangle"}
-{"user_input": "click image black moon", "assistant_output": "click image black moon"}
-{"user_input": "hey AI, find pink star icon", "assistant_output": "find pink star"}
-{"user_input": "umm click on image green circle", "assistant_output": "click on image green circle"}
-{"user_input": "select image blue heart", "assistant_output": "select image blue heart"}
-{"user_input": "image click orange square icon", "assistant_output": "image click orange square"}
-{"user_input": "find purple diamond image", "assistant_output": "find purple diamond"}
-{"user_input": "click icon yellow star", "assistant_output": "click icon yellow star"}
-{"user_input": "image click red triangle", "assistant_output": "image click red triangle"}
-{"user_input": "please click picture cyan moon icon", "assistant_output": "click picture cyan moon"}
-{"user_input": "find lime star image", "assistant_output": "find lime star"}
-{"user_input": "click image silver circle", "assistant_output": "click image silver circle"}
-{"user_input": "hey AI, find magenta heart icon", "assistant_output": "find magenta heart"}
-{"user_input": "umm click on image black diamond", "assistant_output": "click on image black diamond"}
-{"user_input": "select image red triangle", "assistant_output": "select image red triangle"}
-{"user_input": "image click green moon icon", "assistant_output": "image click green moon"}
-{"user_input": "please click on blue text that says tractor", "assistant_output": "click blue tractor"}
-{"user_input": "click on purple text field named username", "assistant_output": "click purple username"}
-{"user_input": "click green text field that says username input", "assistant_output": "click green username input"}
-{"user_input": "click white text field named password please", "assistant_output": "click white password"}
-{"user_input": "click on purple text field called username123", "assistant_output": "click purple username123"}
-{"user_input": "clic the green button", "assistant_output": "click green"}
-{"user_input": "clik image red icon", "assistant_output": "click image red"}
-{"user_input": "find blu icon", "assistant_output": "click image blue"}
-{"user_input": "click on imag yellow star", "assistant_output": "click image yellow star"}
-{"user_input": "click image blue icon", "assistant_output": "click image blue"}
-{"user_input": "click image green star", "assistant_output": "click image green star"}
 {"user_input": "find yellow flag", "assistant_output": "click image yellow flag"}
 {"user_input": "select image red circle", "assistant_output": "click image red circle"}
 {"user_input": "image click purple icon", "assistant_output": "click image purple"}
@@ -775,12 +676,21 @@
 {"user_input": "click on blue tractor", "assistant_output": "click blue tractor"}
 {"user_input": "click image blue", "assistant_output": "click image blue"}
 {"user_input": "click image yellow star", "assistant_output": "click image yellow star"}
+{"user_input": "click image green star", "assistant_output": "click image green star"}
 {"user_input": "click image yellow circle", "assistant_output": "click image yellow circle"}
 {"user_input": "click image purple", "assistant_output": "click image purple"}
 {"user_input": "click image orange", "assistant_output": "click image orange"}
 {"user_input": "click image white star", "assistant_output": "click image white star"}
 {"user_input": "click image green", "assistant_output": "click image green"}
 {"user_input": "click image blue flag", "assistant_output": "click image blue flag"}
+{"user_input": "Click image logout button ignore this", "assistant_output": "nothing"}
+{"user_input": "click icon green check ignore ignore", "assistant_output": "nothing"}
+{"user_input": "click picture red x mark nevermind this", "assistant_output": "nothing"}
+{"user_input": "find orange moon image quickly forget this", "assistant_output": "nothing"}
+{"user_input": "click icon cyan heart nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "image click purple triangle, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "please click picture pink diamond icon, remove this", "assistant_output": "nothing"}
+{"user_input": "find black square image, cancel this", "assistant_output": "nothing"}
 {"user_input": "Click the login button now", "assistant_output": "click login button"}
 {"user_input": "Click blue Submit button", "assistant_output": "click blue Submit"}
 {"user_input": "Click green confirm button", "assistant_output": "click green confirm button"}
@@ -810,20 +720,6 @@
 {"user_input": "Click green OK button", "assistant_output": "click green OK button"}
 {"user_input": "Click the red cancel button", "assistant_output": "click red cancel button"}
 {"user_input": "Click on the yellow alert icon", "assistant_output": "click yellow alert icon"}
-{"user_input": "Click the blue confirm button", "assistant_output": "click blue confirm button"}
-{"user_input": "Click white login", "assistant_output": "click white login"}
-{"user_input": "Click orange warning icon", "assistant_output": "click orange warning icon"}
-{"user_input": "Click the green submit icon", "assistant_output": "click green submit icon"}
-{"user_input": "Click purple info button", "assistant_output": "click purple info button"}
-{"user_input": "Click the gray proceed button", "assistant_output": "click gray proceed button"}
-{"user_input": "Click on black logout button", "assistant_output": "click black logout button"}
-{"user_input": "Click blue submit now", "assistant_output": "click blue submit"}
-{"user_input": "Click green confirm now", "assistant_output": "click green confirm"}
-{"user_input": "Click red delete quickly", "assistant_output": "click red delete"}
-{"user_input": "Click yellow approve now", "assistant_output": "click yellow approve"}
-{"user_input": "Click on white checkbox", "assistant_output": "click white checkbox"}
-{"user_input": "Click orange proceed", "assistant_output": "click orange proceed"}
-{"user_input": "Click the purple menu button", "assistant_output": "click purple menu button"}
 {"user_input": "Click gray icon now", "assistant_output": "click gray icon"}
 {"user_input": "Click the black submit button", "assistant_output": "click black submit button"}
 {"user_input": "Click red cancel icon", "assistant_output": "click red cancel icon"}
@@ -840,6 +736,15 @@
 {"user_input": "Click blue approve", "assistant_output": "click blue approve"}
 {"user_input": "Click white login button", "assistant_output": "click white login button"}
 {"user_input": "Click orange info now", "assistant_output": "click orange info"}
+{"user_input": "Click ignore", "assistant_output": "click ignore"}
+{"user_input": "Click ignore this", "assistant_output": "click ignore this"}
+{"user_input": "left click main menu ignore this", "assistant_output": "nothing"}
+{"user_input": "Click the black settings button now ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Click green OK button nevermind this", "assistant_output": "nothing"}
+{"user_input": "Click the red cancel button forget this", "assistant_output": "nothing"}
+{"user_input": "Click on the yellow alert icon nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "Click gray icon now, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "Click the black submit button, remove this", "assistant_output": "nothing"}
 {"user_input": "hey listen uh I want you to click the blue submit button now", "assistant_output": "click blue submit button"}
 {"user_input": "okay click green proceed button now", "assistant_output": "click green proceed button"}
 {"user_input": "please left click the red label called Submit", "assistant_output": "click red Submit"}
@@ -866,15 +771,6 @@
 {"user_input": "Middle click the red menu item", "assistant_output": "middle click red menu item"}
 {"user_input": "Middle click on yellow icon", "assistant_output": "middle click yellow icon"}
 {"user_input": "Middle click the blue button", "assistant_output": "middle click blue button"}
-{"user_input": "Middle click white tab", "assistant_output": "middle click white tab"}
-{"user_input": "Middle click orange link", "assistant_output": "middle click orange link"}
-{"user_input": "Middle click the green icon", "assistant_output": "middle click green icon"}
-{"user_input": "Middle click purple menu", "assistant_output": "middle click purple menu"}
-{"user_input": "Middle click gray tab", "assistant_output": "middle click gray tab"}
-{"user_input": "Middle click black icon now", "assistant_output": "middle click black icon"}
-{"user_input": "Middle click blue link quickly", "assistant_output": "middle click blue link"}
-{"user_input": "Middle click green menu item", "assistant_output": "middle click green menu item"}
-{"user_input": "Middle click red button now", "assistant_output": "middle click red button"}
 {"user_input": "Mid click yellow tab", "assistant_output": "middle click yellow tab"}
 {"user_input": "Mid click white link now", "assistant_output": "middle click white link"}
 {"user_input": "Mid click orange button", "assistant_output": "middle click orange button"}
@@ -882,18 +778,6 @@
 {"user_input": "Mid click gray menu item", "assistant_output": "middle click gray menu item"}
 {"user_input": "Mid click on black tab", "assistant_output": "middle click black tab"}
 {"user_input": "Mid click green button now", "assistant_output": "middle click green button"}
-{"user_input": "Middle click red link quickly", "assistant_output": "middle click red link"}
-{"user_input": "middle click yellow icon now", "assistant_output": "middle click yellow icon"}
-{"user_input": "middle click blue menu", "assistant_output": "middle click blue menu"}
-{"user_input": "middle click white tab now", "assistant_output": "middle click white tab"}
-{"user_input": "Middle click orange menu item", "assistant_output": "middle click orange menu item"}
-{"user_input": "middle click purple tab", "assistant_output": "middle click purple tab"}
-{"user_input": "middle click gray icon quickly", "assistant_output": "middle click gray icon"}
-{"user_input": "middle click black link", "assistant_output": "middle click black link"}
-{"user_input": "middle click green tab now", "assistant_output": "middle click green tab"}
-{"user_input": "middle click red menu item", "assistant_output": "middle click red menu item"}
-{"user_input": "middle click yellow button", "assistant_output": "middle click yellow button"}
-{"user_input": "middle click blue tab now", "assistant_output": "middle click blue tab"}
 {"user_input": "Middle click white menu", "assistant_output": "middle click white menu"}
 {"user_input": "Middle click orange link quickly", "assistant_output": "middle click orange link"}
 {"user_input": "Middle click purple button", "assistant_output": "middle click purple button"}
@@ -901,6 +785,9 @@
 {"user_input": "Middle click black menu item", "assistant_output": "middle click black menu item"}
 {"user_input": "Middle click green link now", "assistant_output": "middle click green link"}
 {"user_input": "Middle click red tab", "assistant_output": "middle click red tab"}
+{"user_input": "Middle click white menu ignore this", "assistant_output": "nothing"}
+{"user_input": "Middle click orange link quickly ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Middle click purple button nevermind this", "assistant_output": "nothing"}
 {"user_input": "right click now", "assistant_output": "right click now"}
 {"user_input": "right click context menu", "assistant_output": "right click context menu"}
 {"user_input": "right click settings", "assistant_output": "right click settings"}
@@ -931,34 +818,16 @@
 {"user_input": "Right click red button quickly", "assistant_output": "right click red button"}
 {"user_input": "right click yellow link", "assistant_output": "right click yellow link"}
 {"user_input": "rght click blue menu", "assistant_output": "right click blue menu"}
-{"user_input": "Right click orange menu item", "assistant_output": "right click orange menu item"}
-{"user_input": "right click purple tab", "assistant_output": "right click purple tab"}
-{"user_input": "right click gray icon quickly", "assistant_output": "right click gray icon"}
-{"user_input": "Right click black menu item", "assistant_output": "right click black menu item"}
-{"user_input": "right click green link", "assistant_output": "right click green link"}
-{"user_input": "right click red tab", "assistant_output": "right click red tab"}
-{"user_input": "right click yellow menu item", "assistant_output": "right click yellow menu item"}
-{"user_input": "right click blue button quickly", "assistant_output": "right click blue button"}
-{"user_input": "right click white icon", "assistant_output": "right click white icon"}
-{"user_input": "right click orange button", "assistant_output": "right click orange button"}
-{"user_input": "right click purple link", "assistant_output": "right click purple link"}
-{"user_input": "right click gray menu", "assistant_output": "right click gray menu"}
-{"user_input": "right click black button ", "assistant_output": "right click black button"}
-{"user_input": "right click green icon", "assistant_output": "right click green icon"}
-{"user_input": "right click red menu", "assistant_output": "right click red menu"}
-{"user_input": "Right click yellow tab quickly", "assistant_output": "right click yellow tab"}
-{"user_input": "Right click blue icon", "assistant_output": "right click blue icon"}
-{"user_input": "Right click white menu item", "assistant_output": "right click white menu item"}
-{"user_input": "Right click orange tab", "assistant_output": "right click orange tab"}
-{"user_input": "Right click gray tab", "assistant_output": "right click gray tab"}
-{"user_input": "Right click black link quickly", "assistant_output": "right click black link"}
-{"user_input": "Right click green menu", "assistant_output": "right click green menu"}
 {"user_input": "Right click red icon", "assistant_output": "right click red icon"}
 {"user_input": "Right click yellow button quickly", "assistant_output": "right click yellow button"}
 {"user_input": "Right click blue tab now", "assistant_output": "right click blue tab"}
 {"user_input": "Right click white link", "assistant_output": "right click white link"}
 {"user_input": "Right click orange icon", "assistant_output": "right click orange icon"}
 {"user_input": "Right click purple menu now", "assistant_output": "right click purple menu"}
+{"user_input": "Right click red button quickly ignore this", "assistant_output": "nothing"}
+{"user_input": "right click yellow link ignore ignore", "assistant_output": "nothing"}
+{"user_input": "rght click blue menu nevermind this", "assistant_output": "nothing"}
+{"user_input": "Right click white tab forget this", "assistant_output": "nothing"}
 {"user_input": "click left of main menu", "assistant_output": "click left of main menu"}
 {"user_input": "click right of save button", "assistant_output": "click right of save button"}
 {"user_input": "click above the search box", "assistant_output": "click above of search box"}
@@ -983,20 +852,6 @@
 {"user_input": "click text right of apply", "assistant_output": "click right of apply|text"}
 {"user_input": "click above the object", "assistant_output": "click above of object"}
 {"user_input": "click text below settings", "assistant_output": "click below of settings|text"}
-{"user_input": "click left of the tab", "assistant_output": "click left of tab"}
-{"user_input": "click right of the link", "assistant_output": "click right of link"}
-{"user_input": "click text above username", "assistant_output": "click above of username|text"}
-{"user_input": "click text below password", "assistant_output": "click below of password|text"}
-{"user_input": "click left to the field", "assistant_output": "click left of field"}
-{"user_input": "click right to the checkbox", "assistant_output": "click right of checkbox"}
-{"user_input": "click text above title", "assistant_output": "click above of title|text"}
-{"user_input": "click under the list", "assistant_output": "click below of list"}
-{"user_input": "click text left of edit", "assistant_output": "click left of edit|text"}
-{"user_input": "click text right of view", "assistant_output": "click right of view|text"}
-{"user_input": "click above the container", "assistant_output": "click above of container"}
-{"user_input": "click text below area", "assistant_output": "click below of area|text"}
-{"user_input": "click left of element", "assistant_output": "click left of element"}
-{"user_input": "click right of widget", "assistant_output": "click right of widget"}
 {"user_input": "click text above header", "assistant_output": "click above of header|text"}
 {"user_input": "click text below footer", "assistant_output": "click below of footer|text"}
 {"user_input": "click left to the control", "assistant_output": "click left of control"}
@@ -1080,15 +935,15 @@
 {"user_input": "right click text above username", "assistant_output": "right click above of username|text"}
 {"user_input": "right click text below password", "assistant_output": "right click below of password|text"}
 {"user_input": "right click left to the field", "assistant_output": "right click left of field"}
-{"user_input": "right click right to the checkbox", "assistant_output": "right click right of checkbox"}
-{"user_input": "right click text above title", "assistant_output": "right click above of title|text"}
-{"user_input": "right click under the list", "assistant_output": "right click below of list"}
-{"user_input": "right click text left of edit", "assistant_output": "right click left of edit|text"}
-{"user_input": "right click text right of view", "assistant_output": "right click right of view|text"}
-{"user_input": "right click above the container", "assistant_output": "right click above of container"}
-{"user_input": "right click text below area", "assistant_output": "right click below of area|text"}
-{"user_input": "right click left of element", "assistant_output": "right click left of element"}
-{"user_input": "right click right of widget", "assistant_output": "right click right of widget"}
+{"user_input": "write click right to the checkbox", "assistant_output": "right click right of checkbox"}
+{"user_input": "write click text above title", "assistant_output": "right click above of title|text"}
+{"user_input": "write click under the list", "assistant_output": "right click below of list"}
+{"user_input": "write click text left of edit", "assistant_output": "right click left of edit|text"}
+{"user_input": "write click text right of view", "assistant_output": "right click right of view|text"}
+{"user_input": "write click above the container", "assistant_output": "right click above of container"}
+{"user_input": "write click text below area", "assistant_output": "right click below of area|text"}
+{"user_input": "write click left of element", "assistant_output": "right click left of element"}
+{"user_input": "write click right of widget", "assistant_output": "right click right of widget"}
 {"user_input": "double click left of main menu", "assistant_output": "double click left of main menu"}
 {"user_input": "double click right of save button", "assistant_output": "double click right of save button"}
 {"user_input": "double click above the search box", "assistant_output": "double click above of search box"}
@@ -1249,6 +1104,10 @@
 {"user_input": "right click the best number inside reposts", "assistant_output": "right click variable reposts"}
 {"user_input": "double click the top value in comments", "assistant_output": "double click variable comments"}
 {"user_input": "middle click the strongest value inside notifications", "assistant_output": "middle click variable notifications"}
+{"user_input": "click top items", "assistant_output": "click top variable items"}
+{"user_input": "can you click best item in items", "assistant_output": "click top variable items"}
+{"user_input": "click best value in instructions", "assistant_output": "click top variable instructions"}
+{"user_input": "click best result in values", "assistant_output": "click top variable values"}
 {"user_input": "click top variable variable health", "assistant_output": "Wrong input"}
 {"user_input": "click the variable top variable score", "assistant_output": "Wrong input"}
 {"user_input": "click top var var_name", "assistant_output": "click variable var_name"}
@@ -1412,14 +1271,14 @@
 {"user_input": "Focus 30,40,700,800", "assistant_output": "Focus 30,40,700,800"}
 {"user_input": "Focus 150,225,1600,900", "assistant_output": "Focus 150,225,1600,900"}
 {"user_input": "Focus 5,5,1366,768", "assistant_output": "Focus 5,5,1366,768"}
-{"user_input": "Focus 200,300,1000,750", "assistant_output": "Focus 200,300,1000,750"}
-{"user_input": "Focus 45,60,1920,1200", "assistant_output": "Focus 45,60,1920,1200"}
-{"user_input": "Focus 75,90,1024,768", "assistant_output": "Focus 75,90,1024,768"}
-{"user_input": "Focus 320,240,1440,900", "assistant_output": "Focus 320,240,1440,900"}
-{"user_input": "Focus 12,34,567,890", "assistant_output": "Focus 12,34,567,890"}
-{"user_input": "Focus 99,88,777,666", "assistant_output": "Focus 99,88,777,666"}
-{"user_input": "Focus 123,456,789,1011", "assistant_output": "Focus 123,456,789,1011"}
-{"user_input": "Focus 404,303,2020,1616", "assistant_output": "Focus 404,303,2020,1616"}
+{"user_input": "Focus on 200,300,1000,750", "assistant_output": "Focus 200,300,1000,750"}
+{"user_input": "Focus on 45,60,1920,1200", "assistant_output": "Focus 45,60,1920,1200"}
+{"user_input": "Focus on 75,90,1024,768", "assistant_output": "Focus 75,90,1024,768"}
+{"user_input": "Focus on 320,240,1440,900", "assistant_output": "Focus 320,240,1440,900"}
+{"user_input": "Focus at 12,34,567,890", "assistant_output": "Focus 12,34,567,890"}
+{"user_input": "Focus at 99,88,777,666", "assistant_output": "Focus 99,88,777,666"}
+{"user_input": "Focus at 123,456,789,1011", "assistant_output": "Focus 123,456,789,1011"}
+{"user_input": "Focus at 404,303,2020,1616", "assistant_output": "Focus 404,303,2020,1616"}
 {"user_input": "Focus 720,480,1920,1080", "assistant_output": "Focus 720,480,1920,1080"}
 {"user_input": "Focus 80,160,640,480", "assistant_output": "Focus 80,160,640,480"}
 {"user_input": "Focus 22,33,444,555", "assistant_output": "Focus 22,33,444,555"}
@@ -1455,25 +1314,25 @@
 {"user_input": "play recording macro one", "assistant_output": "play macro one"}
 {"user_input": "play recording login flow now", "assistant_output": "play login flow"}
 {"user_input": "play recording user test", "assistant_output": "play user test"}
-{"user_input": "play recording macro setup", "assistant_output": "play macro setup"}
-{"user_input": "play recording workflow two", "assistant_output": "play workflow two"}
-{"user_input": "play recording sequence two", "assistant_output": "play sequence two"}
-{"user_input": "play recording automation three", "assistant_output": "play automation three"}
-{"user_input": "play recording import test", "assistant_output": "play import test"}
-{"user_input": "play recording export test", "assistant_output": "play export test"}
-{"user_input": "play recording upload macro", "assistant_output": "play upload macro"}
-{"user_input": "play recording cleanup flow", "assistant_output": "play cleanup flow"}
-{"user_input": "play recording setup macro", "assistant_output": "play setup macro"}
-{"user_input": "play recording test flow", "assistant_output": "play test flow"}
-{"user_input": "play recording login test", "assistant_output": "play login test"}
-{"user_input": "play recording user macro", "assistant_output": "play user macro"}
-{"user_input": "play recording sequence three", "assistant_output": "play sequence three"}
-{"user_input": "play recording macro three", "assistant_output": "play macro three"}
-{"user_input": "play recording workflow test", "assistant_output": "play workflow test"}
-{"user_input": "play recording export macro two", "assistant_output": "play export macro two"}
-{"user_input": "play recording import flow two", "assistant_output": "play import flow two"}
-{"user_input": "play recording automation flow", "assistant_output": "play automation flow"}
-{"user_input": "play recording sequence macro", "assistant_output": "play sequence macro"}
+{"user_input": "run macro setup", "assistant_output": "play macro setup"}
+{"user_input": "run workflow two", "assistant_output": "play workflow two"}
+{"user_input": "run recording sequence two", "assistant_output": "play sequence two"}
+{"user_input": "run recording automation three", "assistant_output": "play automation three"}
+{"user_input": "run recording import test", "assistant_output": "play import test"}
+{"user_input": "run recording export test", "assistant_output": "play export test"}
+{"user_input": "play upload macro", "assistant_output": "play upload macro"}
+{"user_input": "play cleanup flow", "assistant_output": "play cleanup flow"}
+{"user_input": "play setup macro", "assistant_output": "play setup macro"}
+{"user_input": "play test flow", "assistant_output": "play test flow"}
+{"user_input": "play login test", "assistant_output": "play login test"}
+{"user_input": "play user macro", "assistant_output": "play user macro"}
+{"user_input": "play sequence three", "assistant_output": "play sequence three"}
+{"user_input": "play macro three", "assistant_output": "play macro three"}
+{"user_input": "play workflow test", "assistant_output": "play workflow test"}
+{"user_input": "play export macro two", "assistant_output": "play export macro two"}
+{"user_input": "play import flow two", "assistant_output": "play import flow two"}
+{"user_input": "play automation flow", "assistant_output": "play automation flow"}
+{"user_input": "play sequence macro", "assistant_output": "play sequence macro"}
 {"user_input": "uh play recording login flow now", "assistant_output": "play login flow"}
 {"user_input": "hey can you play recording macro setup", "assistant_output": "play macro setup"}
 {"user_input": "umm play recording workflow two please", "assistant_output": "play workflow two"}
@@ -1573,70 +1432,6 @@
 {"user_input": "Um stop recording workflow", "assistant_output": "stop recording workflow"}
 {"user_input": "Stop recording import please", "assistant_output": "stop recording import"}
 {"user_input": "Alright stop recording demo", "assistant_output": "stop recording demo"}
-{"user_input": "Start recording macro one", "assistant_output": "Start recording macro one"}
-{"user_input": "Begin recording my actions", "assistant_output": "Start recording my actions"}
-{"user_input": "Start recording workflow", "assistant_output": "Start recording workflow"}
-{"user_input": "Start recording alt here", "assistant_output": "Start recording alt here"}
-{"user_input": "Start recording login flow", "assistant_output": "Start recording login flow"}
-{"user_input": "Start recording new macro", "assistant_output": "Start recording new macro"}
-{"user_input": "Start recording user flow", "assistant_output": "Start recording user flow"}
-{"user_input": "Start recording import macro", "assistant_output": "Start recording import macro"}
-{"user_input": "Start recording cleanup macro", "assistant_output": "Start recording cleanup macro"}
-{"user_input": "Start recording upload flow", "assistant_output": "Start recording upload flow"}
-{"user_input": "Start recording export macro", "assistant_output": "Start recording export macro"}
-{"user_input": "Start recording export flow", "assistant_output": "Start recording export flow"}
-{"user_input": "Start recording import flow", "assistant_output": "Start recording import flow"}
-{"user_input": "Start recording automation one", "assistant_output": "Start recording automation one"}
-{"user_input": "Start recording setup flow", "assistant_output": "Start recording setup flow"}
-{"user_input": "Start recording automation two", "assistant_output": "Start recording automation two"}
-{"user_input": "Start recording sequence one", "assistant_output": "Start recording sequence one"}
-{"user_input": "Start recording sequence two", "assistant_output": "Start recording sequence two"}
-{"user_input": "Start recording test macro", "assistant_output": "Start recording test macro"}
-{"user_input": "Start recording sequence three", "assistant_output": "Start recording sequence three"}
-{"user_input": "Start recording workflow four", "assistant_output": "Start recording workflow four"}
-{"user_input": "Start recording upload macro one", "assistant_output": "Start recording upload macro one"}
-{"user_input": "Start recording upload macro two", "assistant_output": "Start recording upload macro two"}
-{"user_input": "Start recording automation three", "assistant_output": "Start recording automation three"}
-{"user_input": "Start recording automation four", "assistant_output": "Start recording automation four"}
-{"user_input": "Start recording test flow", "assistant_output": "Start recording test flow"}
-{"user_input": "Start recording macro alpha", "assistant_output": "Start recording macro alpha"}
-{"user_input": "Start recording workflow beta", "assistant_output": "Start recording workflow beta"}
-{"user_input": "Start recording import macro flow", "assistant_output": "Start recording import macro flow"}
-{"user_input": "Start recording cleanup macro flow", "assistant_output": "Start recording cleanup macro flow"}
-{"user_input": "Start recording upload macro flow", "assistant_output": "Start recording upload macro flow"}
-{"user_input": "Start recording login macro", "assistant_output": "Start recording login macro"}
-{"user_input": "Start recording user sequence", "assistant_output": "Start recording user sequence"}
-{"user_input": "Start recording workflow sequence", "assistant_output": "Start recording workflow sequence"}
-{"user_input": "Start recording test sequence", "assistant_output": "Start recording test sequence"}
-{"user_input": "Start recording automation sequence", "assistant_output": "Start recording automation sequence"}
-{"user_input": "Start recording macro sequence", "assistant_output": "Start recording macro sequence"}
-{"user_input": "Start recording workflow gamma", "assistant_output": "Start recording workflow gamma"}
-{"user_input": "Start recording automation gamma", "assistant_output": "Start recording automation gamma"}
-{"user_input": "Start recording sequence beta", "assistant_output": "Start recording sequence beta"}
-{"user_input": "Begin recording nova", "assistant_output": "Start recording nova"}
-{"user_input": "Let’s record my morning routine", "assistant_output": "Start recording my morning routine"}
-{"user_input": "Kick off recording upload flow", "assistant_output": "Start recording upload flow"}
-{"user_input": "Fire up the recording test sequence", "assistant_output": "Start recording test sequence"}
-{"user_input": "Begin recording echo", "assistant_output": "Start recording echo"}
-{"user_input": "Record nova", "assistant_output": "Start recording nova"}
-{"user_input": "Let’s record alpha", "assistant_output": "Start recording alpha"}
-{"user_input": "Time to record pulse", "assistant_output": "Start recording pulse"}
-{"user_input": "Start a quick recording ripple", "assistant_output": "Start recording ripple"}
-{"user_input": "Launch recording horizon", "assistant_output": "Start recording horizon"}
-{"user_input": "Please record my morning routine", "assistant_output": "Start recording my morning routine"}
-{"user_input": "Kick off recording login flow", "assistant_output": "Start recording login flow"}
-{"user_input": "Fire up the recording cleanup macro", "assistant_output": "Start recording cleanup macro"}
-{"user_input": "Can you start recording test sequence", "assistant_output": "Start recording test sequence"}
-{"user_input": "Hey start recording my macro called login flow", "assistant_output": "Start recording login flow"}
-{"user_input": "Can you start recording workflow alpha now", "assistant_output": "Start recording workflow alpha"}
-{"user_input": "Start recording this new automation sequence please", "assistant_output": "Start recording automation sequence"}
-{"user_input": "I want to start recording user actions for upload flow", "assistant_output": "Start recording upload flow"}
-{"user_input": "Go ahead and start recording cleanup macro now", "assistant_output": "Start recording cleanup macro"}
-{"user_input": "Start recording the test macro we just talked about", "assistant_output": "Start recording test macro"}
-{"user_input": "Please start recording sequence beta", "assistant_output": "Start recording sequence beta"}
-{"user_input": "Start recording workflow beta for me", "assistant_output": "Start recording workflow beta"}
-{"user_input": "Okay start recording automation alpha", "assistant_output": "Start recording automation alpha"}
-{"user_input": "Start recording login macro for this session", "assistant_output": "Start recording login macro"}
 {"user_input": "Start loop over names", "assistant_output": "start loop names as template"}
 {"user_input": "Start loop for each item", "assistant_output": "start loop item as template"}
 {"user_input": "Start looping through usernames", "assistant_output": "start loop usernames as template"}
@@ -1645,20 +1440,31 @@
 {"user_input": "Start loop over usernames as template", "assistant_output": "start loop usernames as template"}
 {"user_input": "Start loop for email list as template", "assistant_output": "start loop email list as template"}
 {"user_input": "Start looping over file list as template", "assistant_output": "start loop file list as template"}
-{"user_input": "Start looping over project list as template", "assistant_output": "start loop project list as template"}
-{"user_input": "Start loop over customer list as template", "assistant_output": "start loop customer list as template"}
-{"user_input": "Start loop over file names as template", "assistant_output": "start loop file names as template"}
-{"user_input": "Start loop over task list as template", "assistant_output": "start loop task list as template"}
-{"user_input": "Start loop over document list as template", "assistant_output": "start loop document list as template"}
-{"user_input": "Start loop over item list as template", "assistant_output": "start loop item list as template"}
+{"user_input": "looping over project list as template", "assistant_output": "start loop project list as template"}
+{"user_input": "loop over customer list as template", "assistant_output": "start loop customer list as template"}
+{"user_input": "loop over file names as template", "assistant_output": "start loop file names as template"}
+{"user_input": "loop over task list as template", "assistant_output": "start loop task list as template"}
+{"user_input": "loop over document list as template", "assistant_output": "start loop document list as template"}
+{"user_input": "loop over item list as template", "assistant_output": "start loop item list as template"}
 {"user_input": "Start loop over emails as template", "assistant_output": "start loop emails as template"}
 {"user_input": "Start loop over projects as template", "assistant_output": "start loop projects as template"}
 {"user_input": "Start loop over files as template", "assistant_output": "start loop files as template"}
 {"user_input": "Start loop over items as template", "assistant_output": "start loop items as template"}
 {"user_input": "Start loop over clients as template", "assistant_output": "start loop clients as template"}
 {"user_input": "Start loop over tickets as template", "assistant_output": "start loop tickets as template"}
-{"user_input": "Start loop over products as template", "assistant_output": "start loop products as template"}
-{"user_input": "Start loop names list as template", "assistant_output": "start loop names list as template"}
+{"user_input": "loop over usernames", "assistant_output": "start loop usernames as template"}
+{"user_input": "Start looping over project list as template", "assistant_output": "start loop project list as template"}
+{"user_input": "Start loop over customer list as template", "assistant_output": "start loop customer list as template"}
+{"user_input": "Start loop over file names as template", "assistant_output": "start loop file names as template"}
+{"user_input": "Start loop over task list as template", "assistant_output": "start loop task list as template"}
+{"user_input": "loop over emails as template", "assistant_output": "start loop emails as template"}
+{"user_input": "loop over projects as template", "assistant_output": "start loop projects as template"}
+{"user_input": "loop over files as template", "assistant_output": "start loop files as template"}
+{"user_input": "loop over items as template", "assistant_output": "start loop items as template"}
+{"user_input": "loop over clients as template", "assistant_output": "start loop clients as template"}
+{"user_input": "loop over tickets as template", "assistant_output": "start loop tickets as template"}
+{"user_input": "loop over products as template", "assistant_output": "start loop products as template"}
+{"user_input": "loop names list as template", "assistant_output": "start loop names list as template"}
 {"user_input": "Start looping items list as template", "assistant_output": "start loop items list as template"}
 {"user_input": "Start loop items as template", "assistant_output": "start loop items as template"}
 {"user_input": "Start loop over employee list", "assistant_output": "start loop employee list as template"}
@@ -1695,30 +1501,30 @@
 {"user_input": "Start loop employees data", "assistant_output": "start loop employees data as template"}
 {"user_input": "Start loop user accounts", "assistant_output": "start loop user accounts as template"}
 {"user_input": "Start loop items list available", "assistant_output": "start loop items list as template"}
-{"user_input": "start loop 3 times", "assistant_output": "start loop 3"}
-{"user_input": "start loop 7 times", "assistant_output": "start loop 7"}
-{"user_input": "start loop 8 times", "assistant_output": "start loop 8"}
-{"user_input": "start loop 9 times", "assistant_output": "start loop 9"}
+{"user_input": "loop 3 times", "assistant_output": "start loop 3"}
+{"user_input": "loop 7 times", "assistant_output": "start loop 7"}
+{"user_input": "loop 8", "assistant_output": "start loop 8"}
+{"user_input": "loop 9 times", "assistant_output": "start loop 9"}
 {"user_input": "start loop 10", "assistant_output": "start loop 10"}
 {"user_input": "start loop 20", "assistant_output": "start loop 20"}
-{"user_input": "start loop 30", "assistant_output": "start loop 30"}
-{"user_input": "start loop 40", "assistant_output": "start loop 40"}
+{"user_input": "loop 30", "assistant_output": "start loop 30"}
+{"user_input": "loop 40", "assistant_output": "start loop 40"}
 {"user_input": "start loop 50", "assistant_output": "start loop 50"}
 {"user_input": "start loop 100 times", "assistant_output": "start loop 100"}
 {"user_input": "start loop 200 times", "assistant_output": "start loop 200"}
-{"user_input": "start loop 300 times", "assistant_output": "start loop 300"}
+{"user_input": "start loop 300", "assistant_output": "start loop 300"}
 {"user_input": "start loop 400 times", "assistant_output": "start loop 400"}
 {"user_input": "start loop 500 times", "assistant_output": "start loop 500"}
 {"user_input": "start loop 1000", "assistant_output": "start loop 1000"}
 {"user_input": "start loop one time", "assistant_output": "start loop 1"}
-{"user_input": "start loop two times", "assistant_output": "start loop 2"}
+{"user_input": "loop two times", "assistant_output": "start loop 2"}
 {"user_input": "start loop three times", "assistant_output": "start loop 3"}
 {"user_input": "start loop four", "assistant_output": "start loop 4"}
 {"user_input": "start loop five", "assistant_output": "start loop 5"}
-{"user_input": "start loop six", "assistant_output": "start loop 6"}
+{"user_input": "loop six", "assistant_output": "start loop 6"}
 {"user_input": "start loop seven", "assistant_output": "start loop 7"}
 {"user_input": "start loop eight times", "assistant_output": "start loop 8"}
-{"user_input": "start loop nine times", "assistant_output": "start loop 9"}
+{"user_input": "loop nine times", "assistant_output": "start loop 9"}
 {"user_input": "start loop ten times", "assistant_output": "start loop 10"}
 {"user_input": "loop 5 times", "assistant_output": "start loop 5"}
 {"user_input": "run loop 10", "assistant_output": "start loop 10"}
@@ -1797,6 +1603,70 @@
 {"user_input": "execute loop 170", "assistant_output": "start loop 170"}
 {"user_input": "start loop with 180 repetitions", "assistant_output": "start loop 180"}
 {"user_input": "do a loop for 190 times", "assistant_output": "start loop 190"}
+{"user_input": "Start recording macro one", "assistant_output": "Start recording macro one"}
+{"user_input": "Begin recording my actions", "assistant_output": "Start recording my actions"}
+{"user_input": "Start recording workflow", "assistant_output": "Start recording workflow"}
+{"user_input": "Start recording alt here", "assistant_output": "Start recording alt here"}
+{"user_input": "Start recording login flow", "assistant_output": "Start recording login flow"}
+{"user_input": "Start recording new macro", "assistant_output": "Start recording new macro"}
+{"user_input": "Start recording user flow", "assistant_output": "Start recording user flow"}
+{"user_input": "Start recording import macro", "assistant_output": "Start recording import macro"}
+{"user_input": "Start recording cleanup macro", "assistant_output": "Start recording cleanup macro"}
+{"user_input": "Start recording upload flow", "assistant_output": "Start recording upload flow"}
+{"user_input": "Start recording export macro", "assistant_output": "Start recording export macro"}
+{"user_input": "Start recording export flow", "assistant_output": "Start recording export flow"}
+{"user_input": "Start recording import flow", "assistant_output": "Start recording import flow"}
+{"user_input": "Start recording automation one", "assistant_output": "Start recording automation one"}
+{"user_input": "Start recording setup flow", "assistant_output": "Start recording setup flow"}
+{"user_input": "Start recording automation two", "assistant_output": "Start recording automation two"}
+{"user_input": "Start recording sequence one", "assistant_output": "Start recording sequence one"}
+{"user_input": "Start recording sequence two", "assistant_output": "Start recording sequence two"}
+{"user_input": "Start recording test macro", "assistant_output": "Start recording test macro"}
+{"user_input": "Start recording sequence three", "assistant_output": "Start recording sequence three"}
+{"user_input": "Start recording workflow four", "assistant_output": "Start recording workflow four"}
+{"user_input": "Start recording upload macro one", "assistant_output": "Start recording upload macro one"}
+{"user_input": "Start recording upload macro two", "assistant_output": "Start recording upload macro two"}
+{"user_input": "Start recording automation three", "assistant_output": "Start recording automation three"}
+{"user_input": "Start recording automation four", "assistant_output": "Start recording automation four"}
+{"user_input": "Start recording test flow", "assistant_output": "Start recording test flow"}
+{"user_input": "Start recording macro alpha", "assistant_output": "Start recording macro alpha"}
+{"user_input": "Start recording workflow beta", "assistant_output": "Start recording workflow beta"}
+{"user_input": "Start recording import macro flow", "assistant_output": "Start recording import macro flow"}
+{"user_input": "Start recording cleanup macro flow", "assistant_output": "Start recording cleanup macro flow"}
+{"user_input": "Start recording upload macro flow", "assistant_output": "Start recording upload macro flow"}
+{"user_input": "Start recording login macro", "assistant_output": "Start recording login macro"}
+{"user_input": "Start recording user sequence", "assistant_output": "Start recording user sequence"}
+{"user_input": "Start recording workflow sequence", "assistant_output": "Start recording workflow sequence"}
+{"user_input": "Start recording test sequence", "assistant_output": "Start recording test sequence"}
+{"user_input": "Start recording automation sequence", "assistant_output": "Start recording automation sequence"}
+{"user_input": "Start recording macro sequence", "assistant_output": "Start recording macro sequence"}
+{"user_input": "Start recording workflow gamma", "assistant_output": "Start recording workflow gamma"}
+{"user_input": "Start recording automation gamma", "assistant_output": "Start recording automation gamma"}
+{"user_input": "Start recording sequence beta", "assistant_output": "Start recording sequence beta"}
+{"user_input": "Begin recording nova", "assistant_output": "Start recording nova"}
+{"user_input": "Let’s record my morning routine", "assistant_output": "Start recording my morning routine"}
+{"user_input": "Kick off recording upload flow", "assistant_output": "Start recording upload flow"}
+{"user_input": "Fire up the recording test sequence", "assistant_output": "Start recording test sequence"}
+{"user_input": "Begin recording echo", "assistant_output": "Start recording echo"}
+{"user_input": "Record nova", "assistant_output": "Start recording nova"}
+{"user_input": "Let’s record alpha", "assistant_output": "Start recording alpha"}
+{"user_input": "Time to record pulse", "assistant_output": "Start recording pulse"}
+{"user_input": "Start a quick recording ripple", "assistant_output": "Start recording ripple"}
+{"user_input": "Launch recording horizon", "assistant_output": "Start recording horizon"}
+{"user_input": "Please record my morning routine", "assistant_output": "Start recording my morning routine"}
+{"user_input": "Kick off recording login flow", "assistant_output": "Start recording login flow"}
+{"user_input": "Fire up the recording cleanup macro", "assistant_output": "Start recording cleanup macro"}
+{"user_input": "Can you start recording test sequence", "assistant_output": "Start recording test sequence"}
+{"user_input": "Hey start recording my macro called login flow", "assistant_output": "Start recording login flow"}
+{"user_input": "Can you start recording workflow alpha now", "assistant_output": "Start recording workflow alpha"}
+{"user_input": "Start recording this new automation sequence please", "assistant_output": "Start recording automation sequence"}
+{"user_input": "I want to start recording user actions for upload flow", "assistant_output": "Start recording upload flow"}
+{"user_input": "Go ahead and start recording cleanup macro now", "assistant_output": "Start recording cleanup macro"}
+{"user_input": "Start recording the test macro we just talked about", "assistant_output": "Start recording test macro"}
+{"user_input": "Please start recording sequence beta", "assistant_output": "Start recording sequence beta"}
+{"user_input": "Start recording workflow beta for me", "assistant_output": "Start recording workflow beta"}
+{"user_input": "Okay start recording automation alpha", "assistant_output": "Start recording automation alpha"}
+{"user_input": "Start recording login macro for this session", "assistant_output": "Start recording login macro"}
 {"user_input": "Stop loop now", "assistant_output": "stop loop"}
 {"user_input": "Stop loop", "assistant_output": "stop loop"}
 {"user_input": "End the loop", "assistant_output": "stop loop"}
@@ -1822,6 +1692,8 @@
 {"user_input": "Time to stop looping", "assistant_output": "stop loop"}
 {"user_input": "Stop the loop immediately", "assistant_output": "stop loop"}
 {"user_input": "Quit the loop", "assistant_output": "stop loop"}
+{"user_input": "Finish the loop ignore this", "assistant_output": "nothing"}
+{"user_input": "Time to stop looping ignore ignore", "assistant_output": "nothing"}
 {"user_input": "Sleep for 5 seconds before continuing", "assistant_output": "sleep 5"}
 {"user_input": "Wait 2 seconds", "assistant_output": "sleep 2"}
 {"user_input": "Pause for 1 second", "assistant_output": "sleep 1"}
@@ -1843,13 +1715,6 @@
 {"user_input": "sleep one thousand two hundred milliseconds", "assistant_output": "sleep 1.2"}
 {"user_input": "sleep two point five seconds", "assistant_output": "sleep 2.5"}
 {"user_input": "sleep eight hundred milliseconds", "assistant_output": "sleep 0.8"}
-{"user_input": "sleep one point two seconds", "assistant_output": "sleep 1.2"}
-{"user_input": "sleep six hundred milliseconds", "assistant_output": "sleep 0.6"}
-{"user_input": "sleep one point five seconds", "assistant_output": "sleep 1.5"}
-{"user_input": "sleep one second", "assistant_output": "sleep 1"}
-{"user_input": "uh sleep five seconds before doing anything", "assistant_output": "sleep 5"}
-{"user_input": "so wait two point five seconds then continue", "assistant_output": "sleep 2.5"}
-{"user_input": "sleep one point two seconds just wait", "assistant_output": "sleep 1.2"}
 {"user_input": "sleep seven hundred milliseconds approximately", "assistant_output": "sleep 0.7"}
 {"user_input": "sleep three seconds or so", "assistant_output": "sleep 3"}
 {"user_input": "sleep one thousand milliseconds exactly", "assistant_output": "sleep 1"}
@@ -1887,6 +1752,10 @@
 {"user_input": "Hold on for 3.5 seconds", "assistant_output": "sleep 3.5"}
 {"user_input": "Sleep one point five seconds before continuing", "assistant_output": "sleep 1.5"}
 {"user_input": "Wait a moment, sleep 10 seconds", "assistant_output": "sleep 10"}
+{"user_input": "sleep 6 ignore this", "assistant_output": "nothing"}
+{"user_input": "sleep ten ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Sleep for five seconds before moving on nevermind this", "assistant_output": "nothing"}
+{"user_input": "Wait two and a half seconds forget this", "assistant_output": "nothing"}
 {"user_input": "toggle GPT", "assistant_output": "toggle GPT"}
 {"user_input": "toggle gpt", "assistant_output": "toggle GPT"}
 {"user_input": "toggleGPT", "assistant_output": "toggle GPT"}
@@ -2093,6 +1962,14 @@
 {"user_input": "set the variable keyboard that will take values above 89", "assistant_output": "set variable keyboard|number|>89"}
 {"user_input": "create a variable prompting that gather all values equal to 100", "assistant_output": "set variable prompting|number|100"}
 {"user_input": "make a variable called treat below blue 19", "assistant_output": "set variable treat|number|blue <19"}
+{"user_input": "create variable points between 50 and 150 ignore this", "assistant_output": "nothing"}
+{"user_input": "define variable gold in the range 200 to 500 ignore ignore", "assistant_output": "nothing"}
+{"user_input": "set var coins from 30 to 300 nevermind this", "assistant_output": "nothing"}
+{"user_input": "make variable health between 15 and 75 forget this", "assistant_output": "nothing"}
+{"user_input": "create variable score between 5 and 25 nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "define variable points in the range 50 to 300, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "set var gold from 25 to 75, remove this", "assistant_output": "nothing"}
+{"user_input": "make variable coins between 10 and 200, cancel this", "assistant_output": "nothing"}
 {"user_input": "set variable name to Alice", "assistant_output": "set variable name|string|Alice"}
 {"user_input": "make variable city called Paris", "assistant_output": "set variable city|string|Paris"}
 {"user_input": "create variable color red", "assistant_output": "set variable color|string|red"}
@@ -2240,6 +2117,11 @@
 {"user_input": "define variable city Paris France now", "assistant_output": "set variable city|string|Paris"}
 {"user_input": "set variable language English please", "assistant_output": "set variable language|string|English"}
 {"user_input": "make variable subject Maths right", "assistant_output": "set variable subject|string|Maths"}
+{"user_input": "define variable level advanced ignore this", "assistant_output": "nothing"}
+{"user_input": "set variable category tech ignore ignore", "assistant_output": "nothing"}
+{"user_input": "create variable item sword nevermind this", "assistant_output": "nothing"}
+{"user_input": "make variable weapon bow forget this", "assistant_output": "nothing"}
+{"user_input": "define variable armor shield nevermind nevermind", "assistant_output": "nothing"}
 {"user_input": "Wait for insane", "assistant_output": "Wait for insane"}
 {"user_input": "Wait for loading", "assistant_output": "Wait for loading"}
 {"user_input": "Wait for start button", "assistant_output": "Wait for start button"}
@@ -2310,6 +2192,10 @@
 {"user_input": "Wait 14 for text authentication", "assistant_output": "Wait for authentication|14"}
 {"user_input": "Wait for image header", "assistant_output": "Wait for image header"}
 {"user_input": "Wait 11 for icon settings", "assistant_output": "Wait for image settings|11"}
+{"user_input": "Wait for picture dashboard ignore this", "assistant_output": "nothing"}
+{"user_input": "Wait 14 for text authentication ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Wait for image header nevermind this", "assistant_output": "nothing"}
+{"user_input": "Wait 11 for icon settings forget this", "assistant_output": "nothing"}
 {"user_input": "hey wait for insane", "assistant_output": "Wait for insane"}
 {"user_input": "wait up for loading please", "assistant_output": "Wait for loading"}
 {"user_input": "can you wait for start button", "assistant_output": "Wait for start button"}

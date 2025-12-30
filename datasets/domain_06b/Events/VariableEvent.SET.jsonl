@@ -205,7 +205,14 @@
 {"user_input": "make a variable called treat below blue 19", "assistant_output": "set variable treat|number|blue <19"}
 
 
-
+{"user_input": "create variable points between 50 and 150 ignore this", "assistant_output": "nothing"}
+{"user_input": "define variable gold in the range 200 to 500 ignore ignore", "assistant_output": "nothing"}
+{"user_input": "set var coins from 30 to 300 nevermind this", "assistant_output": "nothing"}
+{"user_input": "make variable health between 15 and 75 forget this", "assistant_output": "nothing"}
+{"user_input": "create variable score between 5 and 25 nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "define variable points in the range 50 to 300, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "set var gold from 25 to 75, remove this", "assistant_output": "nothing"}
+{"user_input": "make variable coins between 10 and 200, cancel this", "assistant_output": "nothing"}
 
 
 // VariableEvent.SET (strings)
@@ -368,3 +375,9 @@
 {"user_input": "define variable city Paris France now", "assistant_output": "set variable city|string|Paris"}
 {"user_input": "set variable language English please", "assistant_output": "set variable language|string|English"}
 {"user_input": "make variable subject Maths right", "assistant_output": "set variable subject|string|Maths"}
+
+{"user_input": "define variable level advanced ignore this", "assistant_output": "nothing"}
+{"user_input": "set variable category tech ignore ignore", "assistant_output": "nothing"}
+{"user_input": "create variable item sword nevermind this", "assistant_output": "nothing"}
+{"user_input": "make variable weapon bow forget this", "assistant_output": "nothing"}
+{"user_input": "define variable armor shield nevermind nevermind", "assistant_output": "nothing"}

@@ -6,12 +6,12 @@
 {"user_input": "Start loop over usernames as template", "assistant_output": "start loop usernames as template"}
 {"user_input": "Start loop for email list as template", "assistant_output": "start loop email list as template"}
 {"user_input": "Start looping over file list as template", "assistant_output": "start loop file list as template"}
-{"user_input": "Start looping over project list as template", "assistant_output": "start loop project list as template"}
-{"user_input": "Start loop over customer list as template", "assistant_output": "start loop customer list as template"}
-{"user_input": "Start loop over file names as template", "assistant_output": "start loop file names as template"}
-{"user_input": "Start loop over task list as template", "assistant_output": "start loop task list as template"}
-{"user_input": "Start loop over document list as template", "assistant_output": "start loop document list as template"}
-{"user_input": "Start loop over item list as template", "assistant_output": "start loop item list as template"}
+{"user_input": "looping over project list as template", "assistant_output": "start loop project list as template"}
+{"user_input": "loop over customer list as template", "assistant_output": "start loop customer list as template"}
+{"user_input": "loop over file names as template", "assistant_output": "start loop file names as template"}
+{"user_input": "loop over task list as template", "assistant_output": "start loop task list as template"}
+{"user_input": "loop over document list as template", "assistant_output": "start loop document list as template"}
+{"user_input": "loop over item list as template", "assistant_output": "start loop item list as template"}
 {"user_input": "Start loop over emails as template", "assistant_output": "start loop emails as template"}
 {"user_input": "Start loop over projects as template", "assistant_output": "start loop projects as template"}
 {"user_input": "Start loop over files as template", "assistant_output": "start loop files as template"}
@@ -22,7 +22,7 @@
 {"user_input": "Start loop for each item", "assistant_output": "start loop item as template"}
 {"user_input": "Start looping through usernames", "assistant_output": "start loop usernames as template"}
 {"user_input": "Start looping over items list as template", "assistant_output": "start loop items list as template"}
-{"user_input": "Start loop over usernames", "assistant_output": "start loop usernames as template"}
+{"user_input": "loop over usernames", "assistant_output": "start loop usernames as template"}
 {"user_input": "Start loop over usernames as template", "assistant_output": "start loop usernames as template"}
 {"user_input": "Start loop for email list as template", "assistant_output": "start loop email list as template"}
 {"user_input": "Start looping over file list as template", "assistant_output": "start loop file list as template"}
@@ -30,17 +30,17 @@
 {"user_input": "Start loop over customer list as template", "assistant_output": "start loop customer list as template"}
 {"user_input": "Start loop over file names as template", "assistant_output": "start loop file names as template"}
 {"user_input": "Start loop over task list as template", "assistant_output": "start loop task list as template"}
-{"user_input": "Start loop over document list as template", "assistant_output": "start loop document list as template"}
-{"user_input": "Start loop over item list as template", "assistant_output": "start loop item list as template"}
-{"user_input": "Start loop over emails as template", "assistant_output": "start loop emails as template"}
-{"user_input": "Start loop over projects as template", "assistant_output": "start loop projects as template"}
-{"user_input": "Start loop over files as template", "assistant_output": "start loop files as template"}
-{"user_input": "Start loop over items as template", "assistant_output": "start loop items as template"}
-{"user_input": "Start loop over clients as template", "assistant_output": "start loop clients as template"}
-{"user_input": "Start loop over tickets as template", "assistant_output": "start loop tickets as template"}
-{"user_input": "Start loop over products as template", "assistant_output": "start loop products as template"}
-{"user_input": "Start loop over files as template", "assistant_output": "start loop files as template"}
-{"user_input": "Start loop names list as template", "assistant_output": "start loop names list as template"}
+{"user_input": "loop over document list as template", "assistant_output": "start loop document list as template"}
+{"user_input": "loop over item list as template", "assistant_output": "start loop item list as template"}
+{"user_input": "loop over emails as template", "assistant_output": "start loop emails as template"}
+{"user_input": "loop over projects as template", "assistant_output": "start loop projects as template"}
+{"user_input": "loop over files as template", "assistant_output": "start loop files as template"}
+{"user_input": "loop over items as template", "assistant_output": "start loop items as template"}
+{"user_input": "loop over clients as template", "assistant_output": "start loop clients as template"}
+{"user_input": "loop over tickets as template", "assistant_output": "start loop tickets as template"}
+{"user_input": "loop over products as template", "assistant_output": "start loop products as template"}
+{"user_input": "loop over files as template", "assistant_output": "start loop files as template"}
+{"user_input": "loop names list as template", "assistant_output": "start loop names list as template"}
 {"user_input": "Start looping items list as template", "assistant_output": "start loop items list as template"}
 {"user_input": "Start loop items as template", "assistant_output": "start loop items as template"}
 {"user_input": "Start loop over employee list", "assistant_output": "start loop employee list as template"}
@@ -77,30 +77,30 @@
 {"user_input": "Start loop employees data", "assistant_output": "start loop employees data as template"}
 {"user_input": "Start loop user accounts", "assistant_output": "start loop user accounts as template"}
 {"user_input": "Start loop items list available", "assistant_output": "start loop items list as template"}
-{"user_input": "start loop 3 times", "assistant_output": "start loop 3"}
-{"user_input": "start loop 7 times", "assistant_output": "start loop 7"}
-{"user_input": "start loop 8 times", "assistant_output": "start loop 8"}
-{"user_input": "start loop 9 times", "assistant_output": "start loop 9"}
+{"user_input": "loop 3 times", "assistant_output": "start loop 3"}
+{"user_input": "loop 7 times", "assistant_output": "start loop 7"}
+{"user_input": "loop 8", "assistant_output": "start loop 8"}
+{"user_input": "loop 9 times", "assistant_output": "start loop 9"}
 {"user_input": "start loop 10", "assistant_output": "start loop 10"}
 {"user_input": "start loop 20", "assistant_output": "start loop 20"}
-{"user_input": "start loop 30", "assistant_output": "start loop 30"}
-{"user_input": "start loop 40", "assistant_output": "start loop 40"}
+{"user_input": "loop 30", "assistant_output": "start loop 30"}
+{"user_input": "loop 40", "assistant_output": "start loop 40"}
 {"user_input": "start loop 50", "assistant_output": "start loop 50"}
 {"user_input": "start loop 100 times", "assistant_output": "start loop 100"}
 {"user_input": "start loop 200 times", "assistant_output": "start loop 200"}
-{"user_input": "start loop 300 times", "assistant_output": "start loop 300"}
+{"user_input": "start loop 300", "assistant_output": "start loop 300"}
 {"user_input": "start loop 400 times", "assistant_output": "start loop 400"}
 {"user_input": "start loop 500 times", "assistant_output": "start loop 500"}
 {"user_input": "start loop 1000", "assistant_output": "start loop 1000"}
 {"user_input": "start loop one time", "assistant_output": "start loop 1"}
-{"user_input": "start loop two times", "assistant_output": "start loop 2"}
+{"user_input": "loop two times", "assistant_output": "start loop 2"}
 {"user_input": "start loop three times", "assistant_output": "start loop 3"}
 {"user_input": "start loop four", "assistant_output": "start loop 4"}
 {"user_input": "start loop five", "assistant_output": "start loop 5"}
-{"user_input": "start loop six", "assistant_output": "start loop 6"}
+{"user_input": "loop six", "assistant_output": "start loop 6"}
 {"user_input": "start loop seven", "assistant_output": "start loop 7"}
 {"user_input": "start loop eight times", "assistant_output": "start loop 8"}
-{"user_input": "start loop nine times", "assistant_output": "start loop 9"}
+{"user_input": "loop nine times", "assistant_output": "start loop 9"}
 {"user_input": "start loop ten times", "assistant_output": "start loop 10"}
 {"user_input": "loop 5 times", "assistant_output": "start loop 5"}
 {"user_input": "run loop 10", "assistant_output": "start loop 10"}

@@ -158,20 +158,23 @@ while True:
         time.sleep(0.1)
         continue
 
-    print("context meta: ", current_context.meta)
-
     # ---- GPT Processing ----
     orig_ctx = current_context.text
     if current_context.meta is None:
         current_context.meta = {}
     if not current_context.meta.get("gpt_applied", False):
         ctx_processed = apply_gpt_to_context(orig_ctx) if use_GPT else orig_ctx
-        current_context.meta["gpt_applied"] = True
+        if use_GPT:
+            current_context.meta["gpt_applied"] = True
         current_context.text = ctx_processed
     else:
         ctx_processed = orig_ctx
     ctx_processed = re.sub(r"[.;!?]", "", ctx_processed).strip()
 
+    if ctx_processed == "nothing":
+        print("Canceled command.")
+        current_context = Context()
+        continue
 
     # ---- Action parsing (once per context) ----
     if ctx_processed not in parsed_action_cache:
@@ -218,7 +221,12 @@ while True:
     failed = True
     if not is_template:
         if isinstance(action_result, ToggleGPT):
-            use_GPT = not use_GPT
+            if " on" in current_context.text.lower():
+                use_GPT = True
+            elif " off" in current_context.text.lower():
+                use_GPT = False
+            else:
+                use_GPT = not use_GPT
             print(f"GPT is now {'ON' if use_GPT else 'OFF'}. Say 'toggle GPT' to switch again.")
             failed = False
 
@@ -244,8 +252,6 @@ while True:
                                             embd_func=models.embd_func, run_ocr_func=run_ocr)
 
         elif isinstance(action_result, ScreenCaptureEvent):
-            print(action_result)
-            print(target_text)
             if target_text:
                 nums = list(map(int, re.findall(r"\d+", target_text)))
                 if len(nums) != 4:
@@ -257,11 +263,9 @@ while True:
                 screenshot_box = bbox_coords
                 time.sleep(0.25)
                 current_context.text += " {},{},{},{}".format(*screenshot_box)
-            print("current box: ", screenshot_box)
+            print("Currently focused on area: ", screenshot_box)
             failed = False
                     
-    print("action result: ", action_result)
-    
     # Variables
     if isinstance(action_result, VariableEvent):
         if target_text:
@@ -281,7 +285,6 @@ while True:
                 and not isinstance(action_result, SequenceEvent) \
                 and not isinstance(action_result, Condition) \
                 and not isinstance(action_result, LoopEvent):
-        print("parsed action: ", parsed_action)
         append_to_recording_seq(current_context, is_template, found_colors, parsed_action)
         failed = False
 
@@ -297,7 +300,6 @@ while True:
     elif isinstance(action_result, Condition):
         if action_result == Condition.IF:
             condition = conditionProcessor.parse_condition(target_text) # {type, query, colors, negate}
-            print("prased conditioin: ", condition)
             if condition:
                 if condition["type"] == "text": 
                     passed, target = conditionProcessor.check_text(condition, screenshot_box, run_ocr_func=run_ocr, embd_func=models.embd_func)

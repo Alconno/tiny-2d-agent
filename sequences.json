@@ -291,54 +291,6 @@
             }
         ]
     },
-    "auction": {
-        "steps": [
-            {"text": "focus 10, 411, 900, 893", "meta": {"gpt_applied": true}},
-            {
-                "text": "if not image yepmark exists",
-                "sub_contexts": [
-                    {"text": "click Show stacks", "meta": {"gpt_applied": true}}
-                ]
-            },
-            {
-                "text": "loop names as template",
-                "sub_contexts": [
-                    {"text": "Focus 18,174,1085,701", "meta": {"gpt_applied": true}},
-                    {"text": "Click below of {{man}}.", "meta": {"gpt_applied": true}},
-                    {"text": "Write {{names.0}}", "meta": {"gpt_applied": true}},
-                    {"text": "Click search.", "meta": {"gpt_applied": true}},
-                    {"text": "Click white {{names.0}}.", "meta": {"gpt_applied": true}},
-                    {"text": "press ctrl A", "meta": {"gpt_applied": true}},
-                    {"text": "Press Backspace.", "meta": {"gpt_applied": true}},
-                    {"text": "focus 831, 271, 903, 644", "meta": {"gpt_applied": true}},
-                    {"text": "Set a variable named items with all values yellow below {{names.1}}."},
-                    {
-                        "text": "If variable items exists", "meta": {"gpt_applied": true},
-                        "sub_contexts": [
-                            {"text": "Click Top Variable Items."}
-                        ]
-                    }
-                ]
-            },
-            {"text": "Focus 18,174,1085,701", "meta": {"gpt_applied": true}},
-            {"text": "Click below of name.", "meta": {"gpt_applied": true}}
-        ],
-        "vars": [
-            {
-                "name": "names",
-                "type": "list",
-                "value": [
-                    ["Eternal Fire", 45],
-                    ["Eternal Water", 15]
-                ]
-            },
-            {
-                "name": "man",
-                "type": "str",
-                "value": "name"
-            }
-        ]
-    },
     "microphone": {
         "steps": [
             {
@@ -350,5 +302,101 @@
             }
         ],
         "vars": []
+    },
+    "auction": {
+        "steps": [
+            {
+                "text": "toggle GPT on",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "capture 22,154,1088,705",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "start loop names as template",
+                "meta": {
+                    "gpt_applied": true
+                },
+                "sub_contexts": [
+                    {
+                        "text": "click below of name",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "press template",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "write  {{names}}",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "capture 845,161,1070,249",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "click search",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "capture 46,120,309,339",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "click reset",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "capture 831,239,920,637",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "set variable items|number|yellow <40",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "click variable items",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "capture 15,148,1086,705",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    }
+                ]
+            }
+        ],
+        "vars": [
+            {
+                "name": "names",
+                "type": "list"
+            }
+        ]
     }
 }

@@ -19,7 +19,7 @@ def setup_gpt_model():
         trust_remote_code=True,
         device_map="auto"
     )
-    _model = PeftModel.from_pretrained(base_model, "./qwen-domain-lora/training_20251218_032425/checkpoint-292")
+    _model = PeftModel.from_pretrained(base_model, "./qwen-domain-lora/training_20251230_155211/checkpoint-278")
     _model.eval()
 
     print(f"---- Hosting GPT model: {sum(p.numel() for p in _model.parameters())} params ----")

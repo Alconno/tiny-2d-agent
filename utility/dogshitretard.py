@@ -105,7 +105,6 @@ def clean_target(target: str):
 
 
 def get_matching_str(ctx: str, cands: list, embd_func):
-    print("get_matching_str() input:", ctx)
     assert isinstance(ctx, str)
     assert all(isinstance(c, str) for c in cands)
 
@@ -268,35 +267,44 @@ def parse_delay(text):
 
 
 
-def extract_vars_from_steps(steps: list):
+def extract_vars_from_steps(steps):
     vars_dict = {}
-
-    def add(var_name, var_type):
-        if var_name not in vars_dict:
-            vars_dict[var_name] = var_type
-
     visited = set()
-    def walk(ctx_list, loop_vars=None):
+
+    def add(name, typ):
+        vars_dict.setdefault(name, typ)
+
+    def walk(ctxs, loop_vars=None):
         loop_vars = loop_vars or set()
-        for ctx in ctx_list:
+
+        for ctx in ctxs:
             if isinstance(ctx, Context):
-                if id(ctx) in visited: continue
+                if id(ctx) in visited:
+                    continue
                 visited.add(id(ctx))
-                
-                # handle loop
+
                 new_loop_vars = loop_vars.copy()
-                if ctx.meta.get("loop"):
-                    loop_var = ctx.meta["loop"].replace(" as template", "").strip()
-                    add(loop_var, "list")
-                    new_loop_vars.add(loop_var)
-                # handle template vars in text
+
                 if ctx.text:
+                    t = ctx.text.strip().lower()
+
+                    # loop detection
+                    if t.startswith(("loop", "start loop")) and "as template" in t:
+                        var = t.split("as template")[0] \
+                            .replace("start loop", "") \
+                            .replace("loop", "") \
+                            .strip()
+                        add(var, "list")
+                        new_loop_vars.add(var)
+
+                    # normal template vars
                     for v in re.findall(r"\{\{\s*(.*?)\s*\}\}", ctx.text):
                         if v not in new_loop_vars:
                             add(v, "str")
-                # recurse into sub_contexts
+
                 if ctx.sub_contexts:
                     walk(ctx.sub_contexts, new_loop_vars)
+
             elif isinstance(ctx, list):
                 walk(ctx, loop_vars)
 

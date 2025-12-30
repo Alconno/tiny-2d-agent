@@ -19,25 +19,25 @@
 {"user_input": "play recording automation two", "assistant_output": "play automation two"}
 {"user_input": "play recording login flow now", "assistant_output": "play login flow"}
 {"user_input": "play recording user test", "assistant_output": "play user test"}
-{"user_input": "play recording macro setup", "assistant_output": "play macro setup"}
-{"user_input": "play recording workflow two", "assistant_output": "play workflow two"}
-{"user_input": "play recording sequence two", "assistant_output": "play sequence two"}
-{"user_input": "play recording automation three", "assistant_output": "play automation three"}
-{"user_input": "play recording import test", "assistant_output": "play import test"}
-{"user_input": "play recording export test", "assistant_output": "play export test"}
-{"user_input": "play recording upload macro", "assistant_output": "play upload macro"}
-{"user_input": "play recording cleanup flow", "assistant_output": "play cleanup flow"}
-{"user_input": "play recording setup macro", "assistant_output": "play setup macro"}
-{"user_input": "play recording test flow", "assistant_output": "play test flow"}
-{"user_input": "play recording login test", "assistant_output": "play login test"}
-{"user_input": "play recording user macro", "assistant_output": "play user macro"}
-{"user_input": "play recording sequence three", "assistant_output": "play sequence three"}
-{"user_input": "play recording macro three", "assistant_output": "play macro three"}
-{"user_input": "play recording workflow test", "assistant_output": "play workflow test"}
-{"user_input": "play recording export macro two", "assistant_output": "play export macro two"}
-{"user_input": "play recording import flow two", "assistant_output": "play import flow two"}
-{"user_input": "play recording automation flow", "assistant_output": "play automation flow"}
-{"user_input": "play recording sequence macro", "assistant_output": "play sequence macro"}
+{"user_input": "run macro setup", "assistant_output": "play macro setup"}
+{"user_input": "run workflow two", "assistant_output": "play workflow two"}
+{"user_input": "run recording sequence two", "assistant_output": "play sequence two"}
+{"user_input": "run recording automation three", "assistant_output": "play automation three"}
+{"user_input": "run recording import test", "assistant_output": "play import test"}
+{"user_input": "run recording export test", "assistant_output": "play export test"}
+{"user_input": "play upload macro", "assistant_output": "play upload macro"}
+{"user_input": "play cleanup flow", "assistant_output": "play cleanup flow"}
+{"user_input": "play setup macro", "assistant_output": "play setup macro"}
+{"user_input": "play test flow", "assistant_output": "play test flow"}
+{"user_input": "play login test", "assistant_output": "play login test"}
+{"user_input": "play user macro", "assistant_output": "play user macro"}
+{"user_input": "play sequence three", "assistant_output": "play sequence three"}
+{"user_input": "play macro three", "assistant_output": "play macro three"}
+{"user_input": "play workflow test", "assistant_output": "play workflow test"}
+{"user_input": "play export macro two", "assistant_output": "play export macro two"}
+{"user_input": "play import flow two", "assistant_output": "play import flow two"}
+{"user_input": "play automation flow", "assistant_output": "play automation flow"}
+{"user_input": "play sequence macro", "assistant_output": "play sequence macro"}
 
 // Human like
 {"user_input": "uh play recording login flow now", "assistant_output": "play login flow"}

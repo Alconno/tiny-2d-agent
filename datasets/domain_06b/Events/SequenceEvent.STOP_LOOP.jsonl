@@ -25,3 +25,6 @@
 {"user_input": "Time to stop looping", "assistant_output": "stop loop"}
 {"user_input": "Stop the loop immediately", "assistant_output": "stop loop"}
 {"user_input": "Quit the loop", "assistant_output": "stop loop"}
+
+{"user_input": "Finish the loop ignore this", "assistant_output": "nothing"}
+{"user_input": "Time to stop looping ignore ignore", "assistant_output": "nothing"}

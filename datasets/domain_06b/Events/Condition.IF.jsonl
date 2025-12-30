@@ -95,6 +95,14 @@
 {"user_input": "confirm that text complete is present", "assistant_output": "If text complete exists"}
 {"user_input": "make sure the ok text shows up", "assistant_output": "If text ok exists"}
 
+{"user_input": "verify text saving exists ignore this", "assistant_output": "nothing"}
+{"user_input": "if text saved exists ignore ignore", "assistant_output": "nothing"}
+{"user_input": "check text deleted exists nevermind this", "assistant_output": "nothing"}
+{"user_input": "if text updated exists forget this", "assistant_output": "nothing"}
+{"user_input": "verify text modifying exists nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "if text modified exists, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "check text uploaded exists, remove this", "assistant_output": "nothing"}
+{"user_input": "if text downloading exists, cancel this", "assistant_output": "nothing"}
 
 
 
@@ -136,26 +144,6 @@
 {"user_input": "verify image green square exists", "assistant_output": "If image green square exists"}
 {"user_input": "check image blue triangle exists", "assistant_output": "If image blue triangle exists"}
 {"user_input": "if image yellow star exists", "assistant_output": "If image yellow star exists"}
-{"user_input": "verify image pink heart exists", "assistant_output": "If image pink heart exists"}
-{"user_input": "check image orange diamond exists", "assistant_output": "If image orange diamond exists"}
-{"user_input": "if image purple moon exists", "assistant_output": "If image purple moon exists"}
-{"user_input": "verify image brown cloud exists", "assistant_output": "If image brown cloud exists"}
-{"user_input": "check image black tree exists", "assistant_output": "If image black tree exists"}
-{"user_input": "if image white sun exists", "assistant_output": "If image white sun exists"}
-{"user_input": "verify image gray leaf exists", "assistant_output": "If image gray leaf exists"}
-{"user_input": "check image red flower exists", "assistant_output": "If image red flower exists"}
-{"user_input": "if image green heart exists", "assistant_output": "If image green heart exists"}
-{"user_input": "verify image blue star exists", "assistant_output": "If image blue star exists"}
-{"user_input": "check image yellow diamond exists", "assistant_output": "If image yellow diamond exists"}
-{"user_input": "if image circle red exists", "assistant_output": "If image circle red exists"}
-{"user_input": "verify image triangle blue exists", "assistant_output": "If image triangle blue exists"}
-{"user_input": "check image heart pink exists", "assistant_output": "If image heart pink exists"}
-{"user_input": "if image diamond orange exists", "assistant_output": "If image diamond orange exists"}
-{"user_input": "verify image star yellow exists", "assistant_output": "If image star yellow exists"}
-{"user_input": "check image sun white exists", "assistant_output": "If image sun white exists"}
-{"user_input": "if image moon purple exists", "assistant_output": "If image moon purple exists"}
-{"user_input": "verify image cloud gray exists", "assistant_output": "If image cloud gray exists"}
-{"user_input": "check image tree brown exists", "assistant_output": "If image tree brown exists"}
 {"user_input": "if image flower green exists", "assistant_output": "If image flower green exists"}
 {"user_input": "verify image leaf yellow exists", "assistant_output": "If image leaf yellow exists"}
 {"user_input": "check image sun orange exists", "assistant_output": "If image sun orange exists"}
@@ -189,3 +177,15 @@
 {"user_input": "is the red circle image displayed", "assistant_output": "If image red circle exists"}
 {"user_input": "confirm that the diamond image is present", "assistant_output": "If image diamond exists"}
 {"user_input": "make sure the sun image shows up", "assistant_output": "If image sun exists"}
+
+{"user_input": "verify image pink heart exists ignore this", "assistant_output": "nothing"}
+{"user_input": "check image orange diamond exists ignore ignore", "assistant_output": "nothing"}
+{"user_input": "if image purple moon exists nevermind this", "assistant_output": "nothing"}
+{"user_input": "verify image brown cloud exists forget this", "assistant_output": "nothing"}
+{"user_input": "check image black tree exists nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "if image white sun exists, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "verify image gray leaf exists, remove this", "assistant_output": "nothing"}
+{"user_input": "check image red flower exists, cancel this", "assistant_output": "nothing"}
+{"user_input": "if image green heart exists ignore this", "assistant_output": "nothing"}
+{"user_input": "verify image blue star exists ignore ignore", "assistant_output": "nothing"}
+{"user_input": "check image yellow diamond exists nevermind this", "assistant_output": "nothing"}

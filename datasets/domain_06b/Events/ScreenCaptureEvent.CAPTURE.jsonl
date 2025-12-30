@@ -68,14 +68,14 @@
 {"user_input": "Focus 30,40,700,800", "assistant_output": "Focus 30,40,700,800"}
 {"user_input": "Focus 150,225,1600,900", "assistant_output": "Focus 150,225,1600,900"}
 {"user_input": "Focus 5,5,1366,768", "assistant_output": "Focus 5,5,1366,768"}
-{"user_input": "Focus 200,300,1000,750", "assistant_output": "Focus 200,300,1000,750"}
-{"user_input": "Focus 45,60,1920,1200", "assistant_output": "Focus 45,60,1920,1200"}
-{"user_input": "Focus 75,90,1024,768", "assistant_output": "Focus 75,90,1024,768"}
-{"user_input": "Focus 320,240,1440,900", "assistant_output": "Focus 320,240,1440,900"}
-{"user_input": "Focus 12,34,567,890", "assistant_output": "Focus 12,34,567,890"}
-{"user_input": "Focus 99,88,777,666", "assistant_output": "Focus 99,88,777,666"}
-{"user_input": "Focus 123,456,789,1011", "assistant_output": "Focus 123,456,789,1011"}
-{"user_input": "Focus 404,303,2020,1616", "assistant_output": "Focus 404,303,2020,1616"}
+{"user_input": "Focus on 200,300,1000,750", "assistant_output": "Focus 200,300,1000,750"}
+{"user_input": "Focus on 45,60,1920,1200", "assistant_output": "Focus 45,60,1920,1200"}
+{"user_input": "Focus on 75,90,1024,768", "assistant_output": "Focus 75,90,1024,768"}
+{"user_input": "Focus on 320,240,1440,900", "assistant_output": "Focus 320,240,1440,900"}
+{"user_input": "Focus at 12,34,567,890", "assistant_output": "Focus 12,34,567,890"}
+{"user_input": "Focus at 99,88,777,666", "assistant_output": "Focus 99,88,777,666"}
+{"user_input": "Focus at 123,456,789,1011", "assistant_output": "Focus 123,456,789,1011"}
+{"user_input": "Focus at 404,303,2020,1616", "assistant_output": "Focus 404,303,2020,1616"}
 {"user_input": "Focus 720,480,1920,1080", "assistant_output": "Focus 720,480,1920,1080"}
 {"user_input": "Focus 80,160,640,480", "assistant_output": "Focus 80,160,640,480"}
 {"user_input": "Focus 22,33,444,555", "assistant_output": "Focus 22,33,444,555"}

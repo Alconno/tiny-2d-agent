@@ -35,6 +35,13 @@ class SequenceProcessor:
         self.data_map = [(emb,key) for emb, key in zip(key_embeds, keys)]
 
 
+    def strip_text(self, ctxs):
+        for c in ctxs:
+            if hasattr(c, "text") and isinstance(c.text, str):
+                c.text = c.text.strip()
+            if getattr(c, "sub_contexts", None):
+                self.strip_text(c.sub_contexts)
+
 
     def save_sequence(self, events, name, vars_list=None):
         name = name.lower()
@@ -44,8 +51,22 @@ class SequenceProcessor:
         except FileNotFoundError:
             data = {}
 
+        def remove_none(obj):
+            if isinstance(obj, dict):
+                return {
+                    k: remove_none(v)
+                    for k, v in obj.items()
+                    if v not in (None, [], {})
+                }
+            elif isinstance(obj, list):
+                return [remove_none(v) for v in obj if v not in (None, [], {})]
+            return obj
+
+
+        self.strip_text(events)
+
         data[name] = {
-            "steps": [e.to_dict() for e in events],
+            "steps": [remove_none(e.to_dict()) for e in events],
             "vars": vars_list or []
         }
 
@@ -53,6 +74,8 @@ class SequenceProcessor:
             json.dump(data, f, indent=4)
 
         self.update_embds()
+
+
 
 
 
@@ -89,6 +112,8 @@ class SequenceProcessor:
                     else:
                         var_values[var_name] = [predefined]
                     continue
+                else:
+                    print(f"Please Enter the value for variable {var_name}")
                 spoken = self.voiceTranscriber()
                 var_values[var_name] = [x.strip() for x in (spoken.split(",") if var_type=="list" else [spoken])]
             pause_listener_event.set()
@@ -132,16 +157,19 @@ class SequenceProcessor:
                 
         def parse_loop(text):
             parts = text.lower().split()
-            if len(parts) >= 2 and parts[0] == "loop":
-                # numeric loop
-                if parts[1].isdigit():
-                    return ("count", int(parts[1]))
-                # explicit template
-                if len(parts) >= 4 and parts[-2] == "as" and (parts[-1] == "template" or parts[-1] == "variable"):
-                    return ("template", parts[1])
-                # implicit template: "loop varname"
-                return ("template", parts[1])
-            return (None, None)
+            if "loop" not in parts:
+                return (None, None)
+
+            loop_idx = parts.index("loop")
+            after = parts[loop_idx + 1:]
+
+            if not after:
+                return (None, None)
+
+            if "as" in after:
+                var = after[0]
+                return ("template", var)
+            return ("template", after[0])
 
         ctx_steps = [Context.from_dict(s) for s in sequence["steps"]]
         final_steps = []
@@ -207,7 +235,6 @@ class SequenceProcessor:
         elif action_result == SequenceEvent.PLAY:
             voiceTranscriber.listener_enabled = False
             loaded_sequence = self.load_sequence(name=target_text, pause_listener_event=pause_listener_event)
-            print("loaded sequence: ", loaded_sequence)
             print("a:", len(context_queue))
             if loaded_sequence:
                 context_queue.extend(loaded_sequence)

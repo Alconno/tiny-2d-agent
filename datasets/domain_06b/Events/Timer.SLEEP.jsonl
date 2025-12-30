@@ -20,13 +20,6 @@
 {"user_input": "sleep one thousand two hundred milliseconds", "assistant_output": "sleep 1.2"},
 {"user_input": "sleep two point five seconds", "assistant_output": "sleep 2.5"},
 {"user_input": "sleep eight hundred milliseconds", "assistant_output": "sleep 0.8"},
-{"user_input": "sleep one point two seconds", "assistant_output": "sleep 1.2"},
-{"user_input": "sleep six hundred milliseconds", "assistant_output": "sleep 0.6"}
-{"user_input": "sleep one point five seconds", "assistant_output": "sleep 1.5"}
-{"user_input": "sleep one second", "assistant_output": "sleep 1"}
-{"user_input": "uh sleep five seconds before doing anything", "assistant_output": "sleep 5"}
-{"user_input": "so wait two point five seconds then continue", "assistant_output": "sleep 2.5"}
-{"user_input": "sleep one point two seconds just wait", "assistant_output": "sleep 1.2"}
 {"user_input": "sleep seven hundred milliseconds approximately", "assistant_output": "sleep 0.7"}
 {"user_input": "sleep three seconds or so", "assistant_output": "sleep 3"}
 {"user_input": "sleep one thousand milliseconds exactly", "assistant_output": "sleep 1"}
@@ -64,3 +57,8 @@
 {"user_input": "Hold on for 3.5 seconds", "assistant_output": "sleep 3.5"}
 {"user_input": "Sleep one point five seconds before continuing", "assistant_output": "sleep 1.5"}
 {"user_input": "Wait a moment, sleep 10 seconds", "assistant_output": "sleep 10"}
+
+{"user_input": "sleep 6 ignore this", "assistant_output": "nothing"}
+{"user_input": "sleep ten ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Sleep for five seconds before moving on nevermind this", "assistant_output": "nothing"}
+{"user_input": "Wait two and a half seconds forget this", "assistant_output": "nothing"}

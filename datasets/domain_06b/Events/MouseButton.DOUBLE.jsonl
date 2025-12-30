@@ -20,50 +20,7 @@
 {"user_input": "Double click open folder", "assistant_output": "double click open folder"}
 {"user_input": "Double click start button", "assistant_output": "double click start button"}
 {"user_input": "Double click exit link", "assistant_output": "double click exit link"}
-{"user_input": "Double click green button", "assistant_output": "double click green button"}
-{"user_input": "Double click notification icon", "assistant_output": "double click notification icon"}
-{"user_input": "Double click profile picture", "assistant_output": "double click profile picture"}
-{"user_input": "Double click text box", "assistant_output": "double click text box"}
-{"user_input": "Double click sidebar menu", "assistant_output": "double click sidebar menu"}
-{"user_input": "Double click blue text", "assistant_output": "double click blue text"}
-{"user_input": "Double click gray button", "assistant_output": "double click gray button"}
-{"user_input": "Double click next page link", "assistant_output": "double click next page link"}
-{"user_input": "Double click home icon", "assistant_output": "double click home icon"}
-{"user_input": "Double click cancel button", "assistant_output": "double click cancel button"}
-{"user_input": "Double click confirm action", "assistant_output": "double click confirm action"}
-{"user_input": "Double click submit form", "assistant_output": "double click submit form"}
-{"user_input": "Double click menu item", "assistant_output": "double click menu item"}
 {"user_input": "Double click header text", "assistant_output": "double click header text"}
-{"user_input": "Double click image icon", "assistant_output": "double click image icon"}
-{"user_input": "Double click link text", "assistant_output": "double click link text"}
-{"user_input": "Double click footer link", "assistant_output": "double click footer link"}
-{"user_input": "Double click notification badge", "assistant_output": "double click notification badge"}
-{"user_input": "Double click document title", "assistant_output": "double click document title"}
-{"user_input": "Double click search bar", "assistant_output": "double click search bar"}
-{"user_input": "Double click blue banner", "assistant_output": "double click blue banner"}
-{"user_input": "Double click red icon", "assistant_output": "double click red icon"}
-{"user_input": "Double click purple label", "assistant_output": "double click purple label"}
-{"user_input": "Double click info box", "assistant_output": "double click info box"}
-{"user_input": "Double click notification panel", "assistant_output": "double click notification panel"}
-{"user_input": "Double click sidebar icon", "assistant_output": "double click sidebar icon"}
-{"user_input": "Double click green link", "assistant_output": "double click green link"}
-{"user_input": "Double click submit icon", "assistant_output": "double click submit icon"}
-{"user_input": "Double click black button", "assistant_output": "double click black button"}
-{"user_input": "Double click white checkbox", "assistant_output": "double click white checkbox"}
-{"user_input": "Double click red icon", "assistant_output": "double click red icon"}
-{"user_input": "Double click orange sidebar", "assistant_output": "double click orange sidebar"}
-{"user_input": "Double click brown icon", "assistant_output": "double click brown icon"}
-{"user_input": "Double click gray checkbox", "assistant_output": "double click gray checkbox"}
-{"user_input": "Double click purple banner", "assistant_output": "double click purple banner"}
-{"user_input": "Double click black icon", "assistant_output": "double click black icon"}
-{"user_input": "Double click white field", "assistant_output": "double click white field"}
-{"user_input": "Double click red label", "assistant_output": "double click red label"}
-{"user_input": "Double click green sidebar", "assistant_output": "double click green sidebar"}
-{"user_input": "Double click blue field", "assistant_output": "double click blue field"}
-{"user_input": "Double click yellow label", "assistant_output": "double click yellow label"}
-{"user_input": "Double click orange link", "assistant_output": "double click orange link"}
-{"user_input": "Double click brown button", "assistant_output": "double click brown button"}
-{"user_input": "Double click gray menu", "assistant_output": "double click gray menu"}
 {"user_input": "Double click purple checkbox", "assistant_output": "double click purple checkbox"}
 {"user_input": "Hey, double click that green button over there", "assistant_output": "double click green button"}
 {"user_input": "Double click the big blue panel", "assistant_output": "double click blue panel"}
@@ -74,13 +31,6 @@
 {"user_input": "Double click on the white checkbox quickly", "assistant_output": "double click white checkbox"}
 {"user_input": "Hey AI, double click the purple menu", "assistant_output": "double click purple menu"}
 {"user_input": "Double click gray text field now", "assistant_output": "double click gray text field"}
-{"user_input": "Double click the orange icon right now", "assistant_output": "double click orange icon"}
-{"user_input": "Double click the first button you see", "assistant_output": "double click button"}
-{"user_input": "Double click the main panel", "assistant_output": "double click panel"}
-{"user_input": "Can you double click the sidebar for me?", "assistant_output": "double click sidebar"}
-{"user_input": "Double click the top link", "assistant_output": "double click link"}
-{"user_input": "Double click that field please", "assistant_output": "double click field"}
-{"user_input": "Quickly double click the green icon", "assistant_output": "double click green icon"}
 {"user_input": "Double click the blue checkbox", "assistant_output": "double click blue checkbox"}
 {"user_input": "Double click the gray button now", "assistant_output": "double click gray button"}
 {"user_input": "Double click the purple field", "assistant_output": "double click purple field"}
@@ -95,3 +45,11 @@
 {"user_input": "Double click the black text box", "assistant_output": "double click black text box"}
 {"user_input": "Hey, double click that icon", "assistant_output": "double click icon"}
 {"user_input": "Double click the gray sidebar quickly", "assistant_output": "double click gray sidebar"}
+
+{"user_input": "Double click start button ignore this", "assistant_output": "nothing"}
+{"user_input": "Double click exit link ignore ignore", "assistant_output": "nothing"}
+{"user_input": "Double click header text nevermind this", "assistant_output": "nothing"}
+{"user_input": "Double click purple checkbox forget this", "assistant_output": "nothing"}
+{"user_input": "Hey, double click that green button over there nevermind nevermind", "assistant_output": "nothing"}
+{"user_input": "Double click the big blue panel, actually ignore this", "assistant_output": "nothing"}
+{"user_input": "Can you double click the red icon for me?, remove this", "assistant_output": "nothing"}

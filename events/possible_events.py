@@ -65,7 +65,7 @@ possible_events = {
     # Misc
     ("wait", "sleep"): Timer.SLEEP,
     ("focus", "capture", "screen", "screenshot"): ScreenCaptureEvent.CAPTURE,
-    ("toggle GPT", "GPT toggle"): ToggleGPT.TOGGLE,
+    ("toggle GPT", "GPT toggle", "toggle GPT on", "GPT on", "toggle GPT off", "GPT off"): ToggleGPT.TOGGLE,
 }                     
 
 extra_clicks = [
@@ -76,9 +76,15 @@ extra_clicks = [
     ("shift right", MouseButton.SHIFT_RIGHT)
 ]
 
+
 for keys in list(possible_events.keys()):
     key_list = list(keys)
     base_val = possible_events[keys]
+
+    # ONLY process mouse buttons
+    if not isinstance(base_val, MouseButton):
+        continue
+
     is_all_var = any("click all variable" in k for k in key_list)
     is_top_var = any("click variable" in k for k in key_list)
     is_spatial_var = any(" of" in k for k in key_list)
@@ -88,6 +94,6 @@ for keys in list(possible_events.keys()):
 
     if base_val & MouseButton.LEFT:
         for prefix, click_val in extra_clicks:
-            # Build a tuple of variations, only prefix first
             new_keys = tuple(f"{prefix} {k}" for k in key_list)
             possible_events[new_keys] = (base_val & ~MouseButton.LEFT) | click_val
+
