@@ -66,3 +66,68 @@
 {"user_input": "Okay start recording automation alpha", "assistant_output": "Start recording automation alpha"}
 {"user_input": "Start recording login macro for this session", "assistant_output": "Start recording login macro"}
 
+
+
+
+
+
+
+// ----------------- Misc commands used mid recording -----------------
+
+// Clear previous action while recording
+{"user_input": "scratch that last one", "assistant_output": "clear previous"}
+{"user_input": "undo my previous action", "assistant_output": "clear previous"}
+{"user_input": "cancel what I just did", "assistant_output": "clear previous"}
+{"user_input": "take back the last step", "assistant_output": "clear previous"}
+{"user_input": "disregard that last instruction", "assistant_output": "clear previous"}
+{"user_input": "actually, nevermind that last one", "assistant_output": "clear previous"}
+{"user_input": "let me redo that last part", "assistant_output": "clear previous"}
+{"user_input": "backtrack one step", "assistant_output": "clear previous"}
+{"user_input": "erase my last move", "assistant_output": "clear previous"}
+{"user_input": "remove that last entry", "assistant_output": "clear previous"}
+{"user_input": "forget what I just said to do", "assistant_output": "clear previous"}
+{"user_input": "wipe the previous command", "assistant_output": "clear previous"}
+{"user_input": "delete the last event", "assistant_output": "clear previous"}
+{"user_input": "go back one", "assistant_output": "clear previous"}
+{"user_input": "retract that", "assistant_output": "clear previous"}
+{"user_input": "oops, undo please", "assistant_output": "clear previous"}
+{"user_input": "reverse that last action", "assistant_output": "clear previous"}
+{"user_input": "drop the previous step", "assistant_output": "clear previous"}
+{"user_input": "cancel last operation", "assistant_output": "clear previous"}
+{"user_input": "nix the last thing", "assistant_output": "clear previous"}
+{"user_input": "clear previous", "assistant_output": "clear previous"}
+{"user_input": "remove previous", "assistant_output": "clear previous"}
+{"user_input": "delete previous", "assistant_output": "clear previous"}
+{"user_input": "undo previous", "assistant_output": "clear previous"}
+{"user_input": "erase previous", "assistant_output": "clear previous"}
+{"user_input": "scratch previous", "assistant_output": "clear previous"}
+{"user_input": "cancel previous", "assistant_output": "clear previous"}
+{"user_input": "drop previous", "assistant_output": "clear previous"}
+{"user_input": "back previous", "assistant_output": "clear previous"}
+
+// Wipe all actions/events in current recording
+{"user_input": "start over from scratch", "assistant_output": "reset recording"}
+{"user_input": "wipe everything clean", "assistant_output": "reset recording"}
+{"user_input": "erase all steps", "assistant_output": "reset recording"}
+{"user_input": "clear the whole sequence", "assistant_output": "reset recording"}
+{"user_input": "delete everything I've done so far", "assistant_output": "reset recording"}
+{"user_input": "begin again from zero", "assistant_output": "reset recording"}
+{"user_input": "empty the recording completely", "assistant_output": "reset recording"}
+{"user_input": "reset all progress", "assistant_output": "reset recording"}
+{"user_input": "throw it all away and start fresh", "assistant_output": "reset recording"}
+{"user_input": "nuke everything", "assistant_output": "reset recording"}
+{"user_input": "purge the entire recording", "assistant_output": "reset recording"}
+{"user_input": "clean slate, please", "assistant_output": "reset recording"}
+{"user_input": "abandon current work", "assistant_output": "reset recording"}
+{"user_input": "scrap the whole recording", "assistant_output": "reset recording"}
+{"user_input": "restart from the beginning", "assistant_output": "reset recording"}
+{"user_input": "discard all recorded steps", "assistant_output": "reset recording"}
+{"user_input": "reset to square one", "assistant_output": "reset recording"}
+{"user_input": "delete the whole recording", "assistant_output": "reset recording"}
+{"user_input": "reset recording", "assistant_output": "reset recording"}
+{"user_input": "clear recording", "assistant_output": "reset recording"}
+{"user_input": "wipe recording", "assistant_output": "reset recording"}
+{"user_input": "delete recording", "assistant_output": "reset recording"}
+{"user_input": "erase recording", "assistant_output": "reset recording"}
+{"user_input": "purge recording", "assistant_output": "reset recording"}
+{"user_input": "restart recording", "assistant_output": "reset recording"}

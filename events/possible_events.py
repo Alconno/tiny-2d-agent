@@ -46,6 +46,8 @@ possible_events = {
     ("start sequence recording", "start recording sequence", "record sequence", "start recording"): SequenceEvent.START,
     ("end recording", "stop recording", "save recording"): SequenceEvent.SAVE,
     ("play recording", "play sequence", "play"): SequenceEvent.PLAY,
+    ("reset recording", "clear recording"): SequenceEvent.RESET,
+    ("clear previous", "clear preivous step", "clear previous command", "clear previous event"): SequenceEvent.CLEAR_PREV,
 
     # Loop events
     ("loop", "start loop", "start looping"): LoopEvent.START,

@@ -6,6 +6,8 @@ class SequenceEvent(Flag):
     START   = auto()
     SAVE    = auto()
     PLAY    = auto()
+    RESET   = auto()
+    CLEAR_PREV = auto()
 
 
 class SequenceProcessor:
@@ -221,6 +223,10 @@ class SequenceProcessor:
                                recording_state, recording_stack,
                                voiceTranscriber, pause_listener_event, context_queue):
         
+        if not recording_stack or not recording_state:
+            recording_state = {"active": False, "contexts": [], "name": ""}
+            recording_stack = [recording_state["contexts"]]
+        
         if action_result == SequenceEvent.START:
             recording_state["active"] = True
             recording_state["contexts"] = []
@@ -240,6 +246,16 @@ class SequenceProcessor:
                 context_queue.extend(loaded_sequence)
             print("b:", len(context_queue))
             voiceTranscriber.listener_enabled = True
+
+        elif action_result == SequenceEvent.RESET and recording_state["active"]:
+            recording_state["contexts"] = []
+            recording_stack = [recording_state["contexts"]]
+
+        elif action_result == SequenceEvent.CLEAR_PREV and recording_state["active"]:
+            if recording_stack[-1]:
+                last_item = recording_stack[-1][-1]
+                print(f"Cleared step '{last_item.text if hasattr(last_item, 'text') else last_item}'")
+                recording_stack[-1].pop()
 
 
         return False, recording_state, recording_stack

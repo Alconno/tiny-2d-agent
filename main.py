@@ -101,8 +101,8 @@ def append_to_recording_seq(curr_ctx: Context, is_template, found_colors, action
     
 def append_condition_to_recording_seq(curr_ctx: Context):
     global recording_stack, recording_state
+    # IF CASE appending
     if recording_state["active"]:
-        curr_ctx.meta = {"if": condition}
         curr_ctx.sub_contexts = []
 
         parent = recording_stack[-1]

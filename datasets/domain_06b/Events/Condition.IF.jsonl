@@ -68,22 +68,22 @@
 {"user_input": "check text message exists", "assistant_output": "If text message exists"}
 {"user_input": "if text notice exists", "assistant_output": "If text notice exists"}
 {"user_input": "verify text log exists", "assistant_output": "If text log exists"}
-{"user_input": "if text report exists", "assistant_output": "If text report exists"}
-{"user_input": "check text file exists", "assistant_output": "If text file exists"}
-{"user_input": "if text document exists", "assistant_output": "If text document exists"}
-{"user_input": "verify text folder exists", "assistant_output": "If text folder exists"}
-{"user_input": "if text folder empty exists", "assistant_output": "If text folder empty exists"}
-{"user_input": "check text folder full exists", "assistant_output": "If text folder full exists"}
-{"user_input": "if text system exists", "assistant_output": "If text system exists"}
-{"user_input": "verify text network exists", "assistant_output": "If text network exists"}
-{"user_input": "if text connection exists", "assistant_output": "If text connection exists"}
-{"user_input": "check text server exists", "assistant_output": "If text server exists"}
-{"user_input": "if text client exists", "assistant_output": "If text client exists"}
-{"user_input": "verify text process exists", "assistant_output": "If text process exists"}
-{"user_input": "if text task exists", "assistant_output": "If text task exists"}
-{"user_input": "check text job exists", "assistant_output": "If text job exists"}
-{"user_input": "if text queue exists", "assistant_output": "If text queue exists"}
-{"user_input": "verify text buffer exists", "assistant_output": "If text buffer exists"}
+{"user_input": "if text report", "assistant_output": "If text report exists"}
+{"user_input": "check text file", "assistant_output": "If text file exists"}
+{"user_input": "if text document", "assistant_output": "If text document exists"}
+{"user_input": "verify text folder", "assistant_output": "If text folder exists"}
+{"user_input": "if text folder empty", "assistant_output": "If text folder empty exists"}
+{"user_input": "check text folder full", "assistant_output": "If text folder full exists"}
+{"user_input": "if text system", "assistant_output": "If text system exists"}
+{"user_input": "verify text network", "assistant_output": "If text network exists"}
+{"user_input": "if text connection", "assistant_output": "If text connection exists"}
+{"user_input": "check text server", "assistant_output": "If text server exists"}
+{"user_input": "if text client", "assistant_output": "If text client exists"}
+{"user_input": "verify text process", "assistant_output": "If text process exists"}
+{"user_input": "if text task", "assistant_output": "If text task exists"}
+{"user_input": "check text job", "assistant_output": "If text job exists"}
+{"user_input": "if text queue", "assistant_output": "If text queue exists"}
+{"user_input": "verify text buffer", "assistant_output": "If text buffer exists"}
 {"user_input": "hey check if the text hello is there", "assistant_output": "If text hello exists"}
 {"user_input": "can you see if blue text sky exists", "assistant_output": "If text blue sky exists"}
 {"user_input": "make sure the green or red text stop shows up", "assistant_output": "If text green or red stop exists"}
