@@ -1,7 +1,7 @@
 from pynput.keyboard import Controller, Key
 from enum import Enum, auto
 import time
-
+from core.state import RuntimeState
 
 class KeyboardEvent(Enum):
     WRITE = auto()
@@ -61,8 +61,9 @@ class Keyboard:
         for k in reversed(keys_to_press): self.k.release(k)
 
 
-    def execute(self, event: KeyboardEvent, target: str):
-        if event == KeyboardEvent.WRITE:
-            self.write(target)
-        elif event == KeyboardEvent.PRESS:
-            self.press(target)
+    def execute(self, rs: RuntimeState):
+        if rs.action_event == KeyboardEvent.WRITE:
+            self.write(rs.target_text)
+        elif rs.action_event == KeyboardEvent.PRESS:
+            self.press(rs.target_text)
+        return False # Did not fail

@@ -26,6 +26,9 @@ class Context:
             c.sub_contexts = [sub.copy() for sub in self.sub_contexts]
         return c
     
+    def clone(self):
+        return Context.from_dict(self.to_dict())
+
     def print_tree(self, indent=0):
         pad = "  " * indent
         print(f"{pad}{{")

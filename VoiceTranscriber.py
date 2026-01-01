@@ -2,7 +2,7 @@ from pynput import keyboard
 import sounddevice as sd, numpy as np, tempfile
 from scipy.io.wavfile import write
 from transformers import pipeline
-import re
+import threading
 
 class VoiceTranscriber:
     def __init__(self, sr=16000, ch=1, model="openai/whisper-small", listener="on"):
@@ -17,6 +17,7 @@ class VoiceTranscriber:
         )
         self.pressed = False
         self.listener_enabled = listener.lower() == "on"
+        self.pause_listener_event = None
         
         if self.listener_enabled:
             self.listener = keyboard.Listener(on_press=self._press, on_release=self._release)

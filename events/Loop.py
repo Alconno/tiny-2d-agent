@@ -1,6 +1,5 @@
 from enum import Flag, auto
-from class_models.Context import Context
-from re import Match
+from core.state import RuntimeState
 import re
 
 class LoopEvent(Flag):
@@ -8,30 +7,29 @@ class LoopEvent(Flag):
     STOP  = auto()
 
 
-class LoopProcessor():
+class LoopHandler():
     def __init__(self):
         pass
 
-    def process(self, action_result, target_text, current_context: Context, recording_stack, \
-                recording_state, context_queue, is_template: Match[str] | None):
+    def process(self, rs: RuntimeState):
         
-        if action_result == LoopEvent.START:
-            raw = target_text.strip()
-            if is_template:
-                if recording_state["active"]:
-                    var_name = raw.replace(is_template.group(1), "").strip()
+        if rs.action_event == LoopEvent.START:
+            raw = rs.target_text.strip()
+            if rs.is_template:
+                if rs.recording_state["active"]:
+                    var_name = raw.replace(rs.is_template.group(1), "").strip()
                     if not var_name:
                         print("Template loop missing variable name: ", var_name)
                     else:
-                        current_context.sub_contexts = []
+                        rs.current_context.sub_contexts = []
 
-                        recording_stack[-1].append(current_context)
-                        recording_stack.append(current_context.sub_contexts)
+                        rs.recording_stack[-1].append(rs.current_context)
+                        rs.recording_stack.append(rs.current_context.sub_contexts)
                 else:
                     # For multiple variables, loop subcontexts will be repeated with filled out template and returned as one
-                    if current_context.sub_contexts and not recording_state["active"]:
-                        for sub_ctx in reversed(current_context.sub_contexts):
-                            context_queue.appendleft(sub_ctx)
+                    if rs.current_context.sub_contexts and not rs.recording_state["active"]:
+                        for sub_ctx in reversed(rs.current_context.sub_contexts):
+                            rs.context_queue.appendleft(sub_ctx)
             else:
                 print("d")
                 m = re.search(r"\d+", raw)
@@ -41,23 +39,23 @@ class LoopProcessor():
                 else:
                     count = int(m.group(0))
 
-                    if recording_state["active"]:
-                        current_context.sub_contexts = []
-                        recording_stack[-1].append(current_context)
-                        recording_stack.append(current_context.sub_contexts)
+                    if rs.recording_state["active"]:
+                        rs.current_context.sub_contexts = []
+                        rs.recording_stack[-1].append(rs.current_context)
+                        rs.recording_stack.append(rs.current_context.sub_contexts)
                     else:
                         print("count: ", count)
-                        print("q size: ", len(context_queue))
+                        print("q size: ", len(rs.context_queue))
                         for _ in range(count):
-                            if current_context.sub_contexts and not recording_state["active"]:
-                                for sub_ctx in reversed(current_context.sub_contexts):
+                            if rs.current_context.sub_contexts and not rs.recording_state["active"]:
+                                for sub_ctx in reversed(rs.current_context.sub_contexts):
                                     print("adding sub ctx: ", sub_ctx.text)
-                                    context_queue.appendleft(sub_ctx.copy())
+                                    rs.context_queue.appendleft(sub_ctx.copy())
 
-            return False, recording_stack
+            return False, rs.recording_stack
 
-        elif action_result == LoopEvent.STOP:
-            if len(recording_stack) > 1:
-                recording_stack.pop()
+        elif rs.action_result == LoopEvent.STOP:
+            if len(rs.recording_stack) > 1:
+                rs.recording_stack.pop()
 
-        return False, recording_stack
+        return False, rs.recording_stack

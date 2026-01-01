@@ -12,6 +12,7 @@ import base64
 from PIL import Image
 from utility.get_text_color import get_text_color
 from utility.color_to_text import get_color_name
+from core.state import RuntimeState
 
 def normalize_word(s):
     s = s.lower()
@@ -143,30 +144,30 @@ def extract_action(context_text, event_embeds, embd_func, max_n=8, boost_alpha=0
     return best if best["score"] > 0.6 else None
 
 
-def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=False):
+def extract_box_target(rs: RuntimeState, embd_lines, return_all=False):
     boost_alpha = 0.2
     color_boost = 1.15
     color_penalty = 0.85
+    ctx = rs.target_text
 
     ctx = ctx.lower().strip()
     if not ctx:
         return None
 
-    ctx_emb = embd_func([ctx])
+    ctx_emb = rs.models.embd_func([ctx])
     if ctx_emb is None:
         return None
     ctx_emb = ctx_emb[0]
 
-    if color_list:
-        color_list = [c.lower() for c in color_list]
     if return_all:
         results = []
 
     best = {"score": -1, "query": ctx, "result": None}
 
-
     for line in embd_lines:
         for item in line:
+            if not isinstance(item, dict): 
+                print("Item: ", item)
             item_text = item["text"].lower()
 
             sim = hybrid_score(ctx, item_text, ctx_emb, item["embedding"])
@@ -176,11 +177,11 @@ def extract_box_target(ctx, embd_lines, embd_func, color_list=None, return_all=F
                 sim *= 1 + boost_alpha * (len(ctx.split()) - 1)
 
             # Color adjustments
-            if sim > 0.6 and item.get("crop") and color_list:
+            if sim > 0.6 and item.get("crop") and rs.color_list:
                 np_crop = base64_to_crop(item["crop"])
                 color_rgb = get_text_color(np_crop)
                 color_text = get_color_name(color_rgb)
-                sim *= color_boost if color_text in color_list else color_penalty
+                sim *= color_boost if color_text in rs.color_list else color_penalty
 
             if return_all:
                 if sim > 0.6:
@@ -451,11 +452,11 @@ def compare(sign, target, value):
     return value == target
 
 
-def extract_numbers_target(ctx, embd_lines, embd_func, color_list=None, return_all=False):
-    color_list = color_list or []
+def extract_numbers_target(rs: RuntimeState, embd_lines, return_all=False):
+    color_list = rs.color_list or []
     results = []
 
-    ctx_lower = ctx.lower().strip()
+    ctx_lower = rs.target_text.lower().strip()
 
     # "all" context: extract everything
     if ctx_lower in ("all", "all numbers"):
@@ -496,8 +497,8 @@ def extract_numbers_target(ctx, embd_lines, embd_func, color_list=None, return_a
 
     # batch embed unique candidate colors
     unique_colors = {c["color"] for c in candidates if c["color"] and color_list}
-    color_emb_map = dict(zip(unique_colors, embd_func(list(unique_colors)))) if unique_colors else {}
-    colors_emb = embd_func(list(color_list))
+    color_emb_map = dict(zip(unique_colors, rs.models.embd_func(list(unique_colors)))) if unique_colors else {}
+    colors_emb = rs.models.embd_func(list(color_list))
 
     # filter by color similarity if color_list provided
     for c in candidates:
@@ -521,88 +522,7 @@ def extract_numbers_target(ctx, embd_lines, embd_func, color_list=None, return_a
     return max(results, key=lambda x: x["value"]) if results else None
 
 
-
-
-from events.Mouse import MouseButton
-from utility.image_matching import calculate_edges
-def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, spatial_search_condition="object"):
-    ASA = 5 # Additional Spatial Awareness
-    SAD = 350 # Spatial Awareness Distance - How far something is considered "next to" 
-    x,y,w,h = bbox
-    ox, oy = offset
-    orig_box = bbox
-
-    min_height, min_width = max(5, int(h*0.1)), max(7, int(w*0.1))
-    is_object_detection = spatial_search_condition == "object"
-    is_text_detection = spatial_search_condition == "text"
-    #print("is object detection: ", is_object_detection)
-
-    edge_dropout = 0.1 if is_object_detection else 0.25 # forces more focus on text, but generalises objects
-    proj_dropout = 0.03 if is_object_detection else 0.1
-    proj_gate = 0
-
-    # Requires (left, top, right, bottom) bbox format for PIL.crop()
-    def get_segments(bbox, horizontal=False, reverse=False):
-        crop = np.array(screenshot.crop(bbox))
-
-        x_proj, y_proj = calculate_edges(
-            crop, use_color=is_text_detection, apply_blur=True,
-            edge_dropout=edge_dropout, proj_dropout=proj_dropout
-        )
-        proj = x_proj if horizontal else y_proj
-        if reverse: proj = proj[::-1]
-
-        diff = np.diff(np.pad((proj > proj_gate).astype(int), (1, 1)))
-        starts = np.where(diff == 1)[0]
-        ends   = np.where(diff == -1)[0]
-
-        if reverse:
-            L = len(proj)
-            starts, ends = L - ends, L - starts
-        return starts, ends
-    
-    while bbox == orig_box:
-        if spatial_event & MouseButton.SPATIAL_ABOVE:
-            crop_left, crop_top, crop_right, crop_bottom = max(0, x-ASA-1), max(0, y-SAD), x+w+ASA+10, y
-            starts, ends = get_segments((crop_left, crop_top, crop_right, crop_bottom), reverse=True)
-            for y0, y1 in zip(starts, ends):
-                abs_y0, abs_y1 = y0 + crop_top, y1 + crop_top
-                if (abs_y1 - abs_y0) >= min_height:
-                    bbox = (x, abs_y0, w, abs_y1 - abs_y0)
-                    break
-        elif spatial_event & MouseButton.SPATIAL_BELOW:
-            starts, ends = get_segments((max(0, x-ASA-1), y+h, 
-                                         min(screenshot.width, x+w+ASA+10), min(screenshot.height, y+h+SAD)))
-            for y0, y1 in zip(starts, ends):
-                local_y = y0 + (int(y + h))
-                if local_y <= 1 or local_y > screenshot.height - min_height:
-                    continue
-                if (y1 - y0) >= min_height:
-                    bbox = (x, local_y, w, y1 - y0)
-                    break
-        elif spatial_event & MouseButton.SPATIAL_LEFT:
-            crop_start_x = max(0, x - SAD)
-            starts, ends = get_segments((crop_start_x, y-ASA, x, y+h+ASA), horizontal=True, reverse=True)
-            for x0, x1 in zip(starts, ends):
-                if (x1 - x0) >= min_width:
-                    bbox = (x0 + crop_start_x, y, x1 - x0, h)
-                    break
-        elif spatial_event & MouseButton.SPATIAL_RIGHT:
-            starts, ends = get_segments((x+w, y-ASA, min(screenshot.width, x+w+SAD), y+h+ASA), horizontal=True)
-            for x0,x1 in zip(starts,ends):
-                if x0 <= 1 or x0 > screenshot.width - min_width: continue
-                if (x1-x0) >= min_width:
-                    bbox = (x0+(x+w), y, x1-x0, h)
-                    break
-        edge_dropout += 0.001
-        proj_dropout += 0.01
-        if proj_dropout >= 0.4: break
-
-    bx, by, bw, bh = bbox 
-    return (bx + ox, by + oy, bw, bh)
-
  
-
 
 def apply_offset_to_var(offset, var):
     ox, oy = offset

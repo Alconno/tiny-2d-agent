@@ -330,25 +330,13 @@
                         }
                     },
                     {
-                        "text": "press template",
-                        "meta": {
-                            "gpt_applied": true
-                        }
-                    },
-                    {
                         "text": "write  {{names}}",
                         "meta": {
                             "gpt_applied": true
                         }
                     },
                     {
-                        "text": "capture 845,161,1070,249",
-                        "meta": {
-                            "gpt_applied": true
-                        }
-                    },
-                    {
-                        "text": "click search",
+                        "text": "press enter",
                         "meta": {
                             "gpt_applied": true
                         }
@@ -378,7 +366,7 @@
                         }
                     },
                     {
-                        "text": "click variable items",
+                        "text": "click top variable items",
                         "meta": {
                             "gpt_applied": true
                         }
@@ -395,8 +383,29 @@
         "vars": [
             {
                 "name": "names",
-                "type": "list"
+                "type": "list",
+                "value": [
+                    "Eternal fire",
+                    "Eternal water"
+                ]
             }
         ]
+    },
+    "pc": {
+        "steps": [
+            {
+                "text": "capture 358,538,825,778",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "click event",
+                "meta": {
+                    "gpt_applied": true
+                }
+            }
+        ],
+        "vars": []
     }
 }

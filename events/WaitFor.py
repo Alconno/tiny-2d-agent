@@ -1,10 +1,13 @@
 from enum import Flag, auto
 import re, time
+from core.state import RuntimeState
+from core.ocr import run_ocr
+
 class WaitForEvent(Flag):
     TEXT     = auto()
     IMAGE    = auto()
 
-class WaitForEventProcessor():
+class WaitForEventHandler():
     def __init__(self):
         from utility.dogshitretard import take_screenshot, get_target_image, extract_box_target
         from utility.image_matching import find_crop_in_image
@@ -24,8 +27,9 @@ class WaitForEventProcessor():
             match = re.search(r'\d+', str(wait_str))
             return int(match.group()) if match else 5
 
-    def waitFor(self, action_result, ctx, found_colors, screenshot_box, embd_func, run_ocr_func):
-        parts = [p.strip() for p in ctx.split("|", 1)]
+    def waitFor(self, rs: RuntimeState):
+
+        parts = [p.strip() for p in rs.target_text.split("|", 1)]
         if len(parts) == 1:
             parts.append(None)
         real_ctx = parts[0]
@@ -34,11 +38,11 @@ class WaitForEventProcessor():
         result = False
         start_time = time.time()
         
-        if action_result == WaitForEvent.IMAGE:
+        if rs.action_event == WaitForEvent.IMAGE:
             while time.time() - start_time < wait_timer:
                 print(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
-                screenshot, offset = self.take_screenshot_func(screenshot_box)
-                matching = self.get_target_image_func(embd_func, real_ctx, "./clickable_images")
+                screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
+                matching = self.get_target_image_func(rs.models.embd_func, real_ctx, "./clickable_images")
                 if matching:
                     _, bbox = self.find_crop_in_image_func(screenshot, matching, offset=offset)
                     if bbox:
@@ -46,12 +50,12 @@ class WaitForEventProcessor():
                         result = True
                         break
                 time.sleep(0.1)
-        elif action_result == WaitForEvent.TEXT:
+        elif rs.action_event == WaitForEvent.TEXT:
             while time.time() - start_time < wait_timer:
                 print(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
-                screenshot, offset = self.take_screenshot_func(screenshot_box)
-                emb = run_ocr_func(screenshot, offset, found_colors)
-                target = self.extract_box_target(real_ctx, emb, embd_func, found_colors)
+                screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
+                emb = run_ocr(screenshot, offset, rs)
+                target = self.extract_box_target(rs, emb)
                 if target and target.get("result"):
                     print(target)
                     print(f"Found text {real_ctx}")

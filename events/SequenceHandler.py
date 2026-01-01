@@ -1,6 +1,8 @@
 from enum import Flag, auto
 import os, json, re
 from class_models.Context import Context
+from core.state import RuntimeState
+from VoiceTranscriber import VoiceTranscriber
 
 class SequenceEvent(Flag):
     START   = auto()
@@ -10,11 +12,10 @@ class SequenceEvent(Flag):
     CLEAR_PREV = auto()
 
 
-class SequenceProcessor:
+class SequenceHandler:
     def __init__(self, embd_func, filepath="sequences.json"):
-        from VoiceTranscriber import VoiceTranscriber
         from utility.dogshitretard import cmp_txt_and_embs, extract_vars_from_steps
-
+    
         self.voiceTranscriber = VoiceTranscriber()
         self.voiceTranscriber.listener_enabled = False
         self.embd_func = embd_func
@@ -173,11 +174,12 @@ class SequenceProcessor:
                 return ("template", var)
             return ("template", after[0])
 
-        ctx_steps = [Context.from_dict(s) for s in sequence["steps"]]
+        ctx_steps = [Context.from_dict(s).clone() for s in sequence["steps"]]
         final_steps = []
 
         for ctx in ctx_steps:
-            ctx.text = subst(ctx.text)
+            new_ctx = ctx.clone()
+            new_ctx.text = subst(new_ctx.text)
 
             loop_type, loop_val = parse_loop(ctx.text)
 
@@ -213,50 +215,49 @@ class SequenceProcessor:
 
             # normal step
             final_steps.append(ctx)
-
-
         return final_steps
+    
+    
 
 
 
-    def process_sequence_event(self, action_result, target_text,  
-                               recording_state, recording_stack,
-                               voiceTranscriber, pause_listener_event, context_queue):
+    def process_sequence_event(self, rs: RuntimeState, voiceTranscriber: VoiceTranscriber):
         
-        if not recording_stack or not recording_state:
-            recording_state = {"active": False, "contexts": [], "name": ""}
-            recording_stack = [recording_state["contexts"]]
+        if not rs.recording_stack or not rs.recording_state:
+            rs.recording_state = {"active": False, "contexts": [], "name": ""}
+            rs.recording_stack = [rs.recording_state["contexts"]]
         
-        if action_result == SequenceEvent.START:
-            recording_state["active"] = True
-            recording_state["contexts"] = []
-            recording_state["name"] = target_text
-            recording_stack = [recording_state["contexts"]]
+        if rs.action_event == SequenceEvent.START:
+            rs.recording_state["active"] = True
+            rs.recording_state["contexts"] = []
+            rs.recording_state["name"] = rs.target_text
+            rs.recording_stack = [rs.recording_state["contexts"]]
 
-        elif action_result == SequenceEvent.SAVE:
-            vars_list = self.extract_vars_from_steps_func(recording_state["contexts"])
-            self.save_sequence(recording_state["contexts"], recording_state.get("name"), vars_list)
-            recording_state.update({"active": False, "contexts": [], "name": ""})
+        elif rs.action_event == SequenceEvent.SAVE:
+            vars_list = self.extract_vars_from_steps_func(rs.recording_state["contexts"])
+            self.save_sequence(rs.recording_state["contexts"], rs.recording_state.get("name"), vars_list)
+            rs.recording_state.update({"active": False, "contexts": [], "name": ""})
 
-        elif action_result == SequenceEvent.PLAY:
+        elif rs.action_event == SequenceEvent.PLAY:
             voiceTranscriber.listener_enabled = False
-            loaded_sequence = self.load_sequence(name=target_text, pause_listener_event=pause_listener_event)
-            print("a:", len(context_queue))
+            loaded_sequence = self.load_sequence(
+                                    name=rs.target_text, 
+                                    pause_listener_event=voiceTranscriber.pause_listener_event
+                                )
             if loaded_sequence:
-                context_queue.extend(loaded_sequence)
-            print("b:", len(context_queue))
+                rs.context_queue.extend(loaded_sequence)
             voiceTranscriber.listener_enabled = True
 
-        elif action_result == SequenceEvent.RESET and recording_state["active"]:
-            recording_state["contexts"] = []
-            recording_stack = [recording_state["contexts"]]
+        elif rs.action_event == SequenceEvent.RESET and rs.recording_state["active"]:
+            rs.recording_state["contexts"] = []
+            rs.recording_stack = [rs.recording_state["contexts"]]
 
-        elif action_result == SequenceEvent.CLEAR_PREV and recording_state["active"]:
-            if recording_stack[-1]:
-                last_item = recording_stack[-1][-1]
+        elif rs.action_event == SequenceEvent.CLEAR_PREV and rs.recording_state["active"]:
+            if rs.recording_stack[-1]:
+                last_item = rs.recording_stack[-1][-1]
                 print(f"Cleared step '{last_item.text if hasattr(last_item, 'text') else last_item}'")
-                recording_stack[-1].pop()
+                rs.recording_stack[-1].pop()
 
 
-        return False, recording_state, recording_stack
+        return False
 

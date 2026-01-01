@@ -1,5 +1,7 @@
 from enum import Flag, auto
 import tkinter as tk
+from core.state import RuntimeState
+import re, time
 
 class ScreenCaptureEvent(Flag):
     CAPTURE = auto()
@@ -50,4 +52,24 @@ class ScreenCapture:
 
             return bbox_xywh, bbox_coords
         return None, None
+
+    def handle_screenshot(self, rs: RuntimeState):
+        failed = True
+        if rs.target_text:
+            nums = list(map(int, re.findall(r"\d+", rs.target_text)))
+            if len(nums) != 4:
+                print("Invalid screenshot box format")
+                failed = True
+            else:
+                failed = False
+                rs.screenshot_box = tuple(nums)
+        else:
+            bbox_xywh, bbox_coords  = self.select_region()
+            rs.screenshot_box = bbox_coords
+            time.sleep(0.25)
+            rs.current_context.text += " {},{},{},{}".format(*rs.screenshot_box)
+            failed = False
+        print("Currently focused on area: ", rs.screenshot_box)
+        return failed
+
 

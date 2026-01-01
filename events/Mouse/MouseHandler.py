@@ -1,33 +1,15 @@
-from enum import Flag, auto, Enum
 from pynput.mouse import Button, Controller
+from events.Mouse.MouseEvent import MouseButton
 from pynput.keyboard import Controller as KeyboardController, Key
+from core.state import RuntimeState
+from core.ocr import run_ocr
 import time
 
-class MouseButton(Flag):
-    LEFT   = auto()
-    RIGHT  = auto()
-    MIDDLE = auto()
-    DOUBLE = auto()
-    IMAGE  = auto()
-    
-    SHIFT_LEFT  = auto()
-    SHIFT_RIGHT = auto()
-    
-    VAR_ALL = auto()
-    VAR_TOP = auto()
-    
-    SPATIAL_LEFT  = auto()
-    SPATIAL_RIGHT = auto()
-    SPATIAL_ABOVE = auto()
-    SPATIAL_BELOW = auto()
-
-
-
-
-class Mouse:
+class MouseHandler:
     def __init__(self):
         from utility.dogshitretard import take_screenshot, get_target_image, extract_box_target
-        from utility.dogshitretard import get_matching_str, get_spatial_location, apply_offset_to_bbox
+        from utility.dogshitretard import get_matching_str, apply_offset_to_bbox
+        from utility.spatial_location import get_spatial_location
         from utility.image_matching import find_crop_in_image
 
         self.take_screenshot_func = take_screenshot
@@ -91,82 +73,82 @@ class Mouse:
         for btn in self._iterate_buttons(button & ~MouseButton.DOUBLE):
             self.controller.release(btn)
 
-    def execute(self, action, target):
+    def execute(self, action_event, target):
         if target:
             x, y, w, h = target["result"]["bbox"]
             cx, cy = x + w/2, y + h/2
-            button = action["result"]
+            button = action_event
             self.click(int(cx), int(cy), button)
         else:
             (cx, cy) = self.controller.position
-            self.click(int(cx), int(cy), action["result"])
+            self.click(int(cx), int(cy), action_event)
 
-    def process_event(self, parsed_action, ctx, variables, screenshot_box, found_colors, embd_func, run_ocr_func):
-        screenshot, offset = self.take_screenshot_func(screenshot_box)
-        action_result = parsed_action["result"]
+    def process_event(self, rs: RuntimeState):
+        screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
+
         failed = False
 
-        if action_result & MouseButton.IMAGE:
-            matching = self.get_target_image_func(embd_func, ctx, "./clickable_images")
+        if rs.action_event & MouseButton.IMAGE:
+            matching = self.get_target_image_func(rs.models.embd_func, rs.target_text, "./clickable_images")
             if matching:
-                print("Found image ", ctx)
+                print("Found image ", matching)
                 _, bbox = self.find_crop_in_image_func(screenshot, matching, offset=offset)
                 print("Found bbox: ", bbox)
                 if bbox:
-                    self.execute(parsed_action, {"result": {"bbox": bbox}})
+                    self.execute(rs.action_event, {"result": {"bbox": bbox}})
                     failed = False
             else:
-                print("image not found:", ctx)
+                print("image not found:", rs.target_text)
 
-        elif action_result & MouseButton.VAR_ALL:
-            var_name = self.get_matching_str_func(ctx, list(variables.keys()), embd_func) 
+        elif rs.action_event & MouseButton.VAR_ALL:
+            var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func) 
             if var_name:
-                var_obj = variables.get(var_name)
+                var_obj = rs.variables.get(var_name)
                 var_values = var_obj.get("value") if isinstance(var_obj, dict) else getattr(var_obj, "value", []) or []
                 for value in var_values:
                     bbox = value.get("bbox") if isinstance(value, dict) else None
                     if bbox:
                         print("Clicking var value:", value, "\n\n-------------------")
-                        self.execute(parsed_action, {"result": {"bbox": bbox}})
+                        self.execute(rs.action_event, {"result": {"bbox": bbox}})
                         time.sleep(1)
 
-        elif action_result & MouseButton.VAR_TOP:
-            var_name = self.get_matching_str_func(ctx, list(variables.keys()), embd_func)
+        elif rs.action_event & MouseButton.VAR_TOP:
+            var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func)
             if var_name:
-                var_obj = variables.get(var_name)
+                var_obj = rs.variables.get(var_name)
                 var_values = var_obj.get("value") if isinstance(var_obj, dict) else getattr(var_obj, "value", []) or []
                 if var_values:
                     top = var_values[0]
                     bbox = top.get("bbox") if isinstance(top, dict) else None
                     if bbox:
                         print("Clicking var value:", top, "\n\n-------------------")
-                        self.execute(parsed_action, {"result": {"bbox": bbox}})
+                        self.execute(rs.action_event, {"result": {"bbox": bbox}})
                         time.sleep(1)
 
-        elif action_result & (MouseButton.SPATIAL_ABOVE | MouseButton.SPATIAL_BELOW |
+        elif rs.action_event & (MouseButton.SPATIAL_ABOVE | MouseButton.SPATIAL_BELOW |
                             MouseButton.SPATIAL_LEFT | MouseButton.SPATIAL_RIGHT):
-            emb = run_ocr_func(screenshot, offset, found_colors)
+            emb = run_ocr(screenshot, offset, rs)
             
-            parts = [p.strip() for p in ctx.split("|", 1)]
+            parts = [p.strip() for p in rs.target_text.split("|", 1)]
             if len(parts) == 1:
                 parts.append(None)
-            real_ctx = parts[0]
+            rs.target_text = parts[0] # real ctx
             spatial_search_condition = parts[1] or "object" # 'text' (color edge detection) or 'object'(defaut)(gray edge detection)
             
-            target = self.extract_box_target(ctx, emb, embd_func, found_colors)
+            target = self.extract_box_target(rs, emb)
 
             if target:
                 bbox = target["result"]["bbox"]
-                new_bbox = self.get_spatial_location(action_result, bbox, offset, screenshot, spatial_search_condition)
-                self.execute(parsed_action, {"result": {"bbox": new_bbox}})
+                new_bbox = self.get_spatial_location(rs.action_event, bbox, offset, screenshot, spatial_search_condition)
+                self.execute(rs.action_event, {"result": {"bbox": new_bbox}})
 
         else:
-            emb = run_ocr_func(screenshot, offset, found_colors)
-            target = self.extract_box_target(ctx, emb, embd_func, found_colors)
+            emb = run_ocr(screenshot, offset, rs)
+            target = self.extract_box_target(rs, emb)
             if target and target['result'] and target['result']['bbox']:
                 self.apply_offset_to_bbox(offset, target['result']['bbox'])
             if target:
-                self.execute(parsed_action, target)
+                self.execute(rs.action_event, target)
                 failed = False
 
         return failed

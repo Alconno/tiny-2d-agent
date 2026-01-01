@@ -3,9 +3,9 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from events.Mouse import MouseButton
+from events.Mouse.MouseEvent import MouseButton
 from events.Keyboard import KeyboardEvent
-from events.SequenceProcessor import SequenceEvent
+from events.SequenceHandler import SequenceEvent
 from events.Timer import Timer
 from events.ScreenCapture import ScreenCaptureEvent
 from events.Conditioning import Condition

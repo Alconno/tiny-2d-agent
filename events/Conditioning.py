@@ -1,4 +1,6 @@
-from pynput.keyboard import Controller, Key
+from core.ocr import run_ocr
+from core.state import RuntimeState
+from core.recording import append_condition_to_recording_seq
 from enum import Enum, auto
 import re
 import cv2
@@ -8,7 +10,7 @@ class Condition(Enum):
     IF      = auto()
     END_IF  = auto()
 
-class ConditionProcessor():
+class ConditionHandler():
     def __init__(self):
         from utility.dogshitretard import take_screenshot, extract_box_target,\
                                         get_target_image, get_matching_str
@@ -71,13 +73,13 @@ class ConditionProcessor():
         return not found if condition.get("negate", False) else found
 
         
-    def check_text(self, condition, screenshot_box, run_ocr_func, embd_func):
-        screenshot, offset = self.take_screenshot_func(screenshot_box)
-        ctx = condition["query"]
-        color_list = condition["colors"]
+    def check_text(self, condition, rs: RuntimeState):
+        screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
+        rs.target_text = condition["query"]
+        rs.color_list = condition["colors"]
 
-        embd_lines = run_ocr_func(screenshot, offset, color_list)
-        target = self.extract_box_target(ctx, embd_lines, embd_func, color_list)
+        embd_lines = run_ocr(screenshot, offset, rs)
+        target = self.extract_box_target(rs, embd_lines)
 
         found = target is not None and target.get("result") is not None and target.get("score", 0) > 0.7
         found = self.apply_negate(found, condition)
@@ -86,10 +88,10 @@ class ConditionProcessor():
 
 
 
-    def check_image(self, condition, screenshot_box, embd_func):
-        screenshot, _ = self.take_screenshot_func(screenshot_box)
+    def check_image(self, condition, rs: RuntimeState):
+        screenshot, _ = self.take_screenshot_func(rs.screenshot_box)
         matching = self.get_target_image_func(
-            embd_func, condition["query"], "./clickable_images"
+            rs.models.embd_func, condition["query"], "./clickable_images"
         )
 
         bbox = None
@@ -103,16 +105,47 @@ class ConditionProcessor():
 
     
 
-    def check_variable(self, condition, variables: dict, embd_func):
+    def check_variable(self, condition, rs: RuntimeState):
         var_name = self.get_matching_str_func(
-            condition["query"], list(variables.keys()), embd_func
+            condition["query"], list(rs.variables.keys()), rs.models.embd_func
         )
 
-        found = var_name in variables
+        found = var_name in rs.variables
         found = self.apply_negate(found, condition)
 
-        return found, variables.get(var_name, None)
+        return found, rs.variables.get(var_name, None)
 
 
-        
+    
+    def check_condition(self, condition, rs: RuntimeState):
+        failed = True
+        if condition:
+            if condition["type"] == "text": 
+                passed, target = self.check_text(condition, rs)
+                append_condition_to_recording_seq(rs.current_context)
+            elif condition["type"] == "image":
+                passed, target = self.check_image(condition, rs)
+                append_condition_to_recording_seq(rs.current_context)
+            elif condition["type"] == "variable":
+                passed, var_obj = self.check_variable(condition, rs)
+                append_condition_to_recording_seq(rs.current_context)
+            if passed:
+                failed = False
+                if rs.current_context.sub_contexts and not rs.recording_state["active"]:
+                    for sub_ctx in reversed(rs.current_context.sub_contexts):
+                        rs.context_queue.appendleft(sub_ctx)
+            print("Condition ", "passed" if passed else "failed.")
+        return failed
 
+
+
+    def handle_condition(self, rs: RuntimeState):
+        failed = True
+        if rs.action_event == Condition.IF:
+            condition = self.parse_condition(rs.target_text) # {type, query, colors, negate}
+            failed = self.check_condition(condition, rs)
+        elif rs.action_event == Condition.END_IF:
+            if rs.recording_stack:
+                rs.recording_stack.pop()
+            failed = False
+        return failed
