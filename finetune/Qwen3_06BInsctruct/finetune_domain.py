@@ -6,7 +6,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, TrainingArguments, Trainer
 from datasets import load_dataset
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, PeftModel
-from prompts import get_prompt
+from models.prompts.voice_to_command import get_prompt
 
 checkpoint = None
 

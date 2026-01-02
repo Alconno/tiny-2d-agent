@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
-from prompts import get_prompt
+from models.prompts.voice_to_command import get_prompt
 from transformers import BitsAndBytesConfig
 
 

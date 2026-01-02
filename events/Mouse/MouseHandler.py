@@ -4,6 +4,9 @@ from pynput.keyboard import Controller as KeyboardController, Key
 from core.state import RuntimeState
 from core.ocr import run_ocr
 import time
+from core.logging import get_logger
+log = get_logger(__name__) 
+
 
 class MouseHandler:
     def __init__(self):
@@ -46,7 +49,6 @@ class MouseHandler:
         shift_held = bool(button & (MouseButton.SHIFT_LEFT | MouseButton.SHIFT_RIGHT))
         real_button = button & ~MouseButton.DOUBLE
         total_clicks = 2 if MouseButton.DOUBLE in button else 1
-        print(shift_held, real_button, total_clicks)
 
         if shift_held:
             self.kb_controller.press(Key.shift)
@@ -89,14 +91,13 @@ class MouseHandler:
         if rs.action_event & MouseButton.IMAGE:
             matching = self.get_target_image_func(rs.models.embd_func, rs.target_text, "./clickable_images")
             if matching:
-                print("Found image ", matching)
                 _, bbox = self.find_crop_in_image_func(screenshot, matching, offset=offset)
-                print("Found bbox: ", bbox)
                 if bbox:
                     self.execute(rs.action_event, {"result": {"bbox": bbox}})
+                    log.info(f"Successfully clicked on image {matching}")
                     failed = False
             else:
-                print("image not found:", rs.target_text)
+                log.warning(f"Image not found: {rs.target_text}")
 
         elif rs.action_event & MouseButton.VAR_ALL:
             var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func) 
@@ -106,9 +107,11 @@ class MouseHandler:
                 for value in var_values:
                     bbox = value.get("bbox") if isinstance(value, dict) else None
                     if bbox:
-                        print("Clicking var value:", value, "\n\n-------------------")
+                        log.info(f"Successfully clicked variable value: {value}")
                         self.execute(rs.action_event, {"result": {"bbox": bbox}})
                         time.sleep(1)
+                    else:
+                        log.warning(f"Failed clicking on variable value: {value}")
 
         elif rs.action_event & MouseButton.VAR_TOP:
             var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func)
@@ -119,9 +122,11 @@ class MouseHandler:
                     top = var_values[0]
                     bbox = top.get("bbox") if isinstance(top, dict) else None
                     if bbox:
-                        print("Clicking var value:", top, "\n\n-------------------")
+                        log.info(f"Successfully clicked variable top value: {top['value']}")
                         self.execute(rs.action_event, {"result": {"bbox": bbox}})
                         time.sleep(1)
+                    else:
+                        log.warning(f"Failed clicking on variable top value: {top}")
 
         elif rs.action_event & (MouseButton.SPATIAL_ABOVE | MouseButton.SPATIAL_BELOW |
                             MouseButton.SPATIAL_LEFT | MouseButton.SPATIAL_RIGHT):
@@ -139,6 +144,9 @@ class MouseHandler:
                 bbox = target["result"]["bbox"]
                 new_bbox = self.get_spatial_location(rs.action_event, bbox, offset, screenshot, spatial_search_condition)
                 self.execute(rs.action_event, {"result": {"bbox": new_bbox}})
+                log.info(f"Successfully spatially clicked on '{target['query']}'")
+            else:
+                log.warning(f"Failed clicking spatially on: {target}")
 
         else:
             emb = run_ocr(screenshot, offset, rs)
@@ -147,6 +155,9 @@ class MouseHandler:
                 self.apply_offset_to_bbox(offset, target['result']['bbox'])
             if target:
                 self.execute(rs.action_event, target)
+                log.info(f"Successfully clicked on '{target['query']}'")
                 failed = False
+            else:
+                log.warning(f"Failed clicking on target: {target}")
 
         return failed

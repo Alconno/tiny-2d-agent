@@ -1,4 +1,5 @@
-import re
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 class Variable():
     def __init__(self, name=None, type=None, desc=None, value=None):
@@ -12,7 +13,7 @@ class Variable():
 
     @staticmethod
     def extract_structured_var(ctx_str):
-        print("ctx str: ", ctx_str) # name|type|desc
+        log.debug("ctx str: ", ctx_str) # name|type|desc
         
         parts = list(map(str.strip, ctx_str.split("|")))
         while len(parts) < 3:

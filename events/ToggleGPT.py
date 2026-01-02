@@ -1,7 +1,7 @@
-from pynput.keyboard import Controller, Key
-from enum import Enum, auto
+from enum import Enum
 from core.state import RuntimeState
-import time
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 
 class ToggleGPT(Enum):
@@ -19,5 +19,5 @@ class ToggleGPTHandler():
             rs.use_gpt = False
         else:
             rs.use_gpt = not rs.use_gpt
-        print(f"GPT is now {'ON' if rs.use_gpt else 'OFF'}. Say 'toggle GPT' to switch again.")
+        log.info(f"GPT is now {'ON' if rs.use_gpt else 'OFF'}. Say 'toggle GPT' to switch again.")
         return False # success

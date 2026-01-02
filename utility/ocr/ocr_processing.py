@@ -1,5 +1,6 @@
 import re
-
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 
 
@@ -14,7 +15,7 @@ def embd_ocr_lines(embd_func, preds):
 
     for line in preds:
         if line is None or len(line) == 0 or len(line[0]) != 3: 
-            print("embd_ocr_lines() => received wrong preds structure")
+            log.debug("embd_ocr_lines() => received wrong preds structure")
             continue
 
         entries = [None] * len(line)
@@ -49,7 +50,7 @@ def filter_numbers(preds):
     for line in preds:
         new_line = []
         if line is not None and len(line) > 0 and len(line[0]) != 3: 
-            print("filter_numbers(preds) => received wrong preds structure")
+            log.debug("filter_numbers(preds) => received wrong preds structure")
             continue
 
         for bbox, text, color in line:

@@ -4,7 +4,8 @@ from utility.ocr.image_utils import base64_to_crop
 from utility.ocr.color_processing.get_text_color import get_text_color
 from utility.ocr.color_processing.color_to_text import get_color_name
 from utility.text.numbers import parse_sign_number
-
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 
 def extract_target_context(action_span, context):
@@ -37,7 +38,7 @@ def extract_box_from_string_target(rs: RuntimeState, embd_lines, return_all=Fals
     for line in embd_lines:
         for item in line:
             if not isinstance(item, dict): 
-                print("Item: ", item)
+                log.debug(f"Item in wrong format: {item}")
             item_text = item["text"].lower()
 
             sim = hybrid_score(ctx, item_text, ctx_emb, item["embedding"])

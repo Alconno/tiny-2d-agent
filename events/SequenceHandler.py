@@ -2,7 +2,11 @@ from enum import Flag, auto
 import os, json, re
 from class_models.Context import Context
 from core.state import RuntimeState
-from VoiceTranscriber import VoiceTranscriber
+from models.VoiceTranscriber import VoiceTranscriber
+from core.logging import get_logger
+log = get_logger(__name__) 
+
+
 
 class SequenceEvent(Flag):
     START   = auto()
@@ -116,13 +120,13 @@ class SequenceHandler:
                         var_values[var_name] = [predefined]
                     continue
                 else:
-                    print(f"Please Enter the value for variable {var_name}")
+                    log.info(f"Please Enter the value for variable {var_name}")
                 spoken = self.voiceTranscriber()
                 var_values[var_name] = [x.strip() for x in (spoken.split(",") if var_type=="list" else [spoken])]
             pause_listener_event.set()
             self.voiceTranscriber.listener_enabled = False
 
-        print(var_values)
+        log.debug(var_values)
 
         # variable substitution
         VAR_PATTERN = re.compile(r"\{\{(\w+)(?:\.(\d+))?\}\}")
@@ -255,7 +259,7 @@ class SequenceHandler:
         elif rs.action_event == SequenceEvent.CLEAR_PREV and rs.recording_state["active"]:
             if rs.recording_stack[-1]:
                 last_item = rs.recording_stack[-1][-1]
-                print(f"Cleared step '{last_item.text if hasattr(last_item, 'text') else last_item}'")
+                log.info(f"Cleared step '{last_item.text if hasattr(last_item, 'text') else last_item}'")
                 rs.recording_stack[-1].pop()
 
 

@@ -1,7 +1,11 @@
 from enum import Flag, auto
-import re, time
+import time
 from core.state import RuntimeState
 from core.ocr import run_ocr
+from core.logging import get_logger
+log = get_logger(__name__) 
+
+
 
 class WaitForEvent(Flag):
     TEXT     = auto()
@@ -40,25 +44,25 @@ class WaitForEventHandler():
         
         if rs.action_event == WaitForEvent.IMAGE:
             while time.time() - start_time < wait_timer:
-                print(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
+                log.info(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
                 screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
                 matching = self.get_target_image_func(rs.models.embd_func, real_ctx, "./clickable_images")
                 if matching:
                     _, bbox = self.find_crop_in_image_func(screenshot, matching, offset=offset)
                     if bbox:
-                        print(f"Found image {real_ctx}")
+                        log.info(f"Found image {real_ctx}")
                         result = True
                         break
                 time.sleep(0.1)
         elif rs.action_event == WaitForEvent.TEXT:
             while time.time() - start_time < wait_timer:
-                print(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
+                log.info(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
                 screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
                 emb = run_ocr(screenshot, offset, rs)
                 target = self.extract_box_from_string_target(rs, emb)
                 if target and target.get("result"):
-                    print(target)
-                    print(f"Found text {real_ctx}")
+                    log.debug(target)
+                    log.info(f"Found text {real_ctx}")
                     result = True
                     break
                 time.sleep(0.1)

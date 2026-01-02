@@ -1,12 +1,12 @@
 import os, sys, time
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import torch
 
 
 def setup_gpt_model():
     from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
     from peft import PeftModel
-    from prompts import get_prompt
+    from models.prompts.voice_to_command import get_prompt
 
     global _model, _get_prompt, _tokenizer
 

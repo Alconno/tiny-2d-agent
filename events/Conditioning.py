@@ -3,8 +3,9 @@ from core.state import RuntimeState
 from core.recording import append_condition_to_recording_seq
 from enum import Enum, auto
 import re
-import cv2
-import numpy as np
+from core.logging import get_logger
+log = get_logger(__name__) 
+
 
 class Condition(Enum):
     IF      = auto()
@@ -81,9 +82,9 @@ class ConditionHandler():
         target = self.extract_box_target(rs, embd_lines)
 
         found = target is not None and target.get("result") is not None and target.get("score", 0) > 0.7
-        found = self.apply_negate(found, condition)
+        result = self.apply_negate(found, condition)
 
-        return found, target
+        return result, target
 
 
 
@@ -98,9 +99,9 @@ class ConditionHandler():
             _, bbox = self.find_crop_in_image_func(screenshot, matching)
 
         found = bbox is not None
-        found = self.apply_negate(found, condition)
+        result = self.apply_negate(found, condition)
 
-        return found, bbox
+        return result, bbox
 
     
 
@@ -110,9 +111,9 @@ class ConditionHandler():
         )
 
         found = var_name in rs.variables
-        found = self.apply_negate(found, condition)
+        result = self.apply_negate(found, condition)
 
-        return found, rs.variables.get(var_name, None)
+        return result, rs.variables.get(var_name, None)
 
 
     
@@ -133,7 +134,9 @@ class ConditionHandler():
                 if rs.current_context.sub_contexts and not rs.recording_state["active"]:
                     for sub_ctx in reversed(rs.current_context.sub_contexts):
                         rs.context_queue.appendleft(sub_ctx)
-            print("Condition ", "passed" if passed else "failed.")
+                log.info(f"Condition '{rs.target_text}' has successfully passed!")
+            else:
+                log.warning(f"Condition '{rs.target_text}' has failed.")
         return failed
 
 

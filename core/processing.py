@@ -3,7 +3,8 @@ from core.gpt import apply_gpt_to_context
 from core.state import RuntimeState
 from utility import extract_action, extract_target_context
 from class_models.Context import Context
-
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 
 # Applies GPT to context if needed
@@ -51,7 +52,7 @@ def parse_action_and_extract_target(rs: RuntimeState, raw_ctx: str, ctx_processe
 
         parsed_action = extract_action(ctx_processed, rs.event_embeds, rs.models.embd_func)
         if not parsed_action:
-            print("Could not extract action")
+            log.debug("Could not extract action")
             rs.current_context = None
             return False
 
@@ -104,7 +105,7 @@ from events.WaitFor import WaitForEvent
 from class_models.Context import Context
 from core.state import RuntimeState
 from services.handlers import EventHandler
-from VoiceTranscriber import VoiceTranscriber
+from models.VoiceTranscriber import VoiceTranscriber
 from core.recording import append_to_recording_seq
 def map_event_handlers(handlers: EventHandler, voiceTranscriber: VoiceTranscriber):
     CONTROL_EVENTS = (SequenceEvent, Condition, LoopEvent)

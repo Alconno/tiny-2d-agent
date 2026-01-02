@@ -1,8 +1,11 @@
 import threading
 from collections import deque
-from VoiceTranscriber import VoiceTranscriber
+from models.VoiceTranscriber import VoiceTranscriber
 from class_models.Context import Context
 import time
+from core.logging import get_logger
+log = get_logger(__name__) 
+
 
 def build_voice_listener():
     voice_transcriber = VoiceTranscriber()
@@ -15,7 +18,7 @@ def build_voice_listener():
             if voice_transcriber.pause_listener_event.is_set():
                 voice_input = voice_transcriber()
                 if voice_input:
-                    print("Received voice input: ", voice_input)
+                    log.debug("Received voice input: ", voice_input)
                     context_queue.append(Context(voice_input))
             else:
                 time.sleep(0.1)

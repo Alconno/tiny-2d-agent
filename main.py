@@ -2,6 +2,14 @@
 import tkinter
 import os, time,re
 
+# ---- Logging ----
+import logging
+from core.logging import setup_logging, get_logger
+setup_logging()
+logging.getLogger().setLevel(logging.INFO)
+log = get_logger("main")
+
+
 # ---- Local / project modules ----
 from utility import (embd_events)
 from events.possible_events import possible_events
@@ -15,8 +23,7 @@ from services.voice import build_voice_listener
 from core.processing import process_context, parse_action_and_extract_target,  \
                             extract_template, handle_retry, map_event_handlers
 
-# ---- Logging / environment ----
-import logging
+# ---- Environment ----
 logging.getLogger("ppocr").setLevel(logging.WARNING)
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -36,7 +43,7 @@ rs.handlers = handlers
 EVENT_HANDLERS_MAP = map_event_handlers(handlers, voiceTranscriber)
 
 # ---- Main loop ----
-print("\n\nMain loop started, hold F8 to say your commands!\n\n")    
+log.info("\n\nMain loop started, hold F8 to say your commands!\n\n")    
 while True:
     # --- Fetch new context ---
     rs.fetch_next_context()
@@ -53,25 +60,23 @@ while True:
     orig_ctx, ctx_processed = process_context(rs)
 
     if ctx_processed == "nothing":
-        print("Canceled command.")
+        log.info("Command cancelled")
         rs.current_context = Context()
         continue
 
     # ---- Action parsing (once per context) ----
     raw_ctx = orig_ctx.strip().lower()
     if not parse_action_and_extract_target(rs, raw_ctx, ctx_processed):
+        log.warning("Failed to parse action")
         continue
 
-    print("----------------------------------------------------------------------------")
-    print(">>>>>>>>>> orig context:", raw_ctx)
-    print(">>>>>>>>>> proc context:", ctx_processed)
-    print(">>>>>>>>>> action:", rs.action_event)
-
+    log.debug("Raw context: %s", raw_ctx)
+    log.debug("Processed context: %s", ctx_processed)
 
     # ---- Template check ----
     rs.is_template = extract_template(rs.target_text)
     if rs.is_template and not rs.recording_state["active"]:
-        print("You cannot use templates while NOT recording")
+        log.warning("Template used outside recording mode")
         rs.current_context = Context()
         continue
     
@@ -80,13 +85,14 @@ while True:
     failed = True
     handler = EVENT_HANDLERS_MAP.get(type(rs.action_event))
     if not handler:
-        print("No handler for event:", rs.action_event)
+        log.error("No handler for event %s", rs.action_event)
         failed = True
     else:
         failed = handler(rs)
 
     # ---- Retry logic ----
     if failed:
+        log.warning("Handler failed, retrying...")
         handle_retry(rs, ctx_processed, raw_ctx)
         time.sleep(1)
         continue

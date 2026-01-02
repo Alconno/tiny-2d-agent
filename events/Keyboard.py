@@ -2,6 +2,8 @@ from pynput.keyboard import Controller, Key
 from enum import Enum, auto
 import time
 from core.state import RuntimeState
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 class KeyboardEvent(Enum):
     WRITE = auto()
@@ -34,6 +36,7 @@ class Keyboard:
 
     def write(self, text: str):
         self.k.type(text)
+        log.info(f"Wrote down text '{text}'")
 
 
     def press(self, text: str):
@@ -53,10 +56,12 @@ class Keyboard:
                 if m: keys_to_press.append(self.alias[m["text"]])
                 
         if not keys_to_press:
-            print(f"No valid keys found in '{text}'")
+            log.warning(f"No valid keys found in '{text}'")
             return
 
-        for k in keys_to_press: self.k.press(k)
+        for k in keys_to_press: 
+            self.k.press(k)
+            log.info(f"Pressed key '{k}'")
         time.sleep(0.2)
         for k in reversed(keys_to_press): self.k.release(k)
 

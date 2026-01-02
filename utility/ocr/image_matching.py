@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import os
 import os.path as osp
 from utility.embeddings.similarity import cmp_txt_and_embs
+from core.logging import get_logger
+log = get_logger(__name__) 
+
 
 def bbox_to_transformed(x, y, w, h):
     return np.float32([
@@ -154,19 +157,19 @@ def find_crop_in_image(screenshot, crop_path, min_match_count=4, return_new_img=
     if isinstance(screenshot, Image.Image):
         img = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
     else:
-        print("Wrong image format")
+        log.debug("Wrong image format")
         return None, None
 
     crop = Image.open(crop_path).convert("RGB")
     img = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
     crop = cv2.cvtColor(np.array(crop), cv2.COLOR_RGB2BGR)
-    print(img.shape, crop.shape)
+
     if img is None or crop is None:
         raise FileNotFoundError("Could not read one of the images")
 
     bbox, transformed = SIFT_search(img, crop, min_match_count)
     if bbox == None:
-        print("running multiscale")
+        log.debug("Running multiscale")
         bbox, transformed = template_match(img, crop)
 
     if offset is not None and bbox is not None:

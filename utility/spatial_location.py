@@ -13,7 +13,6 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
     min_height, min_width = max(5, int(h*0.1)), max(7, int(w*0.1))
     is_object_detection = spatial_search_condition == "object"
     is_text_detection = spatial_search_condition == "text"
-    #print("is object detection: ", is_object_detection)
 
     edge_dropout = 0.1 if is_object_detection else 0.25 # forces more focus on text, but generalises objects
     proj_dropout = 0.03 if is_object_detection else 0.1

@@ -1,6 +1,8 @@
 from enum import Flag, auto
 from core.state import RuntimeState
 import re
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 class LoopEvent(Flag):
     START = auto()
@@ -19,7 +21,7 @@ class LoopHandler():
                 if rs.recording_state["active"]:
                     var_name = raw.replace(rs.is_template.group(1), "").strip()
                     if not var_name:
-                        print("Template loop missing variable name: ", var_name)
+                        log.warning("Template loop missing variable name: ", var_name)
                     else:
                         rs.current_context.sub_contexts = []
 
@@ -31,11 +33,10 @@ class LoopHandler():
                         for sub_ctx in reversed(rs.current_context.sub_contexts):
                             rs.context_queue.appendleft(sub_ctx)
             else:
-                print("d")
                 m = re.search(r"\d+", raw)
 
                 if not m:
-                    print("No numeric loop count found.")
+                    log.warning(f"No numeric loop count found in '{raw}'")
                 else:
                     count = int(m.group(0))
 
@@ -44,12 +45,9 @@ class LoopHandler():
                         rs.recording_stack[-1].append(rs.current_context)
                         rs.recording_stack.append(rs.current_context.sub_contexts)
                     else:
-                        print("count: ", count)
-                        print("q size: ", len(rs.context_queue))
                         for _ in range(count):
                             if rs.current_context.sub_contexts and not rs.recording_state["active"]:
                                 for sub_ctx in reversed(rs.current_context.sub_contexts):
-                                    print("adding sub ctx: ", sub_ctx.text)
                                     rs.context_queue.appendleft(sub_ctx.copy())
 
             return False, rs.recording_stack

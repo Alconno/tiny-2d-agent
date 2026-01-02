@@ -8,9 +8,9 @@ import pickle
 from PIL import Image
 import io
 
-from OCR import OCR
-from finetune.Qwen3_06BInsctruct.generate import generate, setup_gpt_model
-from embed import embed_text, get_emb_model
+from models.OCR.OCR import OCR
+from models.qwen06voice_to_command import generate, setup_gpt_model
+from models.embeddings import embed_text, get_emb_model
 
 import io, base64
 from PIL import Image

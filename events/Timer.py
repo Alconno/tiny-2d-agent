@@ -2,6 +2,8 @@ from enum import Flag, auto
 from core.state import RuntimeState
 from utility import parse_delay
 import time
+from core.logging import get_logger
+log = get_logger(__name__) 
 
 class Timer(Flag):
     SLEEP   = auto()
@@ -15,6 +17,7 @@ class TimerHandler():
         failed = True
         delay_s = parse_delay(rs.target_text)
         if delay_s:
+            log.info(f"Sleeping {delay_s}s")
             time.sleep(delay_s)
             failed = False
         return failed
