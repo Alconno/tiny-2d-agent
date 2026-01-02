@@ -1,7 +1,7 @@
 import re
 from core.gpt import apply_gpt_to_context
 from core.state import RuntimeState
-from utility.dogshitretard import extract_action, extract_target_context
+from utility import extract_action, extract_target_context
 from class_models.Context import Context
 
 

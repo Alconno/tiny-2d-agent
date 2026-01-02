@@ -3,7 +3,7 @@ import tkinter
 import os, time,re
 
 # ---- Local / project modules ----
-from utility.dogshitretard import embd_events
+from utility import (embd_events)
 from events.possible_events import possible_events
 from class_models.Context import Context
 from core.state import RuntimeState

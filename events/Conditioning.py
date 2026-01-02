@@ -12,12 +12,11 @@ class Condition(Enum):
 
 class ConditionHandler():
     def __init__(self):
-        from utility.dogshitretard import take_screenshot, extract_box_target,\
-                                        get_target_image, get_matching_str
-        from utility.image_matching import find_crop_in_image
+        from utility import (take_screenshot, extract_box_from_string_target,\
+                              get_target_image, find_crop_in_image, get_matching_str)
 
         self.take_screenshot_func = take_screenshot
-        self.extract_box_target = extract_box_target
+        self.extract_box_target = extract_box_from_string_target
         self.get_target_image_func = get_target_image
         self.find_crop_in_image_func = find_crop_in_image
         self.get_matching_str_func = get_matching_str

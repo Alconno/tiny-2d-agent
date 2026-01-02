@@ -1,6 +1,6 @@
 
 from events.Mouse.MouseEvent import MouseButton
-from utility.image_matching import calculate_edges
+from utility.ocr.image_matching import calculate_edges
 import numpy as np
 
 def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, spatial_search_condition="object"):

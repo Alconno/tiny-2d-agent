@@ -1,3 +1,5 @@
+import re
+
 class Context:
     def __init__(self, txt="", meta=None):
         self.text = txt
@@ -41,3 +43,4 @@ class Context:
                 child.print_tree(indent + 2)
             print(f"{pad}  ]")
         print(f"{pad}}}")
+

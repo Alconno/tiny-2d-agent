@@ -7,15 +7,13 @@ import time
 
 class MouseHandler:
     def __init__(self):
-        from utility.dogshitretard import take_screenshot, get_target_image, extract_box_target
-        from utility.dogshitretard import get_matching_str, apply_offset_to_bbox
-        from utility.spatial_location import get_spatial_location
-        from utility.image_matching import find_crop_in_image
+        from utility import (take_screenshot, get_target_image, extract_box_from_string_target,\
+                             get_matching_str, get_spatial_location, find_crop_in_image, apply_offset_to_bbox)
 
         self.take_screenshot_func = take_screenshot
         self.get_target_image_func = get_target_image
         self.find_crop_in_image_func = find_crop_in_image
-        self.extract_box_target = extract_box_target
+        self.extract_box_target = extract_box_from_string_target
         self.get_matching_str_func = get_matching_str
         self.get_spatial_location = get_spatial_location
         self.apply_offset_to_bbox = apply_offset_to_bbox

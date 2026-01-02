@@ -3,6 +3,9 @@ import numpy as np
 from PIL import Image
 import pyautogui
 import matplotlib.pyplot as plt   
+import os
+import os.path as osp
+from utility.embeddings.similarity import cmp_txt_and_embs
 
 def bbox_to_transformed(x, y, w, h):
     return np.float32([
@@ -178,6 +181,16 @@ def find_crop_in_image(screenshot, crop_path, min_match_count=4, return_new_img=
         return out, bbox
     return None, bbox
 
+
+def get_target_image(embd_func, ctx, path="./clickable_images"):
+    image_files = [f for f in os.listdir(path)
+                   if f.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".gif", ".webp"))]
+    base = [osp.splitext(f)[0] for f in image_files]
+    base_embs = embd_func(base)
+    best = cmp_txt_and_embs(ctx, zip(base_embs, base), embd_func)
+    if not best:
+        return None
+    return osp.join(path, image_files[base.index(best["text"])])
 
 
 

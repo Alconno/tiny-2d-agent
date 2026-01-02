@@ -14,13 +14,13 @@ class SequenceEvent(Flag):
 
 class SequenceHandler:
     def __init__(self, embd_func, filepath="sequences.json"):
-        from utility.dogshitretard import cmp_txt_and_embs, extract_vars_from_steps
+        from utility import (cmp_txt_and_embs, extract_vars_from_contexts)
     
         self.voiceTranscriber = VoiceTranscriber()
         self.voiceTranscriber.listener_enabled = False
         self.embd_func = embd_func
         self.cmp_txt_and_embs = cmp_txt_and_embs
-        self.extract_vars_from_steps_func = extract_vars_from_steps
+        self.extract_vars_from_contexts = extract_vars_from_contexts
 
         self.filepath = filepath
         if not os.path.exists(filepath):
@@ -234,7 +234,7 @@ class SequenceHandler:
             rs.recording_stack = [rs.recording_state["contexts"]]
 
         elif rs.action_event == SequenceEvent.SAVE:
-            vars_list = self.extract_vars_from_steps_func(rs.recording_state["contexts"])
+            vars_list = self.extract_vars_from_contexts(rs.recording_state["contexts"])
             self.save_sequence(rs.recording_state["contexts"], rs.recording_state.get("name"), vars_list)
             rs.recording_state.update({"active": False, "contexts": [], "name": ""})
 

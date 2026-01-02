@@ -9,12 +9,13 @@ class VariableEvent(Flag):
 
 class VariableHandler():
     def __init__(self):
-        from utility.dogshitretard import extract_box_target,\
-                                        extract_numbers_target, take_screenshot, apply_offset_to_var
+        from utility import (take_screenshot, extract_box_from_string_target,\
+                             extract_box_from_numeric_target, apply_offset_to_var)
+
 
         self.take_screenshot_func = take_screenshot
-        self.extract_box_target = extract_box_target
-        self.extract_numbers_target = extract_numbers_target
+        self.extract_box_from_string_target = extract_box_from_string_target
+        self.extract_box_from_numeric_target = extract_box_from_numeric_target
         self.apply_offset = apply_offset_to_var
 
     
@@ -33,11 +34,11 @@ class VariableHandler():
             
             if is_num:
                 # Number
-                targets = self.extract_numbers_target(rs, emb_lines, return_all=True)
+                targets = self.extract_box_from_numeric_target(rs, emb_lines, return_all=True)
             else:
                 # String
                 # Will not include 'color' field in answer as its only used dynamically during embd matching
-                targets = self.extract_box_target(rs, emb_lines, return_all=True)
+                targets = self.extract_box_from_string_target(rs, emb_lines, return_all=True)
                 if targets == None: return var
                 targets = [
                     {'score': t['score'], 

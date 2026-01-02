@@ -9,13 +9,13 @@ class WaitForEvent(Flag):
 
 class WaitForEventHandler():
     def __init__(self):
-        from utility.dogshitretard import take_screenshot, get_target_image, extract_box_target
-        from utility.image_matching import find_crop_in_image
+        from utility import (take_screenshot, get_target_image, \
+                            find_crop_in_image, extract_box_from_string_target)
 
         self.take_screenshot_func = take_screenshot
         self.get_target_image_func = get_target_image
         self.find_crop_in_image_func = find_crop_in_image
-        self.extract_box_target = extract_box_target
+        self.extract_box_from_string_target = extract_box_from_string_target
 
     def parse_wait_timer(self, wait_str):
         if not wait_str:
@@ -55,7 +55,7 @@ class WaitForEventHandler():
                 print(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
                 screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
                 emb = run_ocr(screenshot, offset, rs)
-                target = self.extract_box_target(rs, emb)
+                target = self.extract_box_from_string_target(rs, emb)
                 if target and target.get("result"):
                     print(target)
                     print(f"Found text {real_ctx}")

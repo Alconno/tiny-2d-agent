@@ -1,6 +1,6 @@
 from enum import Flag, auto
 from core.state import RuntimeState
-from utility.dogshitretard import parse_delay
+from utility import parse_delay
 import time
 
 class Timer(Flag):

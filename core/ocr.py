@@ -1,4 +1,4 @@
-from utility.dogshitretard import embd_ocr_lines, filter_numbers, image_diff_percent, image_hash
+from utility import embd_ocr_lines, filter_numbers, image_diff_percent, image_hash
 from core.state import RuntimeState
 
 def run_ocr(screenshot, offset, rs: RuntimeState, number_only=False):

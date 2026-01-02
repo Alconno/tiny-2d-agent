@@ -9,7 +9,7 @@ class KeyboardEvent(Enum):
 
 class Keyboard:
     def __init__(self, embd_func):
-        from utility.dogshitretard import cmp_txt_and_embs
+        from utility import (cmp_txt_and_embs)
 
         self.embd_func = embd_func
         self.cmp_txt_and_embs = cmp_txt_and_embs
