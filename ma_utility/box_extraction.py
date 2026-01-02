@@ -1,9 +1,9 @@
 from core.state import RuntimeState
-from utility.embeddings.similarity import hybrid_score
-from utility.ocr.image_utils import base64_to_crop
-from utility.ocr.color_processing.get_text_color import get_text_color
-from utility.ocr.color_processing.color_to_text import get_color_name
-from utility.text.numbers import parse_sign_number
+from ma_utility.embeddings.similarity import hybrid_score
+from ma_utility.ocr.image_utils import base64_to_crop
+from ma_utility.ocr.color_processing.get_text_color import get_text_color
+from ma_utility.ocr.color_processing.color_to_text import get_color_name
+from ma_utility.text.numbers import parse_sign_number
 from core.logging import get_logger
 log = get_logger(__name__) 
 
@@ -101,6 +101,8 @@ def extract_box_from_numeric_target(rs: RuntimeState, embd_lines, return_all=Fal
                     "bbox": it["bbox"],
                     "crop": it.get("crop")
                 })
+        return results if return_all else (max(results, key=lambda x: x["value"]) if results else None)
+
 
     # parse rules for numeric comparison
     parts = ctx_lower.split()

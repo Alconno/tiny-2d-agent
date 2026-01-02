@@ -11,7 +11,7 @@ log = get_logger("main")
 
 
 # ---- Local / project modules ----
-from utility import (embd_events)
+from ma_utility import (embd_events)
 from events.possible_events import possible_events
 from class_models.Context import Context
 from core.state import RuntimeState

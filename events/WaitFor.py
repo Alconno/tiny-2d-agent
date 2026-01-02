@@ -13,7 +13,7 @@ class WaitForEvent(Flag):
 
 class WaitForEventHandler():
     def __init__(self):
-        from utility import (take_screenshot, get_target_image, \
+        from ma_utility import (take_screenshot, get_target_image, \
                             find_crop_in_image, extract_box_from_string_target)
 
         self.take_screenshot_func = take_screenshot

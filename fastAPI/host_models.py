@@ -4,10 +4,10 @@ import traceback
 from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 import uvicorn
-import pickle
 from PIL import Image
-import io
+import io, sys
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from models.OCR.OCR import OCR
 from models.qwen06voice_to_command import generate, setup_gpt_model
 from models.embeddings import embed_text, get_emb_model

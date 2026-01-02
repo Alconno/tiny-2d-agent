@@ -1,7 +1,7 @@
 import re
 from core.gpt import apply_gpt_to_context
 from core.state import RuntimeState
-from utility import extract_action, extract_target_context
+from ma_utility import extract_action, extract_target_context
 from class_models.Context import Context
 from core.logging import get_logger
 log = get_logger(__name__) 

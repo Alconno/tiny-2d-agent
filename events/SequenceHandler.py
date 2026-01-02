@@ -18,7 +18,7 @@ class SequenceEvent(Flag):
 
 class SequenceHandler:
     def __init__(self, embd_func, filepath="sequences.json"):
-        from utility import (cmp_txt_and_embs, extract_vars_from_contexts)
+        from ma_utility import (cmp_txt_and_embs, extract_vars_from_contexts)
     
         self.voiceTranscriber = VoiceTranscriber()
         self.voiceTranscriber.listener_enabled = False

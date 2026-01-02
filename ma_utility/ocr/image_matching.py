@@ -5,7 +5,7 @@ import pyautogui
 import matplotlib.pyplot as plt   
 import os
 import os.path as osp
-from utility.embeddings.similarity import cmp_txt_and_embs
+from ma_utility.embeddings.similarity import cmp_txt_and_embs
 from core.logging import get_logger
 log = get_logger(__name__) 
 
@@ -95,7 +95,7 @@ def calculate_edges(crop, use_color=False, apply_blur=False, blur_sigma=35.0, ed
     y_proj = edges.sum(axis=1)
     x_proj = np.where(x_proj >= x_proj.max() * proj_dropout, x_proj, 0)
     y_proj = np.where(y_proj >= y_proj.max() * proj_dropout, y_proj, 0)
-    return x_proj, y_proj
+    return x_proj, y_proj, edges
 
 def projection_score(template_proj, matched_proj):
     t = template_proj.flatten()

@@ -13,7 +13,7 @@ class Condition(Enum):
 
 class ConditionHandler():
     def __init__(self):
-        from utility import (take_screenshot, extract_box_from_string_target,\
+        from ma_utility import (take_screenshot, extract_box_from_string_target,\
                               get_target_image, find_crop_in_image, get_matching_str)
 
         self.take_screenshot_func = take_screenshot

@@ -10,7 +10,7 @@ log = get_logger(__name__)
 
 class MouseHandler:
     def __init__(self):
-        from utility import (take_screenshot, get_target_image, extract_box_from_string_target,\
+        from ma_utility import (take_screenshot, get_target_image, extract_box_from_string_target,\
                              get_matching_str, get_spatial_location, find_crop_in_image, apply_offset_to_bbox)
 
         self.take_screenshot_func = take_screenshot
@@ -122,7 +122,7 @@ class MouseHandler:
                     top = var_values[0]
                     bbox = top.get("bbox") if isinstance(top, dict) else None
                     if bbox:
-                        log.info(f"Successfully clicked variable top value: {top['value']}")
+                        log.info(f"Successfully clicked variable top value: {top['match']}")
                         self.execute(rs.action_event, {"result": {"bbox": bbox}})
                         time.sleep(1)
                     else:
@@ -142,11 +142,14 @@ class MouseHandler:
 
             if target:
                 bbox = target["result"]["bbox"]
-                new_bbox = self.get_spatial_location(rs.action_event, bbox, offset, screenshot, spatial_search_condition)
-                self.execute(rs.action_event, {"result": {"bbox": new_bbox}})
-                log.info(f"Successfully spatially clicked on '{target['query']}'")
+                no_offset_new_bbox, new_bbox = self.get_spatial_location(rs.action_event, bbox, offset, screenshot, spatial_search_condition)
+                if no_offset_new_bbox != bbox:
+                    self.execute(rs.action_event, {"result": {"bbox": new_bbox}})
+                    log.info(f"Success: '{rs.current_context.text}'")
+                else:
+                    log.info(f"Could not find anything {rs.current_context.text.partition('click')[2].strip()}")
             else:
-                log.warning(f"Failed clicking spatially on: {target}")
+                log.warning(f"Failed clicking spatially: {rs.current_context.text}")
 
         else:
             emb = run_ocr(screenshot, offset, rs)

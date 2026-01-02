@@ -17,16 +17,6 @@
 {"user_input": "set variable health to 100", "assistant_output": "set variable health|number|100"}
 {"user_input": "set var mana to 50", "assistant_output": "set variable mana|number|50"}
 {"user_input": "make variable energy 75", "assistant_output": "set variable energy|number|75"}
-{"user_input": "create variable score with value 200", "assistant_output": "set variable score|number|200"}
-{"user_input": "define variable points 150", "assistant_output": "set variable points|number|150"}
-{"user_input": "set variable level greater than 10", "assistant_output": "set variable level|number|>10"}
-{"user_input": "make variable xp less than 500", "assistant_output": "set variable xp|number|<500"}
-{"user_input": "set var gold between 100 and 1000", "assistant_output": "set variable gold|number|>100<1000"}
-{"user_input": "define variable coins between 50 and 200", "assistant_output": "set variable coins|number|>50<200"}
-{"user_input": "create variable health red greater than 20", "assistant_output": "set variable health|number|red >20"}
-{"user_input": "set variable mana blue less than 100", "assistant_output": "set variable mana|number|blue <100"}
-{"user_input": "make variable energy green between 10 and 50", "assistant_output": "set variable energy|number|green >10<50"}
-{"user_input": "set var score yellow 100", "assistant_output": "set variable score|number|yellow 100"}
 {"user_input": "create variable points orange between 5 and 20", "assistant_output": "set variable points|number|orange >5<20"}
 {"user_input": "define variable gold brown 500", "assistant_output": "set variable gold|number|brown 500"}
 {"user_input": "set variable coins purple less than 50", "assistant_output": "set variable coins|number|purple <50"}
@@ -56,21 +46,6 @@
 {"user_input": "set var energy red 75", "assistant_output": "set variable energy|number|red 75"}
 {"user_input": "define variable score green 100", "assistant_output": "set variable score|number|green 100"}
 {"user_input": "set variable points blue smaller than 200", "assistant_output": "set variable points|number|blue <200"}
-{"user_input": "make variable gold yellow 300", "assistant_output": "set variable gold|number|yellow 300"}
-{"user_input": "create variable coins orange 50", "assistant_output": "set variable coins|number|orange 50"}
-{"user_input": "set variable health purple more than 20", "assistant_output": "set variable health|number|purple >20"}
-{"user_input": "define variable mana brown under 100", "assistant_output": "set variable mana|number|brown <100"}
-{"user_input": "make variable energy black 60", "assistant_output": "set variable energy|number|black 60"}
-{"user_input": "set var score white at least 50", "assistant_output": "set variable score|number|white >50"}
-{"user_input": "create variable points gray up to 150", "assistant_output": "set variable points|number|gray <150"}
-{"user_input": "set variable gold red 500", "assistant_output": "set variable gold|number|red 500"}
-{"user_input": "make variable coins green from 10 to 100", "assistant_output": "set variable coins|number|green >10<100"}
-{"user_input": "define variable health blue 200", "assistant_output": "set variable health|number|blue 200"}
-{"user_input": "set variable mana yellow 150", "assistant_output": "set variable mana|number|yellow 150"}
-{"user_input": "create variable energy orange in the range 5 to 50", "assistant_output": "set variable energy|number|orange >5<50"}
-{"user_input": "set var score purple up to 300", "assistant_output": "set variable score|number|purple <300"}
-{"user_input": "make variable points brown 50", "assistant_output": "set variable points|number|brown 50"}
-{"user_input": "set variable gold black above 100", "assistant_output": "set variable gold|number|black >100"}
 {"user_input": "define variable coins white below 50", "assistant_output": "set variable coins|number|white <50"}
 {"user_input": "create variable health gray 75", "assistant_output": "set variable health|number|gray 75"}
 {"user_input": "make variable mana red between 10 and 100", "assistant_output": "set variable mana|number|red >10<100"}
@@ -93,12 +68,6 @@
 {"user_input": "define variable score red 150", "assistant_output": "set variable score|number|red 150"}
 {"user_input": "create variable points green <200", "assistant_output": "set variable points|number|green <200"}
 {"user_input": "set variable health red or blue <10", "assistant_output": "set variable health|number|red or blue <10"}
-{"user_input": "make variable mana green or yellow >5", "assistant_output": "set variable mana|number|green or yellow >5"}
-{"user_input": "create variable energy blue or purple <50", "assistant_output": "set variable energy|number|blue or purple <50"}
-{"user_input": "define variable score red or orange >20<100", "assistant_output": "set variable score|number|red or orange >20<100"}
-{"user_input": "set var points yellow or green <200", "assistant_output": "set variable points|number|yellow or green <200"}
-{"user_input": "make variable gold purple or brown >10<500", "assistant_output": "set variable gold|number|purple or brown >10<500"}
-{"user_input": "create variable coins black or white <30", "assistant_output": "set variable coins|number|black or white <30"}
 {"user_input": "define variable health gray or blue >15", "assistant_output": "set variable health|number|gray or blue >15"}
 {"user_input": "set variable mana red or green <50", "assistant_output": "set variable mana|number|red or green <50"}
 {"user_input": "make variable energy yellow or purple >5<25", "assistant_output": "set variable energy|number|yellow or purple >5<25"}
@@ -133,13 +102,6 @@
 {"user_input": "make variable armor from all values less than 15", "assistant_output": "set variable armor|number|<15"}
 {"user_input": "make variable attack to all numbers above 9", "assistant_output": "set variable attack|number|>9"}
 {"user_input": "make a variable defense with all values below 7", "assistant_output": "set variable defense|number|<7"}
-{"user_input": "make a variable regen using all numbers above 18", "assistant_output": "set variable regen|number|>18"}
-{"user_input": "set variable weight from all values less than 40", "assistant_output": "set variable weight|number|<40"}
-{"user_input": "set variable size with all numbers over 60", "assistant_output": "set variable size|number|>60"}
-{"user_input": "set variable range using all numbers below 12", "assistant_output": "set variable range|number|<12"}
-{"user_input": "set variable cooldown from all values above 3", "assistant_output": "set variable cooldown|number|>3"}
-{"user_input": "set variable clicks with all numbers under 9", "assistant_output": "set variable clicks|number|<9"}
-{"user_input": "set variable slots using all values greater than 14", "assistant_output": "set variable slots|number|>14"}
 {"user_input": "set variable tries from all numbers above 2", "assistant_output": "set variable tries|number|>2"}
 {"user_input": "set variable stacks with all values lower than 11", "assistant_output": "set variable stacks|number|<11"}
 {"user_input": "set variable rounds from all numbers above 19", "assistant_output": "set variable rounds|number|>19"}
@@ -162,34 +124,6 @@
 {"user_input": "create variable energy >5<25", "assistant_output": "set variable energy|number|>5<25"}
 {"user_input": "define variable score >20<100", "assistant_output": "set variable score|number|>20<100"}
 {"user_input": "set var points <200", "assistant_output": "set variable points|number|<200"}
-{"user_input": "make variable gold >10<500", "assistant_output": "set variable gold|number|>10<500"}
-{"user_input": "create variable coins >5<50", "assistant_output": "set variable coins|number|>5<50"}
-{"user_input": "define variable health >0<100", "assistant_output": "set variable health|number|>0<100"}
-{"user_input": "set variable mana >10<200", "assistant_output": "set variable mana|number|>10<200"}
-{"user_input": "make variable energy >15<150", "assistant_output": "set variable energy|number|>15<150"}
-{"user_input": "create variable score >50<250", "assistant_output": "set variable score|number|>50<250"}
-{"user_input": "define variable points >5<100", "assistant_output": "set variable points|number|>5<100"}
-{"user_input": "set var gold >100<500", "assistant_output": "set variable gold|number|>100<500"}
-{"user_input": "make variable coins >10<200", "assistant_output": "set variable coins|number|>10<200"}
-{"user_input": "create variable health >20<80", "assistant_output": "set variable health|number|>20<80"}
-{"user_input": "create variable score from 50 to 250", "assistant_output": "set variable score|number|>50<250"}
-{"user_input": "define variable points in the range 5 to 100", "assistant_output": "set variable points|number|>5<100"}
-{"user_input": "set var gold between 100 and 500", "assistant_output": "set variable gold|number|>100<500"}
-{"user_input": "make variable coins from 10 to 200", "assistant_output": "set variable coins|number|>10<200"}
-{"user_input": "create variable health in the range 20 to 80", "assistant_output": "set variable health|number|>20<80"}
-{"user_input": "define variable mana from 0 to 50", "assistant_output": "set variable mana|number|>0<50"}
-{"user_input": "set variable energy in the range 5 to 25", "assistant_output": "set variable energy|number|>5<25"}
-{"user_input": "make variable score from 10 to 100", "assistant_output": "set variable score|number|>10<100"}
-{"user_input": "create variable points between 50 and 150", "assistant_output": "set variable points|number|>50<150"}
-{"user_input": "define variable gold in the range 200 to 500", "assistant_output": "set variable gold|number|>200<500"}
-{"user_input": "set var coins from 30 to 300", "assistant_output": "set variable coins|number|>30<300"}
-{"user_input": "make variable health between 15 and 75", "assistant_output": "set variable health|number|>15<75"}
-{"user_input": "create variable score between 5 and 25", "assistant_output": "set variable score|number|>5<25"}
-{"user_input": "define variable points in the range 50 to 300", "assistant_output": "set variable points|number|>50<300"}
-{"user_input": "set var gold from 25 to 75", "assistant_output": "set variable gold|number|>25<75"}
-{"user_input": "make variable coins between 10 and 200", "assistant_output": "set variable coins|number|>10<200"}
-{"user_input": "create variable health from 0 to 50", "assistant_output": "set variable health|number|>0<50"}
-{"user_input": "define variable mana in the range 15 to 60", "assistant_output": "set variable mana|number|>15<60"}
 {"user_input": "set variable energy between 10 and 40", "assistant_output": "set variable energy|number|>10<40"}
 {"user_input": "make variable score from 5 to 25", "assistant_output": "set variable score|number|>5<25"}
 {"user_input": "create variable points in the range 20 to 80", "assistant_output": "set variable points|number|>20<80"}
@@ -216,6 +150,7 @@
 
 
 // VariableEvent.SET (strings)
+/*
 {"user_input": "set variable name to Alice", "assistant_output": "set variable name|string|Alice"}
 {"user_input": "make variable city called Paris", "assistant_output": "set variable city|string|Paris"}
 {"user_input": "create variable color red", "assistant_output": "set variable color|string|red"}
@@ -381,3 +316,5 @@
 {"user_input": "create variable item sword nevermind this", "assistant_output": "nothing"}
 {"user_input": "make variable weapon bow forget this", "assistant_output": "nothing"}
 {"user_input": "define variable armor shield nevermind nevermind", "assistant_output": "nothing"}
+
+*/

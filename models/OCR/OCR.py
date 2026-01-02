@@ -27,7 +27,7 @@ class OCR:
             rec_char_type='en',
             use_angle_cls=False, 
             use_textline_orientation=False,
-            rec_model_dir='ch_PP-OCRv3_rec_small',
+            rec_model_dir='./models/OCR/ch_PP-OCRv3_rec_small',
             rec_algorithm='CRNN',
             det_db_box_type="quad"
         )

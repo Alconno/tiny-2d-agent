@@ -1,7 +1,7 @@
 import numpy as np
 from rapidfuzz import fuzz
 import jellyfish
-from utility.text.normalize import normalize_word
+from ma_utility.text.normalize import normalize_word
 
 def cosine_sim(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))

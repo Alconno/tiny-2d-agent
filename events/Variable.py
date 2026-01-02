@@ -13,7 +13,7 @@ class VariableEvent(Flag):
 
 class VariableHandler():
     def __init__(self):
-        from utility import (take_screenshot, extract_box_from_string_target,\
+        from ma_utility import (take_screenshot, extract_box_from_string_target,\
                              extract_box_from_numeric_target, apply_offset_to_var)
 
 
@@ -33,6 +33,7 @@ class VariableHandler():
         if rs.action_event == VariableEvent.SET:
             var = Variable.extract_structured_var(rs.target_text)
             is_num = var.type=="number" or var.type=="num"
+            rs.target_text = var.desc
 
             emb_lines = run_ocr(screenshot, offset, rs, number_only=is_num)
             
@@ -42,7 +43,9 @@ class VariableHandler():
                 if targets == None:
                     log.debug("Did not find any variable values")
                     return var
-            else:
+            
+            # No point doing string atm as there is no strong enough GPT to reason properly with extracted strings
+            """else:
                 # String -  # {score, query, result{bbox, text, embedding, crop}}
                 targets = self.extract_box_from_string_target(rs, emb_lines, return_all=True)
                 if targets == None: 
@@ -50,12 +53,12 @@ class VariableHandler():
                     return var
                 targets = [
                     {'score': t['score'], 
-                     'query': t['span'],
+                     'query': t['query'],
                      'match': t['result']['text'], 
                      'color': None, 
                      'bbox': t['result']['bbox']}
                      for t in targets]
-                targets.sort(key=lambda x: x['score'], reverse=True) # descending
+                targets.sort(key=lambda x: x['score'], reverse=True) # descending"""
             
             log.info(f"Found variable values: {[t['match'] for t in targets]}")
             var.value = targets

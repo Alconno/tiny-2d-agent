@@ -1,4 +1,4 @@
-from utility.embeddings.similarity import hybrid_score
+from ma_utility.embeddings.similarity import hybrid_score
 
 ACTION_SCORE_THRESH = 0.6
 
