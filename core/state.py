@@ -29,7 +29,8 @@ class RuntimeState:
         self.color_list = None
         self.is_template: Match[str] | None = None
 
-        self.action_event = None
+        self.action_result = None # Whole action dict
+        self.action_event = None # Only action event class
         self.target_text = None
         
 

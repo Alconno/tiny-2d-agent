@@ -11,7 +11,7 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
     ox, oy = offset
     orig_box = bbox
 
-    min_height, min_width = max(5, int(h*0.1)), max(7, int(w*0.1))
+    min_height, min_width = max(10, int(h*0.2)), max(15, int(w*0.2))
     is_object_detection = spatial_search_condition == "object"
     is_text_detection = spatial_search_condition == "text"
 

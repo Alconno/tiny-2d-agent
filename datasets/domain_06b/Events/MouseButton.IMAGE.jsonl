@@ -2,13 +2,13 @@
 {"user_input": "Click image settings icon", "assistant_output": "click image settings icon"}
 {"user_input": "Click image avatar top right", "assistant_output": "click image avatar"}
 {"user_input": "Click image logo", "assistant_output": "click image logo"}
-{"user_input": "Click image button OK", "assistant_output": "click image button OK"}
-{"user_input": "Click image profile avatar", "assistant_output": "click image profile avatar"}
-{"user_input": "Click image icon next to search", "assistant_output": "click image icon"}
+{"user_input": "Click in image button OK", "assistant_output": "click image button OK"}
+{"user_input": "Click at image profile avatar", "assistant_output": "click image profile avatar"}
+{"user_input": "Click at image icon next to search", "assistant_output": "click image icon"}
 {"user_input": "Click icon search", "assistant_output": "click image search"}
-{"user_input": "Click image settings gear", "assistant_output": "click image settings gear"}
-{"user_input": "Click image profile icon", "assistant_output": "click image profile icon"}
-{"user_input": "Click image menu icon", "assistant_output": "click image menu icon"}
+{"user_input": "Click on image settings gear", "assistant_output": "click image settings gear"}
+{"user_input": "Click on image profile icon", "assistant_output": "click image profile icon"}
+{"user_input": "Click on image menu icon", "assistant_output": "click image menu icon"}
 {"user_input": "Click image save icon", "assistant_output": "click image save icon"}
 {"user_input": "Click image logout button", "assistant_output": "click image logout button"}
 {"user_input": "click icon green check", "assistant_output": "click icon green check"}
@@ -26,38 +26,43 @@
 {"user_input": "find green heart image", "assistant_output": "find green heart"}
 {"user_input": "click icon red star", "assistant_output": "click icon red star"}
 {"user_input": "image click blue diamond", "assistant_output": "image click blue diamond"}
-{"user_input": "please click picture yellow circle icon", "assistant_output": "click picture yellow circle"}
-{"user_input": "find yellow flag", "assistant_output": "click image yellow flag"}
-{"user_input": "select image red circle", "assistant_output": "click image red circle"}
-{"user_input": "image click purple icon", "assistant_output": "click image purple"}
-{"user_input": "click icon orange", "assistant_output": "click image orange"}
-{"user_input": "click picture white logo", "assistant_output": "click image white logo"}
-{"user_input": "click image green icon", "assistant_output": "click image green"}
-{"user_input": "click image red triangle", "assistant_output": "click image red triangle"}
-{"user_input": "find blue flag", "assistant_output": "click image blue flag"}
-{"user_input": "select image yellow circle", "assistant_output": "click image yellow circle"}
-{"user_input": "click image red icon", "assistant_output": "click image red"}
-{"user_input": "find green star", "assistant_output": "click image green star"}
-{"user_input": "select image yellow square", "assistant_output": "click image yellow square"}
-{"user_input": "image click purple triangle", "assistant_output": "click image purple"}
-{"user_input": "click icon orange circle", "assistant_output": "click image orange"}
-{"user_input": "click picture white star", "assistant_output": "click image white star"}
-{"user_input": "click image blue tractor", "assistant_output": "click blue tractor"}
-{"user_input": "click on blue tractor", "assistant_output": "click blue tractor"}
-{"user_input": "click image blue", "assistant_output": "click image blue"}
 {"user_input": "click image yellow star", "assistant_output": "click image yellow star"}
 {"user_input": "click image red triangle", "assistant_output": "click image red triangle"}
-{"user_input": "click image red triangle", "assistant_output": "click image red triangle"}
-{"user_input": "click image red icon", "assistant_output": "click image red"}
-{"user_input": "click image green star", "assistant_output": "click image green star"}
-{"user_input": "click image yellow circle", "assistant_output": "click image yellow circle"}
-{"user_input": "click image purple", "assistant_output": "click image purple"}
-{"user_input": "click image orange", "assistant_output": "click image orange"}
-{"user_input": "click image white star", "assistant_output": "click image white star"}
-{"user_input": "click image green", "assistant_output": "click image green"}
-{"user_input": "click image red triangle", "assistant_output": "click image red triangle"}
-{"user_input": "click image blue flag", "assistant_output": "click image blue flag"}
-{"user_input": "click image yellow circle", "assistant_output": "click image yellow circle"}
+{"user_input": "Right click image profile picture", "assistant_output": "right click image profile picture"}
+{"user_input": "Right click image settings icon", "assistant_output": "right click image settings icon"}
+{"user_input": "Right click icon search", "assistant_output": "right click icon search"}
+{"user_input": "Right click on image avatar", "assistant_output": "right click image avatar"}
+{"user_input": "Right click on picture red x mark", "assistant_output": "right click picture red x mark"}
+{"user_input": "Right click on image menu icon", "assistant_output": "right click image menu icon"}
+{"user_input": "Right click on icon green check", "assistant_output": "right click icon green check"}
+{"user_input": "Right click image diamond", "assistant_output": "right click image diamond"}
+{"user_input": "Right click image star", "assistant_output": "right click image star"}
+{"user_input": "Right click image red triangle", "assistant_output": "right click image red triangle"}
+{"user_input": "Double click on image profile picture", "assistant_output": "double click image profile picture"}
+{"user_input": "Double click image settings icon", "assistant_output": "double click image settings icon"}
+{"user_input": "Double click icon search", "assistant_output": "double click icon search"}
+{"user_input": "Double click picture red x mark", "assistant_output": "double click picture red x mark"}
+{"user_input": "Double click on image avatar", "assistant_output": "double click image avatar"}
+{"user_input": "Double click on image blue diamond", "assistant_output": "double click image blue diamond"}
+{"user_input": "Double click on image heart", "assistant_output": "double click image heart"}
+{"user_input": "Double click image yellow star", "assistant_output": "double click image yellow star"}
+{"user_input": "Double click image red triangle", "assistant_output": "double click image red triangle"}
+{"user_input": "Double click image purple moon", "assistant_output": "double click image purple moon"}
+{"user_input": "Shift click on image profile picture", "assistant_output": "shift click image profile picture"}
+{"user_input": "Shift click on image settings icon", "assistant_output": "shift click image settings icon"}
+{"user_input": "Shift click icon search", "assistant_output": "shift click icon search"}
+{"user_input": "Shift click picture red x mark", "assistant_output": "shift click picture red x mark"}
+{"user_input": "Shift click image avatar", "assistant_output": "shift click image avatar"}
+{"user_input": "Shift right on click image blue diamond", "assistant_output": "shift click image blue diamond"}
+{"user_input": "Shift right on click image heart", "assistant_output": "shift click image heart"}
+{"user_input": "Shift right click image yellow star", "assistant_output": "shift click image yellow star"}
+{"user_input": "Shift right click image triangle", "assistant_output": "shift click image triangle"}
+{"user_input": "Shift right click image moon", "assistant_output": "shift click image moon"}
+
+{"user_input": "please right click the image blue diamond", "assistant_output": "right click image blue diamond"}
+{"user_input": "can you double click on the red triangle image", "assistant_output": "double click image red triangle"}
+{"user_input": "shift click on the icon green heart", "assistant_output": "shift click icon green heart"}
+
 
 {"user_input": "Click image logout button ignore this", "assistant_output": "nothing"}
 {"user_input": "click icon green check ignore ignore", "assistant_output": "nothing"}

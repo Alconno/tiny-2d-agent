@@ -87,6 +87,7 @@ class MouseHandler:
         screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
 
         failed = False
+        print("action event: ", rs.action_event)
 
         if rs.action_event & MouseButton.IMAGE:
             matching = self.get_target_image_func(rs.models.embd_func, rs.target_text, "./clickable_images")
@@ -112,6 +113,8 @@ class MouseHandler:
                         time.sleep(1)
                     else:
                         log.warning(f"Failed clicking on variable value: {value}")
+            else:
+                log.warning(f"Failed clicking on variable values: variable does not exist")
 
         elif rs.action_event & MouseButton.VAR_TOP:
             var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func)
@@ -127,6 +130,10 @@ class MouseHandler:
                         time.sleep(1)
                     else:
                         log.warning(f"Failed clicking on variable top value: {top}")
+                else:
+                    log.warning(f"Failed clicking on variable top value: variable has no value")
+            else:
+                log.warning(f"Failed clicking on variable top value: variable does not exist")
 
         elif rs.action_event & (MouseButton.SPATIAL_ABOVE | MouseButton.SPATIAL_BELOW |
                             MouseButton.SPATIAL_LEFT | MouseButton.SPATIAL_RIGHT):
@@ -161,6 +168,6 @@ class MouseHandler:
                 log.info(f"Successfully clicked on '{target['query']}'")
                 failed = False
             else:
-                log.warning(f"Failed clicking on target: {target}")
+                log.warning(f"Failed clicking on target: {rs.target_text}")
 
         return failed

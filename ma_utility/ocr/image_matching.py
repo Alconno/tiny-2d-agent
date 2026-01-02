@@ -122,8 +122,8 @@ def template_match(img, crop, max_scale_variation=1.25, thresh=0.75):
         _, score, _, loc = cv2.minMaxLoc(res)
 
         x, y = loc
-        x_proj, y_proj = calculate_edges(img[y:y+h, x:x+w])
-        res_x_proj, res_y_proj = calculate_edges(t_scaled)
+        x_proj, y_proj, _ = calculate_edges(img[y:y+h, x:x+w])
+        res_x_proj, res_y_proj, _ = calculate_edges(t_scaled)
         proj_score_x = projection_score(res_x_proj, x_proj)
         proj_score_y = projection_score(res_y_proj, y_proj)
 

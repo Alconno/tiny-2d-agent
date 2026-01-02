@@ -5,7 +5,7 @@ def append_to_recording_seq(rs: RuntimeState):
     if rs.is_template:
         color = "" if rs.color_list is None else rs.color_list.group(1).strip()
         var_name = rs.is_template.group(1).replace(color, "").strip()
-        rs.current_context.text = f"{rs.action_event.get('span','Type').strip()} {color} {{{{{var_name}}}}}"
+        rs.current_context.text = f"{rs.action_result.get('span','Type').strip()} {color} {{{{{var_name}}}}}"
     if rs.current_context.text:
         rs.current_context.text = rs.current_context.text.strip()
     section.append(rs.current_context)

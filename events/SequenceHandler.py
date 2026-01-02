@@ -129,36 +129,32 @@ class SequenceHandler:
         log.debug(var_values)
 
         # variable substitution
-        VAR_PATTERN = re.compile(r"\{\{(\w+)(?:\.(\d+))?\}\}")
+        VAR_PATTERN = re.compile(r"\{\{(\w+)((?:\.\d+)*)\}\}")
         def subst(text, current_vars=None):
             if not text:
                 return text
 
             def repl(match):
                 var = match.group(1)
-                idx = match.group(2)
+                path = match.group(2)
 
                 if current_vars is None or var not in current_vars:
-                    return match.group(0)  # leave as-is if variable missing
+                    return match.group(0)
 
                 value = current_vars[var]
 
-                # scalar
-                if not isinstance(value, list):
-                    return str(value)
+                # parse indices like ".2.1.3" → [2,1,3]
+                indices = [int(i) for i in path.split(".")[1:]] if path else []
 
-                # list or list-of-lists
-                if idx is None:
-                    first = value[0] if value else ""
-                    if isinstance(first, list):
-                        return str(first[0]) if first else ""
-                    return str(first)
-                else:
-                    i = int(idx)
-                    if isinstance(value[0], list):
-                        return str(value[0][i]) if i < len(value[0]) else ""
-                    else:
-                        return str(value[i]) if i < len(value) else ""
+                try:
+                    for idx in indices:
+                        if not isinstance(value, list) or idx >= len(value):
+                            return ""
+                        value = value[idx]
+
+                    return str(value)
+                except Exception:
+                    return ""
 
             return VAR_PATTERN.sub(repl, text)
                 
@@ -232,17 +228,24 @@ class SequenceHandler:
             rs.recording_stack = [rs.recording_state["contexts"]]
         
         if rs.action_event == SequenceEvent.START:
-            rs.recording_state["active"] = True
-            rs.recording_state["contexts"] = []
-            rs.recording_state["name"] = rs.target_text
-            rs.recording_stack = [rs.recording_state["contexts"]]
+            if not rs.recording_state["active"]:
+                log.info(f"Starting recording '{rs.target_text}'")
+                rs.recording_state["active"] = True
+                rs.recording_state["contexts"] = []
+                rs.recording_state["name"] = rs.target_text
+                rs.recording_stack = [rs.recording_state["contexts"]]
+            else:
+                log.info(f"Cannot start a new recording while already recording {rs.recording_state['name']}")
 
         elif rs.action_event == SequenceEvent.SAVE:
-            vars_list = self.extract_vars_from_contexts(rs.recording_state["contexts"])
-            self.save_sequence(rs.recording_state["contexts"], rs.recording_state.get("name"), vars_list)
-            rs.recording_state.update({"active": False, "contexts": [], "name": ""})
+            log.info(f"Saving recording '{rs.recording_state['name']}'")
+            if rs.recording_state["name"] != "":
+                vars_list = self.extract_vars_from_contexts(rs.recording_state["contexts"])
+                self.save_sequence(rs.recording_state["contexts"], rs.recording_state.get("name"), vars_list)
+                rs.recording_state.update({"active": False, "contexts": [], "name": ""})
 
         elif rs.action_event == SequenceEvent.PLAY:
+            log.info(f"Playing recording '{rs.target_text}'")
             voiceTranscriber.listener_enabled = False
             loaded_sequence = self.load_sequence(
                                     name=rs.target_text, 
@@ -253,6 +256,7 @@ class SequenceHandler:
             voiceTranscriber.listener_enabled = True
 
         elif rs.action_event == SequenceEvent.RESET and rs.recording_state["active"]:
+            log.info(f"Reseting current recording.")
             rs.recording_state["contexts"] = []
             rs.recording_stack = [rs.recording_state["contexts"]]
 

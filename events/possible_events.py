@@ -26,7 +26,7 @@ possible_events = {
     ("shift right", "shift right click"): MouseButton.SHIFT_RIGHT,
 
     # Image click events
-    ("click image", "click on image", "find", "select image", "image click", "click icon", "click picture"): MouseButton.IMAGE,
+    ("click image", "click on image", "find", "select image", "image click", "click icon", "click picture"): MouseButton.IMAGE | MouseButton.LEFT,
     
     # Variable click events
     ("click all variable", "click every variable"): MouseButton.VAR_ALL | MouseButton.LEFT,
@@ -83,17 +83,22 @@ for keys in list(possible_events.keys()):
     key_list = list(keys)
     base_val = possible_events[keys]
 
-    # ONLY process mouse buttons
+    # ONLY process mouse button based events
     if not isinstance(base_val, MouseButton):
         continue
 
     is_all_var = any("click all variable" in k for k in key_list)
     is_top_var = any("click variable" in k for k in key_list)
     is_spatial_var = any(" of" in k for k in key_list)
+    is_image = any(
+        "image" in k or "picture" in k or "icon" in k
+        for k in key_list
+    )
 
-    if not (is_all_var or is_top_var or is_spatial_var):
+    if not (is_all_var or is_top_var or is_spatial_var or is_image):
         continue
 
+    # Apply click modifiers
     if base_val & MouseButton.LEFT:
         for prefix, click_val in extra_clicks:
             new_keys = tuple(f"{prefix} {k}" for k in key_list)

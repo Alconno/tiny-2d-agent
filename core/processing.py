@@ -56,6 +56,7 @@ def parse_action_and_extract_target(rs: RuntimeState, raw_ctx: str, ctx_processe
             rs.current_context = None
             return False
 
+        rs.action_result = parsed_action
         rs.action_event = parsed_action["result"]
         rs.target_text = extract_target_context(parsed_action.get("span",""), ctx_processed)
 

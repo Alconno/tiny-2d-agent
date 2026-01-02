@@ -3,7 +3,7 @@ from class_models.Context import Context
 
 # Extracts variables from inside {{}} brackets (aka templates)
 # so they could be replaces with real usable values before inference
-def extract_vars_from_contexts(self, contexts):
+def extract_vars_from_contexts(contexts):
     vars_dict = {}
     visited = set()
 

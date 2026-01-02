@@ -407,5 +407,116 @@
             }
         ],
         "vars": []
+    },
+    "alchemy": {
+        "steps": [
+            {
+                "text": "start loop accounts as template",
+                "meta": {
+                    "gpt_applied": true
+                },
+                "sub_contexts": [
+                    {
+                        "text": "capture 0,0,448,293",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "double click alchemy",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "capture 570,283,1978,1102",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "Wait for battle.net|10",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "write {{accounts.0}}",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {"text": "press tab", "meta": {"gpt_applied": true}},
+                    {
+                        "text": "write {{accounts.1}}",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "press enter",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "Wait for realm info|10",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "click below of change realm",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
+                    {
+                        "text": "loop 10",
+                        "meta": {"gpt_applied": true},
+                        "sub_contexts":[
+                            {"text": "Press Key.right", "meta": {"gpt_applied": true}},
+                            {"text": "Press ENTER", "meta": {"gpt_applied": true}},
+                            {"text": "Wait for bank|10", "meta": {"gpt_applied": true}},
+                            {
+                                "text": "Wait for full access|10",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "right click image eternal water",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "press F",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "Sleep 8",
+                                "meta": {"gpt_applied": true}
+                            }
+                           
+                        ]
+                    }
+                   
+                    
+                ]
+            }
+        ],
+        "vars": [
+            {
+                "name": "accounts",
+                "type": "list",
+                "value":[
+                    ["doomxd110", "killshot"],
+                    ["doomxd220", "killshot"]
+                ]
+            }
+        ]
     }
 }

@@ -49,11 +49,11 @@ class LoopHandler():
                             if rs.current_context.sub_contexts and not rs.recording_state["active"]:
                                 for sub_ctx in reversed(rs.current_context.sub_contexts):
                                     rs.context_queue.appendleft(sub_ctx.copy())
-
-            return False, rs.recording_stack
+            log.info(f"Starting loop {rs.target_text}")
+            return False
 
         elif rs.action_result == LoopEvent.STOP:
             if len(rs.recording_stack) > 1:
                 rs.recording_stack.pop()
 
-        return False, rs.recording_stack
+        return False
