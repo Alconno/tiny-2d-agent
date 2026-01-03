@@ -100,4 +100,4 @@ while True:
 
     # ---- Clear caches on success ----
     rs.current_context = Context()
-    time.sleep(0.2)
+    time.sleep(0.01)

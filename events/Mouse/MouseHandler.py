@@ -3,7 +3,7 @@ from events.Mouse.MouseEvent import MouseButton
 from pynput.keyboard import Controller as KeyboardController, Key
 from core.state import RuntimeState
 from core.ocr import run_ocr
-import time
+import time, re
 from core.logging import get_logger
 log = get_logger(__name__) 
 
@@ -61,9 +61,38 @@ class MouseHandler:
                 self.controller.release(btn)
             if total_clicks > 1:
                 time.sleep(0.05)
-
         if shift_held:
             self.kb_controller.release(Key.shift)
+
+    def click_xy(self, x, y, button: MouseButton, count=1):
+        if not (button & MouseButton.COORD):
+            raise ValueError("click_xy requires MouseButton.COORD")
+
+        click_button = button & ~MouseButton.COORD
+
+        self.move(x, y)
+        time.sleep(0.1)
+        self.move(x + 1, y + 1)
+        time.sleep(0.1)
+
+        shift_held = bool(click_button & (MouseButton.SHIFT_LEFT | MouseButton.SHIFT_RIGHT))
+        real_button = click_button & ~MouseButton.DOUBLE
+        total_clicks = 2 if MouseButton.DOUBLE in click_button else 1
+
+        if shift_held:
+            self.kb_controller.press(Key.shift)
+            time.sleep(0.05)
+
+        for _ in range(total_clicks * count):
+            for btn in self._iterate_buttons(real_button):
+                self.controller.press(btn)
+            for btn in self._iterate_buttons(real_button):
+                self.controller.release(btn)
+            if total_clicks > 1:
+                time.sleep(0.05)
+        if shift_held:
+            self.kb_controller.release(Key.shift)
+
 
     def press(self, button: MouseButton):
         for btn in self._iterate_buttons(button & ~MouseButton.DOUBLE):
@@ -87,7 +116,6 @@ class MouseHandler:
         screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
 
         failed = False
-        print("action event: ", rs.action_event)
 
         if rs.action_event & MouseButton.IMAGE:
             matching = self.get_target_image_func(rs.models.embd_func, rs.target_text, "./clickable_images")
@@ -158,6 +186,16 @@ class MouseHandler:
             else:
                 log.warning(f"Failed clicking spatially: {rs.current_context.text}")
 
+        elif rs.action_event & MouseButton.COORD:  # Accepts XY
+            nums = re.findall(r'-?\d+', rs.target_text)
+            if len(nums) >= 2:
+                x, y = map(int, nums[:2])
+                x = max(0, min(x, screenshot.width - 1))
+                y = max(0, min(y, screenshot.height - 1))
+                self.click_xy(x, y, rs.action_event)
+            else:
+                log.warning(f"Failed coord click because of invalid coordinate format: '{rs.target}'")
+                return True
         else:
             emb = run_ocr(screenshot, offset, rs)
             target = self.extract_box_target(rs, emb)

@@ -117,16 +117,19 @@ class SequenceHandler:
                                 new_vals.append(x)
                         var_values[var_name] = new_vals
                     else:
-                        var_values[var_name] = [predefined]
+                        var_values[var_name] = predefined
                     continue
                 else:
                     log.info(f"Please Enter the value for variable {var_name}")
                 spoken = self.voiceTranscriber()
-                var_values[var_name] = [x.strip() for x in (spoken.split(",") if var_type=="list" else [spoken])]
+                if var_type == "list":
+                    var_values[var_name] = [x.strip() for x in spoken.split(",")]
+                else:
+                    var_values[var_name] = spoken.strip()
             pause_listener_event.set()
             self.voiceTranscriber.listener_enabled = False
 
-        log.debug(var_values)
+        log.info(var_values)
 
         # variable substitution
         VAR_PATTERN = re.compile(r"\{\{(\w+)((?:\.\d+)*)\}\}")
@@ -142,6 +145,9 @@ class SequenceHandler:
                     return match.group(0)
 
                 value = current_vars[var]
+
+                if not path:
+                    return str(value)
 
                 # parse indices like ".2.1.3" → [2,1,3]
                 indices = [int(i) for i in path.split(".")[1:]] if path else []
@@ -179,7 +185,7 @@ class SequenceHandler:
 
         for ctx in ctx_steps:
             new_ctx = ctx.clone()
-            new_ctx.text = subst(new_ctx.text)
+            new_ctx.text = subst(new_ctx.text, var_values)
 
             loop_type, loop_val = parse_loop(ctx.text)
 
@@ -214,7 +220,7 @@ class SequenceHandler:
                 continue
 
             # normal step
-            final_steps.append(ctx)
+            final_steps.append(new_ctx)
         return final_steps
     
     

@@ -446,7 +446,12 @@
                             "gpt_applied": true
                         }
                     },
-                    {"text": "press tab", "meta": {"gpt_applied": true}},
+                    {
+                        "text": "press tab",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
                     {
                         "text": "write {{accounts.1}}",
                         "meta": {
@@ -473,19 +478,48 @@
                     },
                     {
                         "text": "loop 10",
-                        "meta": {"gpt_applied": true},
-                        "sub_contexts":[
-                            {"text": "Press Key.right", "meta": {"gpt_applied": true}},
-                            {"text": "Press ENTER", "meta": {"gpt_applied": true}},
-                            {"text": "Wait for bank|10", "meta": {"gpt_applied": true}},
+                        "meta": {
+                            "gpt_applied": true
+                        },
+                        "sub_contexts": [
                             {
-                                "text": "Wait for full access|10",
+                                "text": "press right arrow",
                                 "meta": {
                                     "gpt_applied": true
                                 }
                             },
                             {
-                                "text": "right click image eternal water",
+                                "text": "wait 1",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "press enter",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "Wait for bank|10",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "right click coord 1220,405",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "right click coord 1602,636",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "Wait for full access|10",
                                 "meta": {
                                     "gpt_applied": true
                                 }
@@ -497,14 +531,25 @@
                                 }
                             },
                             {
-                                "text": "Sleep 8",
-                                "meta": {"gpt_applied": true}
+                                "text": "sleep 6",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
+                            },
+                            {
+                                "text": "Wait for realm info|10",
+                                "meta": {
+                                    "gpt_applied": true
+                                }
                             }
-                           
                         ]
+                    },
+                    {
+                        "text": "Press alt f4",
+                        "meta": {
+                            "gpt_applied": true
+                        }
                     }
-                   
-                    
                 ]
             }
         ],
@@ -512,10 +557,121 @@
             {
                 "name": "accounts",
                 "type": "list",
-                "value":[
-                    ["doomxd110", "killshot"],
-                    ["doomxd220", "killshot"]
+                "value": [
+                    [
+                        "doomxd110",
+                        "killshot"
+                    ],
+                    [
+                        "doomxd220",
+                        "killshot"
+                    ]
                 ]
+            }
+        ]
+    },
+    "kick": {
+        "steps": [
+            {
+                "text": "capture 2372,183,2507,311",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "double click World of Warcraft",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "sleep 3",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "write {{username}}",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "press Tab",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "write {{password}}",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "press enter",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "sleep 1",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "capture 2010,31,2512,267",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "double click level 80 Paladin",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+              {
+                "text": "sleep 6",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "press ENTER",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "write {{command}}",
+                "meta": {
+                    "gpt_applied": true
+                }
+            },
+            {
+                "text": "press enter",
+                "meta": {
+                    "gpt_applied": true
+                }
+            }
+        ],
+        "vars": [
+            {
+                "name": "username",
+                "type": "str",
+                "value": "mavericks123"
+            },
+            {
+                "name": "password",
+                "type": "str",
+                "value": "killshot"
+            },
+            {
+                "name": "command",
+                "type": "str",
+                "value": "/gremove Papamarko"
             }
         ]
     }

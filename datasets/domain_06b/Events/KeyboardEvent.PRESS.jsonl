@@ -47,16 +47,15 @@
 {"user_input": "press F11", "assistant_output": "press F11"}
 {"user_input": "press alt enter", "assistant_output": "press alt enter"}
 {"user_input": "press control N", "assistant_output": "press control N"}
-{"user_input": "press windows R", "assistant_output": "press windows R"}
-{"user_input": "press control B", "assistant_output": "press control B"}
-{"user_input": "press control I", "assistant_output": "press control I"}
 {"user_input": "press alt F1", "assistant_output": "press alt F1"}
 {"user_input": "press shift F10", "assistant_output": "press shift F10"}
 {"user_input": "press control H", "assistant_output": "press control H"}
 {"user_input": "press alt space", "assistant_output": "press alt space"}
 {"user_input": "press control O", "assistant_output": "press control O"}
-{"user_input": "press control Q", "assistant_output": "press control Q"}
-{"user_input": "press control D", "assistant_output": "press control D"}
+{"user_input": "press arrow up", "assistant_output": "press arrow up"}
+{"user_input": "press arrow down", "assistant_output": "press arrow down"}
+{"user_input": "press arrow right", "assistant_output": "press arrow right"}
+{"user_input": "press arrow left", "assistant_output": "press arrow left"}
 {"user_input": "press F8", "assistant_output": "press F8"}
 {"user_input": "press F9", "assistant_output": "press F9"}
 {"user_input": "press control U", "assistant_output": "press control U"}

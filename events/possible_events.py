@@ -27,7 +27,10 @@ possible_events = {
 
     # Image click events
     ("click image", "click on image", "find", "select image", "image click", "click icon", "click picture"): MouseButton.IMAGE | MouseButton.LEFT,
-    
+
+    # Coordinate click events
+    ("click coord", "click coordinate",  "left click coordinate") : MouseButton.COORD | MouseButton.LEFT,
+
     # Variable click events
     ("click all variable", "click every variable"): MouseButton.VAR_ALL | MouseButton.LEFT,
     ("click variable", "click one variable","click top variable", "click best variable"): MouseButton.VAR_TOP | MouseButton.LEFT,
@@ -94,8 +97,9 @@ for keys in list(possible_events.keys()):
         "image" in k or "picture" in k or "icon" in k
         for k in key_list
     )
+    is_coord = any("coord" in k for k in key_list)
 
-    if not (is_all_var or is_top_var or is_spatial_var or is_image):
+    if not (is_all_var or is_top_var or is_spatial_var or is_image or is_coord):
         continue
 
     # Apply click modifiers

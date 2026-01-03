@@ -6,6 +6,7 @@ class MouseButton(Flag):
     MIDDLE = auto()
     DOUBLE = auto()
     IMAGE  = auto()
+    COORD  = auto()
     
     SHIFT_LEFT  = auto()
     SHIFT_RIGHT = auto()
