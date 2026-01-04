@@ -124,10 +124,5 @@ def get_spatial_location(spatial_event: MouseButton, bbox, offset, screenshot, s
             if segments_found or proj_dropout >= 0.6:
                 break
                 
-
-
-
-    print("proj dropout: ", proj_dropout)
-
     bx, by, bw, bh = bbox 
     return bbox, (bx + ox, by + oy, bw, bh)

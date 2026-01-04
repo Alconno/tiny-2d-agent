@@ -116,96 +116,170 @@ class MouseHandler:
         screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
 
         failed = False
+        results = {}
 
         if rs.action_event & MouseButton.IMAGE:
-            matching = self.get_target_image_func(rs.models.embd_func, rs.target_text, "./clickable_images")
+            matching = self.get_target_image_func(
+                rs.models.embd_func, rs.target_text, "./clickable_images"
+            )
             if matching:
                 _, bbox = self.find_crop_in_image_func(screenshot, matching, offset=offset)
                 if bbox:
                     self.execute(rs.action_event, {"result": {"bbox": bbox}})
+                    results = {
+                        "event": rs.action_event, 
+                        "payload": {"bbox": bbox, "match": matching}
+                    }
                     log.info(f"Successfully clicked on image {matching}")
                     failed = False
+                else:
+                    log.warning(f"Image bbox not found: {rs.target_text}")
+                    failed = True
             else:
                 log.warning(f"Image not found: {rs.target_text}")
+                failed = True
 
         elif rs.action_event & MouseButton.VAR_ALL:
-            var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func) 
+            var_name = self.get_matching_str_func(
+                rs.target_text, list(rs.variables.keys()), rs.models.embd_func
+            )
             if var_name:
                 var_obj = rs.variables.get(var_name)
-                var_values = var_obj.get("value") if isinstance(var_obj, dict) else getattr(var_obj, "value", []) or []
+                var_values = (
+                    var_obj.get("value")
+                    if isinstance(var_obj, dict)
+                    else getattr(var_obj, "value", []) or []
+                )
+
+                found = []
                 for value in var_values:
                     bbox = value.get("bbox") if isinstance(value, dict) else None
                     if bbox:
                         log.info(f"Successfully clicked variable value: {value}")
                         self.execute(rs.action_event, {"result": {"bbox": bbox}})
+                        found.append(value)
                         time.sleep(1)
                     else:
                         log.warning(f"Failed clicking on variable value: {value}")
+
+                if found:
+                    results = {
+                        "event": rs.action_event, 
+                        "payload": {"var_obj": var_obj}
+                    }
+                else:
+                    log.warning("No valid variable values found")
+                    failed = True
             else:
-                log.warning(f"Failed clicking on variable values: variable does not exist")
+                log.warning("Failed clicking on variable values: variable does not exist")
+                failed = True
 
         elif rs.action_event & MouseButton.VAR_TOP:
-            var_name = self.get_matching_str_func(rs.target_text, list(rs.variables.keys()), rs.models.embd_func)
+            var_name = self.get_matching_str_func(
+                rs.target_text, list(rs.variables.keys()), rs.models.embd_func
+            )
             if var_name:
                 var_obj = rs.variables.get(var_name)
-                var_values = var_obj.get("value") if isinstance(var_obj, dict) else getattr(var_obj, "value", []) or []
+                var_values = (
+                    var_obj.get("value")
+                    if isinstance(var_obj, dict)
+                    else getattr(var_obj, "value", []) or []
+                )
+
                 if var_values:
                     top = var_values[0]
                     bbox = top.get("bbox") if isinstance(top, dict) else None
                     if bbox:
                         log.info(f"Successfully clicked variable top value: {top['match']}")
                         self.execute(rs.action_event, {"result": {"bbox": bbox}})
+                        results = {
+                            "event": rs.action_event, 
+                            "payload": {"var_obj": var_obj}
+                        }
                         time.sleep(1)
                     else:
                         log.warning(f"Failed clicking on variable top value: {top}")
+                        failed = True
                 else:
-                    log.warning(f"Failed clicking on variable top value: variable has no value")
+                    log.warning("Failed clicking on variable top value: variable has no value")
+                    failed = True
             else:
-                log.warning(f"Failed clicking on variable top value: variable does not exist")
+                log.warning("Failed clicking on variable top value: variable does not exist")
+                failed = True
 
-        elif rs.action_event & (MouseButton.SPATIAL_ABOVE | MouseButton.SPATIAL_BELOW |
-                            MouseButton.SPATIAL_LEFT | MouseButton.SPATIAL_RIGHT):
+        elif rs.action_event & (
+            MouseButton.SPATIAL_ABOVE
+            | MouseButton.SPATIAL_BELOW
+            | MouseButton.SPATIAL_LEFT
+            | MouseButton.SPATIAL_RIGHT
+        ):
             emb = run_ocr(screenshot, offset, rs)
-            
+
             parts = [p.strip() for p in rs.target_text.split("|", 1)]
             if len(parts) == 1:
                 parts.append(None)
-            rs.target_text = parts[0] # real ctx
-            spatial_search_condition = parts[1] or "object" # 'text' (color edge detection) or 'object'(defaut)(gray edge detection)
-            
+
+            rs.target_text = parts[0]
+            spatial_search_condition = parts[1] or "object"
+
             target = self.extract_box_target(rs, emb)
 
             if target:
                 bbox = target["result"]["bbox"]
-                no_offset_new_bbox, new_bbox = self.get_spatial_location(rs.action_event, bbox, offset, screenshot, spatial_search_condition)
+                no_offset_new_bbox, new_bbox = self.get_spatial_location(
+                    rs.action_event, bbox, offset, screenshot, spatial_search_condition
+                )
                 if no_offset_new_bbox != bbox:
                     self.execute(rs.action_event, {"result": {"bbox": new_bbox}})
+                    results = {
+                        "event": rs.action_event, 
+                        "payload": {"bbox": bbox, "new_bbox": new_bbox}
+                    }
                     log.info(f"Success: '{rs.current_context.text}'")
                 else:
-                    log.info(f"Could not find anything {rs.current_context.text.partition('click')[2].strip()}")
+                    log.info(
+                        f"Could not find anything "
+                        f"{rs.current_context.text.partition('click')[2].strip()}"
+                    )
+                    failed = True
             else:
                 log.warning(f"Failed clicking spatially: {rs.current_context.text}")
+                failed = True
 
-        elif rs.action_event & MouseButton.COORD:  # Accepts XY
-            nums = re.findall(r'-?\d+', rs.target_text)
+        elif rs.action_event & MouseButton.COORD:
+            nums = re.findall(r"-?\d+", rs.target_text)
             if len(nums) >= 2:
                 x, y = map(int, nums[:2])
                 x = max(0, min(x, screenshot.width - 1))
                 y = max(0, min(y, screenshot.height - 1))
                 self.click_xy(x, y, rs.action_event)
+                results ={
+                    "event": rs.action_event, 
+                    "payload": {"x": x, "y": y}
+                }
             else:
-                log.warning(f"Failed coord click because of invalid coordinate format: '{rs.target}'")
-                return True
+                log.warning(
+                    f"Failed coord click because of invalid coordinate format: '{rs.target}'"
+                )
+                return True, results
+
         else:
             emb = run_ocr(screenshot, offset, rs)
             target = self.extract_box_target(rs, emb)
-            if target and target['result'] and target['result']['bbox']:
-                self.apply_offset_to_bbox(offset, target['result']['bbox'])
+            if target and target.get("result") and target["result"].get("bbox"):
+                self.apply_offset_to_bbox(offset, target["result"]["bbox"])
             if target:
                 self.execute(rs.action_event, target)
+                results = {
+                    "event": rs.action_event, 
+                    "payload": {"target": target}
+                }
                 log.info(f"Successfully clicked on '{target['query']}'")
                 failed = False
             else:
                 log.warning(f"Failed clicking on target: {rs.target_text}")
+                failed = True
 
-        return failed
+        return failed, results
+
+

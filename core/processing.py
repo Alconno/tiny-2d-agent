@@ -108,13 +108,13 @@ from core.state import RuntimeState
 from services.handlers import EventHandler
 from models.VoiceTranscriber import VoiceTranscriber
 from core.recording import append_to_recording_seq
-def map_event_handlers(handlers: EventHandler, voiceTranscriber: VoiceTranscriber):
+def map_event_handlers(handlers: EventHandler, voiceTranscriber: VoiceTranscriber = None):
     CONTROL_EVENTS = (SequenceEvent, Condition, LoopEvent)
 
     def wrap_handler(handler_func):
         # wrapper applied to all handlers
         def wrapped(rs):
-            failed = handler_func(rs)
+            failed, data = handler_func(rs) # bool, dict
 
             if (
                 rs.recording_state.get("active", False)
@@ -122,7 +122,7 @@ def map_event_handlers(handlers: EventHandler, voiceTranscriber: VoiceTranscribe
             ):
                 append_to_recording_seq(rs)
 
-            return failed
+            return failed, data
         return wrapped
 
     return {

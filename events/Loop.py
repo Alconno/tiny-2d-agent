@@ -14,7 +14,6 @@ class LoopHandler():
         pass
 
     def process(self, rs: RuntimeState):
-        
         if rs.action_event == LoopEvent.START:
             raw = rs.target_text.strip()
             if rs.is_template:
@@ -56,4 +55,4 @@ class LoopHandler():
             if len(rs.recording_stack) > 1:
                 rs.recording_stack.pop()
 
-        return False
+        return False, {}

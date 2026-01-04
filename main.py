@@ -20,8 +20,8 @@ from services.handlers import EventHandler
 from services.voice import build_voice_listener
 
 # Helpers
-from core.processing import process_context, parse_action_and_extract_target,  \
-                            extract_template, handle_retry, map_event_handlers
+from core.processing import handle_retry, map_event_handlers
+from core.main import prepare_rs
 
 # ---- Environment ----
 logging.getLogger("ppocr").setLevel(logging.WARNING)
@@ -55,32 +55,9 @@ while True:
         time.sleep(0.1)
         continue
 
-    # ---- GPT Processing ----
-    # normalize + rewrite user intent (LLM)
-    orig_ctx, ctx_processed = process_context(rs)
-
-    if ctx_processed == "nothing":
-        log.info("Command cancelled")
-        rs.current_context = Context()
-        continue
-
-    # ---- Action parsing (once per context) ----
-    raw_ctx = orig_ctx.strip().lower()
-    if not parse_action_and_extract_target(rs, raw_ctx, ctx_processed):
-        log.warning("Failed to parse action")
-        continue
-
-    log.debug("Raw context: %s", raw_ctx)
-    log.debug("Processed context: %s", ctx_processed)
-
-    # ---- Template check ----
-    rs.is_template = extract_template(rs.target_text)
-    if rs.is_template and not rs.recording_state["active"]:
-        log.warning("Template used outside recording mode")
-        rs.current_context = Context()
-        continue
+    res, orig_ctx, raw_ctx, ctx_processed = prepare_rs(rs)
+    if not res: continue
     
-
     # ---- Event processing ----
     failed = True
     handler = EVENT_HANDLERS_MAP.get(type(rs.action_event))
@@ -88,7 +65,7 @@ while True:
         log.error("No handler for event %s", rs.action_event)
         failed = True
     else:
-        failed = handler(rs)
+        failed, data = handler(rs)
 
     # ---- Retry logic ----
     if failed:

@@ -71,4 +71,4 @@ class Keyboard:
             self.write(rs.target_text)
         elif rs.action_event == KeyboardEvent.PRESS:
             self.press(rs.target_text)
-        return False # Did not fail
+        return False, {"event": rs.action_event, "payload": rs.target_text}

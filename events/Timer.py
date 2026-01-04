@@ -20,4 +20,4 @@ class TimerHandler():
             log.info(f"Sleeping {delay_s}s")
             time.sleep(delay_s)
             failed = False
-        return failed
+        return failed, {"event": rs.action_event, "payload": delay_s}

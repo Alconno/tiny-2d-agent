@@ -39,7 +39,8 @@ class WaitForEventHandler():
         real_ctx = parts[0]
         wait_timer = self.parse_wait_timer(parts[1]) if len(parts) > 1 else 5
         
-        result = False
+        failed = True
+        results = {}
         start_time = time.time()
         
         if rs.action_event == WaitForEvent.IMAGE:
@@ -51,7 +52,11 @@ class WaitForEventHandler():
                     _, bbox = self.find_crop_in_image_func(screenshot, matching, offset=offset)
                     if bbox:
                         log.info(f"Found image {real_ctx}")
-                        result = True
+                        results = {
+                            "event": rs.action_event, 
+                            "payload": {"bbox": bbox, "match": matching}
+                        } 
+                        failed = False
                         break
                 time.sleep(0.1)
         elif rs.action_event == WaitForEvent.TEXT:
@@ -63,16 +68,19 @@ class WaitForEventHandler():
                 if target and target.get("result"):
                     log.debug(target)
                     log.info(f"Found text {real_ctx}")
-                    result = True
+                    results = {
+                        "event": rs.action_event, 
+                        "payload": {"target": target}
+                    } 
+                    failed = False
                     break
                 time.sleep(0.1)
-        else: 
-            result = True
+
         
-        if not result and start_time:
+        if not failed and start_time:
             remaining = max(0, wait_timer - (time.time() - start_time))
-            result = remaining <= 0
+            failed = remaining <= 0
         
-        return not result # failed = False if pass
+        return failed, results
 
 

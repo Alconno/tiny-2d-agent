@@ -98,38 +98,38 @@ class SequenceHandler:
 
         # Gather variable values
         var_values = {}
-        if sequence.get("vars") and pause_listener_event:
-            pause_listener_event.clear()
-            self.voiceTranscriber.listener_enabled = True
+        if sequence.get("vars"):
+            use_voice = pause_listener_event is not None
+            if use_voice:
+                pause_listener_event.clear()
+                self.voiceTranscriber.listener_enabled = True
             for v in sequence["vars"]:
-                var_name, var_type, predefined = v["name"], v.get("type","str"), v.get("value")
-                if predefined:
-                    if isinstance(predefined, list):
+                name, typ, val = v["name"], v.get("type","str"), v.get("value")
+                if val is not None:
+                    if isinstance(val, list):
                         new_vals = []
-                        for x in predefined:
+                        for x in val:
                             if isinstance(x, str):
-                                try:
-                                    x_parsed = json.loads(x)
-                                    new_vals.append(x_parsed)
-                                except Exception:
-                                    new_vals.append(x)
+                                try: x_parsed = json.loads(x)
+                                except: x_parsed = x
+                                new_vals.append(x_parsed)
                             else:
                                 new_vals.append(x)
-                        var_values[var_name] = new_vals
+                        var_values[name] = new_vals
                     else:
-                        var_values[var_name] = predefined
+                        var_values[name] = val
                     continue
-                else:
-                    log.info(f"Please Enter the value for variable {var_name}")
+                if not use_voice:
+                    var_values[name] = None
+                    continue
+                log.info(f"Please Enter the value for variable {name}")
                 spoken = self.voiceTranscriber()
-                if var_type == "list":
-                    var_values[var_name] = [x.strip() for x in spoken.split(",")]
-                else:
-                    var_values[var_name] = spoken.strip()
-            pause_listener_event.set()
-            self.voiceTranscriber.listener_enabled = False
+                var_values[name] = [x.strip() for x in spoken.split(",")] if typ=="list" else spoken.strip()
+            if use_voice:
+                pause_listener_event.set()
+                self.voiceTranscriber.listener_enabled = False
 
-        log.info(var_values)
+        log.debug(var_values)
 
         # variable substitution
         VAR_PATTERN = re.compile(r"\{\{(\w+)((?:\.\d+)*)\}\}")
@@ -227,7 +227,7 @@ class SequenceHandler:
 
 
 
-    def process_sequence_event(self, rs: RuntimeState, voiceTranscriber: VoiceTranscriber):
+    def process_sequence_event(self, rs: RuntimeState, voiceTranscriber: VoiceTranscriber = None):
         
         if not rs.recording_stack or not rs.recording_state:
             rs.recording_state = {"active": False, "contexts": [], "name": ""}
@@ -252,14 +252,14 @@ class SequenceHandler:
 
         elif rs.action_event == SequenceEvent.PLAY:
             log.info(f"Playing recording '{rs.target_text}'")
-            voiceTranscriber.listener_enabled = False
-            loaded_sequence = self.load_sequence(
-                                    name=rs.target_text, 
-                                    pause_listener_event=voiceTranscriber.pause_listener_event
-                                )
+            pause_listener_event = voiceTranscriber.pause_listener_event if voiceTranscriber else None
+            if voiceTranscriber:
+                voiceTranscriber.listener_enabled = False
+            loaded_sequence = self.load_sequence(rs.target_text, pause_listener_event)
             if loaded_sequence:
                 rs.context_queue.extend(loaded_sequence)
-            voiceTranscriber.listener_enabled = True
+            if voiceTranscriber:
+                voiceTranscriber.listener_enabled = True
 
         elif rs.action_event == SequenceEvent.RESET and rs.recording_state["active"]:
             log.info(f"Reseting current recording.")
@@ -273,5 +273,5 @@ class SequenceHandler:
                 rs.recording_stack[-1].pop()
 
 
-        return False
+        return False, {}
 

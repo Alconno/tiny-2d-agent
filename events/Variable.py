@@ -71,10 +71,11 @@ class VariableHandler():
 
     def handle_variable(self, rs: RuntimeState):
         failed = True
+        var = None
         if rs.target_text:
             var = self.process_event(rs)
             rs.variables[var.name] = var
             failed = var is None
-        return failed
+        return failed,  {"event": rs.action_event, "payload": var}
  
 

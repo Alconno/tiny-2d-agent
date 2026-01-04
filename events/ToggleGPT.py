@@ -20,4 +20,4 @@ class ToggleGPTHandler():
         else:
             rs.use_gpt = not rs.use_gpt
         log.info(f"GPT is now {'ON' if rs.use_gpt else 'OFF'}. Say 'toggle GPT' to switch again.")
-        return False # success
+        return False, {} # success

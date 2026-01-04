@@ -72,6 +72,6 @@ class ScreenCapture:
             rs.current_context.text += " {},{},{},{}".format(*rs.screenshot_box)
             failed = False
         log.debug(f"Currently focused on area: {rs.screenshot_box}")
-        return failed
+        return failed,  {"event": rs.action_event, "payload": rs.screenshot_box}
 
 
