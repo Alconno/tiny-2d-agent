@@ -66,6 +66,9 @@ while True:
         continue
 
     res, orig_ctx, raw_ctx, ctx_processed = out
+    print(orig_ctx, " | ", raw_ctx, " | ", ctx_processed)
+    print(rs.color_list)
+    print(rs.target_text)
     
     # ---- Event processing ----
     failed = True

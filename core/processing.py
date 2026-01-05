@@ -32,16 +32,22 @@ def process_context(rs: RuntimeState):
 # Finding which color/s is/are mentioned in context
 colors = ["black","white","red","green","blue","yellow","orange","brown","gray","purple"]
 color_pattern = r"\b(" + "|".join(colors) + r")\b"
-def find_colors(ctx_processed):
-    found_colors = re.findall(color_pattern, ctx_processed, re.I)
-    color_list = [c.lower() for c in found_colors] or None
+def find_colors(ctx):
+    matches, colors = [], []
 
-    # Remove color string from context
-    if color_list:
-        ctx_processed = re.sub(color_pattern, "", ctx_processed, flags=re.I)
-        ctx_processed = re.sub(r"\s+", " ", ctx_processed).strip()
+    for m in re.finditer(color_pattern, ctx, re.I):
+        # Check if there's non-space text after this color
+        if re.search(r"\S", ctx[m.end():]):
+            matches.append(m)
+            colors.append(m.group(0).lower())
 
-    return color_list, ctx_processed
+    if matches:
+        last_match = max(matches, key=lambda m: m.end())
+        ctx = ctx[last_match.end():].strip()
+        ctx = re.sub(r"^[\s\W]+", "", ctx)
+
+    return colors or None, ctx
+
 
 
 
