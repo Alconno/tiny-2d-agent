@@ -20,13 +20,13 @@ def prepare_rs(rs: RuntimeState):
     if ctx_processed == "nothing":
         log.info("Command cancelled")
         rs.current_context = Context()
-        return False
+        return False, orig_ctx, None, ctx_processed
 
     # ---- Action parsing (once per context) ----
     raw_ctx = orig_ctx.strip().lower()
     if not parse_action_and_extract_target(rs, raw_ctx, ctx_processed):
         log.warning("Failed to parse action")
-        return False
+        return False, orig_ctx, raw_ctx, ctx_processed
 
     log.debug("Raw context: %s", raw_ctx)
     log.debug("Processed context: %s", ctx_processed)

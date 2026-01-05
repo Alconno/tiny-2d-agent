@@ -47,7 +47,7 @@ def find_colors(ctx_processed):
 
 # Parses given context, extracting action and target
 def parse_action_and_extract_target(rs: RuntimeState, raw_ctx: str, ctx_processed: str):
-    if ctx_processed not in rs.parsed_action_cache:
+    if raw_ctx not in rs.parsed_action_cache:
         rs.color_list, ctx_processed = find_colors(ctx_processed)
 
         parsed_action = extract_action(ctx_processed, rs.event_embeds, rs.models.embd_func)

@@ -67,37 +67,33 @@ class OCR:
         x_tol = self.box_condense[0] * scale
         y_tol = self.box_condense[1] * scale
         boxes = deque([tuple(b) for b in boxes])
-        results = {}
+        results = {b: True for b in boxes}
 
         while boxes:
             box0 = boxes.popleft()
-            if results.get(box0, True) in [False, None]:
-                continue
-
             l0, t0, r0, b0 = box0[0], box0[1], box0[0]+box0[2], box0[1]+box0[3]
-            merged = False
+
             for box1 in list(boxes):
-                if results.get(box1, True) in [False, None]:
+                if not results.get(box1, True):
                     continue
                 l1, t1, r1, b1 = box1[0], box1[1], box1[0]+box1[2], box1[1]+box1[3]
-                h0,h1 = box0[3],box1[3]
+                h0, h1 = box0[3], box1[3]
 
                 x_pass = not (r1 < l0 - x_tol or r0 < l1 - x_tol)
-                y_pass = abs(t1 - t0) <= y_tol and abs(h1-h0)<min(h0,h1)*0.5
+                y_pass = abs(t1 - t0) <= y_tol and abs(h1 - h0) < min(h0, h1) * 0.5
 
                 if x_pass and y_pass:
-                    nl,nr = min(l0,l1), max(r0,r1)
-                    nt,nb = min(t0,t1), max(b0,b1)
-                    if nr-nl >= x_limit_px: continue # box too long
+                    nl, nr = min(l0, l1), max(r0, r1)
+                    nt, nb = min(t0, t1), max(b0, b1)
+                    if nr - nl >= x_limit_px:
+                        continue  # box too long
                     new_box = (nl, nt, nr - nl, nb - nt)
-                    results[box0] = results[box1] = False
+
+                    # Keep original boxes, just add the merged one
                     results[new_box] = True
                     boxes.remove(box1)
                     boxes.append(new_box)
-                    merged = True
                     break
-            if not merged:
-                results[box0] = True
 
         return [b for b, keep in results.items() if keep]
                     

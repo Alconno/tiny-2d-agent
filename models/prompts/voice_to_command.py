@@ -1,4 +1,6 @@
-from events.possible_events import possible_events
+from events.possible_events import get_possible_events
+
+possible_events = get_possible_events()
 
 event_mapping_text = "\n".join(
     [f"{', '.join(k)} -> {v}" for k, v in possible_events.items()]

@@ -1,5 +1,6 @@
 import sys
 from pathlib import Path
+from typing import Dict, Tuple
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
@@ -14,7 +15,8 @@ from events.Loop import LoopEvent
 from events.ToggleGPT import ToggleGPT
 from events.WaitFor import WaitForEvent
 
-possible_events = {
+# Base events
+_base_possible_events: Dict[Tuple[str, ...], object] = {
     # Click events
     ("click", "left click"): MouseButton.LEFT,
     ("right click",): MouseButton.RIGHT,
@@ -29,11 +31,11 @@ possible_events = {
     ("click image", "click on image", "find", "select image", "image click", "click icon", "click picture"): MouseButton.IMAGE | MouseButton.LEFT,
 
     # Coordinate click events
-    ("click coord", "click coordinate",  "left click coordinate") : MouseButton.COORD | MouseButton.LEFT,
+    ("click coord", "click coordinate", "left click coordinate"): MouseButton.COORD | MouseButton.LEFT,
 
     # Variable click events
     ("click all variable", "click every variable"): MouseButton.VAR_ALL | MouseButton.LEFT,
-    ("click variable", "click one variable","click top variable", "click best variable"): MouseButton.VAR_TOP | MouseButton.LEFT,
+    ("click variable", "click one variable", "click top variable", "click best variable"): MouseButton.VAR_TOP | MouseButton.LEFT,
 
     # Spatial awareness click events
     ("click left of", "click left to"): MouseButton.SPATIAL_LEFT | MouseButton.LEFT,
@@ -41,7 +43,7 @@ possible_events = {
     ("click above of", "click on top of", "click above"): MouseButton.SPATIAL_ABOVE | MouseButton.LEFT,
     ("click below of", "click under", "click below"): MouseButton.SPATIAL_BELOW | MouseButton.LEFT,
 
-    # Kb events
+    # Keyboard events
     ("write", "type"): KeyboardEvent.WRITE,
     ("press",): KeyboardEvent.PRESS,
 
@@ -63,7 +65,7 @@ possible_events = {
     # Variable events
     ("set var", "set variable", "make var", "make variable"): VariableEvent.SET,
 
-    # Wait For
+    # Wait For events
     ("wait for", "wait for text"): WaitForEvent.TEXT,
     ("wait for image", "wait for picture", "wait for icon"): WaitForEvent.IMAGE,
 
@@ -71,9 +73,10 @@ possible_events = {
     ("wait", "sleep"): Timer.SLEEP,
     ("focus", "capture", "screen", "screenshot"): ScreenCaptureEvent.CAPTURE,
     ("toggle GPT", "GPT toggle", "toggle GPT on", "GPT on", "toggle GPT off", "GPT off"): ToggleGPT.TOGGLE,
-}                     
+}
 
-extra_clicks = [
+
+_extra_clicks = [
     ("right", MouseButton.RIGHT),
     ("middle", MouseButton.MIDDLE),
     ("double", MouseButton.DOUBLE),
@@ -81,30 +84,36 @@ extra_clicks = [
     ("shift right", MouseButton.SHIFT_RIGHT)
 ]
 
+# Lazy-loaded possible_events
+def get_possible_events() -> Dict[Tuple[str, ...], object]:
+    """
+    Returns the full possible_events dictionary including all extra click variants.
+    Computation is done only once on first call.
+    """
+    if not hasattr(get_possible_events, "_cached"):
+        events = dict(_base_possible_events)
 
-for keys in list(possible_events.keys()):
-    key_list = list(keys)
-    base_val = possible_events[keys]
+        for keys in list(_base_possible_events.keys()):
+            key_list = list(keys)
+            base_val = _base_possible_events[keys]
 
-    # ONLY process mouse button based events
-    if not isinstance(base_val, MouseButton):
-        continue
+            if not isinstance(base_val, MouseButton):
+                continue
 
-    is_all_var = any("click all variable" in k for k in key_list)
-    is_top_var = any("click variable" in k for k in key_list)
-    is_spatial_var = any(" of" in k for k in key_list)
-    is_image = any(
-        "image" in k or "picture" in k or "icon" in k
-        for k in key_list
-    )
-    is_coord = any("coord" in k for k in key_list)
+            is_all_var = any("click all variable" in k for k in key_list)
+            is_top_var = any("click variable" in k for k in key_list)
+            is_spatial_var = any(" of" in k for k in key_list)
+            is_image = any("image" in k or "picture" in k or "icon" in k for k in key_list)
+            is_coord = any("coord" in k for k in key_list)
 
-    if not (is_all_var or is_top_var or is_spatial_var or is_image or is_coord):
-        continue
+            if not (is_all_var or is_top_var or is_spatial_var or is_image or is_coord):
+                continue
 
-    # Apply click modifiers
-    if base_val & MouseButton.LEFT:
-        for prefix, click_val in extra_clicks:
-            new_keys = tuple(f"{prefix} {k}" for k in key_list)
-            possible_events[new_keys] = (base_val & ~MouseButton.LEFT) | click_val
+            if base_val & MouseButton.LEFT:
+                for prefix, click_val in _extra_clicks:
+                    new_keys = tuple(f"{prefix} {k}" for k in key_list)
+                    events[new_keys] = (base_val & ~MouseButton.LEFT) | click_val
 
+        get_possible_events._cached = events
+
+    return get_possible_events._cached

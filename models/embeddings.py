@@ -16,4 +16,4 @@ def embed_text(texts, _model):
     else:
         assert texts.strip()
 
-    return _model.encode(texts, batch_size=32, normalize_embeddings=True)
+    return _model.encode(texts, batch_size=32, normalize_embeddings=True, show_progress_bar=False)

@@ -312,17 +312,17 @@
                 }
             },
             {
-                "text": "capture 22,154,1088,705",
-                "meta": {
-                    "gpt_applied": true
-                }
-            },
-            {
                 "text": "start loop names as template",
                 "meta": {
                     "gpt_applied": true
                 },
                 "sub_contexts": [
+                    {
+                        "text": "capture 10, 112, 1092, 722",
+                        "meta": {
+                            "gpt_applied": true
+                        }
+                    },
                     {
                         "text": "click below of name",
                         "meta": {

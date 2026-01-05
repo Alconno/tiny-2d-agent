@@ -71,7 +71,7 @@ class ScreenCapture:
             time.sleep(0.25)
             rs.current_context.text += " {},{},{},{}".format(*rs.screenshot_box)
             failed = False
-        log.debug(f"Currently focused on area: {rs.screenshot_box}")
+        log.info(f"Currently focused on area: {rs.screenshot_box}")
         return failed,  {"event": rs.action_event, "payload": rs.screenshot_box}
 
 

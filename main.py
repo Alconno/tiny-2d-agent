@@ -1,49 +1,54 @@
 # ---- Standard / Third-party ----
+import os
+import time
 import tkinter
-import os, time,re
-
-# ---- Logging ----
 import logging
+
+# ---- Environment ----
+logging.getLogger("ppocr").setLevel(logging.WARNING)
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ["NUMEXPR_MAX_THREADS"] = "16"
+tkinter.NoDefaultRoot()
+
+# ---- Logging setup ----
 from core.logging import setup_logging, get_logger
 setup_logging()
 logging.getLogger().setLevel(logging.INFO)
 log = get_logger("main")
-
+log.info("Setting up main: ")
 
 # ---- Local / project modules ----
-from ma_utility import (embd_events)
-from events.possible_events import possible_events
+log.info("> Project modules...")
+from ma_utility import embd_events
+from events.possible_events import get_possible_events
 from class_models.Context import Context
 from core.state import RuntimeState
 from services.models import build_models
 from services.handlers import EventHandler
 from services.voice import build_voice_listener
 
-# Helpers
+# ---- Helpers / Utilities ----
 from core.processing import handle_retry, map_event_handlers
 from core.main import prepare_rs
 
-# ---- Environment ----
-logging.getLogger("ppocr").setLevel(logging.WARNING)
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-tkinter.NoDefaultRoot()
-
 # ---- Models & Handlers ----
+log.info("> Model connections and handlers")
 models = build_models() # gpt, embd, ocr
 handlers: EventHandler = EventHandler(models) # Handlers for all events from 'possible_events.py'
 voiceTranscriber, context_queue = build_voice_listener()
 
 # ---- Runtime vars ----
+log.info("> Runtime state")
 rs = RuntimeState(context_queue)
-rs.event_embeds = embd_events(models.embd_func, possible_events)
+rs.event_embeds = embd_events(models.embd_func, get_possible_events())
 rs.models = models
 rs.handlers = handlers
 
 EVENT_HANDLERS_MAP = map_event_handlers(handlers, voiceTranscriber)
 
 # ---- Main loop ----
-log.info("\n\nMain loop started, hold F8 to say your commands!\n\n")    
+log.info("Main loop started, hold F8 to say your commands!\n\n")    
 while True:
     # --- Fetch new context ---
     rs.fetch_next_context()
@@ -55,8 +60,12 @@ while True:
         time.sleep(0.1)
         continue
 
-    res, orig_ctx, raw_ctx, ctx_processed = prepare_rs(rs)
-    if not res: continue
+    # ---- Preprocess ----
+    out = prepare_rs(rs)
+    if out is False:
+        continue
+
+    res, orig_ctx, raw_ctx, ctx_processed = out
     
     # ---- Event processing ----
     failed = True

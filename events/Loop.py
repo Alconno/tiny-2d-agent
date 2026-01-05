@@ -49,7 +49,7 @@ class LoopHandler():
                                 for sub_ctx in reversed(rs.current_context.sub_contexts):
                                     rs.context_queue.appendleft(sub_ctx.copy())
             log.info(f"Starting loop {rs.target_text}")
-            return False
+            return False, {}
 
         elif rs.action_result == LoopEvent.STOP:
             if len(rs.recording_stack) > 1:
