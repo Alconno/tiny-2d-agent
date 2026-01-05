@@ -324,7 +324,7 @@
                         }
                     },
                     {
-                        "text": "click below of name",
+                        "text": "click below of name|box",
                         "meta": {
                             "gpt_applied": true
                         }
@@ -354,7 +354,7 @@
                         }
                     },
                     {
-                        "text": "capture 831,239,920,637",
+                        "text": "capture 841, 241, 905, 629",
                         "meta": {
                             "gpt_applied": true
                         }
@@ -367,12 +367,6 @@
                     },
                     {
                         "text": "click top variable items",
-                        "meta": {
-                            "gpt_applied": true
-                        }
-                    },
-                    {
-                        "text": "capture 15,148,1086,705",
                         "meta": {
                             "gpt_applied": true
                         }
