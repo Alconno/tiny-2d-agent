@@ -35,7 +35,7 @@ class VariableHandler():
             is_num = var.type=="number" or var.type=="num"
             rs.target_text = var.desc
 
-            emb_lines = run_ocr(screenshot, offset, rs, number_only=is_num)
+            emb_lines = run_ocr(screenshot, rs, number_only=is_num)
             
             if is_num:
                 # Number - {match, value, color, bbox}

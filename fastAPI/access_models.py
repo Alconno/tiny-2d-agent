@@ -51,7 +51,7 @@ class AccessModels:
             timeout=300
         )
 
-    def ocr_func(self, img: PIL.Image, ocr_crop_offset=(0,0)):
+    def ocr_func(self, img: PIL.Image):
         buf = io.BytesIO()
         img.save(buf, format="PNG")
         buf.seek(0)
@@ -59,7 +59,7 @@ class AccessModels:
         resp = self.session.post(
             f"{self.base}/ocr",
             files={"file": ("screenshot.png", buf, "image/png")},
-            data={"ox": ocr_crop_offset[0], "oy": ocr_crop_offset[1]},
+            data={},
             timeout=120
         )
         resp.raise_for_status()

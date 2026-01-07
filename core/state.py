@@ -15,7 +15,6 @@ class RuntimeState:
         self.use_gpt = False
         self.screenshot_box = None
         self.prev_hash = None
-        self.prev_preds = None
         self.prev_embd_lines = None
         self.prev_screenshot = None
         self.screenshot_sim_threshold = 0.001
@@ -45,3 +44,23 @@ class RuntimeState:
             ctx = Context()
         self.current_context = ctx
         return ctx
+    
+    def print_state(self, show_queue=False):
+        print("=== RuntimeState ===")
+        print("Current Context:", getattr(self.current_context, "text", None))
+        print("Screenshot Box:", self.screenshot_box)
+        print("Prev Embedding Lines:", self.prev_embd_lines)
+        print("Prev Screenshot:", "Yes" if self.prev_screenshot else "No")
+        print("Action Result:", self.action_result)
+        print("Action Event:", self.action_event)
+        print("Target Text:", self.target_text)
+        print("Retries:", self.retries)
+        print("Variables:", self.variables)
+        print("Use GPT:", self.use_gpt)
+        print("Parsed Action Cache Keys:", list(self.parsed_action_cache.keys()))
+        print("Retry Target Cache Keys:", list(self.retry_target_cache.keys()))
+        print("Color List:", self.color_list)
+        print("Is Template Match:", self.is_template)
+        if show_queue:
+            print("Context Queue:", [getattr(c, "text", str(c)) for c in self.context_queue])
+        print("===================")

@@ -32,7 +32,7 @@ def embd_ocr_lines(embd_func, preds):
     if to_encode:
         embeddings = embd_func(to_encode)
         for (entries, i, key, box, text, crop), emb in zip(idxs, embeddings):
-            _emb_cache[key] = emb
+            _emb_cache[key] = emb.copy()
             entries[i] = {"bbox": box, "text": text, "embedding": emb, "crop": crop}
 
     for entries in lines_structure:

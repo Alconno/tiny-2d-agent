@@ -213,7 +213,7 @@ class MouseHandler:
             | MouseButton.SPATIAL_LEFT
             | MouseButton.SPATIAL_RIGHT
         ):
-            emb = run_ocr(screenshot, offset, rs)
+            emb = run_ocr(screenshot, rs)
 
             parts = [p.strip() for p in rs.target_text.split("|", 1)]
             if len(parts) == 1:
@@ -264,7 +264,7 @@ class MouseHandler:
                 return True, results
 
         else:
-            emb = run_ocr(screenshot, offset, rs)
+            emb = run_ocr(screenshot, rs)
             target = self.extract_box_target(rs, emb)
             if target and target.get("result") and target["result"].get("bbox"):
                 self.apply_offset_to_bbox(offset, target["result"]["bbox"])

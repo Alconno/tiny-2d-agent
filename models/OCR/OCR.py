@@ -154,7 +154,7 @@ class OCR:
         return boxes
 
 
-    def __call__(self, screenshot: Image, ocr_crop_offset = (0,0)):
+    def __call__(self, screenshot: Image):
         W, H = screenshot.size 
         scale = 1 / self.downscale if self.downscale != 1.0 else self.upscale if self.upscale > 1.0 else 1.0
         screenshot = screenshot.resize((int(W*scale), int(H*scale)), Image.BILINEAR)
@@ -251,17 +251,5 @@ class OCR:
                 cur.append((b, t, c))
                 prev_x_end = x_end
             if cur: final_lines.append(cur)
-
-        # Fix coordinates for cropped screenshots
-        if ocr_crop_offset and ocr_crop_offset != (0,0):
-            ox, oy = ocr_crop_offset
-            new = []
-            for line in final_lines:
-                new_line = []
-                for b, t, c in line:
-                    new_b = (b[0] + ox, b[1] + oy, b[2], b[3])
-                    new_line.append((new_b, t, c))
-                new.append(new_line)
-            final_lines = new
 
         return final_lines

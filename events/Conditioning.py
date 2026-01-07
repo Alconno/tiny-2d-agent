@@ -78,7 +78,7 @@ class ConditionHandler():
         rs.target_text = condition["query"]
         rs.color_list = condition["colors"]
 
-        embd_lines = run_ocr(screenshot, offset, rs)
+        embd_lines = run_ocr(screenshot, rs)
         target = self.extract_box_target(rs, embd_lines)
 
         found = target is not None and target.get("result") is not None and target.get("score", 0) > 0.7

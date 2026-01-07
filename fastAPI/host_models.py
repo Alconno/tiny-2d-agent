@@ -77,13 +77,12 @@ def gpt(req: GPTReq):
         }
 
 @app.post("/ocr")
-def ocr_api(file: UploadFile = File(...), ox: int = 0, oy: int = 0):
+def ocr_api(file: UploadFile = File(...)):
     try:
-        ocr_crop_offset = (ox, oy)
         img_bytes = file.file.read()
         img = Image.open(io.BytesIO(img_bytes)).convert("RGB")
 
-        ocr_res = ocr(img, ocr_crop_offset)
+        ocr_res = ocr(img)
 
         ocr_res_base64 = [
             [(b, t, crop_to_base64(crop)) for b, t, crop in line]

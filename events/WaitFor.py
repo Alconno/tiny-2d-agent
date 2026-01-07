@@ -63,7 +63,7 @@ class WaitForEventHandler():
             while time.time() - start_time < wait_timer:
                 log.info(f"Waiting {wait_timer - (time.time() - start_time)} more for {real_ctx}")
                 screenshot, offset = self.take_screenshot_func(rs.screenshot_box)
-                emb = run_ocr(screenshot, offset, rs)
+                emb = run_ocr(screenshot, rs)
                 target = self.extract_box_from_string_target(rs, emb)
                 if target and target.get("result"):
                     log.debug(target)
