@@ -36,12 +36,13 @@ class VariableHandler():
             rs.target_text = var.desc
 
             emb_lines = run_ocr(screenshot, rs, number_only=is_num)
-            
+            targets = None
+
             if is_num:
                 # Number - {match, value, color, bbox}
                 targets = self.extract_box_from_numeric_target(rs, emb_lines, return_all=True)
                 if targets == None:
-                    log.debug("Did not find any variable values")
+                    log.info("Did not find any variable values")
                     return var
             
             # No point doing string atm as there is no strong enough GPT to reason properly with extracted strings
@@ -60,6 +61,9 @@ class VariableHandler():
                      for t in targets]
                 targets.sort(key=lambda x: x['score'], reverse=True) # descending"""
             
+            if not targets:
+                return None
+            
             log.info(f"Found variable values: {[t['match'] for t in targets]}")
             var.value = targets
             self.apply_offset(offset, var)
@@ -74,7 +78,8 @@ class VariableHandler():
         var = None
         if rs.target_text:
             var = self.process_event(rs)
-            rs.variables[var.name] = var
+            if var and var.name:
+                rs.variables[var.name] = var
             failed = var is None
         return failed,  {"event": rs.action_event, "payload": var}
  

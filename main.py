@@ -78,7 +78,7 @@ while True:
         failed, data = handler(rs)
 
     # ---- Retry logic ----
-    if failed:
+    if failed and rs.action_event and rs.target_text:
         log.warning("Handler failed, retrying...")
         handle_retry(rs, ctx_processed, raw_ctx)
         time.sleep(1)

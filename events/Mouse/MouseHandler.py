@@ -267,9 +267,8 @@ class MouseHandler:
             emb = run_ocr(screenshot, rs)
             target = self.extract_box_target(rs, emb)
             if target and target.get("result") and target["result"].get("bbox"):
-                self.apply_offset_to_bbox(offset, target["result"]["bbox"])
-            if target:
-                self.execute(rs.action_event, target)
+                new_bbox = self.apply_offset_to_bbox(offset, target["result"]["bbox"])
+                self.execute(rs.action_event, {"result": {"bbox": new_bbox}})
                 results = {
                     "event": rs.action_event, 
                     "payload": {"target": target}

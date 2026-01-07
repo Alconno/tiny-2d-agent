@@ -60,7 +60,6 @@ def parse_action_and_extract_target(rs: RuntimeState, raw_ctx: str, ctx_processe
         rs.action_result = parsed_action
         rs.action_event = parsed_action["result"]
         rs.target_text = extract_target_context(parsed_action.get("span",""), ctx_processed)
-        print("target: ", rs.target_text)
 
         rs.parsed_action_cache[raw_ctx] = parsed_action
         rs.retry_target_cache[raw_ctx] = (rs.target_text, rs.color_list)

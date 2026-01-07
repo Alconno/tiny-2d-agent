@@ -12,9 +12,10 @@ def append_to_recording_seq(rs: RuntimeState):
     return False # success
 
 def append_condition_to_recording_seq(rs: RuntimeState):
-    if rs.recording_state["active"]:
-        rs.current_context.sub_contexts = []
-        parent = rs.recording_stack[-1]
-        parent.append(rs.current_context)
-        rs.recording_stack.append(rs.current_context.sub_contexts)
+    if rs.recording_state:
+        if rs.recording_state["active"]:
+            rs.current_context.sub_contexts = []
+            parent = rs.recording_stack[-1]
+            parent.append(rs.current_context)
+            rs.recording_stack.append(rs.current_context.sub_contexts)
     return False # success
