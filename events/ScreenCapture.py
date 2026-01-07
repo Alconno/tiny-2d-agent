@@ -69,8 +69,9 @@ class ScreenCapture:
             bbox_xywh, bbox_coords  = self.select_region()
             rs.screenshot_box = bbox_coords
             time.sleep(0.25)
-            rs.current_context.text += " {},{},{},{}".format(*rs.screenshot_box)
-            failed = False
+            if rs.current_context:
+                rs.current_context.text += " {},{},{},{}".format(*rs.screenshot_box)
+                failed = False
         log.info(f"Currently focused on area: {rs.screenshot_box}")
         return failed,  {"event": rs.action_event, "payload": rs.screenshot_box}
 

@@ -26,6 +26,7 @@ def extract_action(context_text, event_embeds, embd_func, max_n=8, boost_alpha=0
             spans.append(" ".join(words[i:i+n]))
 
     if not spans: return None
+    print("spans: ", spans)
     span_embs = embd_func(spans)
 
     best = {"score": -1, "span": None, "result": None}

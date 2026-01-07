@@ -28,8 +28,9 @@ def prepare_rs(rs: RuntimeState):
         log.warning("Failed to parse action")
         return False, orig_ctx, raw_ctx, ctx_processed
 
-    log.debug("Raw context: %s", raw_ctx)
-    log.debug("Processed context: %s", ctx_processed)
+    log.info(f"Action: {rs.action_event}")
+    log.debug(f"Raw context: {raw_ctx}")
+    log.debug(f"Processed context: {ctx_processed}")
 
     # ---- Template check ----
     rs.is_template = extract_template(rs.target_text)

@@ -33,20 +33,15 @@ def process_context(rs: RuntimeState):
 colors = ["black","white","red","green","blue","yellow","orange","brown","gray","purple"]
 color_pattern = r"\b(" + "|".join(colors) + r")\b"
 def find_colors(ctx):
-    matches, colors = [], []
-
-    for m in re.finditer(color_pattern, ctx, re.I):
-        # Check if there's non-space text after this color
-        if re.search(r"\S", ctx[m.end():]):
-            matches.append(m)
-            colors.append(m.group(0).lower())
-
-    if matches:
-        last_match = max(matches, key=lambda m: m.end())
-        ctx = ctx[last_match.end():].strip()
-        ctx = re.sub(r"^[\s\W]+", "", ctx)
-
-    return colors or None, ctx
+    found = []
+    ctx = re.sub(rf"\b(or|and)\s+{color_pattern}",
+                 lambda m: found.append(m.group(2).lower()) or "",
+                 ctx, flags=re.I)
+    ctx = re.sub(color_pattern,
+                 lambda m: found.append(m.group(1).lower()) or "",
+                 ctx, flags=re.I)
+    ctx = re.sub(r"\s{2,}", " ", ctx).strip()
+    return found or None, ctx
 
 
 
@@ -65,6 +60,7 @@ def parse_action_and_extract_target(rs: RuntimeState, raw_ctx: str, ctx_processe
         rs.action_result = parsed_action
         rs.action_event = parsed_action["result"]
         rs.target_text = extract_target_context(parsed_action.get("span",""), ctx_processed)
+        print("target: ", rs.target_text)
 
         rs.parsed_action_cache[raw_ctx] = parsed_action
         rs.retry_target_cache[raw_ctx] = (rs.target_text, rs.color_list)
