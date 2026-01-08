@@ -9,7 +9,7 @@ A **local, deterministic desktop RPA agent** that turns natural language
 ## 🎥 Demo (recommended)
 
 ▶️ **YouTube demo**  
-Shows voice commands, OCR, spatial reasoning, retries, and real desktop interaction.
+Shows voice commands, OCR, spatial reasoning, retry logic, real desktop interaction, and the full system I built over a month of development.
 
 👉 https://youtu.be/mXx7YiOWfbA
 
