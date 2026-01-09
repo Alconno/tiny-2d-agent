@@ -7,7 +7,7 @@ from .embeddings.text_matching import get_matching_str, extract_action
 from .ocr.image_matching import get_target_image, find_crop_in_image
 from .ocr.image_utils import base64_to_crop, image_hash, image_diff_percent
 from .ocr.ocr_processing import embd_ocr_lines, filter_numbers
-from .ocr.screenshot import screenshot_raw, take_screenshot
+from .ocr.screenshot import screenshot_raw, take_screenshot, scale_screenshot_box
 
 
 # ---- Text ----

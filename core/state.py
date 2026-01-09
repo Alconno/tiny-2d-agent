@@ -2,6 +2,8 @@ from collections import deque
 from class_models.Context import Context
 from fastAPI.access_models import AccessModels
 from re import Match
+import pyautogui
+
 
 class RuntimeState:
     def __init__(self, context_queue = None):
@@ -14,6 +16,7 @@ class RuntimeState:
         self.n_retries = 3
         self.use_gpt = False
         self.screenshot_box = None
+        self.desktopWH = pyautogui.size()
         self.prev_hash = None
         self.prev_embd_lines = None
         self.prev_screenshot = None

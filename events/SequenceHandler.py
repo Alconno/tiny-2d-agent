@@ -36,7 +36,11 @@ class SequenceHandler:
 
     
     def update_embds(self):
-        data = json.load(open(self.filepath))
+        try:
+            with open(self.filepath) as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, FileNotFoundError):
+            data = {}
         self.data = data
         keys = [k for k in data.keys()]
         key_embeds = self.embd_func(keys)

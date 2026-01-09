@@ -6,6 +6,7 @@ log = get_logger(__file__)
 
 from core.state import RuntimeState
 from core.processing import process_context, parse_action_and_extract_target, extract_template
+from ma_utility import scale_screenshot_box
 from class_models.Context import Context
 
 
@@ -13,6 +14,9 @@ from class_models.Context import Context
 
 
 def prepare_rs(rs: RuntimeState):
+    # Check resolution changes
+    scale_screenshot_box(rs)
+
     # ---- GPT Processing ----
     # normalize + rewrite user intent (LLM)
     orig_ctx, ctx_processed = process_context(rs)
